@@ -1,0 +1,49 @@
+{
+  "name": "Vector Blockchain",
+  "description": "UTXO L2 blockchain for AI agents — fast, safe, verifiable",
+  "url": "https://vector.apexfusion.org",
+  "documentation": "https://docs.vector.apexfusion.org/agents/",
+  "protocols": ["MCP", "A2A", "ACP"],
+  "mcp_server": {
+    "repository": "https://github.com/Apex-Fusion/web3-mcp",
+    "install": "git clone + npm install + npm run build",
+    "transport": "sse",
+    "port": 3000
+  },
+  "sdk": {
+    "python": {
+      "repository": "https://github.com/Apex-Fusion/agent-sdk-py",
+      "install": "git clone + pip install -e .",
+      "base": "PyCardano"
+    }
+  },
+  "endpoints": {
+    "testnet": {
+      "ogmios": "wss://ogmios.vector.testnet.apexfusion.org",
+      "submit": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
+      "explorer": "https://vector.testnet.apexscan.org"
+    },
+    "mainnet": {
+      "ogmios": "wss://ogmios.vector.apexfusion.org",
+      "submit": "https://submit.vector.apexfusion.org/api/submit/tx",
+      "explorer": "https://vector.apexscan.org"
+    }
+  },
+  "capabilities": [
+    "wallet_management",
+    "token_transfers",
+    "smart_contracts",
+    "agent_registry",
+    "agent_messaging",
+    "spend_limits",
+    "audit_logging",
+    "dry_run"
+  ],
+  "chain": {
+    "type": "UTXO",
+    "consensus": "Ouroboros",
+    "smart_contracts": "Plutus/Aiken",
+    "finality": "~13 seconds (99.9%)",
+    "throughput": "4x Cardano"
+  }
+}

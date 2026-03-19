@@ -1,0 +1,92 @@
+site_name: Vector AI Agent Platform
+site_description: Documentation for building AI agents on Vector blockchain
+site_url: https://docs.vector.apexfusion.org/agents/
+docs_dir: docs
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: apex-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    logo: material/vector-triangle
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/apex-theme.css
+
+nav:
+  - Home: index.md
+  - Quick Start:
+      - 5-Minute Start: quickstart/5-minute-start.md
+      - Claude Desktop + Vector: quickstart/claude-desktop.md
+      - OpenClaw + Vector: quickstart/openclaw.md
+      - LangChain + Vector: quickstart/langchain.md
+      - CrewAI + Vector: quickstart/crewai.md
+  - Concepts:
+      - How Vector Works: concepts/how-vector-works.md
+      - Agent Wallets: concepts/agent-wallets.md
+      - Safety Model: concepts/safety-model.md
+      - Agent Identity: concepts/agent-identity.md
+      - Smart Contracts for Agents: concepts/smart-contracts.md
+      - Vector Gotchas: concepts/vector-gotchas.md
+  - Contracts:
+      - Templates: contracts/templates.md
+      - Testing Guide: contracts/testing.md
+      - Deployment: contracts/deployment.md
+  - MCP Server:
+      - Installation: mcp-server/installation.md
+      - Tools Reference: mcp-server/tools-reference.md
+      - Security: mcp-server/security.md
+  - SDK:
+      - Python SDK: sdk/python/index.md
+  - API Reference:
+      - Endpoints: api/index.md
+  - Examples:
+      - Overview: examples/index.md
+      - Autonomous Investor: examples/autonomous-investor.md
+      - Social Agent: examples/social-agent.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Apex-Fusion/vector-ai-agents
