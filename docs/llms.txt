@@ -44,4 +44,4 @@
 - Ogmios: https://ogmios.vector.mainnet.apexfusion.org
 - TX Submit: https://submit.vector.mainnet.apexfusion.org/api/submit/tx
 - Koios: https://koios.vector.mainnet.apexfusion.org/
-- Explorer: https://vector.mainnet.apexscan.org
+- Explorer: https://explorer.vector.mainnet.apexfusion.org

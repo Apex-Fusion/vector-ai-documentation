@@ -139,7 +139,7 @@ curl "https://koios.vector.testnet.apexfusion.org/api/v1/tip"
 ## Block Explorer
 
 **Testnet:** `https://vector.testnet.apexscan.org`
-**Mainnet:** `https://vector.mainnet.apexscan.org`
+**Mainnet:** `https://explorer.vector.mainnet.apexfusion.org`
 
 Web UI for browsing blocks, transactions, addresses, and tokens. Useful for:
 
@@ -175,7 +175,7 @@ Requires a Demeter API key. See the [Apex Fusion developer portal](https://devel
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.mainnet.apexscan.org` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
 
 ---
 

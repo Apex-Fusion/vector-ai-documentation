@@ -55,26 +55,31 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 ## How Agents Connect to Vector
 
 ```
-┌──────────────────────┐       ┌──────────────────────┐
-│  Claude / GPT / etc. │◄─────►│  vector-mcp-server   │
-│  (any MCP client)    │  MCP  │                      │
-└──────────────────────┘       │  ┌────────────────┐  │
-                               │  │ Safety Layer   │  │
-                               │  │ - Spend limits │  │
-                               │  │ - Audit log    │  │
-                               │  │ - Confirmations│  │
-                               │  └───────┬────────┘  │
-                               │          │           │
-                               │  ┌───────▼────────┐  │
-                               │  │ Agent SDK      │  │
-                               │  │ (Python/TS)    │  │
-                               │  └───────┬────────┘  │
-                               │          │           │
-                               │  ┌───────▼────────┐  │
-                               │  │ Ogmios + Koios │  │
-                               │  │ (Chain Access) │  │
-                               │  └────────────────┘  │
-                               └──────────────────────┘
+┌──────────────────────┐      ┌──────────────────────────┐
+│  Claude / GPT / etc. │◄────►│  vector-mcp-server       │
+│  (any MCP client)    │ SSE  │                          │
+└──────────────────────┘      │  ┌────────────────────┐  │
+                              │  │ Rate Limiter        │  │
+                              │  │ (60 calls/min)      │  │
+                              │  └────────┬───────────┘  │
+                              │           │               │
+                              │  ┌────────▼───────────┐  │
+                              │  │ Safety Layer        │  │
+                              │  │ - Per-tx limits     │  │
+                              │  │ - Daily limits      │  │
+                              │  │ - Audit log         │  │
+                              │  └────────┬───────────┘  │
+                              │           │               │
+                              │  ┌────────▼───────────┐  │
+                              │  │ Lucid + Ogmios     │  │
+                              │  │ Provider            │  │
+                              │  └────────┬───────────┘  │
+                              │           │               │
+                              │  ┌────────▼───────────┐  │
+                              │  │ Ogmios / Koios /   │  │
+                              │  │ Submit API          │  │
+                              │  └────────────────────┘  │
+                              └──────────────────────────┘
 ```
 
 Your AI agent talks to the **MCP server**, which handles wallet management, transaction building, safety enforcement, and chain communication. The agent never touches raw CBOR or UTxO selection directly.
@@ -229,7 +234,7 @@ Every agent interaction on Vector is governed by safety controls:
 
 | Service | URL |
 |---------|-----|
-| Block Explorer | `https://vector.mainnet.apexscan.org` |
+| Block Explorer | `https://explorer.vector.mainnet.apexfusion.org` |
 | TX Submission | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | Ogmios | `https://ogmios.vector.mainnet.apexfusion.org` |
 | Koios | `https://koios.vector.mainnet.apexfusion.org/` |

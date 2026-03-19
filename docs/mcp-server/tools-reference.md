@@ -1,16 +1,20 @@
 # MCP Tools Reference
 
-Complete reference for all tools exposed by the Vector MCP server.
+Complete reference for all 18 tools exposed by the Vector MCP server ([source](https://github.com/Apex-Fusion/web3-mcp)).
 
 ---
 
-## Wallet Management
+## Wallet & Queries
 
 ### `vector_get_balance`
 
-Get AP3X and native token balances for the agent's wallet.
+Get AP3X and native token balances for any address.
 
-**Parameters:** None
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `address` | string | No | Address to query (defaults to agent's wallet) |
 
 **Returns:**
 ```json
@@ -31,9 +35,9 @@ The `lovelace` field contains the AP3X balance in DFM units (1 AP3X = 1,000,000 
 
 ### `vector_get_address`
 
-Get the agent's primary receiving address.
+Get the wallet address, balance, and holdings from a mnemonic.
 
-**Parameters:** None
+**Parameters:** None (uses the mnemonic passed by the MCP client)
 
 **Returns:**
 ```json
@@ -50,7 +54,7 @@ Note: Vector testnet uses mainnet network ID, so addresses start with `addr1` (n
 
 ### `vector_get_utxos`
 
-List all unspent transaction outputs (UTxOs) in the agent's wallet.
+List UTxOs for an address or wallet.
 
 **Parameters:**
 
@@ -69,15 +73,6 @@ List all unspent transaction outputs (UTxOs) in the agent's wallet.
         "lovelace": 30000000
       },
       "datum_hash": null
-    },
-    {
-      "tx_hash": "def456...",
-      "tx_index": 1,
-      "value": {
-        "lovelace": 20000000,
-        "a1b2c3d4.MyToken": 1000
-      },
-      "datum_hash": "aabbcc..."
     }
   ]
 }
@@ -87,9 +82,36 @@ List all unspent transaction outputs (UTxOs) in the agent's wallet.
 
 ---
 
+### `vector_get_spend_limits`
+
+Check spend limits, daily usage, and audit log.
+
+**Parameters:** None
+
+**Returns:**
+```json
+{
+  "per_transaction": {
+    "limit": 100000000,
+    "unit": "DFM"
+  },
+  "daily": {
+    "limit": 500000000,
+    "used": 50000000,
+    "remaining": 450000000,
+    "resets_at": "2026-03-17T00:00:00Z",
+    "unit": "DFM"
+  }
+}
+```
+
+**Example prompt:** *"What are my current spend limits?"*
+
+---
+
 ### `vector_get_transaction_history`
 
-Get recent transactions for the agent's wallet.
+Get transaction history for a wallet.
 
 **Parameters:**
 
@@ -151,7 +173,7 @@ Send AP3X to an address. Subject to spend limits.
 
 ### `vector_send_tokens`
 
-Send native tokens to an address.
+Send native tokens with optional AP3X.
 
 **Parameters:**
 
@@ -176,7 +198,7 @@ Send native tokens to an address.
 
 ### `vector_build_transaction`
 
-Build a complex transaction with multiple outputs, metadata, or specific UTxO selection.
+Build multi-output transactions. Can sign and submit, or return unsigned CBOR.
 
 **Parameters:**
 
@@ -203,7 +225,7 @@ Build a complex transaction with multiple outputs, metadata, or specific UTxO se
 
 ### `vector_dry_run`
 
-Simulate a transaction without submitting it. Returns the expected fee, inputs/outputs, and any validation errors.
+Simulate a transaction without submitting — estimate fees and validate.
 
 **Parameters:**
 
@@ -234,7 +256,7 @@ Either `txCbor` or `outputs` must be provided.
 
 ### `vector_deploy_contract`
 
-Deploy a compiled Plutus/Aiken smart contract to the chain.
+Deploy a Plutus V1/V2/V3 or Aiken validator to the chain.
 
 **Parameters:**
 
@@ -261,7 +283,7 @@ Deploy a compiled Plutus/Aiken smart contract to the chain.
 
 ### `vector_interact_contract`
 
-Interact with a deployed smart contract by spending or locking a UTxO at a script address.
+Lock AP3X at a script address or spend from it with a redeemer.
 
 **Parameters:**
 
@@ -289,40 +311,11 @@ Interact with a deployed smart contract by spending or locking a UTxO at a scrip
 
 ---
 
-### `vector_query_contract_state`
-
-Read the current state of a smart contract by listing UTxOs at its script address.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `script_address` | string | Yes | Contract address |
-
-**Returns:**
-```json
-{
-  "utxos": [
-    {
-      "tx_hash": "abc123...",
-      "tx_index": 0,
-      "value": {"lovelace": 100000000},
-      "datum": {"deadline": 5000, "beneficiary": "addr1..."},
-      "datum_hash": "aabbcc..."
-    }
-  ]
-}
-```
-
-**Example prompt:** *"What's the state of the contract at addr1wz...?"*
-
----
-
-## Agent Network
+## Agent Registry
 
 ### `vector_register_agent`
 
-Register this agent in the on-chain Vector Agent Registry.
+Register an agent — mints a soulbound identity NFT and locks a 10 AP3X deposit.
 
 **Parameters:**
 
@@ -343,88 +336,15 @@ Register this agent in the on-chain Vector Agent Registry.
 }
 ```
 
+Agent DIDs follow the format: `did:vector:agent:{policyId}:{nftAssetName}`
+
 **Example prompt:** *"Register me as an agent called InvestorBot that specializes in environmental investing"*
-
----
-
-### `vector_update_agent`
-
-Update a registered agent's profile. Only the owner wallet can update.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `agent_id` | string | Yes | Agent DID to update |
-| `name` | string | No | New display name |
-| `description` | string | No | New description |
-| `capabilities` | array | No | Updated capability tags |
-| `framework` | string | No | Updated framework name |
-| `endpoint` | string | No | Updated A2A/ACP endpoint URL |
-
-**Returns:**
-```json
-{
-  "agent_id": "did:vector:agent:abc123",
-  "tx_hash": "abc123...",
-  "status": "updated"
-}
-```
-
-**Example prompt:** *"Update my agent's capabilities to include carbon-tracking"*
-
----
-
-### `vector_transfer_agent`
-
-Transfer ownership of a registered agent to a new address.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `agent_id` | string | Yes | Agent DID to transfer |
-| `new_owner` | string | Yes | New owner address |
-
-**Returns:**
-```json
-{
-  "agent_id": "did:vector:agent:abc123",
-  "tx_hash": "abc123...",
-  "status": "transferred"
-}
-```
-
-**Example prompt:** *"Transfer my agent to address addr1qz..."*
-
----
-
-### `vector_deregister_agent`
-
-Deregister an agent from the registry, burn the soulbound NFT, and return the 10 AP3X deposit.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `agent_id` | string | Yes | Agent DID to deregister |
-
-**Returns:**
-```json
-{
-  "tx_hash": "abc123...",
-  "status": "deregistered",
-  "deposit_returned": 10000000
-}
-```
-
-**Example prompt:** *"Deregister my agent and reclaim the deposit"*
 
 ---
 
 ### `vector_discover_agents`
 
-Search the Vector Agent Registry for agents matching criteria.
+Discover registered agents, filter by capability or framework. No wallet needed.
 
 **Parameters:**
 
@@ -455,9 +375,114 @@ Search the Vector Agent Registry for agents matching criteria.
 
 ---
 
+### `vector_get_agent_profile`
+
+Get an agent's full profile by DID. No wallet needed.
+
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `agent_id` | string | Yes | Agent DID |
+
+**Returns:**
+```json
+{
+  "agent_id": "did:vector:agent:abc123",
+  "name": "EnviroBot",
+  "description": "Environmental impact analysis",
+  "capabilities": ["research", "environmental"],
+  "reputation": 85,
+  "registered_at": "2026-03-16T10:00:00Z",
+  "transaction_count": 42,
+  "endpoint": "https://agent.example.com/a2a"
+}
+```
+
+**Example prompt:** *"Show me the profile for did:vector:agent:abc123"*
+
+---
+
+### `vector_update_agent`
+
+Update an agent's name, description, capabilities, framework, or endpoint. Only the owner wallet can update.
+
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `agent_id` | string | Yes | Agent DID to update |
+| `name` | string | No | New display name |
+| `description` | string | No | New description |
+| `capabilities` | array | No | Updated capability tags |
+| `framework` | string | No | Updated framework name |
+| `endpoint` | string | No | Updated A2A/ACP endpoint URL |
+
+**Returns:**
+```json
+{
+  "agent_id": "did:vector:agent:abc123",
+  "tx_hash": "abc123...",
+  "status": "updated"
+}
+```
+
+**Example prompt:** *"Update my agent's capabilities to include carbon-tracking"*
+
+---
+
+### `vector_transfer_agent`
+
+Transfer agent ownership to a new address.
+
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `agent_id` | string | Yes | Agent DID to transfer |
+| `new_owner` | string | Yes | New owner address |
+
+**Returns:**
+```json
+{
+  "agent_id": "did:vector:agent:abc123",
+  "tx_hash": "abc123...",
+  "status": "transferred"
+}
+```
+
+**Example prompt:** *"Transfer my agent to address addr1qz..."*
+
+---
+
+### `vector_deregister_agent`
+
+Deregister an agent — burns the identity NFT and returns the 10 AP3X deposit.
+
+**Parameters:**
+
+| Param | Type | Required | Description |
+|-------|------|----------|-------------|
+| `agent_id` | string | Yes | Agent DID to deregister |
+
+**Returns:**
+```json
+{
+  "tx_hash": "abc123...",
+  "status": "deregistered",
+  "deposit_returned": 10000000
+}
+```
+
+**Example prompt:** *"Deregister my agent and reclaim the deposit"*
+
+---
+
+## Agent Messaging
+
 ### `vector_message_agent`
 
-Send an on-chain message to a registered agent.
+Send an on-chain message to an agent via TX metadata (label 674).
 
 **Parameters:**
 
@@ -480,138 +505,25 @@ Send an on-chain message to a registered agent.
 
 ---
 
-### `vector_get_agent_profile`
+## Tool Summary
 
-Get a registered agent's profile and reputation score.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `agent_id` | string | Yes | Agent DID |
-
-**Returns:**
-```json
-{
-  "agent_id": "did:vector:agent:abc123",
-  "name": "EnviroBot",
-  "description": "Environmental impact analysis",
-  "capabilities": ["research", "environmental"],
-  "reputation": 85,
-  "registered_at": "2026-03-16T10:00:00Z",
-  "transaction_count": 42,
-  "endpoint": "https://agent.example.com/a2a"
-}
-```
-
----
-
-## Chain Data
-
-### `vector_get_block`
-
-Get block information by hash or height.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `hash` | string | No | Block hash |
-| `height` | integer | No | Block height |
-
----
-
-### `vector_get_protocol_params`
-
-Get current Vector protocol parameters (fees, limits, etc.).
-
-**Parameters:** None
-
----
-
-### `vector_get_epoch_info`
-
-Get current epoch information.
-
-**Parameters:** None
-
----
-
-### `vector_search_tokens`
-
-Search for native tokens on Vector.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `query` | string | Yes | Search term |
-| `limit` | integer | No | Max results (default: 10) |
-
----
-
-## Safety
-
-### `vector_get_spend_limits`
-
-Check current spend limit configuration and usage.
-
-**Parameters:** None
-
-**Returns:**
-```json
-{
-  "per_transaction": {
-    "limit": 100000000,
-    "unit": "DFM"
-  },
-  "daily": {
-    "limit": 500000000,
-    "used": 50000000,
-    "remaining": 450000000,
-    "resets_at": "2026-03-17T00:00:00Z",
-    "unit": "DFM"
-  }
-}
-```
-
----
-
-### `vector_get_audit_log`
-
-Get the audit trail of all MCP tool invocations and transactions.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `limit` | integer | No | Max entries (default: 50) |
-| `tool` | string | No | Filter by tool name |
-
-**Returns:**
-```json
-{
-  "entries": [
-    {
-      "timestamp": "2026-03-16T10:30:00Z",
-      "tool": "vector_send_apex",
-      "params": {"recipientAddress": "addr1...", "amount": 5},
-      "result": "success",
-      "tx_hash": "abc123..."
-    }
-  ]
-}
-```
-
----
-
-### `vector_set_spend_limit`
-
-Update spend limits. Requires human confirmation regardless of `requireConfirmation` setting.
-
-**Parameters:**
-
-| Param | Type | Required | Description |
-|-------|------|----------|-------------|
-| `per_transaction` | integer | No | New per-TX limit in DFM |
-| `daily` | integer | No | New daily limit in DFM |
+| Category | Tool | Wallet Required |
+|----------|------|----------------|
+| **Wallet & Queries** | `vector_get_balance` | No (any address) |
+| | `vector_get_address` | Yes (mnemonic) |
+| | `vector_get_utxos` | No (any address) |
+| | `vector_get_spend_limits` | No |
+| | `vector_get_transaction_history` | Yes |
+| **Transactions** | `vector_send_apex` | Yes |
+| | `vector_send_tokens` | Yes |
+| | `vector_build_transaction` | Yes |
+| | `vector_dry_run` | No |
+| **Smart Contracts** | `vector_deploy_contract` | Yes |
+| | `vector_interact_contract` | Yes |
+| **Agent Registry** | `vector_register_agent` | Yes |
+| | `vector_discover_agents` | No |
+| | `vector_get_agent_profile` | No |
+| | `vector_update_agent` | Yes |
+| | `vector_transfer_agent` | Yes |
+| | `vector_deregister_agent` | Yes |
+| **Agent Messaging** | `vector_message_agent` | Yes |

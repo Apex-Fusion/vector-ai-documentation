@@ -27,83 +27,92 @@ The server handles:
 
 <div class="setup-chooser" markdown>
 <div class="section-grid" markdown>
-<a href="#connect-to-existing-server"><strong>&#x26A1; Quick Setup</strong> <span class="section-desc">— Connect to an existing MCP server in minutes. No Node.js or builds required.</span></a>
-<a href="#install-locally"><strong>&#x1F527; Advanced Setup</strong> <span class="section-desc">— Install and run your own MCP server locally. Full control over configuration.</span></a>
+<a href="#quick-setup-connect-to-hosted-server"><strong>&#x26A1; Quick Setup</strong> <span class="section-desc">— Connect to the hosted MCP server in seconds. No installs, no builds, no configuration.</span></a>
+<a href="#advanced-setup-install-locally"><strong>&#x1F527; Advanced Setup</strong> <span class="section-desc">— Clone and run your own MCP server locally. Full control over configuration.</span></a>
 </div>
 </div>
 
 ---
 
-## Connect to Existing Server
+## Quick Setup — Connect to Hosted Server
 
-The fastest way to get started — point your AI client at a running Vector MCP server. No local installation needed.
+The Vector MCP server is hosted and publicly available — no installation required. Connect your AI client directly.
+
+**Testnet SSE endpoint:** `https://mcp.vector.testnet.apexfusion.org/sse`
+
+No authentication, no API keys, no environment variables needed.
+
+### Claude Code (Terminal)
+
+One command:
+
+```bash
+claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+```
+
+To make it available across all your projects, add `--scope user`:
+
+```bash
+claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+```
+
+That's it — all 18 Vector MCP tools are immediately available in Claude Code.
 
 ### Claude Desktop
 
 Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
 
-=== "Testnet"
-
-    ```json
-    {
-      "mcpServers": {
-        "vector": {
-          "url": "http://your-mcp-server:3000",
-          "env": {
-            "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
-            "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-            "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
-            "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
-          }
-        }
-      }
+```json
+{
+  "mcpServers": {
+    "vector-mcp": {
+      "type": "sse",
+      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
     }
-    ```
+  }
+}
+```
 
-=== "Mainnet"
+Restart Claude Desktop after saving. See [Claude Desktop + Vector](../quickstart/claude-desktop.md) for a full walkthrough.
 
-    ```json
-    {
-      "mcpServers": {
-        "vector": {
-          "url": "http://your-mcp-server:3000",
-          "env": {
-            "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
-            "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
-            "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
-            "VECTOR_EXPLORER_URL": "https://vector.mainnet.apexscan.org"
-          }
-        }
-      }
+### Claude.ai (Web / Mobile)
+
+Go to **Settings → Connectors → Add custom connector**, then enter:
+
+```
+https://mcp.vector.testnet.apexfusion.org/sse
+```
+
+### Project-Level Setup
+
+For team collaboration, commit a `.mcp.json` file to your project root:
+
+```json
+{
+  "mcpServers": {
+    "vector-mcp": {
+      "type": "sse",
+      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
     }
-    ```
-
-Replace `http://your-mcp-server:3000` with the actual server URL provided to you. See [Claude Desktop + Vector](../quickstart/claude-desktop.md) for the full walkthrough.
-
-### OpenClaw
-
-```yaml
-mcp_servers:
-  - name: vector
-    url: "http://your-mcp-server:3000"
-    env:
-      VECTOR_OGMIOS_URL: "https://ogmios.vector.testnet.apexfusion.org"
-      VECTOR_KOIOS_URL: "https://koios.vector.testnet.apexfusion.org/"
+  }
+}
 ```
 
-### Generic MCP Client
+Anyone who opens the project with Claude Code will automatically pick up the Vector MCP server.
 
-Connect any MCP-compatible client to the server's SSE endpoint:
+### Other MCP Clients
+
+Connect any MCP-compatible client to the SSE endpoint:
 
 ```
-http://your-mcp-server:3000
+https://mcp.vector.testnet.apexfusion.org/sse
 ```
 
-That's it — all Vector MCP tools are available immediately.
+No additional configuration required — the hosted server handles all chain access internally.
 
 ---
 
-## Install Locally
+## Advanced Setup — Install Locally
 
 For full control, install and run the MCP server yourself.
 
@@ -212,7 +221,7 @@ All settings are configured via environment variables:
     VECTOR_OGMIOS_URL=https://ogmios.vector.mainnet.apexfusion.org
     VECTOR_SUBMIT_URL=https://submit.vector.mainnet.apexfusion.org/api/submit/tx
     VECTOR_KOIOS_URL=https://koios.vector.mainnet.apexfusion.org/
-    VECTOR_EXPLORER_URL=https://vector.mainnet.apexscan.org
+    VECTOR_EXPLORER_URL=https://explorer.vector.mainnet.apexfusion.org
     ```
 
 !!! note "Testnet uses mainnet network ID"
@@ -267,7 +276,7 @@ When enabled (default), every MCP tool invocation is logged to the audit log pat
 }
 ```
 
-Query the audit log via the `vector_get_audit_log` MCP tool, or read the JSON file directly.
+Read the JSON file directly, or query it programmatically.
 
 ---
 
@@ -278,7 +287,7 @@ Query the audit log via the `vector_get_audit_log` MCP tool, or read the JSON fi
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.mainnet.apexscan.org` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
 
 ---
 

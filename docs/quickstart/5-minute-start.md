@@ -6,30 +6,29 @@ Get an AI agent talking to Vector blockchain in under 5 minutes.
 
 ## Prerequisites
 
-- **Node.js** 18+ (for the MCP server)
-- **Python 3.11+** (for the Python SDK) or **TypeScript** (for the TS SDK)
-- An **MCP-compatible AI client** (Claude Desktop, OpenClaw, or any MCP client)
+- An **MCP-compatible AI client** (Claude Code, Claude Desktop, or any MCP client)
+
+That's it — no installs needed. The Vector MCP server is hosted publicly.
 
 ---
 
-## Step 1: Install the MCP Server
+## Step 1: Connect to the MCP Server
 
-Clone the repository and build it:
+The Vector MCP server is hosted at `https://mcp.vector.testnet.apexfusion.org/sse` — no installation, no API keys, no configuration.
 
-```bash
-git clone https://github.com/Apex-Fusion/web3-mcp
-cd web3-mcp
-npm install
-npm run build
-npm start  # serves SSE over HTTP on port 3000
-```
+=== "Claude Code (Terminal)"
 
-!!! warning "Secure your mnemonic"
-    Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.
+    One command:
 
-## Step 2: Configure Your AI Client
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+    ```
 
-Add the Vector MCP server to your AI client's configuration.
+    To make it available across all your projects, add `--scope user`:
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+    ```
 
 === "Claude Desktop"
 
@@ -38,44 +37,36 @@ Add the Vector MCP server to your AI client's configuration.
     ```json
     {
       "mcpServers": {
-        "vector": {
-          "command": "node",
-          "args": ["/path/to/web3-mcp/build/index.js"],
-          "env": {
-            "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
-            "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-            "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
-            "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
-          }
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
         }
       }
     }
     ```
 
-    The mnemonic is not stored here — it is prompted by the tool call when needed.
+    Restart Claude Desktop after saving.
 
-=== "OpenClaw"
+=== "Claude.ai (Web / Mobile)"
 
-    ```yaml
-    # openclaw.yml
-    mcp_servers:
-      - name: vector
-        command: node /path/to/web3-mcp/build/index.js
-        env:
-          VECTOR_OGMIOS_URL: "https://ogmios.vector.testnet.apexfusion.org"
-          VECTOR_KOIOS_URL: "https://koios.vector.testnet.apexfusion.org/"
+    Go to **Settings → Connectors → Add custom connector**, then enter:
+
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
     ```
 
-=== "Generic MCP Client"
+=== "Other MCP Clients"
 
-    Start the server (it serves SSE over HTTP on port 3000):
+    Connect to the SSE endpoint:
 
-    ```bash
-    cd /path/to/web3-mcp
-    npm start
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
     ```
 
-    Connect your MCP client to `http://localhost:3000`.
+All 18 Vector MCP tools are immediately available. For local installation instead, see the [MCP Server Setup Guide](../mcp-server/installation.md#advanced-setup-install-locally).
+
+!!! warning "Secure your mnemonic"
+    Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.
 
 ## Step 3: Fund Your Agent (Testnet)
 
@@ -185,7 +176,7 @@ The guides above use **testnet** endpoints. When you're ready for mainnet, repla
 | `VECTOR_OGMIOS_URL` | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | `VECTOR_SUBMIT_URL` | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://vector.mainnet.apexscan.org` |
+| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
 
 !!! warning "Mainnet uses real funds"
     On mainnet, AP3X has real value. Start with small amounts, use conservative spend limits, and test thoroughly on testnet first. Use separate mnemonics for testnet and mainnet wallets.

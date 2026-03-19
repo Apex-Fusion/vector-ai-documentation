@@ -240,7 +240,7 @@ Vector currently runs a public testnet. Mainnet (with Conway-era features) is im
 |---|---------|---------|
 | **Ogmios** | `wss://ogmios.vector.testnet.apexfusion.org` | `wss://ogmios.vector.mainnet.apexfusion.org` |
 | **TX Submit** | `submit.vector.testnet.apexfusion.org/api/submit/tx` | `submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| **Explorer** | `vector.testnet.apexscan.org` | `vector.mainnet.apexscan.org` |
+| **Explorer** | `vector.testnet.apexscan.org` | `explorer.vector.mainnet.apexfusion.org` |
 | **Funds** | Free (testnet faucet) | Real value |
 
 Start on testnet. The code is identical — just change the endpoint URLs.

@@ -9,21 +9,34 @@ This guide walks you through configuring Claude Desktop to connect to Vector's M
 ## Prerequisites
 
 - **Claude Desktop** installed ([download](https://claude.ai/download))
-- **Node.js 18+** installed
-- Basic familiarity with Claude Desktop
 
 ---
 
-## Step 1: Install the Vector MCP Server
+## Step 1: Configure Claude Desktop
 
-Clone the repository and build it:
+Open Claude Desktop's MCP configuration file:
 
-```bash
-git clone https://github.com/Apex-Fusion/web3-mcp
-cd web3-mcp
-npm install
-npm run build
+- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux:** `~/.config/Claude/claude_desktop_config.json`
+
+Add the Vector MCP server — connect directly to the hosted server (no installs needed):
+
+```json
+{
+  "mcpServers": {
+    "vector-mcp": {
+      "type": "sse",
+      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+    }
+  }
+}
 ```
+
+No API keys, no environment variables, no Node.js required.
+
+!!! tip "Want to run locally instead?"
+    See [MCP Server Setup — Install Locally](../mcp-server/installation.md#advanced-setup-install-locally) for running your own server with full configuration control.
 
 ## Step 2: Prepare Your Wallet Mnemonic
 
@@ -32,41 +45,11 @@ Generate or locate your **15-word mnemonic phrase** (15 or 24 words are both acc
 !!! danger "Save your mnemonic securely"
     Write down the words and store them safely. This is the only way to recover your agent's wallet. Never share it, never commit it to git. The mnemonic is passed per-call by the tool — it is not stored in the server config.
 
-## Step 3: Configure Claude Desktop
-
-Open Claude Desktop's MCP configuration file:
-
-- **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-- **Linux:** `~/.config/Claude/claude_desktop_config.json`
-
-Add the Vector MCP server (replace `/path/to/web3-mcp` with the actual clone location):
-
-```json
-{
-  "mcpServers": {
-    "vector": {
-      "command": "node",
-      "args": ["/path/to/web3-mcp/build/index.js"],
-      "env": {
-        "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
-        "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-        "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
-        "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
-      }
-    }
-  }
-}
-```
-
-!!! tip "Mnemonic passed per-call"
-    The mnemonic is NOT stored in the config file. When Claude calls a tool that requires signing, the MCP client will prompt for the mnemonic at that point. This is by design for security.
-
-## Step 4: Restart Claude Desktop
+## Step 3: Restart Claude Desktop
 
 Close and reopen Claude Desktop. You should see the Vector MCP tools appear in Claude's tool list (look for the hammer icon).
 
-## Step 5: Fund Your Testnet Wallet
+## Step 4: Fund Your Testnet Wallet
 
 Ask Claude:
 
@@ -74,7 +57,7 @@ Ask Claude:
 
 Claude will call `vector_get_address` and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with `addr1` (not `addr_test1`). To fund it, get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge).
 
-## Step 6: Verify the Setup
+## Step 5: Verify the Setup
 
 Ask Claude:
 
@@ -218,7 +201,7 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 ## Switching to Mainnet
 
-To run Claude on Vector mainnet, update the endpoint URLs in your config:
+For mainnet, you'll need to [run the MCP server locally](../mcp-server/installation.md#advanced-setup-install-locally) with mainnet endpoints:
 
 ```json
 {
@@ -230,7 +213,7 @@ To run Claude on Vector mainnet, update the endpoint URLs in your config:
         "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
         "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
         "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
-        "VECTOR_EXPLORER_URL": "https://vector.mainnet.apexscan.org"
+        "VECTOR_EXPLORER_URL": "https://explorer.vector.mainnet.apexfusion.org"
       }
     }
   }
