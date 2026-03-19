@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.vector.apexfusion.org/agents/sdk/python/">
+        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/sdk/python/">
       
       
         <link rel="prev" href="../../mcp-server/security/">
@@ -68,8 +68,6 @@
   
     
     
-      
-    
     
     
     
@@ -124,33 +122,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="apex-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -1075,7 +1047,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Setup Guide
   
 
     
@@ -2474,42 +2446,59 @@
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sent! TX: </span><span class="si">{</span><span class="n">tx</span><span class="o">.</span><span class="n">explorer_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="environment-variable-configuration">Environment variable configuration<a class="headerlink" href="#environment-variable-configuration" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Testnet</label><label for="__tabbed_1_2">Mainnet</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span>https://ogmios.vector.testnet.apexfusion.org
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span>https://submit.vector.testnet.apexfusion.org/api/submit/tx
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span>https://koios.vector.testnet.apexfusion.org/
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;word1 word2 word3 ...&quot;</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_PER_TX</span><span class="o">=</span><span class="m">50000000</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_DAILY</span><span class="o">=</span><span class="m">200000000</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_EXPLORER_URL</span><span class="o">=</span>https://vector.testnet.apexscan.org
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;word1 word2 word3 ...&quot;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_PER_TX</span><span class="o">=</span><span class="m">50000000</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_DAILY</span><span class="o">=</span><span class="m">200000000</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># No constructor args needed — everything from env</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">VectorAgent</span><span class="p">()</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span>https://ogmios.vector.apexfusion.org
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span>https://submit.vector.apexfusion.org/api/submit/tx
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span>https://koios.vector.apexfusion.org/
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_EXPLORER_URL</span><span class="o">=</span>https://vector.apexscan.org
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;word1 word2 word3 ...&quot;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_PER_TX</span><span class="o">=</span><span class="m">50000000</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SPEND_LIMIT_DAILY</span><span class="o">=</span><span class="m">200000000</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># No constructor args needed — everything from env</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">VectorAgent</span><span class="p">()</span>
 </code></pre></div>
 <hr />
 <h2 id="project-structure">Project Structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>agent-sdk-py/
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>├── src/vector_agent/
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>│   ├── __init__.py          # exports VectorAgent, VectorAgentMCP, types
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>│   ├── agent.py             # VectorAgent (standalone mode)
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>│   ├── agent_mcp.py         # VectorAgentMCP (MCP client mode)
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>│   ├── exceptions.py        # custom exceptions
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>│   ├── safety.py            # SafetyLayer (spend limits + audit)
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>│   ├── types.py             # Pydantic data models
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>│   ├── chain/
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>│   │   ├── context.py       # VectorChainContext (PyCardano context)
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>│   │   ├── ogmios.py        # OgmiosClient
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>│   │   └── submit.py        # SubmitClient
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>│   └── wallet/
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>│       ├── hd.py            # HDWallet (mnemonic-based)
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>│       └── skey.py          # SkeyWallet (signing key file)
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>├── examples/
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>│   ├── balance_check.py
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>│   ├── mcp_client_example.py
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>│   └── send_ada.py
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>├── tests/
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>│   ├── test_chain_context.py
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>│   ├── test_safety.py
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>│   └── test_wallet.py
-<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>└── pyproject.toml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>agent-sdk-py/
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>├── src/vector_agent/
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>│   ├── __init__.py          # exports VectorAgent, VectorAgentMCP, types
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>│   ├── agent.py             # VectorAgent (standalone mode)
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>│   ├── agent_mcp.py         # VectorAgentMCP (MCP client mode)
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>│   ├── exceptions.py        # custom exceptions
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>│   ├── safety.py            # SafetyLayer (spend limits + audit)
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>│   ├── types.py             # Pydantic data models
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>│   ├── chain/
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>│   │   ├── context.py       # VectorChainContext (PyCardano context)
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>│   │   ├── ogmios.py        # OgmiosClient
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>│   │   └── submit.py        # SubmitClient
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>│   └── wallet/
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>│       ├── hd.py            # HDWallet (mnemonic-based)
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>│       └── skey.py          # SkeyWallet (signing key file)
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>├── examples/
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>│   ├── balance_check.py
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>│   ├── mcp_client_example.py
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>│   └── send_ada.py
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>├── tests/
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>│   ├── test_chain_context.py
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>│   ├── test_safety.py
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>│   └── test_wallet.py
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>└── pyproject.toml
 </code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>

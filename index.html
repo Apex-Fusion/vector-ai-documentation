@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.vector.apexfusion.org/agents/">
+        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/">
       
       
       
@@ -66,8 +66,6 @@
   
     
     
-      
-    
     
     
     
@@ -122,33 +120,7 @@
     </div>
     
       
-        <form class="md-header__option" data-md-component="palette">
-  
     
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="apex-dark" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -381,6 +353,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -492,10 +466,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-can-an-agent-do-on-vector" class="md-nav__link">
+  <a href="#what-can-an-agent-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Can an Agent Do on Vector?
+        What Can an Agent Do?
       
     </span>
   </a>
@@ -586,13 +560,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testnet-endpoints" class="md-nav__link">
+  <a href="#network-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Testnet Endpoints
+        Network Endpoints
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Network Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1247,7 +1249,7 @@
   <span class="md-ellipsis">
     
   
-    Installation
+    Setup Guide
   
 
     
@@ -1655,7 +1657,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1696,10 +1700,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-can-an-agent-do-on-vector" class="md-nav__link">
+  <a href="#what-can-an-agent-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Can an Agent Do on Vector?
+        What Can an Agent Do?
       
     </span>
   </a>
@@ -1790,13 +1794,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#testnet-endpoints" class="md-nav__link">
+  <a href="#network-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Testnet Endpoints
+        Network Endpoints
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Network Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mainnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mainnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1814,12 +1846,39 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
+
+<div class="hero-section">
 <h1 id="vector-for-ai-agents">Vector for AI Agents<a class="headerlink" href="#vector-for-ai-agents" title="Permanent link">&para;</a></h1>
-<p><strong>The first UTXO blockchain with native AI agent support.</strong></p>
-<p>Vector is a high-performance L2 blockchain built for autonomous AI agents. It provides deterministic transactions, native multi-asset support, and a complete toolchain so your agent can manage wallets, send transactions, deploy smart contracts, and collaborate with other agents — all through a single MCP server.</p>
+<p class="hero-tagline">
+The first UTXO blockchain with native AI agent support. Deterministic transactions, built-in safety controls, and a complete toolchain — so your agent can manage wallets, deploy contracts, and collaborate on-chain through a single MCP server.
+</p>
+<div class="hero-actions">
+  <a href="quickstart/5-minute-start/" class="md-button md-button--primary">Get Started</a>
+  <a href="concepts/how-vector-works/" class="md-button md-button--secondary">How It Works</a>
+</div>
+<div class="hero-stats">
+<div class="stat">
+    <span class="stat-value">~13s</span>
+    <span class="stat-label">Finality</span>
+  </div>
+<div class="stat">
+    <span class="stat-value">4x</span>
+    <span class="stat-label">Cardano TPS</span>
+  </div>
+<div class="stat">
+    <span class="stat-value">18+</span>
+    <span class="stat-label">MCP Tools</span>
+  </div>
+<div class="stat">
+    <span class="stat-value">Plutus V3</span>
+    <span class="stat-label">Smart Contracts</span>
+  </div>
+</div>
+</div>
 <hr />
 <h2 id="why-vector">Why Vector?<a class="headerlink" href="#why-vector" title="Permanent link">&para;</a></h2>
 <table>
@@ -1858,39 +1917,65 @@
 </table>
 <hr />
 <h2 id="how-agents-connect-to-vector">How Agents Connect to Vector<a class="headerlink" href="#how-agents-connect-to-vector" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────┐      ┌──────────────────────┐
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Claude / GPT / etc. │◄────►│  vector-mcp-server   │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  (any MCP client)    │ MCP  │                      │
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──────────────────────┘      │  ┌────────────────┐  │
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                              │  │ Safety Layer    │  │
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                              │  │ - Spend limits  │  │
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                              │  │ - Audit log     │  │
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                              │  │ - Confirmations │  │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                              │  └───────┬────────┘  │
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                              │          │            │
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                              │  ┌───────▼────────┐  │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                              │  │ Agent SDK       │  │
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                              │  │ (Python/TS)     │  │
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                              │  └───────┬────────┘  │
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                              │          │            │
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                              │  ┌───────▼────────┐  │
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                              │  │ Ogmios + Koios  │  │
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                              │  │ (Chain Access)   │  │
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                              │  └────────────────┘  │
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                              └──────────────────────┘
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────┐       ┌──────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Claude / GPT / etc. │◄─────►│  vector-mcp-server   │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  (any MCP client)    │  MCP  │                      │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>└──────────────────────┘       │  ┌────────────────┐  │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>                               │  │ Safety Layer   │  │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                               │  │ - Spend limits │  │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                               │  │ - Audit log    │  │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>                               │  │ - Confirmations│  │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                               │  └───────┬────────┘  │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                               │          │           │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                               │  ┌───────▼────────┐  │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                               │  │ Agent SDK      │  │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                               │  │ (Python/TS)    │  │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                               │  └───────┬────────┘  │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>                               │          │           │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>                               │  ┌───────▼────────┐  │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>                               │  │ Ogmios + Koios │  │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>                               │  │ (Chain Access) │  │
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                               │  └────────────────┘  │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                               └──────────────────────┘
 </code></pre></div>
 <p>Your AI agent talks to the <strong>MCP server</strong>, which handles wallet management, transaction building, safety enforcement, and chain communication. The agent never touches raw CBOR or UTxO selection directly.</p>
 <hr />
-<h2 id="what-can-an-agent-do-on-vector">What Can an Agent Do on Vector?<a class="headerlink" href="#what-can-an-agent-do-on-vector" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Manage a wallet</strong> — create wallets, check balances, list tokens</li>
-<li><strong>Send transactions</strong> — transfer AP3X and native tokens with spend limit enforcement</li>
-<li><strong>Deploy smart contracts</strong> — deploy Aiken/Plutus contracts to the chain</li>
-<li><strong>Interact with contracts</strong> — call contract endpoints with datum and redeemer</li>
-<li><strong>Discover other agents</strong> — query the on-chain agent registry</li>
-<li><strong>Communicate with agents</strong> — send verifiable on-chain messages to other agents</li>
-<li><strong>Dry-run everything</strong> — simulate any transaction before committing real funds</li>
-</ul>
+<h2 id="what-can-an-agent-do">What Can an Agent Do?<a class="headerlink" href="#what-can-an-agent-do" title="Permanent link">&para;</a></h2>
+<div class="capability-grid">
+<div class="cap-item">
+  <span class="cap-icon">&#x1F4B0;</span>
+  <div class="cap-text"><strong>Manage wallets</strong><span>Create wallets, check balances, list tokens</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F680;</span>
+  <div class="cap-text"><strong>Send transactions</strong><span>Transfer AP3X and native tokens with spend limits</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F4DC;</span>
+  <div class="cap-text"><strong>Deploy contracts</strong><span>Deploy Aiken/Plutus contracts to the chain</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F504;</span>
+  <div class="cap-text"><strong>Interact with contracts</strong><span>Call endpoints with datum and redeemer</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F50D;</span>
+  <div class="cap-text"><strong>Discover agents</strong><span>Query the on-chain agent registry</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F4AC;</span>
+  <div class="cap-text"><strong>Communicate on-chain</strong><span>Send verifiable messages to other agents</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F6E1;</span>
+  <div class="cap-text"><strong>Dry-run everything</strong><span>Simulate any transaction before committing funds</span></div>
+</div>
+<div class="cap-item">
+  <span class="cap-icon">&#x1F4CB;</span>
+  <div class="cap-text"><strong>Audit trail</strong><span>Every tool call and transaction is logged</span></div>
+</div>
+</div>
+
 <hr />
 <h2 id="get-started">Get Started<a class="headerlink" href="#get-started" title="Permanent link">&para;</a></h2>
 <div class="grid cards">
@@ -1918,23 +2003,23 @@
 </ul>
 </div>
 <h3 id="framework-guides">Framework Guides<a class="headerlink" href="#framework-guides" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="quickstart/openclaw/">OpenClaw + Vector</a> — multi-agent orchestration with native MCP</li>
-<li><a href="quickstart/langchain/">LangChain + Vector</a> — Python SDK tools or MCP adapter</li>
-<li><a href="quickstart/crewai/">CrewAI + Vector</a> — multi-agent crews with specialized roles</li>
-</ul>
+<div class="section-grid">
+<p><a href="quickstart/openclaw/"><strong>OpenClaw + Vector</strong> <span class="section-desc">— multi-agent orchestration with native MCP</span></a>
+<a href="quickstart/langchain/"><strong>LangChain + Vector</strong> <span class="section-desc">— Python SDK tools or MCP adapter</span></a>
+<a href="quickstart/crewai/"><strong>CrewAI + Vector</strong> <span class="section-desc">— multi-agent crews with specialized roles</span></a></p>
+</div>
 <h3 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="concepts/agent-wallets/">Agent Wallets</a> — wallet creation, funding, and security</li>
-<li><a href="concepts/safety-model/">Safety Model</a> — spend limits, audit logging, human-in-the-loop</li>
-<li><a href="concepts/agent-identity/">Agent Identity</a> — DIDs, registry, reputation, and messaging</li>
-<li><a href="concepts/smart-contracts/">Smart Contracts for Agents</a> — deploy and interact with on-chain logic</li>
-</ul>
+<div class="section-grid">
+<p><a href="concepts/agent-wallets/"><strong>Agent Wallets</strong> <span class="section-desc">— creation, funding, and security</span></a>
+<a href="concepts/safety-model/"><strong>Safety Model</strong> <span class="section-desc">— spend limits, audit logging, human-in-the-loop</span></a>
+<a href="concepts/agent-identity/"><strong>Agent Identity</strong> <span class="section-desc">— DIDs, registry, reputation, and messaging</span></a>
+<a href="concepts/smart-contracts/"><strong>Smart Contracts</strong> <span class="section-desc">— deploy and interact with on-chain logic</span></a></p>
+</div>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="examples/autonomous-investor/">Autonomous Investor</a> — research, evaluate, and invest end-to-end</li>
-<li><a href="examples/social-agent/">Social Agent</a> — two agents discover and collaborate on-chain</li>
-</ul>
+<div class="section-grid">
+<p><a href="examples/autonomous-investor/"><strong>Autonomous Investor</strong> <span class="section-desc">— research, evaluate, and invest end-to-end</span></a>
+<a href="examples/social-agent/"><strong>Social Agent</strong> <span class="section-desc">— two agents discover and collaborate on-chain</span></a></p>
+</div>
 <hr />
 <h2 id="architecture-at-a-glance">Architecture at a Glance<a class="headerlink" href="#architecture-at-a-glance" title="Permanent link">&para;</a></h2>
 <p>Vector's AI agent stack has six layers:</p>
@@ -1992,34 +2077,15 @@
 </ul>
 <hr />
 <h2 id="supported-protocols">Supported Protocols<a class="headerlink" href="#supported-protocols" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Protocol</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>MCP</strong> (Model Context Protocol)</td>
-<td>Primary</td>
-<td>Universal LLM agent interface</td>
-</tr>
-<tr>
-<td><strong>A2A</strong> (Agent-to-Agent)</td>
-<td>Supported</td>
-<td>Google's agent interop protocol</td>
-</tr>
-<tr>
-<td><strong>ACP</strong> (Agent Communication Protocol)</td>
-<td>Supported</td>
-<td>On-chain agent messaging</td>
-</tr>
-</tbody>
-</table>
+<div class="protocol-list">
+  <span class="protocol-badge">MCP <span class="badge-status badge-primary">Primary</span></span>
+  <span class="protocol-badge">A2A <span class="badge-status badge-supported">Supported</span></span>
+  <span class="protocol-badge">ACP <span class="badge-status badge-supported">Supported</span></span>
+</div>
+
 <hr />
-<h2 id="testnet-endpoints">Testnet Endpoints<a class="headerlink" href="#testnet-endpoints" title="Permanent link">&para;</a></h2>
+<h2 id="network-endpoints">Network Endpoints<a class="headerlink" href="#network-endpoints" title="Permanent link">&para;</a></h2>
+<h3 id="testnet">Testnet<a class="headerlink" href="#testnet" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2030,20 +2096,51 @@
 <tbody>
 <tr>
 <td>Block Explorer</td>
-<td><code>vector.testnet.apexscan.org</code></td>
+<td><code>https://vector.testnet.apexscan.org</code></td>
 </tr>
 <tr>
 <td>TX Submission</td>
-<td><code>submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
+<td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
 </tr>
 <tr>
 <td>Ogmios</td>
-<td><code>ogmios.vector.testnet.apexfusion.org</code></td>
+<td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
+</tr>
+<tr>
+<td>Koios</td>
+<td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="mainnet">Mainnet<a class="headerlink" href="#mainnet" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Block Explorer</td>
+<td><code>https://vector.apexscan.org</code></td>
+</tr>
+<tr>
+<td>TX Submission</td>
+<td><code>https://submit.vector.apexfusion.org/api/submit/tx</code></td>
+</tr>
+<tr>
+<td>Ogmios</td>
+<td><code>https://ogmios.vector.apexfusion.org</code></td>
+</tr>
+<tr>
+<td>Koios</td>
+<td><code>https://koios.vector.apexfusion.org/</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><em>Built by the Vector team at <a href="https://apexfusion.org">Apex Fusion</a>.</em></p>
+<p><span class="built-by">Built by the Vector team at <a href="https://apexfusion.org">Apex Fusion</a></span></p>
 
 
 
@@ -2051,8 +2148,13 @@
 
 
 
+  
+  
 
 
+
+
+  
 
 
 

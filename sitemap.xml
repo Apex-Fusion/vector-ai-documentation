@@ -1,99 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/api/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/api/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/blog/announcement/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/blog/announcement/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/agent-identity/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/agent-identity/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/agent-wallets/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/agent-wallets/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/how-vector-works/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/how-vector-works/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/safety-model/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/safety-model/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/smart-contracts/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/smart-contracts/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/concepts/vector-gotchas/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/concepts/vector-gotchas/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/contracts/deployment/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/contracts/deployment/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/contracts/templates/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/contracts/templates/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/contracts/testing/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/contracts/testing/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/examples/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/examples/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/examples/autonomous-investor/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/examples/autonomous-investor/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/examples/social-agent/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/examples/social-agent/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/mcp-server/installation/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/mcp-server/installation/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/mcp-server/security/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/mcp-server/security/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/mcp-server/tools-reference/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/mcp-server/tools-reference/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/quickstart/5-minute-start/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/quickstart/5-minute-start/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/quickstart/claude-desktop/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/quickstart/claude-desktop/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/quickstart/crewai/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/quickstart/crewai/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/quickstart/langchain/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/quickstart/langchain/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/quickstart/openclaw/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/quickstart/openclaw/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.vector.apexfusion.org/agents/sdk/python/</loc>
+         <loc>https://apex-fusion.github.io/vector-ai-documentation/sdk/python/</loc>
          <lastmod>2026-03-19</lastmod>
     </url>
 </urlset>
