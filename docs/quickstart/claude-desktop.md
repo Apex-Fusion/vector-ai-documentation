@@ -22,16 +22,31 @@ Open Claude Desktop's MCP configuration file:
 
 Add the Vector MCP server — connect directly to the hosted server (no installs needed):
 
-```json
-{
-  "mcpServers": {
-    "vector-mcp": {
-      "type": "sse",
-      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Mainnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+        }
+      }
+    }
+    ```
 
 No API keys, no environment variables, no Node.js required.
 
@@ -201,24 +216,7 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 ## Switching to Mainnet
 
-For mainnet, you'll need to [run the MCP server locally](../mcp-server/installation.md#advanced-setup-install-locally) with mainnet endpoints:
-
-```json
-{
-  "mcpServers": {
-    "vector": {
-      "command": "node",
-      "args": ["/path/to/web3-mcp/build/index.js"],
-      "env": {
-        "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
-        "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
-        "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
-        "VECTOR_EXPLORER_URL": "https://explorer.vector.mainnet.apexfusion.org"
-      }
-    }
-  }
-}
-```
+Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above, or if running a [local MCP server](../mcp-server/installation.md#advanced-setup-install-locally), update the endpoint URLs to use `*.vector.mainnet.apexfusion.org`.
 
 !!! warning "Mainnet uses real funds"
     On mainnet, AP3X has real value. Use conservative spend limits and test thoroughly on testnet first. Use a separate mnemonic for your mainnet wallet.

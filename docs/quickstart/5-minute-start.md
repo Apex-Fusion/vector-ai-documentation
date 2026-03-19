@@ -14,36 +14,65 @@ That's it — no installs needed. The Vector MCP server is hosted publicly.
 
 ## Step 1: Connect to the MCP Server
 
-The Vector MCP server is hosted at `https://mcp.vector.testnet.apexfusion.org/sse` — no installation, no API keys, no configuration.
+The Vector MCP server is hosted and publicly available — no installation, no API keys, no configuration.
 
 === "Claude Code (Terminal)"
 
     One command:
 
-    ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
-    ```
+    === "Testnet"
 
-    To make it available across all your projects, add `--scope user`:
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+        ```
 
-    ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
-    ```
+        To make it available across all your projects, add `--scope user`:
+
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+        ```
+
+    === "Mainnet"
+
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse
+        ```
+
+        To make it available across all your projects, add `--scope user`:
+
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
+        ```
 
 === "Claude Desktop"
 
     Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
 
-    ```json
-    {
-      "mcpServers": {
-        "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+    === "Testnet"
+
+        ```json
+        {
+          "mcpServers": {
+            "vector-mcp": {
+              "type": "sse",
+              "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+            }
+          }
         }
-      }
-    }
-    ```
+        ```
+
+    === "Mainnet"
+
+        ```json
+        {
+          "mcpServers": {
+            "vector-mcp": {
+              "type": "sse",
+              "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+            }
+          }
+        }
+        ```
 
     Restart Claude Desktop after saving.
 
@@ -51,17 +80,33 @@ The Vector MCP server is hosted at `https://mcp.vector.testnet.apexfusion.org/ss
 
     Go to **Settings → Connectors → Add custom connector**, then enter:
 
-    ```
-    https://mcp.vector.testnet.apexfusion.org/sse
-    ```
+    === "Testnet"
+
+        ```
+        https://mcp.vector.testnet.apexfusion.org/sse
+        ```
+
+    === "Mainnet"
+
+        ```
+        https://mcp.vector.mainnet.apexfusion.org/sse
+        ```
 
 === "Other MCP Clients"
 
     Connect to the SSE endpoint:
 
-    ```
-    https://mcp.vector.testnet.apexfusion.org/sse
-    ```
+    === "Testnet"
+
+        ```
+        https://mcp.vector.testnet.apexfusion.org/sse
+        ```
+
+    === "Mainnet"
+
+        ```
+        https://mcp.vector.mainnet.apexfusion.org/sse
+        ```
 
 All 18 Vector MCP tools are immediately available. For local installation instead, see the [MCP Server Setup Guide](../mcp-server/installation.md#advanced-setup-install-locally).
 

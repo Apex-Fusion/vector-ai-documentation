@@ -38,23 +38,35 @@ The server handles:
 
 The Vector MCP server is hosted and publicly available — no installation required. Connect your AI client directly.
 
-**Testnet SSE endpoint:** `https://mcp.vector.testnet.apexfusion.org/sse`
-
 No authentication, no API keys, no environment variables needed.
 
 ### Claude Code (Terminal)
 
 One command:
 
-```bash
-claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
-```
+=== "Testnet"
 
-To make it available across all your projects, add `--scope user`:
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+    ```
 
-```bash
-claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
-```
+    To make it available across all your projects, add `--scope user`:
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+    ```
+
+=== "Mainnet"
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse
+    ```
+
+    To make it available across all your projects, add `--scope user`:
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
+    ```
 
 That's it — all 18 Vector MCP tools are immediately available in Claude Code.
 
@@ -62,16 +74,31 @@ That's it — all 18 Vector MCP tools are immediately available in Claude Code.
 
 Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
 
-```json
-{
-  "mcpServers": {
-    "vector-mcp": {
-      "type": "sse",
-      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Mainnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+        }
+      }
+    }
+    ```
 
 Restart Claude Desktop after saving. See [Claude Desktop + Vector](../quickstart/claude-desktop.md) for a full walkthrough.
 
@@ -79,24 +106,47 @@ Restart Claude Desktop after saving. See [Claude Desktop + Vector](../quickstart
 
 Go to **Settings → Connectors → Add custom connector**, then enter:
 
-```
-https://mcp.vector.testnet.apexfusion.org/sse
-```
+=== "Testnet"
+
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
+    ```
+
+=== "Mainnet"
+
+    ```
+    https://mcp.vector.mainnet.apexfusion.org/sse
+    ```
 
 ### Project-Level Setup
 
 For team collaboration, commit a `.mcp.json` file to your project root:
 
-```json
-{
-  "mcpServers": {
-    "vector-mcp": {
-      "type": "sse",
-      "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+        }
+      }
     }
-  }
-}
-```
+    ```
+
+=== "Mainnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+        }
+      }
+    }
+    ```
 
 Anyone who opens the project with Claude Code will automatically pick up the Vector MCP server.
 
@@ -104,9 +154,17 @@ Anyone who opens the project with Claude Code will automatically pick up the Vec
 
 Connect any MCP-compatible client to the SSE endpoint:
 
-```
-https://mcp.vector.testnet.apexfusion.org/sse
-```
+=== "Testnet"
+
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
+    ```
+
+=== "Mainnet"
+
+    ```
+    https://mcp.vector.mainnet.apexfusion.org/sse
+    ```
 
 No additional configuration required — the hosted server handles all chain access internally.
 
@@ -144,7 +202,7 @@ npm run build && docker build -t vector-mcp . && docker run -p 3000:3000 vector-
 
 Once the server is running locally, point your AI client to it:
 
-=== "Claude Desktop"
+=== "Claude Desktop (Testnet)"
 
     Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
 
@@ -159,6 +217,27 @@ Once the server is running locally, point your AI client to it:
             "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
             "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
             "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
+          }
+        }
+      }
+    }
+    ```
+
+=== "Claude Desktop (Mainnet)"
+
+    Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
+
+    ```json
+    {
+      "mcpServers": {
+        "vector": {
+          "command": "node",
+          "args": ["/path/to/web3-mcp/build/index.js"],
+          "env": {
+            "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
+            "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
+            "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
+            "VECTOR_EXPLORER_URL": "https://explorer.vector.mainnet.apexfusion.org"
           }
         }
       }
