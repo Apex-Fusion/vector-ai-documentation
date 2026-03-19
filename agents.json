@@ -25,10 +25,10 @@
       "explorer": "https://vector.testnet.apexscan.org"
     },
     "mainnet": {
-      "ogmios": "wss://ogmios.vector.apexfusion.org",
-      "submit": "https://submit.vector.apexfusion.org/api/submit/tx",
-      "koios": "https://koios.vector.apexfusion.org/",
-      "explorer": "https://vector.apexscan.org"
+      "ogmios": "wss://ogmios.vector.mainnet.apexfusion.org",
+      "submit": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
+      "koios": "https://koios.vector.mainnet.apexfusion.org/",
+      "explorer": "https://vector.mainnet.apexscan.org"
     }
   },
   "capabilities": [

@@ -2225,10 +2225,10 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://your-mcp-server:3000&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.apexfusion.org/&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.apexscan.org&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.mainnet.apexfusion.org&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.mainnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.mainnet.apexfusion.org/&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.mainnet.apexscan.org&quot;</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="p">}</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">}</span>
@@ -2316,48 +2316,59 @@
 <tr>
 <th>Variable</th>
 <th>Description</th>
+<th>Default</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>PORT</code></td>
-<td>HTTP port (default: 3000)</td>
+<td>HTTP port</td>
+<td><code>3000</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_OGMIOS_URL</code></td>
 <td>Ogmios HTTP endpoint</td>
+<td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_SUBMIT_URL</code></td>
 <td>TX submission endpoint</td>
+<td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_KOIOS_URL</code></td>
 <td>Koios REST API endpoint (include trailing slash)</td>
+<td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_EXPLORER_URL</code></td>
 <td>Block explorer URL</td>
+<td><code>https://vector.testnet.apexscan.org</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_SPEND_LIMIT_PER_TX</code></td>
 <td>Per-TX spend limit in DFM</td>
+<td><code>100000000</code> (100 AP3X)</td>
 </tr>
 <tr>
 <td><code>VECTOR_SPEND_LIMIT_DAILY</code></td>
 <td>Daily spend limit in DFM</td>
+<td><code>500000000</code> (500 AP3X)</td>
 </tr>
 <tr>
 <td><code>VECTOR_AUDIT_LOG_PATH</code></td>
-<td>Audit log file path</td>
+<td>Persistent audit log file path</td>
+<td><code>./vector-audit-log.json</code></td>
 </tr>
 <tr>
 <td><code>VECTOR_RATE_LIMIT_PER_MINUTE</code></td>
 <td>Max tool calls per minute</td>
+<td><code>60</code></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Note:</strong> <code>VECTOR_MNEMONIC</code> is intentionally absent — the mnemonic is passed per-call by the MCP client, not stored in the environment.</p>
+<p><strong>Source repository:</strong> <a href="https://github.com/Apex-Fusion/web3-mcp">github.com/Apex-Fusion/web3-mcp</a></p>
 <h3 id="network-endpoints">Network Endpoints<a class="headerlink" href="#network-endpoints" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Testnet</label><label for="__tabbed_3_2">Mainnet</label></div>
 <div class="tabbed-content">
@@ -2369,10 +2380,10 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span>https://ogmios.vector.apexfusion.org
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span>https://submit.vector.apexfusion.org/api/submit/tx
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span>https://koios.vector.apexfusion.org/
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">VECTOR_EXPLORER_URL</span><span class="o">=</span>https://vector.apexscan.org
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span>https://ogmios.vector.mainnet.apexfusion.org
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span>https://submit.vector.mainnet.apexfusion.org/api/submit/tx
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span>https://koios.vector.mainnet.apexfusion.org/
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">VECTOR_EXPLORER_URL</span><span class="o">=</span>https://vector.mainnet.apexscan.org
 </code></pre></div>
 </div>
 </div>
@@ -2443,22 +2454,22 @@
 <tr>
 <td>Ogmios</td>
 <td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
-<td><code>https://ogmios.vector.apexfusion.org</code></td>
+<td><code>https://ogmios.vector.mainnet.apexfusion.org</code></td>
 </tr>
 <tr>
 <td>TX Submit</td>
 <td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
-<td><code>https://submit.vector.apexfusion.org/api/submit/tx</code></td>
+<td><code>https://submit.vector.mainnet.apexfusion.org/api/submit/tx</code></td>
 </tr>
 <tr>
 <td>Koios</td>
 <td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
-<td><code>https://koios.vector.apexfusion.org/</code></td>
+<td><code>https://koios.vector.mainnet.apexfusion.org/</code></td>
 </tr>
 <tr>
 <td>Explorer</td>
 <td><code>https://vector.testnet.apexscan.org</code></td>
-<td><code>https://vector.apexscan.org</code></td>
+<td><code>https://vector.mainnet.apexscan.org</code></td>
 </tr>
 </tbody>
 </table>

@@ -1890,7 +1890,7 @@
 <h2 id="ogmios">Ogmios<a class="headerlink" href="#ogmios" title="Permanent link">&para;</a></h2>
 <p><strong>Protocol:</strong> HTTP JSON-RPC + WebSocket</p>
 <p><strong>Testnet:</strong> <code>https://ogmios.vector.testnet.apexfusion.org</code>
-<strong>Mainnet:</strong> <code>https://ogmios.vector.apexfusion.org</code></p>
+<strong>Mainnet:</strong> <code>https://ogmios.vector.mainnet.apexfusion.org</code></p>
 <p>Ogmios provides low-level chain access:</p>
 <table>
 <thead>
@@ -1946,7 +1946,7 @@
 <h2 id="tx-submit-api">TX Submit API<a class="headerlink" href="#tx-submit-api" title="Permanent link">&para;</a></h2>
 <p><strong>Protocol:</strong> HTTP POST (CBOR body)</p>
 <p><strong>Testnet:</strong> <code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code>
-<strong>Mainnet:</strong> <code>https://submit.vector.apexfusion.org/api/submit/tx</code></p>
+<strong>Mainnet:</strong> <code>https://submit.vector.mainnet.apexfusion.org/api/submit/tx</code></p>
 <p>Submits a signed, serialized transaction to the network.</p>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://submit.vector.testnet.apexfusion.org/api/submit/tx<span class="w"> </span><span class="se">\</span>
@@ -1982,7 +1982,7 @@
 <h2 id="koios">Koios<a class="headerlink" href="#koios" title="Permanent link">&para;</a></h2>
 <p><strong>Protocol:</strong> REST API</p>
 <p><strong>Testnet:</strong> <code>https://koios.vector.testnet.apexfusion.org/</code> (note trailing slash)
-<strong>Mainnet:</strong> <code>https://koios.vector.apexfusion.org/</code></p>
+<strong>Mainnet:</strong> <code>https://koios.vector.mainnet.apexfusion.org/</code></p>
 <p>Koios provides indexed, higher-level queries that Ogmios doesn't cover:</p>
 <table>
 <thead>
@@ -2030,7 +2030,7 @@
 <hr />
 <h2 id="block-explorer">Block Explorer<a class="headerlink" href="#block-explorer" title="Permanent link">&para;</a></h2>
 <p><strong>Testnet:</strong> <code>https://vector.testnet.apexscan.org</code>
-<strong>Mainnet:</strong> <code>https://vector.apexscan.org</code></p>
+<strong>Mainnet:</strong> <code>https://vector.mainnet.apexscan.org</code></p>
 <p>Web UI for browsing blocks, transactions, addresses, and tokens. Useful for:</p>
 <ul>
 <li>Verifying transactions after submission</li>
@@ -2080,22 +2080,22 @@
 <tr>
 <td>Ogmios</td>
 <td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
-<td><code>https://ogmios.vector.apexfusion.org</code></td>
+<td><code>https://ogmios.vector.mainnet.apexfusion.org</code></td>
 </tr>
 <tr>
 <td>TX Submit</td>
 <td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
-<td><code>https://submit.vector.apexfusion.org/api/submit/tx</code></td>
+<td><code>https://submit.vector.mainnet.apexfusion.org/api/submit/tx</code></td>
 </tr>
 <tr>
 <td>Koios</td>
 <td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
-<td><code>https://koios.vector.apexfusion.org/</code></td>
+<td><code>https://koios.vector.mainnet.apexfusion.org/</code></td>
 </tr>
 <tr>
 <td>Explorer</td>
 <td><code>https://vector.testnet.apexscan.org</code></td>
-<td><code>https://vector.apexscan.org</code></td>
+<td><code>https://vector.mainnet.apexscan.org</code></td>
 </tr>
 </tbody>
 </table>

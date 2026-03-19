@@ -13,7 +13,7 @@
 - [LangChain + Vector](quickstart/langchain/)
 - [CrewAI + Vector](quickstart/crewai/)
 - [How Vector Works](concepts/how-vector-works/)
-- [MCP Server Installation](mcp-server/installation/)
+- [MCP Server Setup](mcp-server/installation/)
 - [MCP Tools Reference](mcp-server/tools-reference/)
 - [Python SDK Reference](sdk/python/)
 - [Smart Contract Templates](contracts/templates/)
@@ -32,9 +32,16 @@
 - MCP Server: https://github.com/Apex-Fusion/web3-mcp
 - Python SDK: https://github.com/Apex-Fusion/agent-sdk-py
 - Smart Contracts: https://github.com/Apex-Fusion/vector-ai-agents
+- Documentation: https://github.com/Apex-Fusion/vector-ai-documentation
 
 ## Endpoints (Testnet)
 - Ogmios: https://ogmios.vector.testnet.apexfusion.org
 - TX Submit: https://submit.vector.testnet.apexfusion.org/api/submit/tx
 - Koios: https://koios.vector.testnet.apexfusion.org/
 - Explorer: https://vector.testnet.apexscan.org
+
+## Endpoints (Mainnet)
+- Ogmios: https://ogmios.vector.mainnet.apexfusion.org
+- TX Submit: https://submit.vector.mainnet.apexfusion.org/api/submit/tx
+- Koios: https://koios.vector.mainnet.apexfusion.org/
+- Explorer: https://vector.mainnet.apexscan.org
