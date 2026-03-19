@@ -539,21 +539,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-install-the-mcp-server" class="md-nav__link">
+  <a href="#step-1-connect-to-the-mcp-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install the MCP Server
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-configure-your-ai-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Configure Your AI Client
+        Step 1: Connect to the MCP Server
       
     </span>
   </a>
@@ -1634,21 +1623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-install-the-mcp-server" class="md-nav__link">
+  <a href="#step-1-connect-to-the-mcp-server" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install the MCP Server
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-configure-your-ai-client" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Configure Your AI Client
+        Step 1: Connect to the MCP Server
       
     </span>
   </a>
@@ -1743,64 +1721,51 @@
 <hr />
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Node.js</strong> 18+ (for the MCP server)</li>
-<li><strong>Python 3.11+</strong> (for the Python SDK) or <strong>TypeScript</strong> (for the TS SDK)</li>
-<li>An <strong>MCP-compatible AI client</strong> (Claude Desktop, OpenClaw, or any MCP client)</li>
+<li>An <strong>MCP-compatible AI client</strong> (Claude Code, Claude Desktop, or any MCP client)</li>
 </ul>
+<p>That's it — no installs needed. The Vector MCP server is hosted publicly.</p>
 <hr />
-<h2 id="step-1-install-the-mcp-server">Step 1: Install the MCP Server<a class="headerlink" href="#step-1-install-the-mcp-server" title="Permanent link">&para;</a></h2>
-<p>Clone the repository and build it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Apex-Fusion/web3-mcp
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>web3-mcp
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>npm<span class="w"> </span>install
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>npm<span class="w"> </span>run<span class="w"> </span>build
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>npm<span class="w"> </span>start<span class="w">  </span><span class="c1"># serves SSE over HTTP on port 3000</span>
+<h2 id="step-1-connect-to-the-mcp-server">Step 1: Connect to the MCP Server<a class="headerlink" href="#step-1-connect-to-the-mcp-server" title="Permanent link">&para;</a></h2>
+<p>The Vector MCP server is hosted at <code>https://mcp.vector.testnet.apexfusion.org/sse</code> — no installation, no API keys, no configuration.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Claude Code (Terminal)</label><label for="__tabbed_1_2">Claude Desktop</label><label for="__tabbed_1_3">Claude.ai (Web / Mobile)</label><label for="__tabbed_1_4">Other MCP Clients</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>One command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.testnet.apexfusion.org/sse
 </code></pre></div>
+<p>To make it available across all your projects, add <code>--scope user</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.testnet.apexfusion.org/sse<span class="w"> </span>--scope<span class="w"> </span>user
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Edit <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> (macOS) or <code>%APPDATA%\Claude\claude_desktop_config.json</code> (Windows):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;vector-mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.vector.testnet.apexfusion.org/sse&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>Restart Claude Desktop after saving.</p>
+</div>
+<div class="tabbed-block">
+<p>Go to <strong>Settings → Connectors → Add custom connector</strong>, then enter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://mcp.vector.testnet.apexfusion.org/sse
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Connect to the SSE endpoint:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://mcp.vector.testnet.apexfusion.org/sse
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>All 18 Vector MCP tools are immediately available. For local installation instead, see the <a href="../../mcp-server/installation/#advanced-setup-install-locally">MCP Server Setup Guide</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Secure your mnemonic</p>
 <p>Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.</p>
-</div>
-<h2 id="step-2-configure-your-ai-client">Step 2: Configure Your AI Client<a class="headerlink" href="#step-2-configure-your-ai-client" title="Permanent link">&para;</a></h2>
-<p>Add the Vector MCP server to your AI client's configuration.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Claude Desktop</label><label for="__tabbed_1_2">OpenClaw</label><label for="__tabbed_1_3">Generic MCP Client</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Edit <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> (macOS) or <code>%APPDATA%\Claude\claude_desktop_config.json</code> (Windows):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/to/web3-mcp/build/index.js&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.testnet.apexscan.org&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
-</code></pre></div>
-<p>The mnemonic is not stored here — it is prompted by the tool call when needed.</p>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># openclaw.yml</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">mcp_servers</span><span class="p">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vector</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">node /path/to/web3-mcp/build/index.js</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">env</span><span class="p">:</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nt">VECTOR_OGMIOS_URL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">VECTOR_KOIOS_URL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>Start the server (it serves SSE over HTTP on port 3000):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/path/to/web3-mcp
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm<span class="w"> </span>start
-</code></pre></div>
-<p>Connect your MCP client to <code>http://localhost:3000</code>.</p>
-</div>
-</div>
 </div>
 <h2 id="step-3-fund-your-agent-testnet">Step 3: Fund Your Agent (Testnet)<a class="headerlink" href="#step-3-fund-your-agent-testnet" title="Permanent link">&para;</a></h2>
 <p>There is no direct Vector testnet faucet. To get testnet AP3X:</p>
@@ -1901,39 +1866,39 @@
 <hr />
 <h2 id="using-the-python-sdk-directly">Using the Python SDK Directly<a class="headerlink" href="#using-the-python-sdk-directly" title="Permanent link">&para;</a></h2>
 <p>If you prefer programmatic access without MCP:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Apex-Fusion/agent-sdk-py
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>agent-sdk-py
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Apex-Fusion/agent-sdk-py
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">cd</span><span class="w"> </span>agent-sdk-py
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">vector_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">VectorAgent</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">VectorAgent</span><span class="p">(</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">ogmios_url</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">submit_url</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">mnemonic</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="p">)</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="c1"># Check balance</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">balance</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance: </span><span class="si">{</span><span class="n">balance</span><span class="o">.</span><span class="n">lovelace</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">}</span><span class="s2"> AP3X&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="c1"># Get address</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">address</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_address</span><span class="p">()</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Address: </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="c1"># Send AP3X</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="s2">&quot;addr1qz...&quot;</span><span class="p">,</span> <span class="n">ada</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sent! TX: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">tx_hash</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">vector_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">VectorAgent</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">VectorAgent</span><span class="p">(</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">ogmios_url</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">submit_url</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="n">mnemonic</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="p">)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="c1"># Check balance</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">balance</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance: </span><span class="si">{</span><span class="n">balance</span><span class="o">.</span><span class="n">lovelace</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">}</span><span class="s2"> AP3X&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="c1"># Get address</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">address</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_address</span><span class="p">()</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Address: </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="c1"># Send AP3X</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="s2">&quot;addr1qz...&quot;</span><span class="p">,</span> <span class="n">ada</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sent! TX: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">tx_hash</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
 <p>You can also use environment variables instead of passing params directly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span>
 </code></pre></div>
 <hr />
 <h2 id="switching-to-mainnet">Switching to Mainnet<a class="headerlink" href="#switching-to-mainnet" title="Permanent link">&para;</a></h2>
@@ -1965,7 +1930,7 @@
 <tr>
 <td><code>VECTOR_EXPLORER_URL</code></td>
 <td><code>https://vector.testnet.apexscan.org</code></td>
-<td><code>https://vector.mainnet.apexscan.org</code></td>
+<td><code>https://explorer.vector.mainnet.apexfusion.org</code></td>
 </tr>
 </tbody>
 </table>

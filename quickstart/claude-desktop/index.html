@@ -567,10 +567,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-install-the-vector-mcp-server" class="md-nav__link">
+  <a href="#step-1-configure-claude-desktop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install the Vector MCP Server
+        Step 1: Configure Claude Desktop
       
     </span>
   </a>
@@ -589,10 +589,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-claude-desktop" class="md-nav__link">
+  <a href="#step-3-restart-claude-desktop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Configure Claude Desktop
+        Step 3: Restart Claude Desktop
       
     </span>
   </a>
@@ -600,10 +600,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-restart-claude-desktop" class="md-nav__link">
+  <a href="#step-4-fund-your-testnet-wallet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Restart Claude Desktop
+        Step 4: Fund Your Testnet Wallet
       
     </span>
   </a>
@@ -611,21 +611,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-fund-your-testnet-wallet" class="md-nav__link">
+  <a href="#step-5-verify-the-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Fund Your Testnet Wallet
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-verify-the-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Verify the Setup
+        Step 5: Verify the Setup
       
     </span>
   </a>
@@ -1839,10 +1828,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-install-the-vector-mcp-server" class="md-nav__link">
+  <a href="#step-1-configure-claude-desktop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Install the Vector MCP Server
+        Step 1: Configure Claude Desktop
       
     </span>
   </a>
@@ -1861,10 +1850,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-claude-desktop" class="md-nav__link">
+  <a href="#step-3-restart-claude-desktop" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Configure Claude Desktop
+        Step 3: Restart Claude Desktop
       
     </span>
   </a>
@@ -1872,10 +1861,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-restart-claude-desktop" class="md-nav__link">
+  <a href="#step-4-fund-your-testnet-wallet" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Restart Claude Desktop
+        Step 4: Fund Your Testnet Wallet
       
     </span>
   </a>
@@ -1883,21 +1872,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-fund-your-testnet-wallet" class="md-nav__link">
+  <a href="#step-5-verify-the-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Fund Your Testnet Wallet
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-verify-the-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Verify the Setup
+        Step 5: Verify the Setup
       
     </span>
   </a>
@@ -2155,59 +2133,45 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Claude Desktop</strong> installed (<a href="https://claude.ai/download">download</a>)</li>
-<li><strong>Node.js 18+</strong> installed</li>
-<li>Basic familiarity with Claude Desktop</li>
 </ul>
 <hr />
-<h2 id="step-1-install-the-vector-mcp-server">Step 1: Install the Vector MCP Server<a class="headerlink" href="#step-1-install-the-vector-mcp-server" title="Permanent link">&para;</a></h2>
-<p>Clone the repository and build it:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Apex-Fusion/web3-mcp
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>web3-mcp
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>npm<span class="w"> </span>install
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>npm<span class="w"> </span>run<span class="w"> </span>build
-</code></pre></div>
-<h2 id="step-2-prepare-your-wallet-mnemonic">Step 2: Prepare Your Wallet Mnemonic<a class="headerlink" href="#step-2-prepare-your-wallet-mnemonic" title="Permanent link">&para;</a></h2>
-<p>Generate or locate your <strong>15-word mnemonic phrase</strong> (15 or 24 words are both accepted).</p>
-<div class="admonition danger">
-<p class="admonition-title">Save your mnemonic securely</p>
-<p>Write down the words and store them safely. This is the only way to recover your agent's wallet. Never share it, never commit it to git. The mnemonic is passed per-call by the tool — it is not stored in the server config.</p>
-</div>
-<h2 id="step-3-configure-claude-desktop">Step 3: Configure Claude Desktop<a class="headerlink" href="#step-3-configure-claude-desktop" title="Permanent link">&para;</a></h2>
+<h2 id="step-1-configure-claude-desktop">Step 1: Configure Claude Desktop<a class="headerlink" href="#step-1-configure-claude-desktop" title="Permanent link">&para;</a></h2>
 <p>Open Claude Desktop's MCP configuration file:</p>
 <ul>
 <li><strong>macOS:</strong> <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></li>
 <li><strong>Windows:</strong> <code>%APPDATA%\Claude\claude_desktop_config.json</code></li>
 <li><strong>Linux:</strong> <code>~/.config/Claude/claude_desktop_config.json</code></li>
 </ul>
-<p>Add the Vector MCP server (replace <code>/path/to/web3-mcp</code> with the actual clone location):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/to/web3-mcp/build/index.js&quot;</span><span class="p">],</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.testnet.apexscan.org&quot;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+<p>Add the Vector MCP server — connect directly to the hosted server (no installs needed):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;vector-mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.vector.testnet.apexfusion.org/sse&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
 </code></pre></div>
+<p>No API keys, no environment variables, no Node.js required.</p>
 <div class="admonition tip">
-<p class="admonition-title">Mnemonic passed per-call</p>
-<p>The mnemonic is NOT stored in the config file. When Claude calls a tool that requires signing, the MCP client will prompt for the mnemonic at that point. This is by design for security.</p>
+<p class="admonition-title">Want to run locally instead?</p>
+<p>See <a href="../../mcp-server/installation/#advanced-setup-install-locally">MCP Server Setup — Install Locally</a> for running your own server with full configuration control.</p>
 </div>
-<h2 id="step-4-restart-claude-desktop">Step 4: Restart Claude Desktop<a class="headerlink" href="#step-4-restart-claude-desktop" title="Permanent link">&para;</a></h2>
+<h2 id="step-2-prepare-your-wallet-mnemonic">Step 2: Prepare Your Wallet Mnemonic<a class="headerlink" href="#step-2-prepare-your-wallet-mnemonic" title="Permanent link">&para;</a></h2>
+<p>Generate or locate your <strong>15-word mnemonic phrase</strong> (15 or 24 words are both accepted).</p>
+<div class="admonition danger">
+<p class="admonition-title">Save your mnemonic securely</p>
+<p>Write down the words and store them safely. This is the only way to recover your agent's wallet. Never share it, never commit it to git. The mnemonic is passed per-call by the tool — it is not stored in the server config.</p>
+</div>
+<h2 id="step-3-restart-claude-desktop">Step 3: Restart Claude Desktop<a class="headerlink" href="#step-3-restart-claude-desktop" title="Permanent link">&para;</a></h2>
 <p>Close and reopen Claude Desktop. You should see the Vector MCP tools appear in Claude's tool list (look for the hammer icon).</p>
-<h2 id="step-5-fund-your-testnet-wallet">Step 5: Fund Your Testnet Wallet<a class="headerlink" href="#step-5-fund-your-testnet-wallet" title="Permanent link">&para;</a></h2>
+<h2 id="step-4-fund-your-testnet-wallet">Step 4: Fund Your Testnet Wallet<a class="headerlink" href="#step-4-fund-your-testnet-wallet" title="Permanent link">&para;</a></h2>
 <p>Ask Claude:</p>
 <blockquote>
 <p>"What's my Vector wallet address?"</p>
 </blockquote>
 <p>Claude will call <code>vector_get_address</code> and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with <code>addr1</code> (not <code>addr_test1</code>). To fund it, get AP3X from the <a href="https://developers.apexfusion.org/documentation/getting-started-with-testnet">Prime Testnet faucet</a> and bridge to Vector via the <a href="https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge">Reactor Bridge</a>.</p>
-<h2 id="step-6-verify-the-setup">Step 6: Verify the Setup<a class="headerlink" href="#step-6-verify-the-setup" title="Permanent link">&para;</a></h2>
+<h2 id="step-5-verify-the-setup">Step 5: Verify the Setup<a class="headerlink" href="#step-5-verify-the-setup" title="Permanent link">&para;</a></h2>
 <p>Ask Claude:</p>
 <blockquote>
 <p>"Check my Vector balance"</p>
@@ -2217,34 +2181,34 @@
 <h2 id="what-claude-can-do-on-vector">What Claude Can Do on Vector<a class="headerlink" href="#what-claude-can-do-on-vector" title="Permanent link">&para;</a></h2>
 <p>Once connected, Claude has access to all Vector MCP tools:</p>
 <h3 id="wallet-operations">Wallet Operations<a class="headerlink" href="#wallet-operations" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;What&#39;s my Vector balance?&quot;
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&quot;Show me my wallet address&quot;
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&quot;List my UTxOs on Vector&quot;
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>&quot;What tokens do I have?&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&quot;What&#39;s my Vector balance?&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&quot;Show me my wallet address&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>&quot;List my UTxOs on Vector&quot;
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>&quot;What tokens do I have?&quot;
 </code></pre></div>
 <h3 id="sending-transactions">Sending Transactions<a class="headerlink" href="#sending-transactions" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;Send 5 AP3X to addr1qz...&quot;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&quot;Dry-run sending 10 AP3X to addr1qz...&quot;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&quot;Send 100 MYTOKEN to addr1qz...&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>&quot;Send 5 AP3X to addr1qz...&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>&quot;Dry-run sending 10 AP3X to addr1qz...&quot;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>&quot;Send 100 MYTOKEN to addr1qz...&quot;
 </code></pre></div>
 <h3 id="smart-contracts">Smart Contracts<a class="headerlink" href="#smart-contracts" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;Deploy this escrow contract to Vector&quot;
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&quot;Interact with the contract at addr1...&quot;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&quot;What&#39;s the state of the contract at addr1...?&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;Deploy this escrow contract to Vector&quot;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>&quot;Interact with the contract at addr1...&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&quot;What&#39;s the state of the contract at addr1...?&quot;
 </code></pre></div>
 <h3 id="chain-queries">Chain Queries<a class="headerlink" href="#chain-queries" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;What are the current Vector protocol parameters?&quot;
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&quot;Show me the latest block&quot;
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&quot;Search for environmental tokens on Vector&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;What are the current Vector protocol parameters?&quot;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>&quot;Show me the latest block&quot;
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>&quot;Search for environmental tokens on Vector&quot;
 </code></pre></div>
 <h3 id="agent-network">Agent Network<a class="headerlink" href="#agent-network" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;Register me as an agent named &#39;InvestorBot&#39; with capabilities: investing, research&quot;
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>&quot;Find agents that specialize in environmental analysis&quot;
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>&quot;Send a message to agent did:vector:agent:abc123&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;Register me as an agent named &#39;InvestorBot&#39; with capabilities: investing, research&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>&quot;Find agents that specialize in environmental analysis&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>&quot;Send a message to agent did:vector:agent:abc123&quot;
 </code></pre></div>
 <h3 id="safety">Safety<a class="headerlink" href="#safety" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&quot;What are my current spend limits?&quot;
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&quot;Show me my transaction audit log&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>&quot;What are my current spend limits?&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>&quot;Show me my transaction audit log&quot;
 </code></pre></div>
 <hr />
 <h2 id="safety-configuration">Safety Configuration<a class="headerlink" href="#safety-configuration" title="Permanent link">&para;</a></h2>
@@ -2276,11 +2240,11 @@
 <p>Set to <code>false</code> for fully autonomous operation within spend limits.</p>
 <h3 id="transaction-crafter-mode">Transaction-Crafter Mode<a class="headerlink" href="#transaction-crafter-mode" title="Permanent link">&para;</a></h3>
 <p>For maximum security, use transaction-crafter mode:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&quot;VECTOR_WALLET_MODE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transaction-crafter&quot;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">&quot;VECTOR_WALLET_MODE&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;transaction-crafter&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>In this mode, Claude builds transactions but returns them <strong>unsigned</strong>. You sign and submit them manually. Ideal for high-value operations.</p>
 <h3 id="audit-log">Audit Log<a class="headerlink" href="#audit-log" title="Permanent link">&para;</a></h3>
@@ -2309,7 +2273,7 @@
 </ol>
 <h3 id="connection-refused-errors">"Connection refused" errors<a class="headerlink" href="#connection-refused-errors" title="Permanent link">&para;</a></h3>
 <p>The Ogmios endpoint may be temporarily unavailable. Check:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://ogmios.vector.testnet.apexfusion.org/health
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://ogmios.vector.testnet.apexfusion.org/health
 </code></pre></div>
 <h3 id="transaction-failures">Transaction failures<a class="headerlink" href="#transaction-failures" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2319,21 +2283,21 @@
 </ul>
 <hr />
 <h2 id="switching-to-mainnet">Switching to Mainnet<a class="headerlink" href="#switching-to-mainnet" title="Permanent link">&para;</a></h2>
-<p>To run Claude on Vector mainnet, update the endpoint URLs in your config:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/to/web3-mcp/build/index.js&quot;</span><span class="p">],</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.mainnet.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.mainnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.mainnet.apexfusion.org/&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.mainnet.apexscan.org&quot;</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="p">}</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
+<p>For mainnet, you'll need to <a href="../../mcp-server/installation/#advanced-setup-install-locally">run the MCP server locally</a> with mainnet endpoints:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;node&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/path/to/web3-mcp/build/index.js&quot;</span><span class="p">],</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">      </span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="nt">&quot;VECTOR_OGMIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://ogmios.vector.mainnet.apexfusion.org&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="nt">&quot;VECTOR_SUBMIT_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://submit.vector.mainnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="nt">&quot;VECTOR_KOIOS_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://koios.vector.mainnet.apexfusion.org/&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="nt">&quot;VECTOR_EXPLORER_URL&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://explorer.vector.mainnet.apexfusion.org&quot;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="p">}</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Mainnet uses real funds</p>
