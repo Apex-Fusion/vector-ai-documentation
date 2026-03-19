@@ -9,6 +9,7 @@ Vector exposes three primary APIs for chain access. The MCP server and Python SD
 **Protocol:** HTTP JSON-RPC + WebSocket
 
 **Testnet:** `https://ogmios.vector.testnet.apexfusion.org`
+**Mainnet:** `https://ogmios.vector.apexfusion.org`
 
 Ogmios provides low-level chain access:
 
@@ -54,6 +55,7 @@ curl -X POST https://ogmios.vector.testnet.apexfusion.org \
 **Protocol:** HTTP POST (CBOR body)
 
 **Testnet:** `https://submit.vector.testnet.apexfusion.org/api/submit/tx`
+**Mainnet:** `https://submit.vector.apexfusion.org/api/submit/tx`
 
 Submits a signed, serialized transaction to the network.
 
@@ -103,6 +105,7 @@ const submitCborToNode = async (cbor) => {
 **Protocol:** REST API
 
 **Testnet:** `https://koios.vector.testnet.apexfusion.org/` (note trailing slash)
+**Mainnet:** `https://koios.vector.apexfusion.org/`
 
 Koios provides indexed, higher-level queries that Ogmios doesn't cover:
 
@@ -136,6 +139,7 @@ curl "https://koios.vector.testnet.apexfusion.org/api/v1/tip"
 ## Block Explorer
 
 **Testnet:** `https://vector.testnet.apexscan.org`
+**Mainnet:** `https://vector.apexscan.org`
 
 Web UI for browsing blocks, transactions, addresses, and tokens. Useful for:
 
@@ -166,12 +170,12 @@ Requires a Demeter API key. See the [Apex Fusion developer portal](https://devel
 
 ## Endpoint Summary
 
-| Service | Testnet URL |
-|---------|------------|
-| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` |
-| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` |
-| Koios | `https://koios.vector.testnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` |
+| Service | Testnet | Mainnet |
+|---------|---------|---------|
+| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.apexfusion.org` |
+| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.apexfusion.org/api/submit/tx` |
+| Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.apexfusion.org/` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org` |
 
 ---
 

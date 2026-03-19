@@ -1,6 +1,6 @@
-# MCP Server Installation
+# MCP Server Setup
 
-Install and configure the Vector MCP server to give any AI agent access to Vector blockchain.
+Connect your AI agent to Vector blockchain via the MCP server.
 
 ---
 
@@ -23,17 +23,97 @@ The server handles:
 
 ---
 
-## Requirements
+## Choose Your Setup
+
+<div class="setup-chooser" markdown>
+<div class="section-grid" markdown>
+<a href="#connect-to-existing-server"><strong>&#x26A1; Quick Setup</strong> <span class="section-desc">— Connect to an existing MCP server in minutes. No Node.js or builds required.</span></a>
+<a href="#install-locally"><strong>&#x1F527; Advanced Setup</strong> <span class="section-desc">— Install and run your own MCP server locally. Full control over configuration.</span></a>
+</div>
+</div>
+
+---
+
+## Connect to Existing Server
+
+The fastest way to get started — point your AI client at a running Vector MCP server. No local installation needed.
+
+### Claude Desktop
+
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector": {
+          "url": "http://your-mcp-server:3000",
+          "env": {
+            "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
+            "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
+            "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
+            "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
+          }
+        }
+      }
+    }
+    ```
+
+=== "Mainnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector": {
+          "url": "http://your-mcp-server:3000",
+          "env": {
+            "VECTOR_OGMIOS_URL": "https://ogmios.vector.apexfusion.org",
+            "VECTOR_SUBMIT_URL": "https://submit.vector.apexfusion.org/api/submit/tx",
+            "VECTOR_KOIOS_URL": "https://koios.vector.apexfusion.org/",
+            "VECTOR_EXPLORER_URL": "https://vector.apexscan.org"
+          }
+        }
+      }
+    }
+    ```
+
+Replace `http://your-mcp-server:3000` with the actual server URL provided to you. See [Claude Desktop + Vector](../quickstart/claude-desktop.md) for the full walkthrough.
+
+### OpenClaw
+
+```yaml
+mcp_servers:
+  - name: vector
+    url: "http://your-mcp-server:3000"
+    env:
+      VECTOR_OGMIOS_URL: "https://ogmios.vector.testnet.apexfusion.org"
+      VECTOR_KOIOS_URL: "https://koios.vector.testnet.apexfusion.org/"
+```
+
+### Generic MCP Client
+
+Connect any MCP-compatible client to the server's SSE endpoint:
+
+```
+http://your-mcp-server:3000
+```
+
+That's it — all Vector MCP tools are available immediately.
+
+---
+
+## Install Locally
+
+For full control, install and run the MCP server yourself.
+
+### Requirements
 
 - **Node.js 18+**
 - **npm**
 - Internet access to reach Vector endpoints
 
----
-
-## Install
-
-Clone the repository and build:
+### Clone and Build
 
 ```bash
 git clone https://github.com/Apex-Fusion/web3-mcp
@@ -50,6 +130,46 @@ The server starts and serves SSE over HTTP on **port 3000**.
 ```bash
 npm run build && docker build -t vector-mcp . && docker run -p 3000:3000 vector-mcp
 ```
+
+### Configure Your Client
+
+Once the server is running locally, point your AI client to it:
+
+=== "Claude Desktop"
+
+    Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
+
+    ```json
+    {
+      "mcpServers": {
+        "vector": {
+          "command": "node",
+          "args": ["/path/to/web3-mcp/build/index.js"],
+          "env": {
+            "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
+            "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
+            "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
+            "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
+          }
+        }
+      }
+    }
+    ```
+
+=== "OpenClaw"
+
+    ```yaml
+    mcp_servers:
+      - name: vector
+        command: node /path/to/web3-mcp/build/index.js
+        env:
+          VECTOR_OGMIOS_URL: "https://ogmios.vector.testnet.apexfusion.org"
+          VECTOR_KOIOS_URL: "https://koios.vector.testnet.apexfusion.org/"
+    ```
+
+=== "Generic MCP Client"
+
+    Start the server and connect to `http://localhost:3000`.
 
 ---
 
@@ -73,52 +193,28 @@ All settings are configured via environment variables:
 
 **Note:** `VECTOR_MNEMONIC` is intentionally absent — the mnemonic is passed per-call by the MCP client, not stored in the environment.
 
-### Testnet Endpoints
+### Network Endpoints
 
-```bash
-VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
-VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
-VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
-VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
-```
+=== "Testnet"
 
----
+    ```bash
+    VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
+    VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
+    VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
+    VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
+    ```
 
-## Client Configuration
+=== "Mainnet"
 
-### Claude Desktop
+    ```bash
+    VECTOR_OGMIOS_URL=https://ogmios.vector.apexfusion.org
+    VECTOR_SUBMIT_URL=https://submit.vector.apexfusion.org/api/submit/tx
+    VECTOR_KOIOS_URL=https://koios.vector.apexfusion.org/
+    VECTOR_EXPLORER_URL=https://vector.apexscan.org
+    ```
 
-Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
-
-```json
-{
-  "mcpServers": {
-    "vector": {
-      "command": "node",
-      "args": ["/path/to/web3-mcp/build/index.js"],
-      "env": {
-        "VECTOR_OGMIOS_URL": "https://ogmios.vector.testnet.apexfusion.org",
-        "VECTOR_SUBMIT_URL": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-        "VECTOR_KOIOS_URL": "https://koios.vector.testnet.apexfusion.org/",
-        "VECTOR_EXPLORER_URL": "https://vector.testnet.apexscan.org"
-      }
-    }
-  }
-}
-```
-
-See [Claude Desktop + Vector](../quickstart/claude-desktop.md) for the full walkthrough.
-
-### OpenClaw
-
-```yaml
-mcp_servers:
-  - name: vector
-    command: node /path/to/web3-mcp/build/index.js
-    env:
-      VECTOR_OGMIOS_URL: "https://ogmios.vector.testnet.apexfusion.org"
-      VECTOR_KOIOS_URL: "https://koios.vector.testnet.apexfusion.org/"
-```
+!!! note "Testnet uses mainnet network ID"
+    Vector testnet uses mainnet network ID (networkMagic: 764824073). Wallet addresses start with `addr1`, not `addr_test1`.
 
 ---
 
@@ -173,19 +269,14 @@ Query the audit log via the `vector_get_audit_log` MCP tool, or read the JSON fi
 
 ---
 
-## Network Endpoints
+## Endpoint Reference
 
-### Testnet (Default)
-
-| Service | Endpoint |
-|---------|----------|
-| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` |
-| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` |
-| Koios | `https://koios.vector.testnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` |
-
-!!! note "Testnet uses mainnet network ID"
-    Vector testnet uses mainnet network ID (networkMagic: 764824073). Wallet addresses start with `addr1`, not `addr_test1`.
+| Service | Testnet | Mainnet |
+|---------|---------|---------|
+| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.apexfusion.org` |
+| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.apexfusion.org/api/submit/tx` |
+| Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.apexfusion.org/` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org` |
 
 ---
 

@@ -92,16 +92,34 @@ The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone wi
 
 ### Environment Variable Pattern
 
-```bash
-# Set in your shell profile or secrets manager
-export VECTOR_MNEMONIC="your fifteen word mnemonic phrase ..."
-export VECTOR_OGMIOS_URL="https://ogmios.vector.testnet.apexfusion.org"
-export VECTOR_SUBMIT_URL="https://submit.vector.testnet.apexfusion.org/api/submit/tx"
-export VECTOR_KOIOS_URL="https://koios.vector.testnet.apexfusion.org/"
-export VECTOR_ACCOUNT_INDEX="0"
-export VECTOR_SPEND_LIMIT_PER_TX="100000000"
-export VECTOR_SPEND_LIMIT_DAILY="500000000"
-```
+=== "Testnet"
+
+    ```bash
+    export VECTOR_MNEMONIC="your fifteen word mnemonic phrase ..."
+    export VECTOR_OGMIOS_URL="https://ogmios.vector.testnet.apexfusion.org"
+    export VECTOR_SUBMIT_URL="https://submit.vector.testnet.apexfusion.org/api/submit/tx"
+    export VECTOR_KOIOS_URL="https://koios.vector.testnet.apexfusion.org/"
+    export VECTOR_EXPLORER_URL="https://vector.testnet.apexscan.org"
+    export VECTOR_ACCOUNT_INDEX="0"
+    export VECTOR_SPEND_LIMIT_PER_TX="100000000"
+    export VECTOR_SPEND_LIMIT_DAILY="500000000"
+    ```
+
+=== "Mainnet"
+
+    ```bash
+    export VECTOR_MNEMONIC="your mainnet mnemonic phrase ..."
+    export VECTOR_OGMIOS_URL="https://ogmios.vector.apexfusion.org"
+    export VECTOR_SUBMIT_URL="https://submit.vector.apexfusion.org/api/submit/tx"
+    export VECTOR_KOIOS_URL="https://koios.vector.apexfusion.org/"
+    export VECTOR_EXPLORER_URL="https://vector.apexscan.org"
+    export VECTOR_ACCOUNT_INDEX="0"
+    export VECTOR_SPEND_LIMIT_PER_TX="50000000"
+    export VECTOR_SPEND_LIMIT_DAILY="200000000"
+    ```
+
+!!! warning "Use separate mnemonics"
+    Always use different mnemonics for testnet and mainnet wallets. On mainnet, consider more conservative spend limits.
 
 ---
 

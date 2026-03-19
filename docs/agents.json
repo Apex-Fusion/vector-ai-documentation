@@ -1,8 +1,8 @@
 {
   "name": "Vector Blockchain",
   "description": "UTXO L2 blockchain for AI agents — fast, safe, verifiable",
-  "url": "https://vector.apexfusion.org",
-  "documentation": "https://docs.vector.apexfusion.org/agents/",
+  "url": "https://apex-fusion.github.io/vector-ai-documentation/",
+  "documentation": "https://apex-fusion.github.io/vector-ai-documentation/",
   "protocols": ["MCP", "A2A", "ACP"],
   "mcp_server": {
     "repository": "https://github.com/Apex-Fusion/web3-mcp",
@@ -21,11 +21,13 @@
     "testnet": {
       "ogmios": "wss://ogmios.vector.testnet.apexfusion.org",
       "submit": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
+      "koios": "https://koios.vector.testnet.apexfusion.org/",
       "explorer": "https://vector.testnet.apexscan.org"
     },
     "mainnet": {
       "ogmios": "wss://ogmios.vector.apexfusion.org",
       "submit": "https://submit.vector.apexfusion.org/api/submit/tx",
+      "koios": "https://koios.vector.apexfusion.org/",
       "explorer": "https://vector.apexscan.org"
     }
   },

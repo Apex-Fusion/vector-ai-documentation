@@ -1,24 +1,15 @@
 site_name: Vector AI Agent Platform
 site_description: Documentation for building AI agents on Vector blockchain
-site_url: https://docs.vector.apexfusion.org/agents/
+site_url: https://apex-fusion.github.io/vector-ai-documentation/
 docs_dir: docs
 
 theme:
   name: material
   custom_dir: overrides
   palette:
-    - scheme: apex-dark
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: default
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
+    scheme: apex-dark
+    primary: custom
+    accent: custom
   font:
     text: Inter
     code: JetBrains Mono
@@ -74,7 +65,7 @@ nav:
       - Testing Guide: contracts/testing.md
       - Deployment: contracts/deployment.md
   - MCP Server:
-      - Installation: mcp-server/installation.md
+      - Setup Guide: mcp-server/installation.md
       - Tools Reference: mcp-server/tools-reference.md
       - Security: mcp-server/security.md
   - SDK:

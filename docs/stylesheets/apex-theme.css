@@ -1,170 +1,933 @@
 /* ==========================================================================
-   Apex Fusion Theme for MkDocs Material
-   Matches https://developers.apexfusion.org/documentation
+   Apex Fusion — Vector AI Documentation Theme
+   Dark + Light mode support
    ========================================================================== */
 
-/* ---------- Color tokens (dark mode — the Apex default) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 0.8; }
+}
+
+/* ==========================================================================
+   COLOR TOKENS
+   ========================================================================== */
+
+/* --- Dark mode --- */
 [data-md-color-scheme="apex-dark"] {
-  --md-primary-fg-color:        #F25041;
-  --md-primary-fg-color--light: #F27B50;
-  --md-primary-fg-color--dark:  #D4382A;
-  --md-accent-fg-color:         #F27B50;
+  --md-primary-fg-color:           #F25041;
+  --md-primary-fg-color--light:    #F27B50;
+  --md-primary-fg-color--dark:     #D4382A;
+  --md-accent-fg-color:            #F27B50;
+  --md-default-bg-color:           #111714;
+  --md-default-fg-color:           #e8ece9;
+  --md-default-fg-color--light:    #b0bab3;
+  --md-default-fg-color--lightest: #7a8a7f;
+  --md-code-bg-color:              #151d19;
+  --md-code-fg-color:              #d4ddd7;
+  --md-typeset-color:              #e8ece9;
+  --md-typeset-a-color:            #F27B50;
+  --md-footer-bg-color:            #080c09;
+  --md-footer-bg-color--dark:      #040604;
+  --md-footer-fg-color:            #b0bab3;
+  --md-footer-fg-color--light:     #7a8a7f;
+  --md-footer-fg-color--lighter:   #566059;
 
-  --md-default-bg-color:        #1B1B1B;
-  --md-default-fg-color:        #E0E0E0;
-  --md-default-fg-color--light: #A4A4A4;
-  --md-default-fg-color--lightest: #6b7280;
-
-  /* Code */
-  --md-code-bg-color:           #282c34;
-  --md-code-fg-color:           #abb2bf;
-
-  /* Typeset */
-  --md-typeset-color:           #E0E0E0;
-  --md-typeset-a-color:         #F27B50;
-
-  /* Footer */
-  --md-footer-bg-color:         #121212;
-  --md-footer-bg-color--dark:   #0d0d0d;
-  --md-footer-fg-color:         #A4A4A4;
-  --md-footer-fg-color--light:  #6b7280;
-  --md-footer-fg-color--lighter:#555555;
+  --apex-surface-0:   #111714;
+  --apex-surface-1:   #151d19;
+  --apex-surface-2:   #1a2320;
+  --apex-surface-3:   #222d28;
+  --apex-surface-4:   #2a3631;
+  --apex-border:      #263330;
+  --apex-red:         #F25041;
+  --apex-orange:      #F27B50;
+  --apex-warm:        #F5841F;
+  --apex-teal:        #0d9e8f;
+  --apex-green:       #1ED926;
+  --apex-text:        #e8ece9;
+  --apex-text-secondary: #c8d0ca;
+  --apex-text-muted:  #b0bab3;
+  --apex-text-dim:    #8a9a8f;
+  --apex-heading:     #f5f7f5;
+  --apex-heading-top: #ffffff;
+  --apex-hero-bg:     linear-gradient(135deg, #081f1a 0%, #111714 40%, #1a120e 100%);
+  --apex-hero-border: rgba(13, 158, 143, 0.15);
+  --apex-hero-glow-1: rgba(242, 80, 65, 0.07);
+  --apex-hero-glow-2: rgba(13, 158, 143, 0.12);
+  --apex-hero-h1-gradient: linear-gradient(135deg, #ffffff 0%, #F27B50 100%);
+  --apex-btn-secondary-bg: rgba(255, 255, 255, 0.05);
+  --apex-btn-secondary-hover: rgba(255, 255, 255, 0.08);
+  --apex-header-bg: linear-gradient(180deg, #052e25 0%, #0a1f1a 60%, #111714 100%);
+  --apex-header-border: rgba(13, 158, 143, 0.15);
+  --apex-code-inline: #f0c674;
+  --apex-card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+  --apex-row-hover: rgba(13, 158, 143, 0.04);
+  --apex-planet-opacity: 0.18;
 }
 
-/* ---------- Light mode overrides ---------- */
-[data-md-color-scheme="default"] {
-  --md-primary-fg-color:        #F25041;
-  --md-primary-fg-color--light: #F27B50;
-  --md-primary-fg-color--dark:  #D4382A;
-  --md-accent-fg-color:         #F27B50;
-  --md-typeset-a-color:         #D4382A;
+/* Light mode removed — dark mode only */
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY (both modes)
+   ========================================================================== */
+:root {
+  --md-text-font: "Source Sans 3", "Inter", system-ui, sans-serif;
+  --md-code-font: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* ---------- Header ---------- */
-[data-md-color-scheme="apex-dark"] .md-header {
-  background: linear-gradient(180deg, #052531 0%, #1B1B1B 100%);
+.md-typeset {
+  font-family: var(--md-text-font);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
-/* ---------- Navigation sidebar ---------- */
-[data-md-color-scheme="apex-dark"] .md-sidebar {
-  background: #1D1D1D;
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  font-family: "Outfit", var(--md-text-font);
+  font-weight: 600;
+  color: var(--apex-heading);
+  letter-spacing: -0.02em;
 }
 
-[data-md-color-scheme="apex-dark"] .md-nav__link:hover,
-[data-md-color-scheme="apex-dark"] .md-nav__link--active {
-  color: #F27B50;
+.md-typeset h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6em;
+  color: var(--apex-heading-top);
 }
 
-[data-md-color-scheme="apex-dark"] .md-nav__link {
-  color: #A4A4A4;
+.md-typeset h2 {
+  font-size: 1.55rem;
+  margin-top: 2.4em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--apex-border);
 }
 
-/* Tabs bar */
-[data-md-color-scheme="apex-dark"] .md-tabs {
-  background: #161616;
+.md-typeset h3 {
+  font-size: 1.15rem;
+  margin-top: 1.8em;
 }
 
-/* ---------- Cards on the homepage ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset .grid.cards > ul > li {
-  background: #222222;
-  border: 1px solid #2E2E2E;
-  border-radius: 0.75rem;
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset dd {
+  color: var(--apex-text);
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset .grid.cards > ul > li:hover {
-  border-color: #F27B50;
+.md-typeset strong {
+  color: var(--apex-heading);
 }
 
-/* ---------- Code blocks (Atom One Dark) ---------- */
-[data-md-color-scheme="apex-dark"] .highlight pre,
-[data-md-color-scheme="apex-dark"] .md-typeset pre > code {
-  background: #282c34;
-  border-radius: 0.5rem;
+/* ==========================================================================
+   HEADER (both modes)
+   ========================================================================== */
+.md-header {
+  background: var(--apex-header-bg);
+  border-bottom: 1px solid var(--apex-header-border);
+  backdrop-filter: blur(12px);
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset code {
-  background: #2A2A2A;
-  color: #abb2bf;
+.md-header__title {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
-/* ---------- Admonitions ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset .admonition,
-[data-md-color-scheme="apex-dark"] .md-typeset details {
-  background: #1D1D1D;
-  border-left-color: #F27B50;
-  border-radius: 0.5rem;
+/* ---------- Tabs bar ---------- */
+.md-tabs {
+  background: var(--apex-surface-1);
+  border-bottom: 1px solid var(--apex-border);
 }
 
-/* ---------- Tables ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset table:not([class]) {
-  background: #1D1D1D;
-  border-radius: 0.5rem;
+.md-tabs__link {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  opacity: 1;
+  color: var(--apex-orange);
+}
+
+/* ==========================================================================
+   SIDEBAR (both modes)
+   ========================================================================== */
+.md-sidebar {
+  background: var(--apex-surface-1);
+}
+
+.md-sidebar--primary {
+  border-right: 1px solid var(--apex-border);
+  position: relative;
+}
+
+.md-sidebar--primary::after {
+  content: "";
+  position: fixed;
+  bottom: -40px;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  background: url("../assets/images/planet-sidebar.webp") center bottom / contain no-repeat;
+  opacity: 0.25;
+  pointer-events: none;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+  z-index: 0;
+}
+
+.md-nav__link {
+  color: var(--apex-text-muted);
+  font-size: 0.84rem;
+  font-weight: 400;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--apex-orange);
+  background: rgba(242, 123, 80, 0.06);
+}
+
+.md-nav__link--active {
+  color: var(--apex-orange);
+  font-weight: 600;
+}
+
+.md-nav__item--nested > .md-nav__link {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--apex-text-dim);
+}
+
+/* ==========================================================================
+   CONTENT (both modes)
+   ========================================================================== */
+.md-content {
+  background: var(--apex-surface-0);
+}
+
+.md-content__inner {
+  max-width: 52rem;
+}
+
+/* ---------- Links ---------- */
+.md-typeset a {
+  color: var(--apex-orange);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.md-typeset a:hover {
+  color: var(--apex-warm);
+  border-bottom-color: var(--apex-warm);
+}
+
+/* ---------- Horizontal rules ---------- */
+.md-typeset hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--apex-border) 20%, var(--apex-border) 80%, transparent);
+  margin: 2.5em 0;
+}
+
+/* ==========================================================================
+   HOMEPAGE HERO (both modes)
+   ========================================================================== */
+.md-typeset .hero-section {
+  position: relative;
+  padding: 3.5rem 2.5rem 3rem;
+  margin: -0.6rem -0.6rem 2.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--apex-hero-bg);
+  border: 1px solid var(--apex-hero-border);
+}
+
+.md-typeset .hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--apex-hero-glow-1) 0%, transparent 70%);
+  animation: pulseGlow 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.md-typeset .hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: -40%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--apex-hero-glow-2) 0%, transparent 70%);
+  animation: pulseGlow 8s ease-in-out infinite 2s;
+  pointer-events: none;
+}
+
+.md-typeset .hero-section h1 {
+  position: relative;
+  font-family: "Outfit", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  border-bottom: none;
+  background: var(--apex-hero-h1-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.md-typeset .hero-section .hero-tagline {
+  position: relative;
+  font-size: 1.15rem;
+  color: var(--apex-text);
+  line-height: 1.65;
+  max-width: 38rem;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.md-typeset .hero-section .hero-actions {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.md-typeset .hero-actions .md-button {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  padding: 0.7em 1.8em;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.md-typeset .hero-actions .md-button--primary {
+  background: linear-gradient(135deg, var(--apex-red) 0%, var(--apex-orange) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(242, 80, 65, 0.25);
+}
+
+.md-typeset .hero-actions .md-button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(242, 80, 65, 0.35);
+  border-bottom: none;
+}
+
+.md-typeset .hero-actions .md-button--secondary {
+  background: var(--apex-btn-secondary-bg);
+  color: var(--apex-text);
+  border: 1px solid var(--apex-border) !important;
+}
+
+.md-typeset .hero-actions .md-button--secondary:hover {
+  background: var(--apex-btn-secondary-hover);
+  border-color: var(--apex-orange) !important;
+  color: var(--apex-orange);
+  transform: translateY(-2px);
+  border-bottom: 1px solid var(--apex-orange) !important;
+}
+
+/* ==========================================================================
+   STAT PILLS (both modes)
+   ========================================================================== */
+.md-typeset .hero-stats {
+  position: relative;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+  flex-wrap: wrap;
+}
+
+.md-typeset .hero-stats .stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1.3rem;
+  background: var(--apex-btn-secondary-bg);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+.md-typeset .hero-stats .stat-value {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--apex-heading-top);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.md-typeset .hero-stats .stat-label {
+  font-size: 0.75rem;
+  color: var(--apex-text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.15em;
+}
+
+/* ==========================================================================
+   FEATURE CARDS — Get Started grid (both modes)
+   ========================================================================== */
+.md-typeset .grid.cards > ul {
+  gap: 1rem;
+}
+
+.md-typeset .grid.cards > ul > li {
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
   overflow: hidden;
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset table:not([class]) th {
-  background: #262626;
-  color: #FFFFFF;
+.md-typeset .grid.cards > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--apex-red), var(--apex-orange), var(--apex-teal));
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset table:not([class]) tr:hover td {
-  background: #2A2A2A;
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: rgba(242, 123, 80, 0.3);
+  transform: translateY(-3px);
+  box-shadow: var(--apex-card-shadow-hover);
 }
 
-/* ---------- Search ---------- */
-[data-md-color-scheme="apex-dark"] .md-search__form {
-  background: #292929;
-  border-radius: 0.5rem;
+.md-typeset .grid.cards > ul > li:hover::before {
+  opacity: 1;
 }
 
-[data-md-color-scheme="apex-dark"] .md-search-result__meta {
-  background: #1D1D1D;
+.md-typeset .grid.cards .twemoji svg {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: -0.2em;
 }
 
-/* ---------- Buttons / links ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset a {
-  color: #F27B50;
+.md-typeset .grid.cards > ul > li > p:first-child {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.05rem;
+  color: var(--apex-heading);
+  margin-bottom: 0.3rem;
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset a:hover {
-  color: #F5841F;
+.md-typeset .grid.cards > ul > li > p:nth-child(2) {
+  color: var(--apex-text);
+  font-size: 0.88rem;
+  line-height: 1.55;
 }
 
-/* ---------- Content area ---------- */
-[data-md-color-scheme="apex-dark"] .md-content {
-  background: #1B1B1B;
+.md-typeset .grid.cards > ul > li > p:last-child a {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--apex-orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  transition: gap 0.2s, color 0.2s;
+  border-bottom: none !important;
 }
 
-/* ---------- Scrollbar (subtle) ---------- */
+.md-typeset .grid.cards > ul > li > p:last-child a:hover {
+  gap: 0.7em;
+  color: var(--apex-warm);
+  border-bottom: none !important;
+}
+
+/* ==========================================================================
+   SECTION CARDS (both modes)
+   ========================================================================== */
+.md-typeset .section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.md-typeset .section-grid a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  color: var(--apex-text) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid var(--apex-border) !important;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.md-typeset .section-grid a:hover {
+  border-color: var(--apex-orange) !important;
+  background: var(--apex-surface-3);
+  transform: translateX(4px);
+}
+
+.md-typeset .section-grid a strong {
+  color: var(--apex-heading);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+}
+
+.md-typeset .section-grid .section-desc {
+  color: var(--apex-text-dim);
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   CODE BLOCKS (both modes)
+   ========================================================================== */
+.highlight pre,
+.md-typeset pre > code {
+  background: var(--apex-surface-1);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+.md-typeset code {
+  background: var(--apex-surface-3);
+  color: var(--apex-code-inline);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.87em;
+}
+
+.md-typeset a code {
+  color: inherit;
+}
+
+/* Dark-mode-only syntax highlighting */
+[data-md-color-scheme="apex-dark"] .highlight pre code,
+[data-md-color-scheme="apex-dark"] .highlight pre code span,
+[data-md-color-scheme="apex-dark"] .md-typeset pre > code {
+  color: #d4ddd7;
+}
+
+[data-md-color-scheme="apex-dark"] .highlight .k,
+[data-md-color-scheme="apex-dark"] .highlight .kd,
+[data-md-color-scheme="apex-dark"] .highlight .kn,
+[data-md-color-scheme="apex-dark"] .highlight .kp,
+[data-md-color-scheme="apex-dark"] .highlight .kr,
+[data-md-color-scheme="apex-dark"] .highlight .kt { color: #cc99cd; }
+
+[data-md-color-scheme="apex-dark"] .highlight .s,
+[data-md-color-scheme="apex-dark"] .highlight .s1,
+[data-md-color-scheme="apex-dark"] .highlight .s2,
+[data-md-color-scheme="apex-dark"] .highlight .sb,
+[data-md-color-scheme="apex-dark"] .highlight .sc,
+[data-md-color-scheme="apex-dark"] .highlight .sd,
+[data-md-color-scheme="apex-dark"] .highlight .se,
+[data-md-color-scheme="apex-dark"] .highlight .sh,
+[data-md-color-scheme="apex-dark"] .highlight .si,
+[data-md-color-scheme="apex-dark"] .highlight .sx { color: #7ec699; }
+
+[data-md-color-scheme="apex-dark"] .highlight .nf,
+[data-md-color-scheme="apex-dark"] .highlight .fm,
+[data-md-color-scheme="apex-dark"] .highlight .nb { color: #67cdcc; }
+
+[data-md-color-scheme="apex-dark"] .highlight .mi,
+[data-md-color-scheme="apex-dark"] .highlight .mf,
+[data-md-color-scheme="apex-dark"] .highlight .mh,
+[data-md-color-scheme="apex-dark"] .highlight .mo { color: #f0c674; }
+
+[data-md-color-scheme="apex-dark"] .highlight .c,
+[data-md-color-scheme="apex-dark"] .highlight .c1,
+[data-md-color-scheme="apex-dark"] .highlight .cm,
+[data-md-color-scheme="apex-dark"] .highlight .cs { color: #7a8a7f; font-style: italic; }
+
+[data-md-color-scheme="apex-dark"] .highlight .nn,
+[data-md-color-scheme="apex-dark"] .highlight .nc,
+[data-md-color-scheme="apex-dark"] .highlight .ne { color: #f0c674; }
+
+[data-md-color-scheme="apex-dark"] .highlight .o,
+[data-md-color-scheme="apex-dark"] .highlight .p { color: #d4ddd7; }
+
+[data-md-color-scheme="apex-dark"] .highlight .na { color: #67cdcc; }
+
+.md-clipboard {
+  color: var(--apex-text-dim);
+}
+
+.md-clipboard:hover {
+  color: var(--apex-orange);
+}
+
+/* ==========================================================================
+   TABLES (both modes)
+   ========================================================================== */
+.md-typeset table:not([class]) {
+  background: var(--apex-surface-1);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--apex-surface-3);
+  color: var(--apex-heading);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.85em 1em;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75em 1em;
+  border-top: 1px solid var(--apex-border);
+  color: var(--apex-text);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--apex-row-hover);
+}
+
+/* ==========================================================================
+   ADMONITIONS (both modes)
+   ========================================================================== */
+.md-typeset .admonition,
+.md-typeset details {
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-left: 3px solid var(--apex-orange);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: var(--apex-text);
+}
+
+.md-typeset .admonition p,
+.md-typeset details p {
+  color: var(--apex-text);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  background: rgba(242, 123, 80, 0.06);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: var(--apex-heading);
+}
+
+/* ==========================================================================
+   SEARCH (both modes)
+   ========================================================================== */
+.md-search__form {
+  background: var(--apex-surface-3);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+}
+
+.md-search__form:focus-within {
+  border-color: var(--apex-orange);
+  box-shadow: 0 0 0 3px rgba(242, 123, 80, 0.1);
+}
+
+.md-search-result__meta {
+  background: var(--apex-surface-2);
+}
+
+/* ==========================================================================
+   FOOTER (both modes)
+   ========================================================================== */
+.md-footer {
+  border-top: 1px solid var(--apex-border);
+}
+
+/* ==========================================================================
+   TABBED CONTENT (both modes)
+   ========================================================================== */
+.md-typeset .tabbed-labels > label {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  color: var(--apex-text-dim);
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.md-typeset .tabbed-labels > .tabbed-labels__label--active,
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--apex-orange);
+}
+
+/* ==========================================================================
+   SCROLLBAR (dark mode only — light uses native)
+   ========================================================================== */
 [data-md-color-scheme="apex-dark"] ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 
 [data-md-color-scheme="apex-dark"] ::-webkit-scrollbar-track {
-  background: #1B1B1B;
+  background: transparent;
 }
 
 [data-md-color-scheme="apex-dark"] ::-webkit-scrollbar-thumb {
-  background: #3A3A3A;
-  border-radius: 3px;
+  background: var(--apex-surface-4);
+  border-radius: 4px;
 }
 
 [data-md-color-scheme="apex-dark"] ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--apex-text-dim);
 }
 
-/* ---------- Tab content (tabbed extension) ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset .tabbed-labels > label {
-  color: #A4A4A4;
+/* ==========================================================================
+   SMOOTH ENTRANCE ANIMATIONS (both modes)
+   ========================================================================== */
+.md-content__inner > * {
+  animation: fadeInUp 0.4s ease-out both;
 }
 
-[data-md-color-scheme="apex-dark"] .md-typeset .tabbed-labels > label--active,
-[data-md-color-scheme="apex-dark"] .md-typeset .tabbed-labels > label:hover {
-  color: #F27B50;
+.md-content__inner > *:nth-child(1) { animation-delay: 0s; }
+.md-content__inner > *:nth-child(2) { animation-delay: 0.03s; }
+.md-content__inner > *:nth-child(3) { animation-delay: 0.06s; }
+.md-content__inner > *:nth-child(4) { animation-delay: 0.09s; }
+.md-content__inner > *:nth-child(5) { animation-delay: 0.12s; }
+.md-content__inner > *:nth-child(6) { animation-delay: 0.15s; }
+.md-content__inner > *:nth-child(7) { animation-delay: 0.18s; }
+.md-content__inner > *:nth-child(8) { animation-delay: 0.21s; }
+
+/* ==========================================================================
+   CAPABILITY GRID (both modes)
+   ========================================================================== */
+.md-typeset .capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.7rem;
+  margin: 1.5rem 0 2rem;
 }
 
-/* ---------- Hr / divider ---------- */
-[data-md-color-scheme="apex-dark"] .md-typeset hr {
-  border-color: #2E2E2E;
+.md-typeset .capability-grid .cap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  transition: border-color 0.2s;
+  overflow: hidden;
+}
+
+.md-typeset .capability-grid .cap-item:hover {
+  border-color: rgba(13, 158, 143, 0.35);
+}
+
+.md-typeset .capability-grid .cap-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 1.6rem;
+  text-align: center;
+}
+
+.md-typeset .capability-grid .cap-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.md-typeset .capability-grid .cap-text strong {
+  color: var(--apex-heading);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.2em;
+}
+
+.md-typeset .capability-grid .cap-text span {
+  color: var(--apex-text-muted);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   PROTOCOL BADGES (both modes)
+   ========================================================================== */
+.md-typeset .protocol-list {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem;
+}
+
+.md-typeset .protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: 100px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--apex-text);
+}
+
+.md-typeset .protocol-badge .badge-status {
+  font-size: 0.7rem;
+  padding: 0.15em 0.5em;
+  border-radius: 100px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.md-typeset .protocol-badge .badge-primary {
+  background: rgba(242, 80, 65, 0.15);
+  color: var(--apex-red);
+}
+
+.md-typeset .protocol-badge .badge-supported {
+  background: rgba(30, 217, 38, 0.1);
+  color: var(--apex-green);
+}
+
+/* ==========================================================================
+   BUILT-BY FOOTER BADGE (both modes)
+   ========================================================================== */
+.md-typeset .built-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--apex-surface-2);
+  border: 1px solid var(--apex-border);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  color: var(--apex-text-muted);
+  margin-top: 1rem;
+}
+
+.md-typeset .built-by a {
+  border-bottom: none !important;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE (both modes)
+   ========================================================================== */
+/* ==========================================================================
+   SETUP CHOOSER (MCP page two-path selector)
+   ========================================================================== */
+.md-typeset .setup-chooser .section-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.md-typeset .setup-chooser .section-grid a {
+  padding: 1.3rem 1.4rem;
+  background: var(--apex-surface-2);
+  border: 2px solid var(--apex-border);
+  border-radius: 12px;
+  text-align: left;
+}
+
+.md-typeset .setup-chooser .section-grid a strong {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.md-typeset .setup-chooser .section-grid a .section-desc {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.md-typeset .setup-chooser .section-grid a:first-child {
+  border-color: rgba(13, 158, 143, 0.35);
+}
+
+.md-typeset .setup-chooser .section-grid a:first-child:hover {
+  border-color: var(--apex-teal);
+  background: rgba(13, 158, 143, 0.06);
+}
+
+.md-typeset .setup-chooser .section-grid a:last-child {
+  border-color: rgba(242, 123, 80, 0.25);
+}
+
+.md-typeset .setup-chooser .section-grid a:last-child:hover {
+  border-color: var(--apex-orange);
+  background: rgba(242, 123, 80, 0.06);
+}
+
+/* ==========================================================================
+   RESPONSIVE (both modes)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .md-typeset .hero-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .md-typeset .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .md-typeset .hero-stats {
+    gap: 0.8rem;
+  }
+
+  .md-typeset .hero-actions {
+    flex-direction: column;
+  }
+
+  .md-typeset .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .capability-grid {
+    grid-template-columns: 1fr;
+  }
 }

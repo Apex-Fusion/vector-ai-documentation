@@ -216,6 +216,32 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 ---
 
+## Switching to Mainnet
+
+To run Claude on Vector mainnet, update the endpoint URLs in your config:
+
+```json
+{
+  "mcpServers": {
+    "vector": {
+      "command": "node",
+      "args": ["/path/to/web3-mcp/build/index.js"],
+      "env": {
+        "VECTOR_OGMIOS_URL": "https://ogmios.vector.apexfusion.org",
+        "VECTOR_SUBMIT_URL": "https://submit.vector.apexfusion.org/api/submit/tx",
+        "VECTOR_KOIOS_URL": "https://koios.vector.apexfusion.org/",
+        "VECTOR_EXPLORER_URL": "https://vector.apexscan.org"
+      }
+    }
+  }
+}
+```
+
+!!! warning "Mainnet uses real funds"
+    On mainnet, AP3X has real value. Use conservative spend limits and test thoroughly on testnet first. Use a separate mnemonic for your mainnet wallet.
+
+---
+
 ## Next Steps
 
 - [5-Minute Start](5-minute-start.md) — quick overview for other setups
