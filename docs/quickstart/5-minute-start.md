@@ -182,10 +182,10 @@ The guides above use **testnet** endpoints. When you're ready for mainnet, repla
 
 | Variable | Testnet | Mainnet |
 |----------|---------|---------|
-| `VECTOR_OGMIOS_URL` | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.apexfusion.org` |
-| `VECTOR_SUBMIT_URL` | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.apexfusion.org/api/submit/tx` |
-| `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.apexfusion.org/` |
-| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org` |
+| `VECTOR_OGMIOS_URL` | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
+| `VECTOR_SUBMIT_URL` | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
+| `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
+| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://vector.mainnet.apexscan.org` |
 
 !!! warning "Mainnet uses real funds"
     On mainnet, AP3X has real value. Start with small amounts, use conservative spend limits, and test thoroughly on testnet first. Use separate mnemonics for testnet and mainnet wallets.

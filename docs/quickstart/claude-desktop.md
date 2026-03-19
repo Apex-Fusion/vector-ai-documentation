@@ -227,10 +227,10 @@ To run Claude on Vector mainnet, update the endpoint URLs in your config:
       "command": "node",
       "args": ["/path/to/web3-mcp/build/index.js"],
       "env": {
-        "VECTOR_OGMIOS_URL": "https://ogmios.vector.apexfusion.org",
-        "VECTOR_SUBMIT_URL": "https://submit.vector.apexfusion.org/api/submit/tx",
-        "VECTOR_KOIOS_URL": "https://koios.vector.apexfusion.org/",
-        "VECTOR_EXPLORER_URL": "https://vector.apexscan.org"
+        "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
+        "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
+        "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
+        "VECTOR_EXPLORER_URL": "https://vector.mainnet.apexscan.org"
       }
     }
   }

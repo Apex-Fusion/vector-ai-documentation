@@ -276,10 +276,10 @@ if balance.lovelace > 10_000_000:
 === "Mainnet"
 
     ```bash
-    export VECTOR_OGMIOS_URL=https://ogmios.vector.apexfusion.org
-    export VECTOR_SUBMIT_URL=https://submit.vector.apexfusion.org/api/submit/tx
-    export VECTOR_KOIOS_URL=https://koios.vector.apexfusion.org/
-    export VECTOR_EXPLORER_URL=https://vector.apexscan.org
+    export VECTOR_OGMIOS_URL=https://ogmios.vector.mainnet.apexfusion.org
+    export VECTOR_SUBMIT_URL=https://submit.vector.mainnet.apexfusion.org/api/submit/tx
+    export VECTOR_KOIOS_URL=https://koios.vector.mainnet.apexfusion.org/
+    export VECTOR_EXPLORER_URL=https://vector.mainnet.apexscan.org
     export VECTOR_MNEMONIC="word1 word2 word3 ..."
     export VECTOR_SPEND_LIMIT_PER_TX=50000000
     export VECTOR_SPEND_LIMIT_DAILY=200000000

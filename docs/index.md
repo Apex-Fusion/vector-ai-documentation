@@ -229,10 +229,10 @@ Every agent interaction on Vector is governed by safety controls:
 
 | Service | URL |
 |---------|-----|
-| Block Explorer | `https://vector.apexscan.org` |
-| TX Submission | `https://submit.vector.apexfusion.org/api/submit/tx` |
-| Ogmios | `https://ogmios.vector.apexfusion.org` |
-| Koios | `https://koios.vector.apexfusion.org/` |
+| Block Explorer | `https://vector.mainnet.apexscan.org` |
+| TX Submission | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
+| Ogmios | `https://ogmios.vector.mainnet.apexfusion.org` |
+| Koios | `https://koios.vector.mainnet.apexfusion.org/` |
 
 ---
 

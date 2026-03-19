@@ -68,10 +68,10 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) o
         "vector": {
           "url": "http://your-mcp-server:3000",
           "env": {
-            "VECTOR_OGMIOS_URL": "https://ogmios.vector.apexfusion.org",
-            "VECTOR_SUBMIT_URL": "https://submit.vector.apexfusion.org/api/submit/tx",
-            "VECTOR_KOIOS_URL": "https://koios.vector.apexfusion.org/",
-            "VECTOR_EXPLORER_URL": "https://vector.apexscan.org"
+            "VECTOR_OGMIOS_URL": "https://ogmios.vector.mainnet.apexfusion.org",
+            "VECTOR_SUBMIT_URL": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
+            "VECTOR_KOIOS_URL": "https://koios.vector.mainnet.apexfusion.org/",
+            "VECTOR_EXPLORER_URL": "https://vector.mainnet.apexscan.org"
           }
         }
       }
@@ -179,19 +179,21 @@ Once the server is running locally, point your AI client to it:
 
 All settings are configured via environment variables:
 
-| Variable | Description |
-|----------|-------------|
-| `PORT` | HTTP port (default: 3000) |
-| `VECTOR_OGMIOS_URL` | Ogmios HTTP endpoint |
-| `VECTOR_SUBMIT_URL` | TX submission endpoint |
-| `VECTOR_KOIOS_URL` | Koios REST API endpoint (include trailing slash) |
-| `VECTOR_EXPLORER_URL` | Block explorer URL |
-| `VECTOR_SPEND_LIMIT_PER_TX` | Per-TX spend limit in DFM |
-| `VECTOR_SPEND_LIMIT_DAILY` | Daily spend limit in DFM |
-| `VECTOR_AUDIT_LOG_PATH` | Audit log file path |
-| `VECTOR_RATE_LIMIT_PER_MINUTE` | Max tool calls per minute |
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PORT` | HTTP port | `3000` |
+| `VECTOR_OGMIOS_URL` | Ogmios HTTP endpoint | `https://ogmios.vector.testnet.apexfusion.org` |
+| `VECTOR_SUBMIT_URL` | TX submission endpoint | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` |
+| `VECTOR_KOIOS_URL` | Koios REST API endpoint (include trailing slash) | `https://koios.vector.testnet.apexfusion.org/` |
+| `VECTOR_EXPLORER_URL` | Block explorer URL | `https://vector.testnet.apexscan.org` |
+| `VECTOR_SPEND_LIMIT_PER_TX` | Per-TX spend limit in DFM | `100000000` (100 AP3X) |
+| `VECTOR_SPEND_LIMIT_DAILY` | Daily spend limit in DFM | `500000000` (500 AP3X) |
+| `VECTOR_AUDIT_LOG_PATH` | Persistent audit log file path | `./vector-audit-log.json` |
+| `VECTOR_RATE_LIMIT_PER_MINUTE` | Max tool calls per minute | `60` |
 
 **Note:** `VECTOR_MNEMONIC` is intentionally absent — the mnemonic is passed per-call by the MCP client, not stored in the environment.
+
+**Source repository:** [github.com/Apex-Fusion/web3-mcp](https://github.com/Apex-Fusion/web3-mcp)
 
 ### Network Endpoints
 
@@ -207,10 +209,10 @@ All settings are configured via environment variables:
 === "Mainnet"
 
     ```bash
-    VECTOR_OGMIOS_URL=https://ogmios.vector.apexfusion.org
-    VECTOR_SUBMIT_URL=https://submit.vector.apexfusion.org/api/submit/tx
-    VECTOR_KOIOS_URL=https://koios.vector.apexfusion.org/
-    VECTOR_EXPLORER_URL=https://vector.apexscan.org
+    VECTOR_OGMIOS_URL=https://ogmios.vector.mainnet.apexfusion.org
+    VECTOR_SUBMIT_URL=https://submit.vector.mainnet.apexfusion.org/api/submit/tx
+    VECTOR_KOIOS_URL=https://koios.vector.mainnet.apexfusion.org/
+    VECTOR_EXPLORER_URL=https://vector.mainnet.apexscan.org
     ```
 
 !!! note "Testnet uses mainnet network ID"
@@ -273,10 +275,10 @@ Query the audit log via the `vector_get_audit_log` MCP tool, or read the JSON fi
 
 | Service | Testnet | Mainnet |
 |---------|---------|---------|
-| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.apexfusion.org` |
-| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.apexfusion.org/api/submit/tx` |
-| Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org` |
+| Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
+| TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
+| Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.mainnet.apexscan.org` |
 
 ---
 
