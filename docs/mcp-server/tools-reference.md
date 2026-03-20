@@ -1,6 +1,6 @@
 # MCP Tools Reference
 
-Complete reference for all 18 tools exposed by the Vector MCP server ([source](https://github.com/Apex-Fusion/web3-mcp)).
+Complete reference for all 18 tools exposed by the Vector MCP server ([source](https://github.com/Apex-Fusion/mcp-server)).
 
 ---
 

@@ -19,7 +19,7 @@ Vector uses **HD wallets** (Hierarchical Deterministic) derived from a 15-word m
 
 ### Via MCP Server
 
-The `web3-mcp` server does not have an `init` command. Generate a 15-word mnemonic with any standard BIP39 tool and configure it via `VECTOR_MNEMONIC` (passed per-call).
+The MCP server does not have an `init` command. Generate a 15-word mnemonic with any standard BIP39 tool and configure it via `VECTOR_MNEMONIC` (passed per-call).
 
 ### Via Python SDK
 

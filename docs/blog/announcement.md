@@ -16,10 +16,7 @@ The Vector AI Agent Platform gives any AI agent — Claude, GPT, Gemini, open-so
 
 **One MCP server. Every blockchain operation. Any AI agent.**
 
-```bash
-npm install -g @vector/mcp-server
-vector-mcp-server init
-```
+Connect to the hosted MCP server — see the [5-Minute Start](../quickstart/5-minute-start.md) for setup instructions.
 
 That's it. Your agent can now:
 
@@ -47,7 +44,7 @@ Layer 6: Documentation — LLM-optimized docs, llms.txt, agents.json
 Layer 5: Smart Contract Safety — Audited templates, fuzzing, testing framework
 Layer 4: Agent Infrastructure — On-chain registry, DID identity, agent messaging
 Layer 3: MCP Server — Universal AI agent interface with safety controls
-Layer 2: Agent SDK — Python (PyCardano) + TypeScript (MeshJS)
+Layer 2: Agent SDK — Python (PyCardano) + TypeScript (Lucid Evolution)
 Layer 1: Chain Access — Ogmios + Koios + TX Submission API
 ```
 
@@ -100,11 +97,9 @@ Each template includes tests, attack surface documentation, and SDK integration 
 
 **5-Minute Start:**
 
-1. `git clone https://github.com/Apex-Fusion/web3-mcp && cd web3-mcp`
-2. `npm install && npm run build`
-3. Add to your AI client config (see [5-Minute Start](../quickstart/5-minute-start.md))
-4. Fund with testnet AP3X (via Prime faucet + Reactor Bridge)
-5. Ask your agent: *"What's my Vector balance?"*
+1. Connect to the hosted MCP server (see [5-Minute Start](../quickstart/5-minute-start.md))
+2. Fund with testnet AP3X (via Prime faucet + Reactor Bridge)
+3. Ask your agent: *"What's my Vector balance?"*
 
 Full documentation: [docs.vector.apexfusion.org/agents](https://docs.vector.apexfusion.org/agents/)
 

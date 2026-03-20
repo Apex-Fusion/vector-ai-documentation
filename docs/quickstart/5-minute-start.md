@@ -108,7 +108,7 @@ The Vector MCP server is hosted and publicly available — no installation, no A
         https://mcp.vector.mainnet.apexfusion.org/sse
         ```
 
-All 18 Vector MCP tools are immediately available. For local installation instead, see the [MCP Server Setup Guide](../mcp-server/installation.md#advanced-setup-install-locally).
+All 18 Vector MCP tools are immediately available.
 
 !!! warning "Secure your mnemonic"
     Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.
@@ -150,29 +150,12 @@ Try asking your agent:
 
 ---
 
-## Configuration Reference
-
-Key environment variables for the MCP server:
-
-| Variable | Description |
-|----------|-------------|
-| `VECTOR_OGMIOS_URL` | Ogmios HTTP endpoint |
-| `VECTOR_SUBMIT_URL` | Transaction submission endpoint |
-| `VECTOR_KOIOS_URL` | Koios REST API endpoint (include trailing slash) |
-| `VECTOR_EXPLORER_URL` | Block explorer URL |
-| `VECTOR_SPEND_LIMIT_PER_TX` | Max DFM per transaction |
-| `VECTOR_SPEND_LIMIT_DAILY` | Max DFM per day |
-
----
-
 ## Using the Python SDK Directly
 
 If you prefer programmatic access without MCP:
 
 ```bash
-git clone https://github.com/Apex-Fusion/agent-sdk-py
-cd agent-sdk-py
-pip install -e .
+pip install apex-fusion-agent-sdk
 ```
 
 ```python

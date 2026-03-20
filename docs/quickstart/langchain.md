@@ -11,11 +11,7 @@ Use the Vector Python SDK as a LangChain tool for direct, programmatic access.
 ### Install Dependencies
 
 ```bash
-pip install langchain langchain-anthropic
-
-# Install Vector Agent SDK from source
-git clone https://github.com/Apex-Fusion/agent-sdk-py
-cd agent-sdk-py && pip install -e . && cd ..
+pip install langchain langchain-anthropic apex-fusion-agent-sdk
 ```
 
 ### Create Vector Tools for LangChain
@@ -114,27 +110,21 @@ Use the Vector MCP server with LangChain's MCP tool adapter for zero-code tool i
 ### Install Dependencies
 
 ```bash
-# First clone and build web3-mcp: https://github.com/Apex-Fusion/web3-mcp
 pip install langchain langchain-anthropic langchain-mcp
 ```
 
 ### Connect LangChain to the MCP Server
 
 ```python
-import os
 from langchain_anthropic import ChatAnthropic
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_mcp import MCPToolkit
 
-# Connect to the Vector MCP server (running on port 3000)
+# Connect to the hosted Vector MCP server
 toolkit = MCPToolkit(
-    command="node",
-    args=["/path/to/web3-mcp/build/index.js"],
-    env={
-        "VECTOR_OGMIOS_URL": os.environ["VECTOR_OGMIOS_URL"],
-        "VECTOR_KOIOS_URL": os.environ["VECTOR_KOIOS_URL"],
-    },
+    transport="sse",
+    url="https://mcp.vector.testnet.apexfusion.org/sse",
 )
 
 # All Vector MCP tools are automatically available

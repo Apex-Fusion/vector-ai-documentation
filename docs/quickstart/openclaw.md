@@ -9,43 +9,35 @@ OpenClaw is an open-source AI agent framework with native MCP support, making it
 ## Prerequisites
 
 - **OpenClaw** installed and configured
-- **Node.js 18+** installed
 - A funded Vector testnet wallet (see [5-Minute Start](5-minute-start.md))
 
 ---
 
-## Step 1: Install the Vector MCP Server
+## Step 1: Configure OpenClaw
 
-```bash
-npm install -g @vector/mcp-server
-```
+Add the hosted Vector MCP server to your OpenClaw configuration file (`openclaw.yml`):
 
-## Step 2: Initialize a Wallet
+=== "Testnet"
 
-```bash
-vector-mcp-server init
-```
+    ```yaml
+    mcp_servers:
+      - name: vector
+        transport: sse
+        url: https://mcp.vector.testnet.apexfusion.org/sse
+    ```
 
-Save the 24-word mnemonic securely.
+=== "Mainnet"
 
-## Step 3: Configure OpenClaw
+    ```yaml
+    mcp_servers:
+      - name: vector
+        transport: sse
+        url: https://mcp.vector.mainnet.apexfusion.org/sse
+    ```
 
-Add the Vector MCP server to your OpenClaw configuration file (`openclaw.yml`):
+No installation, no API keys, no environment variables needed.
 
-```yaml
-mcp_servers:
-  - name: vector
-    command: vector-mcp-server start
-    env:
-      VECTOR_MNEMONIC: "your twenty four word mnemonic phrase goes here ..."
-      VECTOR_NETWORK: testnet
-      VECTOR_SPEND_LIMIT_PER_TX: "100000000"
-      VECTOR_SPEND_LIMIT_DAILY: "500000000"
-      VECTOR_REQUIRE_CONFIRMATION: "true"
-      VECTOR_AUDIT_LOG: "true"
-```
-
-## Step 4: Define an Agent with Vector Access
+## Step 2: Define an Agent with Vector Access
 
 Create an agent definition that uses Vector tools:
 
@@ -76,7 +68,7 @@ tools:
   - vector_get_audit_log
 ```
 
-## Step 5: Run the Agent
+## Step 3: Run the Agent
 
 ```bash
 openclaw run agents/investor.yml

@@ -56,7 +56,7 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 
 ```
 ┌──────────────────────┐       ┌──────────────────────────┐
-│  Claude / GPT / etc. │◄─────►│  vector-mcp-server       │
+│  Claude / GPT / etc. │◄─────►│  Vector MCP Server       │
 │  (any MCP client)    │  SSE  │                          │
 └──────────────────────┘       │  ┌────────────────────┐  │
                                │  │ Rate Limiter       │  │
@@ -191,7 +191,7 @@ Vector's AI agent stack has six layers:
 | **5** | Smart Contract Safety | Testing framework, fuzzing, audited templates |
 | **4** | Agent Infrastructure | On-chain registry, DID identity, agent messaging |
 | **3** | MCP Server | Universal AI agent interface with safety controls |
-| **2** | Agent SDK | Python (PyCardano) and TypeScript (MeshJS) libraries |
+| **2** | Agent SDK | Python (PyCardano) and TypeScript (Lucid Evolution) libraries |
 | **1** | Chain Access | Ogmios (WebSocket), Koios (REST), TX Submission API |
 
 ---

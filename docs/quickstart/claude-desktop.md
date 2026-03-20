@@ -50,9 +50,6 @@ Add the Vector MCP server — connect directly to the hosted server (no installs
 
 No API keys, no environment variables, no Node.js required.
 
-!!! tip "Want to run locally instead?"
-    See [MCP Server Setup — Install Locally](../mcp-server/installation.md#advanced-setup-install-locally) for running your own server with full configuration control.
-
 ## Step 2: Prepare Your Wallet Mnemonic
 
 Generate or locate your **15-word mnemonic phrase** (15 or 24 words are both accepted).
@@ -194,7 +191,7 @@ Here's a real interaction flow:
 ### Claude doesn't show Vector tools
 
 1. Verify the MCP config file path is correct for your OS
-2. Ensure the path in `args` points to the actual built `index.js` file in the cloned repo
+2. Ensure the JSON is valid (no trailing commas, correct brackets)
 3. Restart Claude Desktop completely (quit and reopen)
 4. Check the Claude Desktop logs for MCP connection errors
 
@@ -216,7 +213,7 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 ## Switching to Mainnet
 
-Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above, or if running a [local MCP server](../mcp-server/installation.md#advanced-setup-install-locally), update the endpoint URLs to use `*.vector.mainnet.apexfusion.org`.
+Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above.
 
 !!! warning "Mainnet uses real funds"
     On mainnet, AP3X has real value. Use conservative spend limits and test thoroughly on testnet first. Use a separate mnemonic for your mainnet wallet.

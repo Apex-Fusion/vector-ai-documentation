@@ -16,6 +16,7 @@
 - [MCP Server Setup](mcp-server/installation/)
 - [MCP Tools Reference](mcp-server/tools-reference/)
 - [Python SDK Reference](sdk/python/)
+- [TypeScript SDK Reference](sdk/typescript/)
 - [Smart Contract Templates](contracts/templates/)
 - [Contract Testing Guide](contracts/testing/)
 - [Vector-Specific Gotchas](concepts/vector-gotchas/)
@@ -29,8 +30,9 @@
 - [Social Agent Example](examples/social-agent/)
 
 ## Source Repositories
-- MCP Server: https://github.com/Apex-Fusion/web3-mcp
+- MCP Server: https://github.com/Apex-Fusion/mcp-server
 - Python SDK: https://github.com/Apex-Fusion/agent-sdk-py
+- TypeScript SDK: https://github.com/Apex-Fusion/agent-sdk-ts
 - Smart Contracts: https://github.com/Apex-Fusion/vector-ai-agents
 - Documentation: https://github.com/Apex-Fusion/vector-ai-documentation
 

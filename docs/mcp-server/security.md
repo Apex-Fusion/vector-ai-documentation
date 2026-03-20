@@ -8,7 +8,7 @@ Detailed security architecture of the Vector MCP server — how spend limits, au
 
 ```
 ┌──────────────────────┐      ┌──────────────────────────┐
-│  Claude / GPT / etc. │◄────►│  vector-mcp-server       │
+│  Claude / GPT / etc. │◄────►│  Vector MCP Server       │
 │  (any MCP client)    │ SSE  │                          │
 └──────────────────────┘      │  ┌────────────────────┐  │
                               │  │ Rate Limiter        │  │
@@ -179,11 +179,7 @@ This design prevents mnemonic leakage via server logs, environment dumps, or pro
 
 ## Transport Security
 
-The MCP server uses **SSE (Server-Sent Events) over HTTP** on port 3000. For production:
-
-- Run behind a reverse proxy (nginx, Caddy) with TLS
-- Bind to `127.0.0.1` to prevent external access
-- Use firewall rules to restrict access to the MCP client only
+The hosted MCP server uses **SSE (Server-Sent Events) over HTTPS** (port 443). All connections are TLS-encrypted.
 
 ---
 

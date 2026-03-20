@@ -70,6 +70,7 @@ nav:
       - Security: mcp-server/security.md
   - SDK:
       - Python SDK: sdk/python/index.md
+      - TypeScript SDK: sdk/typescript/index.md
   - API Reference:
       - Endpoints: api/index.md
   - Examples:

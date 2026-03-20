@@ -15,11 +15,7 @@ CrewAI excels at orchestrating specialized agents that collaborate on tasks — 
 
 ```bash
 # Install CrewAI
-pip install crewai
-
-# Install Vector Agent SDK from source
-git clone https://github.com/Apex-Fusion/agent-sdk-py
-cd agent-sdk-py && pip install -e . && cd ..
+pip install crewai apex-fusion-agent-sdk
 ```
 
 ---
@@ -209,13 +205,10 @@ Instead of wrapping the Python SDK, you can connect CrewAI to the Vector MCP ser
 from crewai import Agent
 from crewai_mcp import load_mcp_tools
 
+# Connect to the hosted Vector MCP server
 vector_tools = load_mcp_tools(
-    command="node",
-    args=["/path/to/web3-mcp/build/index.js"],
-    env={
-        "VECTOR_OGMIOS_URL": os.environ["VECTOR_OGMIOS_URL"],
-        "VECTOR_KOIOS_URL": os.environ["VECTOR_KOIOS_URL"],
-    },
+    transport="sse",
+    url="https://mcp.vector.testnet.apexfusion.org/sse",
 )
 
 agent = Agent(

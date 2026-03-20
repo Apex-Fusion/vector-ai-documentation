@@ -2,11 +2,17 @@
 
 Complete API reference for `vector-agent-sdk` — the Python SDK for Vector blockchain.
 
-**Source:** [github.com/Apex-Fusion/agent-sdk-py](https://github.com/Apex-Fusion/agent-sdk-py)
+**Source:** [github.com/Apex-Fusion/agent-sdk-py](https://github.com/Apex-Fusion/agent-sdk-py) | **PyPI:** [apex-fusion-agent-sdk](https://pypi.org/project/apex-fusion-agent-sdk/)
 
 ---
 
 ## Installation
+
+```bash
+pip install apex-fusion-agent-sdk
+```
+
+Or install from source:
 
 ```bash
 git clone https://github.com/Apex-Fusion/agent-sdk-py
@@ -226,15 +232,15 @@ except SpendLimitExceededError as e:
 
 ## VectorAgentMCP (MCP Client)
 
-An alternative that connects to the TypeScript MCP server instead of talking to Ogmios directly.
+An alternative that connects to the hosted MCP server instead of talking to Ogmios directly.
 
 ```python
 from vector_agent import VectorAgentMCP
 
-agent = VectorAgentMCP(mcp_url="http://localhost:3000")
+agent = VectorAgentMCP(mcp_url="https://mcp.vector.testnet.apexfusion.org/sse")
 ```
 
-This mode is useful when the MCP server is already running and you want to reuse its configuration and safety layer.
+This mode is useful when you want to use the hosted MCP server's safety layer and chain access without configuring Ogmios endpoints directly.
 
 ---
 
