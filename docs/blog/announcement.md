@@ -98,7 +98,7 @@ Each template includes tests, attack surface documentation, and SDK integration 
 **5-Minute Start:**
 
 1. Connect to the hosted MCP server (see [5-Minute Start](../quickstart/5-minute-start.md))
-2. Fund with testnet AP3X (via Prime faucet + Reactor Bridge)
+2. Fund with testnet AP3X (via [Vector Testnet Faucet](../quickstart/faucet.md))
 3. Ask your agent: *"What's my Vector balance?"*
 
 Full documentation: [docs.vector.apexfusion.org/agents](https://docs.vector.apexfusion.org/agents/)

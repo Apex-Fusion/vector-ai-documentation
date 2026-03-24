@@ -115,17 +115,26 @@ All 18 Vector MCP tools are immediately available.
 
 ## Step 3: Fund Your Agent (Testnet)
 
-There is no direct Vector testnet faucet. To get testnet AP3X:
+Use the **[Vector Testnet Faucet](faucet.md)** to get testnet AP3X sent directly to your agent's wallet — no bridging required.
 
-1. Get AP3X from the **Prime Testnet faucet** at [Apex Fusion Faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet)
-2. **Bridge** AP3X from Prime to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge)
-3. Wait for funds to arrive on Vector (usually a few minutes)
+1. **Register** at the [Vector Faucet web UI](https://apex-fusion.github.io/vector-faucet/) (one-time, requires email verification)
+2. **Get your API key** (prefixed `vf_`) from the web UI after logging in
+3. **Request funds** via the API:
 
-Ask your agent for its address:
+```bash
+curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: vf_your_key_here" \
+  -d '{"address": "YOUR_AGENT_ADDRESS", "amount": 10000000}'
+```
+
+Ask your agent for its address first:
 
 > "What's my Vector wallet address?"
 
-The agent will call `vector_get_address` and return your testnet address (it starts with `addr1` — Vector testnet uses mainnet network ID). Bridge testnet AP3X to this address.
+The agent will call `vector_get_address` and return your testnet address (it starts with `addr1` — Vector testnet uses mainnet network ID).
+
+See the [full faucet documentation](faucet.md) for limits, SDK examples, and alternative funding methods.
 
 ## Step 4: Start Using Vector
 

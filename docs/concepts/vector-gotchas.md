@@ -156,15 +156,12 @@ If you compile with a newer Aiken version targeting Plutus V3, the contract will
 
 ---
 
-## 6. Testnet Faucet is on Prime (Not Vector Directly)
+## 6. Testnet Funding
 
-To get testnet AP3X on Vector:
+The **[Vector Testnet Faucet](../quickstart/faucet.md)** distributes testnet AP3X directly on Vector. Register for an API key at the [faucet web UI](https://apex-fusion.github.io/vector-faucet/), then request funds programmatically. See the [full faucet guide](../quickstart/faucet.md) for API details and limits (10–50 AP3X per request, 200 AP3X/day).
 
-1. Get AP3X from the **Prime Testnet faucet** at [Apex Fusion Faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet)
-2. **Bridge** AP3X from Prime to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge)
-3. Wait for funds to arrive on Vector (usually a few minutes)
-
-There is no direct Vector testnet faucet — the bridge is required.
+!!! tip "Alternative method"
+    You can also get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge). This was previously the only method but is no longer required.
 
 ---
 

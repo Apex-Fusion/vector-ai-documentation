@@ -6,7 +6,7 @@ How to deploy smart contracts on Vector — from compiled Aiken validators to on
 
 ## Prerequisites
 
-- A funded Vector wallet (testnet: get AP3X from the [Prime faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge via [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge))
+- A funded Vector wallet (testnet: use the [Vector Testnet Faucet](../quickstart/faucet.md) to get AP3X directly)
 - A compiled contract (`script.cbor` file from Aiken or Plutus)
 - The MCP server running, or the Python SDK installed
 

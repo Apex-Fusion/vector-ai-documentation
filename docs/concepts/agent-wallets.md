@@ -127,12 +127,15 @@ The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone wi
 
 ### Testnet
 
-To get testnet AP3X:
+Use the **[Vector Testnet Faucet](../quickstart/faucet.md)** to get testnet AP3X directly on Vector:
 
 1. Get your agent's address: `vector_get_address`
-2. Get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet)
-3. Bridge AP3X from Prime to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge)
+2. [Register for a faucet API key](https://apex-fusion.github.io/vector-faucet/) (one-time)
+3. Request funds via the faucet API (see [faucet guide](../quickstart/faucet.md) for details)
 4. Verify with: `vector_get_balance`
+
+!!! tip "Alternative method"
+    You can also get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge).
 
 ### Mainnet
 

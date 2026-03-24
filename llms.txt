@@ -17,6 +17,7 @@
 - [MCP Tools Reference](mcp-server/tools-reference/)
 - [Python SDK Reference](sdk/python/)
 - [Smart Contract Templates](contracts/templates/)
+- [Testnet Faucet](quickstart/faucet/)
 - [Contract Testing Guide](contracts/testing/)
 - [Vector-Specific Gotchas](concepts/vector-gotchas/)
 
@@ -32,6 +33,7 @@
 - MCP Server: https://github.com/Apex-Fusion/web3-mcp
 - Python SDK: https://github.com/Apex-Fusion/agent-sdk-py
 - Smart Contracts: https://github.com/Apex-Fusion/vector-ai-agents
+- Faucet: https://github.com/Apex-Fusion/vector-faucet
 - Documentation: https://github.com/Apex-Fusion/vector-ai-documentation
 
 ## Endpoints (Testnet)
@@ -39,6 +41,7 @@
 - TX Submit: https://submit.vector.testnet.apexfusion.org/api/submit/tx
 - Koios: https://koios.vector.testnet.apexfusion.org/
 - Explorer: https://vector.testnet.apexscan.org
+- Faucet API: https://faucet.vector.testnet.apexfusion.org
 
 ## Endpoints (Mainnet)
 - Ogmios: https://ogmios.vector.mainnet.apexfusion.org

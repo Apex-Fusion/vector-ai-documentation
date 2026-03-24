@@ -67,7 +67,7 @@ Ask Claude:
 
 > "What's my Vector wallet address?"
 
-Claude will call `vector_get_address` and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with `addr1` (not `addr_test1`). To fund it, get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge).
+Claude will call `vector_get_address` and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with `addr1` (not `addr_test1`). To fund it, use the **[Vector Testnet Faucet](faucet.md)** to request AP3X directly on Vector — see the [faucet guide](faucet.md) for setup and API details.
 
 ## Step 5: Verify the Setup
 

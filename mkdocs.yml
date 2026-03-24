@@ -49,6 +49,7 @@ nav:
   - Home: index.md
   - Quick Start:
       - 5-Minute Start: quickstart/5-minute-start.md
+      - Testnet Faucet: quickstart/faucet.md
       - Claude Desktop + Vector: quickstart/claude-desktop.md
       - OpenClaw + Vector: quickstart/openclaw.md
       - LangChain + Vector: quickstart/langchain.md

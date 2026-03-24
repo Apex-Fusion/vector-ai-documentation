@@ -1,6 +1,6 @@
 # API Reference
 
-Vector exposes three primary APIs for chain access. The MCP server and Python SDK abstract over all three — you typically don't need to call them directly.
+Vector exposes chain-access APIs and a testnet faucet API. The MCP server and Python SDK abstract over the chain APIs — you typically don't need to call them directly. The faucet API is called directly to fund testnet wallets.
 
 ---
 
@@ -154,6 +154,88 @@ https://vector.testnet.apexscan.org/transaction/{tx_hash}
 
 ---
 
+## Testnet Faucet API
+
+**Protocol:** REST API (JSON)
+
+**Base URL:** `https://faucet.vector.testnet.apexfusion.org`
+**Web UI:** [apex-fusion.github.io/vector-faucet](https://apex-fusion.github.io/vector-faucet/)
+
+Distributes testnet AP3X tokens directly on Vector. Requires an API key obtained by [registering on the web UI](../quickstart/faucet.md#step-1-register-and-get-an-api-key).
+
+**Authentication:** Include your API key via `X-API-Key: vf_...` or `Authorization: Bearer vf_...` header.
+
+| Endpoint | Method | Auth | Description |
+|----------|--------|------|-------------|
+| `/faucet/request` | POST | API Key | Request testnet AP3X |
+| `/faucet/status` | GET | API Key | Check daily/monthly limits |
+| `/auth/register` | POST | CAPTCHA | Register a new account |
+| `/auth/verify` | POST | None | Verify email address |
+| `/auth/login` | POST | None | Login and get API key |
+| `/auth/rotate-key` | POST | API Key | Rotate API key (invalidates old) |
+| `/health` | GET | None | Health check |
+
+### Example: Request Funds
+
+```bash
+curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
+  -H "Content-Type: application/json" \
+  -H "X-API-Key: vf_your_key_here" \
+  -d '{
+    "address": "addr1q...",
+    "amount": 10000000
+  }'
+```
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `address` | string | Yes | Vector testnet address (starts with `addr1`) |
+| `amount` | integer | Yes | Amount in lovelace (1 AP3X = 1,000,000 lovelace). Range: 10,000,000 – 50,000,000 |
+
+**Response:**
+
+```json
+{
+  "tx_hash": "abc123...",
+  "explorer_url": "https://vector.testnet.apexscan.org/en/transaction/abc123...",
+  "remaining_daily": 150000000,
+  "remaining_monthly": 1500000000
+}
+```
+
+### Example: Check Status
+
+```bash
+curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
+  -H "X-API-Key: vf_your_key_here"
+```
+
+**Response:**
+
+```json
+{
+  "daily_used": 50000000,
+  "daily_limit": 200000000,
+  "daily_remaining": 150000000,
+  "monthly_used": 500000000,
+  "monthly_limit": 2000000000,
+  "monthly_remaining": 1500000000
+}
+```
+
+### Rate Limits
+
+| Limit | Amount |
+|-------|--------|
+| Per request | 10 – 50 AP3X |
+| Daily per account | 200 AP3X |
+| Monthly per account | 2,000 AP3X |
+| API rate limit | 10 requests/minute per IP |
+
+**Full guide:** [Testnet Faucet](../quickstart/faucet.md) — registration walkthrough, SDK examples, and alternative funding methods.
+
+---
+
 ## Hosted Services (Demeter)
 
 [Demeter](https://demeter.run/) provides hosted infrastructure for Vector — no self-hosting required:
@@ -176,6 +258,7 @@ Requires a Demeter API key. See the [Apex Fusion developer portal](https://devel
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
 | Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
+| Faucet API | `https://faucet.vector.testnet.apexfusion.org` | — |
 
 ---
 
