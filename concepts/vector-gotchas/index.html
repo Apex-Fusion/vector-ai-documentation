@@ -446,6 +446,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../quickstart/faucet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testnet Faucet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../quickstart/claude-desktop/" class="md-nav__link">
         
   
@@ -901,9 +922,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-testnet-faucet-is-on-prime-not-vector-directly" class="md-nav__link">
+  <a href="#6-testnet-funding" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Testnet Faucet is on Prime (Not Vector Directly)
+      6. Testnet Funding
     </span>
   </a>
   
@@ -1635,9 +1656,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-testnet-faucet-is-on-prime-not-vector-directly" class="md-nav__link">
+  <a href="#6-testnet-funding" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Testnet Faucet is on Prime (Not Vector Directly)
+      6. Testnet Funding
     </span>
   </a>
   
@@ -1803,14 +1824,12 @@
 </code></pre></div>
 <p>If you compile with a newer Aiken version targeting Plutus V3, the contract will fail to validate on Vector.</p>
 <hr />
-<h2 id="6-testnet-faucet-is-on-prime-not-vector-directly">6. Testnet Faucet is on Prime (Not Vector Directly)<a class="headerlink" href="#6-testnet-faucet-is-on-prime-not-vector-directly" title="Permanent link">&para;</a></h2>
-<p>To get testnet AP3X on Vector:</p>
-<ol>
-<li>Get AP3X from the <strong>Prime Testnet faucet</strong> at <a href="https://developers.apexfusion.org/documentation/getting-started-with-testnet">Apex Fusion Faucet</a></li>
-<li><strong>Bridge</strong> AP3X from Prime to Vector via the <a href="https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge">Reactor Bridge</a></li>
-<li>Wait for funds to arrive on Vector (usually a few minutes)</li>
-</ol>
-<p>There is no direct Vector testnet faucet — the bridge is required.</p>
+<h2 id="6-testnet-funding">6. Testnet Funding<a class="headerlink" href="#6-testnet-funding" title="Permanent link">&para;</a></h2>
+<p>The <strong><a href="../../quickstart/faucet/">Vector Testnet Faucet</a></strong> distributes testnet AP3X directly on Vector. Register for an API key at the <a href="https://apex-fusion.github.io/vector-faucet/">faucet web UI</a>, then request funds programmatically. See the <a href="../../quickstart/faucet/">full faucet guide</a> for API details and limits (10–50 AP3X per request, 200 AP3X/day).</p>
+<div class="admonition tip">
+<p class="admonition-title">Alternative method</p>
+<p>You can also get AP3X from the <a href="https://developers.apexfusion.org/documentation/getting-started-with-testnet">Prime Testnet faucet</a> and bridge to Vector via the <a href="https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge">Reactor Bridge</a>. This was previously the only method but is no longer required.</p>
+</div>
 <hr />
 <h2 id="summary-checklist">Summary Checklist<a class="headerlink" href="#summary-checklist" title="Permanent link">&para;</a></h2>
 <p>Before deploying to Vector testnet:</p>

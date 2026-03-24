@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/quickstart/5-minute-start/">
+        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/quickstart/faucet/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../5-minute-start/">
       
       
-        <link rel="next" href="../faucet/">
+        <link rel="next" href="../claude-desktop/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>5-Minute Start - Vector AI Agent Platform</title>
+        <title>Testnet Faucet - Vector AI Agent Platform</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#5-minute-start" class="md-skip">
+        <a href="#vector-testnet-faucet" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5-Minute Start
+              Testnet Faucet
             
           </span>
         </div>
@@ -204,7 +204,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../5-minute-start/" class="md-tabs__link">
           
   
   Quick Start
@@ -425,6 +425,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-minute-start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5-Minute Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -441,7 +462,7 @@
           
   
   <span class="md-ellipsis">
-    5-Minute Start
+    Testnet Faucet
   </span>
   
 
@@ -452,7 +473,7 @@
         
   
   <span class="md-ellipsis">
-    5-Minute Start
+    Testnet Faucet
   </span>
   
 
@@ -474,54 +495,96 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-connect-to-the-mcp-server" class="md-nav__link">
+  <a href="#step-1-register-and-get-an-api-key" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Connect to the MCP Server
+      Step 1: Register and Get an API Key
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-fund-your-agent-testnet" class="md-nav__link">
+  <a href="#step-2-request-testnet-funds" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Fund Your Agent (Testnet)
+      Step 2: Request Testnet Funds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Request Testnet Funds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-funds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Funds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-start-using-vector" class="md-nav__link">
+  <a href="#sdk-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Start Using Vector
+      SDK Examples
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-python-sdk-directly" class="md-nav__link">
+  <a href="#alternative-prime-faucet-reactor-bridge" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Python SDK Directly
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switching-to-mainnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Switching to Mainnet
+      Alternative: Prime Faucet + Reactor Bridge
     </span>
   </a>
   
@@ -540,27 +603,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../faucet/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Testnet Faucet
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1356,54 +1398,96 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-connect-to-the-mcp-server" class="md-nav__link">
+  <a href="#step-1-register-and-get-an-api-key" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Connect to the MCP Server
+      Step 1: Register and Get an API Key
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-fund-your-agent-testnet" class="md-nav__link">
+  <a href="#step-2-request-testnet-funds" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Fund Your Agent (Testnet)
+      Step 2: Request Testnet Funds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Request Testnet Funds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-funds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Request Funds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limits
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-start-using-vector" class="md-nav__link">
+  <a href="#sdk-examples" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 4: Start Using Vector
+      SDK Examples
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-the-python-sdk-directly" class="md-nav__link">
+  <a href="#alternative-prime-faucet-reactor-bridge" class="md-nav__link">
     <span class="md-ellipsis">
-      Using the Python SDK Directly
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#switching-to-mainnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      Switching to Mainnet
+      Alternative: Prime Faucet + Reactor Bridge
     </span>
   </a>
   
@@ -1433,252 +1517,259 @@
                   
 
 
-<h1 id="5-minute-start">5-Minute Start<a class="headerlink" href="#5-minute-start" title="Permanent link">&para;</a></h1>
-<p>Get an AI agent talking to Vector blockchain in under 5 minutes.</p>
+<h1 id="vector-testnet-faucet">Vector Testnet Faucet<a class="headerlink" href="#vector-testnet-faucet" title="Permanent link">&para;</a></h1>
+<p>Get testnet AP3X tokens sent directly to your Vector wallet — no bridging required. Designed for AI agents that need programmatic access to testnet funds.</p>
 <hr />
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<ul>
-<li>An <strong>MCP-compatible AI client</strong> (Claude Code, Claude Desktop, or any MCP client)</li>
-</ul>
-<p>That's it — no installs needed. The Vector MCP server is hosted publicly.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Web UI</strong></td>
+<td><a href="https://apex-fusion.github.io/vector-faucet/">apex-fusion.github.io/vector-faucet</a></td>
+</tr>
+<tr>
+<td><strong>API Base</strong></td>
+<td><code>https://faucet.vector.testnet.apexfusion.org</code></td>
+</tr>
+<tr>
+<td><strong>Source</strong></td>
+<td><a href="https://github.com/Apex-Fusion/vector-faucet">github.com/Apex-Fusion/vector-faucet</a></td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="step-1-connect-to-the-mcp-server">Step 1: Connect to the MCP Server<a class="headerlink" href="#step-1-connect-to-the-mcp-server" title="Permanent link">&para;</a></h2>
-<p>The Vector MCP server is hosted and publicly available — no installation, no API keys, no configuration.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Claude Code (Terminal)</label><label for="__tabbed_1_2">Claude Desktop</label><label for="__tabbed_1_3">Claude.ai (Web / Mobile)</label><label for="__tabbed_1_4">Other MCP Clients</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>One command:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Testnet</label><label for="__tabbed_2_2">Mainnet</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.testnet.apexfusion.org/sse
+<h2 id="step-1-register-and-get-an-api-key">Step 1: Register and Get an API Key<a class="headerlink" href="#step-1-register-and-get-an-api-key" title="Permanent link">&para;</a></h2>
+<p>Registration is a one-time process done by the human operator through the web UI.</p>
+<ol>
+<li>Visit the <a href="https://apex-fusion.github.io/vector-faucet/">Vector Faucet</a></li>
+<li><strong>Register</strong> with your email and a password (CAPTCHA-protected)</li>
+<li><strong>Verify your email</strong> by clicking the link sent to your inbox</li>
+<li><strong>Log in</strong> to generate your API key (prefixed <code>vf_</code>)</li>
+<li><strong>Copy and store</strong> the API key — it is shown only once</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">API Key Security</p>
+<p>Treat your faucet API key like a password. Never commit it to version control or expose it in client-side code. Store it in a secrets manager or environment variable.</p>
+</div>
+<p>Set it as an environment variable for your agent:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_FAUCET_API_KEY</span><span class="o">=</span><span class="s2">&quot;vf_your_key_here&quot;</span>
 </code></pre></div>
-<p>To make it available across all your projects, add <code>--scope user</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.testnet.apexfusion.org/sse<span class="w"> </span>--scope<span class="w"> </span>user
+<p>If you need a new key, use the <strong>Rotate Key</strong> option in the web UI. This invalidates the previous key.</p>
+<hr />
+<h2 id="step-2-request-testnet-funds">Step 2: Request Testnet Funds<a class="headerlink" href="#step-2-request-testnet-funds" title="Permanent link">&para;</a></h2>
+<p>Once you have an API key, request funds programmatically.</p>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h3>
+<p>Include your API key in every request using either header format:</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-API-Key</code></td>
+<td><code>vf_your_key_here</code></td>
+</tr>
+<tr>
+<td><code>Authorization</code></td>
+<td><code>Bearer vf_your_key_here</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="endpoints">Endpoints<a class="headerlink" href="#endpoints" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/faucet/request</code></td>
+<td>POST</td>
+<td>Request testnet AP3X</td>
+</tr>
+<tr>
+<td><code>/faucet/status</code></td>
+<td>GET</td>
+<td>Check remaining daily/monthly limits</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-funds">Request Funds<a class="headerlink" href="#request-funds" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/request<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: </span><span class="nv">$VECTOR_FAUCET_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="s1">    &quot;address&quot;: &quot;addr1q...&quot;,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s1">    &quot;amount&quot;: 10000000</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s1">  }&#39;</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.mainnet.apexfusion.org/sse
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>address</code></td>
+<td>string</td>
+<td>Yes</td>
+<td>Vector testnet address (starts with <code>addr1</code>)</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>integer</td>
+<td>Yes</td>
+<td>Amount in lovelace (1 AP3X = 1,000,000 lovelace)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;tx_hash&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;abc123...&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&quot;explorer_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://vector.testnet.apexscan.org/en/transaction/abc123...&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">&quot;remaining_daily&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">&quot;remaining_monthly&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500000000</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div>
-<p>To make it available across all your projects, add <code>--scope user</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>--transport<span class="w"> </span>sse<span class="w"> </span>vector-mcp<span class="w"> </span>https://mcp.vector.mainnet.apexfusion.org/sse<span class="w"> </span>--scope<span class="w"> </span>user
+<h3 id="check-status">Check Status<a class="headerlink" href="#check-status" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/status<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: </span><span class="nv">$VECTOR_FAUCET_API_KEY</span><span class="s2">&quot;</span>
 </code></pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="tabbed-block">
-<p>Edit <code>~/Library/Application Support/Claude/claude_desktop_config.json</code> (macOS) or <code>%APPDATA%\Claude\claude_desktop_config.json</code> (Windows):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Testnet</label><label for="__tabbed_3_2">Mainnet</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><strong>Response:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;vector-mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.vector.testnet.apexfusion.org/sse&quot;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;daily_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000000</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;daily_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000000</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;daily_remaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">150000000</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;monthly_used&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500000000</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&quot;monthly_limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000000000</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&quot;monthly_remaining&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1500000000</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
 </code></pre></div>
+<hr />
+<h2 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per request</td>
+<td>10 – 50 AP3X</td>
+</tr>
+<tr>
+<td>Daily per account</td>
+<td>200 AP3X</td>
+</tr>
+<tr>
+<td>Monthly per account</td>
+<td>2,000 AP3X</td>
+</tr>
+<tr>
+<td>API rate limit</td>
+<td>10 requests/minute per IP</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Units</p>
+<p>All API amounts are in <strong>lovelace</strong> (also called DFM). 1 AP3X = 1,000,000 lovelace. To request 10 AP3X, set <code>amount</code> to <code>10000000</code>.</p>
 </div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&quot;vector-mcp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sse&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://mcp.vector.mainnet.apexfusion.org/sse&quot;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<p>Restart Claude Desktop after saving.</p>
-</div>
-<div class="tabbed-block">
-<p>Go to <strong>Settings → Connectors → Add custom connector</strong>, then enter:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Testnet</label><label for="__tabbed_4_2">Mainnet</label></div>
+<hr />
+<h2 id="sdk-examples">SDK Examples<a class="headerlink" href="#sdk-examples" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">TypeScript</label><label for="__tabbed_1_3">curl</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>https://mcp.vector.testnet.apexfusion.org/sse
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">httpx</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">FAUCET_URL</span> <span class="o">=</span> <span class="s2">&quot;https://faucet.vector.testnet.apexfusion.org&quot;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;VECTOR_FAUCET_API_KEY&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">request_testnet_funds</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">amount_lovelace</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10_000_000</span><span class="p">):</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">FAUCET_URL</span><span class="si">}</span><span class="s2">/faucet/request&quot;</span><span class="p">,</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;X-API-Key&quot;</span><span class="p">:</span> <span class="n">API_KEY</span><span class="p">},</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="n">address</span><span class="p">,</span> <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">amount_lovelace</span><span class="p">},</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="p">)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TX: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tx_hash&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Explorer: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;explorer_url&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Daily remaining: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;remaining_daily&#39;</span><span class="p">]</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">}</span><span class="s2"> AP3X&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">return</span> <span class="n">data</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>https://mcp.vector.mainnet.apexfusion.org/sse
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">FAUCET_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://faucet.vector.testnet.apexfusion.org&quot;</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">API_KEY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">VECTOR_FAUCET_API_KEY</span><span class="o">!</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">requestTestnetFunds</span><span class="p">(</span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="nx">_000_000</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">FAUCET_URL</span><span class="si">}</span><span class="sb">/faucet/request`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="s2">&quot;X-API-Key&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">API_KEY</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="kt">JSON.stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">address</span><span class="p">,</span><span class="w"> </span><span class="nx">amount</span><span class="w"> </span><span class="p">}),</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`TX: </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">tx_hash</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Explorer: </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">explorer_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Daily remaining: </span><span class="si">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">remaining_daily</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1</span><span class="nx">_000_000</span><span class="si">}</span><span class="sb"> AP3X`</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Request 10 AP3X</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/request<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: </span><span class="nv">$VECTOR_FAUCET_API_KEY</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;address&quot;: &quot;addr1q...&quot;, &quot;amount&quot;: 10000000}&#39;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># Check remaining limits</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>curl<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/status<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: </span><span class="nv">$VECTOR_FAUCET_API_KEY</span><span class="s2">&quot;</span>
 </code></pre></div>
 </div>
 </div>
 </div>
+<hr />
+<h2 id="alternative-prime-faucet-reactor-bridge">Alternative: Prime Faucet + Reactor Bridge<a class="headerlink" href="#alternative-prime-faucet-reactor-bridge" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Legacy method</p>
+<p>Before the Vector Testnet Faucet existed, the only way to get testnet AP3X on Vector was through Prime. This still works as an alternative — useful if the faucet is temporarily unavailable or you need larger amounts.</p>
 </div>
-<div class="tabbed-block">
-<p>Connect to the SSE endpoint:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Testnet</label><label for="__tabbed_5_2">Mainnet</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>https://mcp.vector.testnet.apexfusion.org/sse
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>https://mcp.vector.mainnet.apexfusion.org/sse
-</code></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<p>All 18 Vector MCP tools are immediately available.</p>
-<div class="admonition warning">
-<p class="admonition-title">Secure your mnemonic</p>
-<p>Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.</p>
-</div>
-<h2 id="step-3-fund-your-agent-testnet">Step 3: Fund Your Agent (Testnet)<a class="headerlink" href="#step-3-fund-your-agent-testnet" title="Permanent link">&para;</a></h2>
-<p>Use the <strong><a href="../faucet/">Vector Testnet Faucet</a></strong> to get testnet AP3X sent directly to your agent's wallet — no bridging required.</p>
 <ol>
-<li><strong>Register</strong> at the <a href="https://apex-fusion.github.io/vector-faucet/">Vector Faucet web UI</a> (one-time, requires email verification)</li>
-<li><strong>Get your API key</strong> (prefixed <code>vf_</code>) from the web UI after logging in</li>
-<li><strong>Request funds</strong> via the API:</li>
+<li>Get AP3X from the <a href="https://developers.apexfusion.org/documentation/getting-started-with-testnet">Prime Testnet faucet</a></li>
+<li>Bridge AP3X from Prime to Vector via the <a href="https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge">Reactor Bridge</a></li>
+<li>Wait for funds to arrive on Vector (usually a few minutes)</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/request<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: vf_your_key_here&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;address&quot;: &quot;YOUR_AGENT_ADDRESS&quot;, &quot;amount&quot;: 10000000}&#39;</span>
-</code></pre></div>
-<p>Ask your agent for its address first:</p>
-<blockquote>
-<p>"What's my Vector wallet address?"</p>
-</blockquote>
-<p>The agent will call <code>vector_get_address</code> and return your testnet address (it starts with <code>addr1</code> — Vector testnet uses mainnet network ID).</p>
-<p>See the <a href="../faucet/">full faucet documentation</a> for limits, SDK examples, and alternative funding methods.</p>
-<h2 id="step-4-start-using-vector">Step 4: Start Using Vector<a class="headerlink" href="#step-4-start-using-vector" title="Permanent link">&para;</a></h2>
-<p>Your agent now has access to these tools:</p>
-<table>
-<thead>
-<tr>
-<th>Tool</th>
-<th>What it does</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>vector_get_balance</code></td>
-<td>Check wallet balance</td>
-</tr>
-<tr>
-<td><code>vector_get_address</code></td>
-<td>Get receiving address</td>
-</tr>
-<tr>
-<td><code>vector_get_utxos</code></td>
-<td>List unspent outputs</td>
-</tr>
-<tr>
-<td><code>vector_send_apex</code></td>
-<td>Send AP3X (with spend limits)</td>
-</tr>
-<tr>
-<td><code>vector_send_tokens</code></td>
-<td>Send native tokens</td>
-</tr>
-<tr>
-<td><code>vector_dry_run</code></td>
-<td>Simulate a transaction</td>
-</tr>
-<tr>
-<td><code>vector_get_transaction_history</code></td>
-<td>View recent transactions</td>
-</tr>
-</tbody>
-</table>
-<p>Try asking your agent:</p>
-<ul>
-<li><em>"What's my Vector balance?"</em></li>
-<li><em>"Send 5 AP3X to addr1qz..."</em></li>
-<li><em>"Show me my recent transactions on Vector"</em></li>
-<li><em>"Dry-run sending 10 AP3X to addr1qz..."</em></li>
-</ul>
-<hr />
-<h2 id="using-the-python-sdk-directly">Using the Python SDK Directly<a class="headerlink" href="#using-the-python-sdk-directly" title="Permanent link">&para;</a></h2>
-<p>If you prefer programmatic access without MCP:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pip<span class="w"> </span>install<span class="w"> </span>apex-fusion-agent-sdk
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">asyncio</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">from</span> <span class="nn">vector_agent</span> <span class="kn">import</span> <span class="n">VectorAgent</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">VectorAgent</span><span class="p">(</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="n">ogmios_url</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="n">submit_url</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="n">mnemonic</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span><span class="p">,</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="p">)</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="c1"># Check balance</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>    <span class="n">balance</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance: </span><span class="si">{</span><span class="n">balance</span><span class="o">.</span><span class="n">lovelace</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1_000_000</span><span class="si">}</span><span class="s2"> AP3X&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="c1"># Get address</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="n">address</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_address</span><span class="p">()</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Address: </span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>    <span class="c1"># Send AP3X</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">agent</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="o">=</span><span class="s2">&quot;addr1qz...&quot;</span><span class="p">,</span> <span class="n">ada</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sent! TX: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">tx_hash</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>
-<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
-</code></pre></div>
-<p>You can also use environment variables instead of passing params directly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;your fifteen word mnemonic phrase here ...&quot;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://ogmios.vector.testnet.apexfusion.org&quot;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span><span class="s2">&quot;https://submit.vector.testnet.apexfusion.org/api/submit/tx&quot;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/&quot;</span>
-</code></pre></div>
-<hr />
-<h2 id="switching-to-mainnet">Switching to Mainnet<a class="headerlink" href="#switching-to-mainnet" title="Permanent link">&para;</a></h2>
-<p>The guides above use <strong>testnet</strong> endpoints. When you're ready for mainnet, replace the endpoint URLs:</p>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Testnet</th>
-<th>Mainnet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>VECTOR_OGMIOS_URL</code></td>
-<td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
-<td><code>https://ogmios.vector.mainnet.apexfusion.org</code></td>
-</tr>
-<tr>
-<td><code>VECTOR_SUBMIT_URL</code></td>
-<td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
-<td><code>https://submit.vector.mainnet.apexfusion.org/api/submit/tx</code></td>
-</tr>
-<tr>
-<td><code>VECTOR_KOIOS_URL</code></td>
-<td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
-<td><code>https://koios.vector.mainnet.apexfusion.org/</code></td>
-</tr>
-<tr>
-<td><code>VECTOR_EXPLORER_URL</code></td>
-<td><code>https://vector.testnet.apexscan.org</code></td>
-<td><code>https://explorer.vector.mainnet.apexfusion.org</code></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">Mainnet uses real funds</p>
-<p>On mainnet, AP3X has real value. Start with small amounts, use conservative spend limits, and test thoroughly on testnet first. Use separate mnemonics for testnet and mainnet wallets.</p>
-</div>
-<p>The code and configuration are identical — only the endpoint URLs change.</p>
 <hr />
 <h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../claude-desktop/">Claude Desktop + Vector</a> — detailed Claude Desktop setup</li>
-<li><a href="../../concepts/how-vector-works/">How Vector Works</a> — understand the UTXO model</li>
-<li><a href="../../mcp-server/tools-reference/">MCP Tools Reference</a> — full tool documentation</li>
+<li><a href="../5-minute-start/">5-Minute Start</a> — get an agent talking to Vector in under 5 minutes</li>
+<li><a href="../../concepts/agent-wallets/">Agent Wallets</a> — wallet creation, funding, and security</li>
 <li><a href="../../concepts/safety-model/">Safety Model</a> — spend limits and audit logging</li>
 </ul>
 
