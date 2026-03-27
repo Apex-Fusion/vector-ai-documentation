@@ -53,6 +53,6 @@
     "consensus": "Ouroboros",
     "smart_contracts": "Plutus/Aiken",
     "finality": "~13 seconds (99.9%)",
-    "throughput": "4x Cardano"
+    "throughput": "10x Cardano"
   }
 }

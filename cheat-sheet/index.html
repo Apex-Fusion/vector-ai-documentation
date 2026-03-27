@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for building AI agents on Vector blockchain">
+        <meta name="description" content="All Vector configuration values, endpoints, and common patterns in one page">
       
       
       
-        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/examples/">
+        <link rel="canonical" href="https://apex-fusion.github.io/vector-ai-documentation/cheat-sheet/">
       
       
-        <link rel="prev" href="../api/">
+        <link rel="prev" href="../quickstart/crewai/">
       
       
-        <link rel="next" href="autonomous-investor/">
+        <link rel="next" href="../concepts/how-vector-works/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Overview - Vector AI Agent Platform</title>
+        <title>Cheat Sheet - Vector AI Agent Platform</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#examples" class="md-skip">
+        <a href="#vector-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Cheat Sheet
             
           </span>
         </div>
@@ -216,9 +216,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../cheat-sheet/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
     
@@ -323,13 +325,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
           
   
   Examples
@@ -572,10 +572,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../cheat-sheet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cheat Sheet
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -584,6 +604,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smart-contracts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Smart Contracts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testnet-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testnet Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mainnet-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mainnet Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faucet-api-testnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faucet API (Testnet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cbor-constructor-tags-aiken-pycardano" class="md-nav__link">
+    <span class="md-ellipsis">
+      CBOR Constructor Tags (Aiken ↔ PyCardano)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Repositories
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1152,30 +1273,27 @@
       
   
   
-    
   
   
-  
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1186,7 +1304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -1197,30 +1315,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1229,53 +1327,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#autonomous-investor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Autonomous Investor
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#social-agent" class="md-nav__link">
-    <span class="md-ellipsis">
-      Social Agent
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contract-deployer-coming-soon" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contract Deployer (Coming Soon)
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1288,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="autonomous-investor/" class="md-nav__link">
+      <a href="../examples/autonomous-investor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1309,7 +1360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="social-agent/" class="md-nav__link">
+      <a href="../examples/social-agent/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1357,27 +1408,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#autonomous-investor" class="md-nav__link">
+  <a href="#network-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Autonomous Investor
+      Network Configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#social-agent" class="md-nav__link">
+  <a href="#smart-contracts" class="md-nav__link">
     <span class="md-ellipsis">
-      Social Agent
+      Smart Contracts
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contract-deployer-coming-soon" class="md-nav__link">
+  <a href="#testnet-endpoints" class="md-nav__link">
     <span class="md-ellipsis">
-      Contract Deployer (Coming Soon)
+      Testnet Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mainnet-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mainnet Endpoints
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faucet-api-testnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faucet API (Testnet)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Variables (.env)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cbor-constructor-tags-aiken-pycardano" class="md-nav__link">
+    <span class="md-ellipsis">
+      CBOR Constructor Tags (Aiken ↔ PyCardano)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Repositories
     </span>
   </a>
   
@@ -1398,22 +1503,282 @@
                   
 
 
-<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
-<p>Real-world scenarios showing AI agents operating on Vector.</p>
-<hr />
-<h2 id="autonomous-investor"><a href="autonomous-investor/">Autonomous Investor</a><a class="headerlink" href="#autonomous-investor" title="Permanent link">&para;</a></h2>
-<p>An agent receives <em>"invest 20% of my funds across environmental projects"</em> and executes end-to-end: checks balance, discovers projects, evaluates reputation, dry-runs transactions, invests, and reports results.</p>
-<p>Implementations in Claude Desktop, LangChain, and CrewAI.</p>
-<h2 id="social-agent"><a href="social-agent/">Social Agent</a><a class="headerlink" href="#social-agent" title="Permanent link">&para;</a></h2>
-<p>Two agents — ResearchBot and InvestorBot — discover each other through the on-chain Agent Registry, communicate via on-chain messages, and collaborate on an investment task. Demonstrates the full agent-to-agent lifecycle.</p>
-<h2 id="contract-deployer-coming-soon">Contract Deployer (Coming Soon)<a class="headerlink" href="#contract-deployer-coming-soon" title="Permanent link">&para;</a></h2>
-<p>An agent deploys an escrow smart contract, monitors its state, and interacts with it to claim funds when conditions are met.</p>
+<h1 id="vector-cheat-sheet">Vector Cheat Sheet<a class="headerlink" href="#vector-cheat-sheet" title="Permanent link">&para;</a></h1>
+<p>Everything you need in one place. Bookmark this page.</p>
+<h2 id="network-configuration">Network Configuration<a class="headerlink" href="#network-configuration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Network Magic</strong></td>
+<td><code>764824073</code></td>
+</tr>
+<tr>
+<td><strong>Address Prefix</strong></td>
+<td><code>addr1</code> (both testnet and mainnet)</td>
+</tr>
+<tr>
+<td><strong>PyCardano Network</strong></td>
+<td><code>Network.MAINNET</code> (even for testnet!)</td>
+</tr>
+<tr>
+<td><strong>Native Coin</strong></td>
+<td>AP3X</td>
+</tr>
+<tr>
+<td><strong>Smallest Unit</strong></td>
+<td>DFM (1 AP3X = 1,000,000 DFM)</td>
+</tr>
+<tr>
+<td><strong>Finality</strong></td>
+<td>~13 seconds (99.9%)</td>
+</tr>
+<tr>
+<td><strong>Throughput</strong></td>
+<td>10x Cardano</td>
+</tr>
+</tbody>
+</table>
+<h2 id="smart-contracts">Smart Contracts<a class="headerlink" href="#smart-contracts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Era</strong></td>
+<td>Conway</td>
+</tr>
+<tr>
+<td><strong>Plutus Version</strong></td>
+<td>V3</td>
+</tr>
+<tr>
+<td><strong>Aiken Version</strong></td>
+<td>Latest stable (v1.1.x+)</td>
+</tr>
+<tr>
+<td><strong>Script Type</strong></td>
+<td><code>"PlutusV3"</code></td>
+</tr>
+<tr>
+<td><strong>CBOR Encoding</strong></td>
+<td>Indefinite-length arrays</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Use latest Aiken</p>
+<p>Vector runs Conway era with Plutus V3. Use the latest stable Aiken release: <code>aikup install</code></p>
+</div>
+<h2 id="testnet-endpoints">Testnet Endpoints<a class="headerlink" href="#testnet-endpoints" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ogmios</strong></td>
+<td><code>https://ogmios.vector.testnet.apexfusion.org</code></td>
+</tr>
+<tr>
+<td><strong>TX Submit</strong></td>
+<td><code>https://submit.vector.testnet.apexfusion.org/api/submit/tx</code></td>
+</tr>
+<tr>
+<td><strong>Koios</strong></td>
+<td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
+</tr>
+<tr>
+<td><strong>Explorer</strong></td>
+<td><code>https://vector.testnet.apexscan.org</code></td>
+</tr>
+<tr>
+<td><strong>Faucet API</strong></td>
+<td><code>https://faucet.vector.testnet.apexfusion.org</code></td>
+</tr>
+<tr>
+<td><strong>Faucet Web UI</strong></td>
+<td><code>https://apex-fusion.github.io/vector-faucet/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mainnet-endpoints">Mainnet Endpoints<a class="headerlink" href="#mainnet-endpoints" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ogmios</strong></td>
+<td><code>https://ogmios.vector.mainnet.apexfusion.org</code></td>
+</tr>
+<tr>
+<td><strong>TX Submit</strong></td>
+<td><code>https://submit.vector.mainnet.apexfusion.org/api/submit/tx</code></td>
+</tr>
+<tr>
+<td><strong>Koios</strong></td>
+<td><code>https://koios.vector.mainnet.apexfusion.org/</code></td>
+</tr>
+<tr>
+<td><strong>Explorer</strong></td>
+<td><code>https://explorer.vector.mainnet.apexfusion.org</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="faucet-api-testnet">Faucet API (Testnet)<a class="headerlink" href="#faucet-api-testnet" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Request testnet AP3X</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/request<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: vf_your_key_here&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;address&quot;: &quot;addr1...&quot;, &quot;amount&quot;: 10000000}&#39;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Check remaining limits</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>curl<span class="w"> </span>https://faucet.vector.testnet.apexfusion.org/faucet/status<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;X-API-Key: vf_your_key_here&quot;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Limit</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per request</td>
+<td>10–50 AP3X</td>
+</tr>
+<tr>
+<td>Daily</td>
+<td>200 AP3X</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>2,000 AP3X</td>
+</tr>
+<tr>
+<td>Rate limit</td>
+<td>10 requests/minute</td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment-variables-env">Environment Variables (.env)<a class="headerlink" href="#environment-variables-env" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">VECTOR_OGMIOS_URL</span><span class="o">=</span>https://ogmios.vector.testnet.apexfusion.org
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">VECTOR_SUBMIT_URL</span><span class="o">=</span>https://submit.vector.testnet.apexfusion.org/api/submit/tx
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">VECTOR_KOIOS_URL</span><span class="o">=</span>https://koios.vector.testnet.apexfusion.org/
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">VECTOR_EXPLORER_URL</span><span class="o">=</span>https://vector.testnet.apexscan.org
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">VECTOR_MNEMONIC</span><span class="o">=</span><span class="s2">&quot;your 24 word mnemonic here&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nv">VECTOR_SPEND_LIMIT_PER_TX</span><span class="o">=</span><span class="m">100000000</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nv">VECTOR_SPEND_LIMIT_DAILY</span><span class="o">=</span><span class="m">500000000</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">FAUCET_API_KEY</span><span class="o">=</span>vf_your_key_here
+</code></pre></div>
+<h2 id="cbor-constructor-tags-aiken-pycardano">CBOR Constructor Tags (Aiken ↔ PyCardano)<a class="headerlink" href="#cbor-constructor-tags-aiken-pycardano" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Constructor</th>
+<th>CBOR Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Constructor 0</td>
+<td><code>CBORTag(121, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 1</td>
+<td><code>CBORTag(122, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 2</td>
+<td><code>CBORTag(123, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 3</td>
+<td><code>CBORTag(124, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 4</td>
+<td><code>CBORTag(125, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 5</td>
+<td><code>CBORTag(126, [...])</code></td>
+</tr>
+<tr>
+<td>Constructor 6+</td>
+<td><code>CBORTag(1280 + n, [...])</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="common-mistakes">Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Top 6 mistakes AI agents make</p>
+<ol>
+<li><strong>Using <code>Network.TESTNET</code></strong> — Use <code>Network.MAINNET</code> (Vector testnet uses mainnet network ID)</li>
+<li><strong>Using old Aiken <code>v1.0.29-alpha</code></strong> — Use latest stable (v1.1.x+), Vector is Conway era</li>
+<li><strong>Targeting <code>PlutusV2</code></strong> — Use <code>PlutusV3</code> (Vector runs Conway era)</li>
+<li><strong>Using <code>addr_test1</code> addresses</strong> — Vector uses <code>addr1</code> for both testnet and mainnet</li>
+<li><strong>Definite-length CBOR</strong> — Use indefinite-length arrays to match Aiken encoding</li>
+<li><strong>Assuming decoded datums</strong> — Ogmios returns raw CBOR hex, decode with <code>cbor2</code></li>
+</ol>
+</div>
+<h2 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Repo</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MCP Server</td>
+<td><a href="https://github.com/Apex-Fusion/mcp-server">github.com/Apex-Fusion/mcp-server</a></td>
+</tr>
+<tr>
+<td>Python SDK</td>
+<td><a href="https://github.com/Apex-Fusion/agent-sdk-py">github.com/Apex-Fusion/agent-sdk-py</a></td>
+</tr>
+<tr>
+<td>TypeScript SDK</td>
+<td><a href="https://github.com/Apex-Fusion/agent-sdk-ts">github.com/Apex-Fusion/agent-sdk-ts</a></td>
+</tr>
+<tr>
+<td>Smart Contracts</td>
+<td><a href="https://github.com/Apex-Fusion/vector-ai-agents">github.com/Apex-Fusion/vector-ai-agents</a></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><a href="https://github.com/Apex-Fusion/vector-ai-documentation">github.com/Apex-Fusion/vector-ai-documentation</a></td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
+
+  
+  
 
 
 

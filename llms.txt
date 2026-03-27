@@ -1,35 +1,73 @@
 # Vector Blockchain — AI Agent Documentation
+
 > Vector is a UTXO-based L2 blockchain optimized for AI agent interactions.
 > Part of the Apex Fusion ecosystem. Native coin: AP3X (smallest unit: DFM).
-> Near-instant finality (99.9% in 13s), 4x Cardano throughput.
+> Near-instant finality (99.9% in 13s), 10x Cardano throughput.
 > Full MCP server available for native AI agent integration.
 > Built on the proven Aiken + PyCardano + Ogmios + Koios toolchain.
 > Testnet uses mainnet network ID — addresses start with addr1, not addr_test1.
 
+## Quick Reference
+
+- Network Magic: 764824073
+- Address Format: addr1 (mainnet flag for BOTH testnet and mainnet)
+- PyCardano Network: Network.MAINNET (even for testnet!)
+- Native Coin: AP3X (1 AP3X = 1,000,000 DFM)
+- DFM is the smallest unit (equivalent to lovelace on Cardano)
+- Smart Contracts: Aiken (primary), Plutus V3 (Conway era)
+- Aiken Version: latest stable (v1.1.x+)
+- Finality: ~13 seconds (99.9%)
+- Agent Registry Deposit: 10 AP3X (refunded on deregister)
+
+## Faucet (Testnet Only)
+
+- Register: https://apex-fusion.github.io/vector-faucet/
+- API: POST https://faucet.vector.testnet.apexfusion.org/faucet/request
+- Status: GET https://faucet.vector.testnet.apexfusion.org/faucet/status
+- Auth Header: X-API-Key: vf_your_key (or Authorization: Bearer vf_your_key)
+- Body: {"address": "addr1...", "amount": 10000000}
+- Limits: 10-50 AP3X per request, 200 AP3X/day, 2000 AP3X/month
+
+## Common Mistakes AI Agents Make
+
+1. Using Network.TESTNET — use Network.MAINNET (addresses must be addr1, not addr_test1)
+2. Using old Aiken (v1.0.29-alpha) — use latest stable (v1.1.x+), Vector is Conway era
+3. Targeting PlutusV2 — use PlutusV3 (Vector runs Conway era)
+4. Using "lovelace" in user-facing text — use "DFM" (code still uses lovelace internally)
+5. Definite-length CBOR arrays — use indefinite-length to match Aiken's encoding
+6. Assuming Ogmios returns decoded datums — it returns raw CBOR hex, decode with cbor2
+
 ## Docs
+
+- [Cheat Sheet](cheat-sheet/) — all config values in one page
 - [Quick Start](quickstart/5-minute-start/)
+- [Testnet Faucet](quickstart/faucet/)
 - [Claude Desktop Setup](quickstart/claude-desktop/)
 - [OpenClaw + Vector](quickstart/openclaw/)
 - [LangChain + Vector](quickstart/langchain/)
 - [CrewAI + Vector](quickstart/crewai/)
 - [How Vector Works](concepts/how-vector-works/)
+- [Agent Wallets](concepts/agent-wallets/)
+- [Vector-Specific Gotchas](concepts/vector-gotchas/)
 - [MCP Server Setup](mcp-server/installation/)
 - [MCP Tools Reference](mcp-server/tools-reference/)
 - [Python SDK Reference](sdk/python/)
 - [TypeScript SDK Reference](sdk/typescript/)
 - [Smart Contract Templates](contracts/templates/)
 - [Contract Testing Guide](contracts/testing/)
-- [Vector-Specific Gotchas](concepts/vector-gotchas/)
+- [Contract Deployment](contracts/deployment/)
+- [API Endpoints](api/)
 
 ## Optional
+
 - [Agent Identity & Registry](concepts/agent-identity/)
 - [Safety Model](concepts/safety-model/)
-- [Agent Wallets](concepts/agent-wallets/)
 - [Smart Contracts for Agents](concepts/smart-contracts/)
 - [Autonomous Investor Example](examples/autonomous-investor/)
 - [Social Agent Example](examples/social-agent/)
 
 ## Source Repositories
+
 - MCP Server: https://github.com/Apex-Fusion/mcp-server
 - Python SDK: https://github.com/Apex-Fusion/agent-sdk-py
 - TypeScript SDK: https://github.com/Apex-Fusion/agent-sdk-ts
@@ -37,13 +75,29 @@
 - Documentation: https://github.com/Apex-Fusion/vector-ai-documentation
 
 ## Endpoints (Testnet)
+
 - Ogmios: https://ogmios.vector.testnet.apexfusion.org
 - TX Submit: https://submit.vector.testnet.apexfusion.org/api/submit/tx
 - Koios: https://koios.vector.testnet.apexfusion.org/
+- Faucet API: https://faucet.vector.testnet.apexfusion.org
 - Explorer: https://vector.testnet.apexscan.org
 
 ## Endpoints (Mainnet)
+
 - Ogmios: https://ogmios.vector.mainnet.apexfusion.org
 - TX Submit: https://submit.vector.mainnet.apexfusion.org/api/submit/tx
 - Koios: https://koios.vector.mainnet.apexfusion.org/
 - Explorer: https://explorer.vector.mainnet.apexfusion.org
+
+## Environment Variables (.env template)
+
+```
+VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
+VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
+VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
+VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
+VECTOR_MNEMONIC="your 24 word mnemonic here"
+VECTOR_SPEND_LIMIT_PER_TX=100000000
+VECTOR_SPEND_LIMIT_DAILY=500000000
+FAUCET_API_KEY=vf_your_key_here
+```
