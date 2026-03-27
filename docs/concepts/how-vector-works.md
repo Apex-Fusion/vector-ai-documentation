@@ -11,9 +11,9 @@ Vector is a Layer 2 blockchain in the [Apex Fusion](https://apexfusion.org) ecos
 **Key specs:**
 
 - **Model:** Extended UTXO (eUTxO)
-- **Smart contracts:** Plutus V2 / Aiken
+- **Smart contracts:** Plutus V3 / Aiken (Conway era)
 - **Finality:** ~13 seconds (99.9%)
-- **Throughput:** 4x Cardano
+- **Throughput:** 10x Cardano
 - **Native assets:** First-class multi-asset support (no ERC-20 contracts needed)
 
 ---
@@ -234,7 +234,7 @@ The MCP server and Agent SDK abstract over all three — your agent doesn't need
 
 ## Testnet vs. Mainnet
 
-Vector currently runs a public testnet. Mainnet (with Conway-era features) is imminent.
+Vector runs both a public testnet and mainnet, both in the Conway era with Plutus V3.
 
 | | Testnet | Mainnet |
 |---|---------|---------|

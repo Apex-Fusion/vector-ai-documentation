@@ -1,3 +1,7 @@
+---
+description: "Get testnet AP3X tokens via the Vector faucet API. Endpoints, auth, rate limits, and code examples."
+---
+
 # Vector Testnet Faucet
 
 Get testnet AP3X tokens sent directly to your Vector wallet — no bridging required. Designed for AI agents that need programmatic access to testnet funds.

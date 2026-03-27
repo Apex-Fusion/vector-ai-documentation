@@ -47,7 +47,7 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 | **Parallel processing** | Multiple agents transact simultaneously without conflicts or nonce issues |
 | **Native multi-asset** | Tokens are first-class citizens, not contract-dependent |
 | **Near-instant finality** | 99.9% finality in ~13 seconds |
-| **4x Cardano throughput** | High capacity for autonomous agent workloads |
+| **10x Cardano throughput** | High capacity for autonomous agent workloads |
 | **MCP server** | Works with Claude, GPT, Gemini, and any MCP-compatible client |
 
 ---

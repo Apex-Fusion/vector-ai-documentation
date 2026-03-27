@@ -1,3 +1,7 @@
+---
+description: "Deploy Aiken/Plutus V3 smart contracts on Vector. MCP and Python SDK deployment methods, CBOR encoding, Conway era."
+---
+
 # Contract Deployment
 
 How to deploy smart contracts on Vector — from compiled Aiken validators to on-chain script addresses.
@@ -14,11 +18,11 @@ How to deploy smart contracts on Vector — from compiled Aiken validators to on
 
 ## Aiken Version Compatibility
 
-Vector currently supports **Aiken v1.0.29-alpha** and earlier. Contracts compile to **Plutus V2** (Vector operates in the Babbage era, not Conway).
+Vector runs the **Conway era** with **Plutus V3** support. Use the latest stable Aiken release.
 
 ```bash
-# Install compatible Aiken version
-aikup install v1.0.29-alpha
+# Install latest Aiken
+aikup install
 
 # Verify
 aiken --version
@@ -59,8 +63,8 @@ cat build/my-contract/validator.cbor
 
 | Consideration | Detail |
 |--------------|--------|
-| **Era** | Babbage (not Conway) |
-| **Script type** | Plutus V2 (Aiken default) |
+| **Era** | Conway |
+| **Script type** | Plutus V3 |
 | **Network ID** | Mainnet (`addr1` addresses, `networkMagic: 764824073`) |
 | **Fee calculation** | Use Vector protocol parameters, not Cardano mainnet |
 
@@ -74,7 +78,7 @@ cat build/my-contract/validator.cbor
 Tool: vector_deploy_contract
 Params: {
   "scriptCbor": "<hex contents of script.cbor>",
-  "scriptType": "PlutusV2",
+  "scriptType": "PlutusV3",
   "initialDatum": "<CBOR-encoded datum hex>",
   "lovelaceAmount": 10000000
 }
@@ -93,7 +97,7 @@ Response: {
 Tool: vector_interact_contract
 Params: {
   "scriptCbor": "<hex>",
-  "scriptType": "PlutusV2",
+  "scriptType": "PlutusV3",
   "action": "lock",
   "datum": "<CBOR-encoded datum hex>",
   "lovelaceAmount": 50000000
@@ -106,7 +110,7 @@ Params: {
 Tool: vector_interact_contract
 Params: {
   "scriptCbor": "<hex>",
-  "scriptType": "PlutusV2",
+  "scriptType": "PlutusV3",
   "action": "spend",
   "redeemer": "<CBOR-encoded redeemer hex>",
   "utxoRef": {"txHash": "abc123...", "outputIndex": 0}
@@ -129,7 +133,7 @@ with open("simple-escrow/script.cbor") as f:
 # Deploy with initial state
 result = await agent.deploy_contract(
     script_cbor=script_cbor,
-    script_type="PlutusV2",
+    script_type="PlutusV3",
     datum_cbor=encode_datum(my_datum),
     lovelace=10_000_000,  # 10 AP3X locked at the script
 )

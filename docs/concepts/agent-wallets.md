@@ -1,3 +1,7 @@
+---
+description: "AI agent wallet management on Vector. HD wallets, mnemonics, addr1 format, Network.MAINNET, spend limits."
+---
+
 # Agent Wallets
 
 How AI agents manage wallets on Vector — creation, funding, security, and best practices.

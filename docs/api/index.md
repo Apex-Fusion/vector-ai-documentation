@@ -1,3 +1,7 @@
+---
+description: "Vector blockchain API endpoints: Ogmios, TX Submit, Koios, and Faucet. Testnet and mainnet URLs."
+---
+
 # API Reference
 
 Vector exposes chain-access APIs and a testnet faucet API. The MCP server and Python SDK abstract over the chain APIs — you typically don't need to call them directly. The faucet API is called directly to fund testnet wallets.

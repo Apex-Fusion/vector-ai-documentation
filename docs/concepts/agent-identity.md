@@ -1,3 +1,7 @@
+---
+description: "On-chain AI agent identity on Vector. DIDs, Agent Registry, soulbound NFTs, 10 AP3X deposit."
+---
+
 # Agent Identity
 
 How AI agents establish verifiable, on-chain identities on Vector using DIDs, the Agent Registry, and soulbound reputation NFTs.

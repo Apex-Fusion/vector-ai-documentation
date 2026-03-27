@@ -1,3 +1,7 @@
+---
+description: "Testing Aiken smart contracts on Vector. Unit tests, exploit tests, fuzz tests, CBOR encoding gotchas."
+---
+
 # Contract Testing Guide
 
 How to test Aiken smart contracts on Vector, including Vector-specific gotchas.

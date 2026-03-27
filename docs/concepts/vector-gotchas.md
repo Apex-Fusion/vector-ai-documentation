@@ -1,3 +1,7 @@
+---
+description: "6 common pitfalls on Vector: AP3X naming, mainnet network ID, CBOR encoding, Ogmios raw datums, Conway era, faucet."
+---
+
 # Vector-Specific Gotchas
 
 Common pitfalls when building on Vector, especially if you're coming from Cardano or Ethereum.
@@ -139,20 +143,20 @@ Always handle both formats when reading datums from Ogmios responses to avoid `A
 
 ---
 
-## 5. Babbage Era (Not Conway)
+## 5. Conway Era & Plutus V3
 
-Vector currently operates in the **Babbage era**, not Conway. This affects:
+Vector operates in the **Conway era** with **Plutus V3** support. This means:
 
-- **Aiken version:** Use `v1.0.29-alpha` or earlier (not the latest Aiken release)
-- **Plutus version:** Contracts compile to **Plutus V2** (not V3)
-- **Protocol features:** Some Conway-era features (governance, DReps) are not yet available
+- **Aiken version:** Use the latest stable Aiken release (v1.1.x+)
+- **Plutus version:** Contracts compile to **Plutus V3**
+- **Script type:** Use `"PlutusV3"` when deploying via MCP or SDK
 
 ```bash
-# Install the correct Aiken version
-aikup install v1.0.29-alpha
+# Install latest Aiken
+aikup install
 ```
 
-If you compile with a newer Aiken version targeting Plutus V3, the contract will fail to validate on Vector.
+When deploying contracts, always specify `scriptType: "PlutusV3"`.
 
 ---
 

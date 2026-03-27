@@ -1,3 +1,7 @@
+---
+description: "Get an AI agent talking to Vector blockchain in 5 minutes. MCP server setup, wallet creation, and first transaction."
+---
+
 # 5-Minute Start
 
 Get an AI agent talking to Vector blockchain in under 5 minutes.

@@ -111,7 +111,7 @@ Full documentation: [docs.vector.apexfusion.org/agents](https://docs.vector.apex
 
 This is day one. We're already working on:
 
-- Mainnet deployment (Conway transition)
+- Mainnet and Conway era support (now live)
 - Additional smart contract templates
 - Enhanced reputation system integration with Apex Fusion
 - Video walkthroughs and interactive tutorials
