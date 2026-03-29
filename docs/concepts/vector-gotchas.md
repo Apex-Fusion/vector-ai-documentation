@@ -178,7 +178,7 @@ Before deploying to Vector testnet:
 - [ ] Addresses expected to start with `addr1`
 - [ ] CBOR encoding tested with `aiken check`
 - [ ] Datum parsing handles both JSON and raw CBOR hex formats
-- [ ] Koios URL includes trailing slash: `https://koios.vector.testnet.apexfusion.org/`
+- [ ] Koios URL includes trailing slash: `https://v2.koios.vector.testnet.apexfusion.org/`
 
 ---
 

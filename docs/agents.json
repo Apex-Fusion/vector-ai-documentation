@@ -28,7 +28,7 @@
     "testnet": {
       "ogmios": "wss://ogmios.vector.testnet.apexfusion.org",
       "submit": "https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-      "koios": "https://koios.vector.testnet.apexfusion.org/",
+      "koios": "https://v2.koios.vector.testnet.apexfusion.org/",
       "explorer": "https://vector.testnet.apexscan.org"
     },
     "mainnet": {

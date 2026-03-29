@@ -37,7 +37,7 @@ Everything you need in one place. Bookmark this page.
 |---------|-----|
 | **Ogmios** | `https://ogmios.vector.testnet.apexfusion.org` |
 | **TX Submit** | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` |
-| **Koios** | `https://koios.vector.testnet.apexfusion.org/` |
+| **Koios** | `https://v2.koios.vector.testnet.apexfusion.org/` |
 | **Explorer** | `https://vector.testnet.apexscan.org` |
 | **Faucet API** | `https://faucet.vector.testnet.apexfusion.org` |
 | **Faucet Web UI** | `https://apex-fusion.github.io/vector-faucet/` |
@@ -77,7 +77,7 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 ```bash
 VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
 VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
-VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
+VECTOR_KOIOS_URL=https://v2.koios.vector.testnet.apexfusion.org/
 VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
 VECTOR_MNEMONIC="your 24 word mnemonic here"
 VECTOR_SPEND_LIMIT_PER_TX=100000000

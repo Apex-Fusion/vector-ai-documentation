@@ -228,7 +228,7 @@ Every agent interaction on Vector is governed by safety controls:
 | Block Explorer | `https://vector.testnet.apexscan.org` |
 | TX Submission | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` |
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` |
-| Koios | `https://koios.vector.testnet.apexfusion.org/` |
+| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` |
 
 ### Mainnet
 

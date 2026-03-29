@@ -203,7 +203,7 @@ You can also use environment variables instead of passing params directly:
 export VECTOR_MNEMONIC="your fifteen word mnemonic phrase here ..."
 export VECTOR_OGMIOS_URL="https://ogmios.vector.testnet.apexfusion.org"
 export VECTOR_SUBMIT_URL="https://submit.vector.testnet.apexfusion.org/api/submit/tx"
-export VECTOR_KOIOS_URL="https://koios.vector.testnet.apexfusion.org/"
+export VECTOR_KOIOS_URL="https://v2.koios.vector.testnet.apexfusion.org/"
 ```
 
 ---
@@ -216,7 +216,7 @@ The guides above use **testnet** endpoints. When you're ready for mainnet, repla
 |----------|---------|---------|
 | `VECTOR_OGMIOS_URL` | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | `VECTOR_SUBMIT_URL` | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
+| `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
 | `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
 
 !!! warning "Mainnet uses real funds"

@@ -108,7 +108,7 @@ const submitCborToNode = async (cbor) => {
 
 **Protocol:** REST API
 
-**Testnet:** `https://koios.vector.testnet.apexfusion.org/` (note trailing slash)
+**Testnet:** `https://v2.koios.vector.testnet.apexfusion.org/` (note trailing slash)
 **Mainnet:** `https://koios.vector.mainnet.apexfusion.org/`
 
 Koios provides indexed, higher-level queries that Ogmios doesn't cover:
@@ -125,7 +125,7 @@ Koios provides indexed, higher-level queries that Ogmios doesn't cover:
 ### Example: Address UTxOs
 
 ```bash
-curl -X POST "https://koios.vector.testnet.apexfusion.org/api/v1/address_utxos" \
+curl -X POST "https://v2.koios.vector.testnet.apexfusion.org/api/v1/address_utxos" \
   -H "Content-Type: application/json" \
   -d '{"_addresses": ["addr1qz..."]}'
 ```
@@ -133,7 +133,7 @@ curl -X POST "https://koios.vector.testnet.apexfusion.org/api/v1/address_utxos" 
 ### Example: Chain Tip
 
 ```bash
-curl "https://koios.vector.testnet.apexfusion.org/api/v1/tip"
+curl "https://v2.koios.vector.testnet.apexfusion.org/api/v1/tip"
 ```
 
 **Full reference:** [koios.rest](https://www.koios.rest/)
@@ -260,7 +260,7 @@ Requires a Demeter API key. See the [Apex Fusion developer portal](https://devel
 |---------|---------|---------|
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| Koios | `https://koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
+| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
 | Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
 | Faucet API | `https://faucet.vector.testnet.apexfusion.org` | — |
 

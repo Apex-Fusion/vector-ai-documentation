@@ -47,7 +47,7 @@ await agent.close();
 const agent = new VectorAgent({
   ogmiosUrl: 'https://ogmios.vector.testnet.apexfusion.org',
   submitUrl: 'https://submit.vector.testnet.apexfusion.org/api/submit/tx',
-  koiosUrl: 'https://koios.vector.testnet.apexfusion.org/',
+  koiosUrl: 'https://v2.koios.vector.testnet.apexfusion.org/',
   explorerUrl: 'https://vector.testnet.apexscan.org',
   mnemonic: process.env.VECTOR_MNEMONIC,
   accountIndex: 0,
@@ -62,7 +62,7 @@ All parameters fall back to environment variables if not provided:
 |-----------|---------------------|---------|
 | `ogmiosUrl` | `VECTOR_OGMIOS_URL` | *required* |
 | `submitUrl` | `VECTOR_SUBMIT_URL` | *required* |
-| `koiosUrl` | `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org` |
+| `koiosUrl` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org` |
 | `mnemonic` | `VECTOR_MNEMONIC` | — |
 | `skeyPath` | `VECTOR_SKEY_PATH` | — |
 | `accountIndex` | `VECTOR_ACCOUNT_INDEX` | `0` |
@@ -77,7 +77,7 @@ All parameters fall back to environment variables if not provided:
     ```bash
     export VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
     export VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
-    export VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
+    export VECTOR_KOIOS_URL=https://v2.koios.vector.testnet.apexfusion.org/
     export VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
     export VECTOR_MNEMONIC="word1 word2 word3 ..."
     ```

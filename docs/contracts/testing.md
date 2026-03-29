@@ -189,7 +189,7 @@ Summary
 ```bash
 # Requires a funded testnet wallet
 export VECTOR_MNEMONIC="your fifteen word mnemonic here ..."
-export VECTOR_KOIOS_URL="https://koios.vector.testnet.apexfusion.org/"
+export VECTOR_KOIOS_URL="https://v2.koios.vector.testnet.apexfusion.org/"
 
 pytest tests/integration/ -v -m integration
 ```
@@ -239,10 +239,10 @@ If your Aiken validator fails with a valid-looking transaction, check CBOR encod
 
 ```python
 # WRONG: will cause 301 redirect and potential errors
-koios_url = "https://koios.vector.testnet.apexfusion.org"
+koios_url = "https://v2.koios.vector.testnet.apexfusion.org"
 
 # CORRECT
-koios_url = "https://koios.vector.testnet.apexfusion.org/"
+koios_url = "https://v2.koios.vector.testnet.apexfusion.org/"
 ```
 
 ---

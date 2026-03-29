@@ -102,7 +102,7 @@ The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone wi
     export VECTOR_MNEMONIC="your fifteen word mnemonic phrase ..."
     export VECTOR_OGMIOS_URL="https://ogmios.vector.testnet.apexfusion.org"
     export VECTOR_SUBMIT_URL="https://submit.vector.testnet.apexfusion.org/api/submit/tx"
-    export VECTOR_KOIOS_URL="https://koios.vector.testnet.apexfusion.org/"
+    export VECTOR_KOIOS_URL="https://v2.koios.vector.testnet.apexfusion.org/"
     export VECTOR_EXPLORER_URL="https://vector.testnet.apexscan.org"
     export VECTOR_ACCOUNT_INDEX="0"
     export VECTOR_SPEND_LIMIT_PER_TX="100000000"

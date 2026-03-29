@@ -53,7 +53,7 @@ from vector_agent import VectorAgent
 agent = VectorAgent(
     ogmios_url="https://ogmios.vector.testnet.apexfusion.org",
     submit_url="https://submit.vector.testnet.apexfusion.org/api/submit/tx",
-    koios_url="https://koios.vector.testnet.apexfusion.org/",
+    koios_url="https://v2.koios.vector.testnet.apexfusion.org/",
     mnemonic="word1 word2 word3 ...",           # 15 or 24 words
     # OR: skey_path="/path/to/payment.skey",    # alternative to mnemonic
     account_index=0,                             # HD wallet account index
@@ -69,7 +69,7 @@ All parameters fall back to environment variables if not provided:
 |-----------|---------------------|---------|
 | `ogmios_url` | `VECTOR_OGMIOS_URL` | *required* |
 | `submit_url` | `VECTOR_SUBMIT_URL` | *required* |
-| `koios_url` | `VECTOR_KOIOS_URL` | `https://koios.vector.testnet.apexfusion.org` |
+| `koios_url` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org` |
 | `mnemonic` | `VECTOR_MNEMONIC` | — |
 | `skey_path` | `VECTOR_SKEY_PATH` | — |
 | `account_index` | `VECTOR_ACCOUNT_INDEX` | `0` |
@@ -272,7 +272,7 @@ if balance.lovelace > 10_000_000:
     ```bash
     export VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
     export VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
-    export VECTOR_KOIOS_URL=https://koios.vector.testnet.apexfusion.org/
+    export VECTOR_KOIOS_URL=https://v2.koios.vector.testnet.apexfusion.org/
     export VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
     export VECTOR_MNEMONIC="word1 word2 word3 ..."
     export VECTOR_SPEND_LIMIT_PER_TX=50000000
