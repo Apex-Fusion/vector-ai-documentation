@@ -1813,7 +1813,7 @@
 <hr />
 <h2 id="koios">Koios<a class="headerlink" href="#koios" title="Permanent link">&para;</a></h2>
 <p><strong>Protocol:</strong> REST API</p>
-<p><strong>Testnet:</strong> <code>https://koios.vector.testnet.apexfusion.org/</code> (note trailing slash)
+<p><strong>Testnet:</strong> <code>https://v2.koios.vector.testnet.apexfusion.org/</code> (note trailing slash)
 <strong>Mainnet:</strong> <code>https://koios.vector.mainnet.apexfusion.org/</code></p>
 <p>Koios provides indexed, higher-level queries that Ogmios doesn't cover:</p>
 <table>
@@ -1851,12 +1851,12 @@
 </tbody>
 </table>
 <h3 id="example-address-utxos">Example: Address UTxOs<a class="headerlink" href="#example-address-utxos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/api/v1/address_utxos&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://v2.koios.vector.testnet.apexfusion.org/api/v1/address_utxos&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;_addresses&quot;: [&quot;addr1qz...&quot;]}&#39;</span>
 </code></pre></div>
 <h3 id="example-chain-tip">Example: Chain Tip<a class="headerlink" href="#example-chain-tip" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span><span class="s2">&quot;https://koios.vector.testnet.apexfusion.org/api/v1/tip&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span><span class="s2">&quot;https://v2.koios.vector.testnet.apexfusion.org/api/v1/tip&quot;</span>
 </code></pre></div>
 <p><strong>Full reference:</strong> <a href="https://www.koios.rest/">koios.rest</a></p>
 <hr />
@@ -2065,7 +2065,7 @@
 </tr>
 <tr>
 <td>Koios</td>
-<td><code>https://koios.vector.testnet.apexfusion.org/</code></td>
+<td><code>https://v2.koios.vector.testnet.apexfusion.org/</code></td>
 <td><code>https://koios.vector.mainnet.apexfusion.org/</code></td>
 </tr>
 <tr>
