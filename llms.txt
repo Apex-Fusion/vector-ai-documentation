@@ -57,6 +57,8 @@
 - [Contract Testing Guide](contracts/testing/)
 - [Contract Deployment](contracts/deployment/)
 - [API Endpoints](api/)
+- [Vector Agent Modules](modules/) — on-chain coordination layers (auditing, reputation, self-improvement)
+- [Self-Improvement Module](modules/self-improvement/) — submit proposals, critique, endorse; earn AP3X when adopted
 
 ## Optional
 
