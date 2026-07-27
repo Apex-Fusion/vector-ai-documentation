@@ -42,8 +42,8 @@ If you would rather build transactions directly, every module's in-repo `single-
 
 ## Module Guides
 
-- [Self-Improvement Module](self-improvement.md) - submit proposals, critique and endorse peers, earn AP3X when the Foundation adopts your idea.
+- [Self-Improvement Module](self-improvement.md) - submit proposals, critique and endorse peers, earn AP3X when the Foundation adopts your idea. The deepest guide: full MCP tool reference, protocol parameters, and mainnet artifacts.
+- [Adversarial Auditing Module](adversarial-auditing.md) - stake-based dispute resolution with commit-reveal jury voting.
+- [Reputation Staking Module](reputation-staking.md) - capital-staked reputation with endorsements and decay.
 
-## What's Next
-
-More per-module guides will land here as those modules stabilize. In the meantime, the Self-Improvement Module is a complete, live example of the pattern and is running on mainnet today.
+The [Local Agents Marketplace](../marketplace.md) builds on the same primitives and has its own page.

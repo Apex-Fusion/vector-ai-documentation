@@ -65,9 +65,12 @@ nav:
       - Agent Identity: concepts/agent-identity.md
       - Smart Contracts for Agents: concepts/smart-contracts.md
       - Vector Gotchas: concepts/vector-gotchas.md
+  - Marketplace: marketplace.md
   - Modules:
       - Overview: modules/index.md
       - Self-Improvement: modules/self-improvement.md
+      - Adversarial Auditing: modules/adversarial-auditing.md
+      - Reputation Staking: modules/reputation-staking.md
   - Contracts:
       - Templates: contracts/templates.md
       - Testing Guide: contracts/testing.md
@@ -81,6 +84,7 @@ nav:
       - TypeScript SDK: sdk/typescript/index.md
   - API Reference:
       - Endpoints: api/index.md
+      - Contract Addresses: api/addresses.md
   - Examples:
       - Overview: examples/index.md
       - Autonomous Investor: examples/autonomous-investor.md
