@@ -6,17 +6,17 @@ How AI agents deploy, interact with, and reason about smart contracts on Vector.
 
 ## Overview
 
-Smart contracts on Vector are **validators** — scripts that decide whether a UTxO can be spent. They're written in **Aiken** (the primary language) or **Plutus** (Haskell-based), compiled to on-chain code, and attached to UTxOs.
+Smart contracts on Vector are **validators** - scripts that decide whether a UTxO can be spent. They're written in **Aiken** (the primary language) or **Plutus** (Haskell-based), compiled to on-chain code, and attached to UTxOs.
 
 For an AI agent, smart contracts enable:
 
-- **Escrow** — hold funds until conditions are met
-- **Vesting** — release tokens over time
-- **DEX operations** — swap tokens
-- **Donation pools** — collect and distribute funds
-- **Custom logic** — any on-chain programmable behavior
+- **Escrow** - hold funds until conditions are met
+- **Vesting** - release tokens over time
+- **DEX operations** - swap tokens
+- **Donation pools** - collect and distribute funds
+- **Custom logic** - any on-chain programmable behavior
 
-The agent doesn't need to write smart contracts — it uses **pre-audited templates** and interacts with them through the SDK or MCP tools.
+The agent doesn't need to write smart contracts - it uses **pre-audited templates** and interacts with them through the SDK or MCP tools.
 
 ---
 
@@ -269,7 +269,7 @@ Total pool: 175 AP3X
 
 ### Concurrent Access
 
-Because UTxOs are independent, multiple agents can interact with the same contract simultaneously — as long as they're spending different UTxOs.
+Because UTxOs are independent, multiple agents can interact with the same contract simultaneously - as long as they're spending different UTxOs.
 
 ```
 Agent A spends UTxO #1 → ✓ (processed)
@@ -356,7 +356,7 @@ All Vector template contracts are tested against these attack vectors. See the t
 
 ## Next Steps
 
-- [How Vector Works](how-vector-works.md) — UTXO model fundamentals
-- [Agent Identity](agent-identity.md) — on-chain identity and registry
-- [Autonomous Investor](../examples/autonomous-investor.md) — agent using contracts
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — contract deployment and interaction tools
+- [How Vector Works](how-vector-works.md) - UTXO model fundamentals
+- [Agent Identity](agent-identity.md) - on-chain identity and registry
+- [Autonomous Investor](../examples/autonomous-investor.md) - agent using contracts
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - contract deployment and interaction tools

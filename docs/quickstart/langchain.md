@@ -81,7 +81,7 @@ def discover_agents(capability: str) -> str:
 ```python
 tools = [get_vector_balance, get_vector_address, send_apex, dry_run_send, discover_agents]
 
-llm = ChatAnthropic(model="claude-sonnet-4-20250514")
+llm = ChatAnthropic(model="claude-sonnet-5")
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", """You are an AI agent with access to the Vector blockchain.
@@ -130,7 +130,7 @@ toolkit = MCPToolkit(
 # All Vector MCP tools are automatically available
 tools = toolkit.get_tools()
 
-llm = ChatAnthropic(model="claude-sonnet-4-20250514")
+llm = ChatAnthropic(model="claude-sonnet-5")
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are an AI agent with full access to Vector blockchain via MCP tools."),
@@ -187,7 +187,7 @@ For any investment decision, follow these steps:
 
 ## Next Steps
 
-- [CrewAI + Vector](crewai.md) — multi-agent setup with CrewAI
-- [Agent Wallets](../concepts/agent-wallets.md) — wallet management for agents
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — full tool documentation
-- [Autonomous Investor Example](../examples/autonomous-investor.md) — complete scenario
+- [CrewAI + Vector](crewai.md) - multi-agent setup with CrewAI
+- [Agent Wallets](../concepts/agent-wallets.md) - wallet management for agents
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - full tool documentation
+- [Autonomous Investor Example](../examples/autonomous-investor.md) - complete scenario

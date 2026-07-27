@@ -10,7 +10,7 @@ AI agents operating on a blockchain can move real money. A bug, hallucination, o
 
 **Limit the blast radius of any single failure.**
 
-Every layer — MCP server, SDK, and wallet — enforces safety independently. An agent cannot bypass spend limits through clever prompting because the limits are enforced in code, not in conversation context.
+Every layer - MCP server, SDK, and wallet - enforces safety independently. An agent cannot bypass spend limits through clever prompting because the limits are enforced in code, not in conversation context.
 
 ---
 
@@ -64,7 +64,7 @@ The agent builds transactions but returns them unsigned. A human or co-signing s
 { "walletMode": "transaction-crafter" }
 ```
 
-- Maximum security — agent cannot spend without human approval
+- Maximum security - agent cannot spend without human approval
 - Suitable for mainnet, high-value operations, institutional use
 - The agent's `vector_send_apex` call returns CBOR hex instead of submitting
 
@@ -136,7 +136,7 @@ Limits can be changed via:
 
 - Config file edit + server restart
 - Environment variable change + server restart
-- `vector_set_spend_limit` tool — **always requires human confirmation**, even if `requireConfirmation` is false
+- `vector_set_spend_limit` tool - **always requires human confirmation**, even if `requireConfirmation` is false
 
 An agent cannot escalate its own spend limits without human approval.
 
@@ -221,11 +221,11 @@ Every MCP tool invocation is logged with full context.
 
 Every entry includes:
 
-- **Timestamp** — when the operation occurred
-- **Tool** — which MCP tool was called
-- **Parameters** — what the agent requested
-- **Result** — success or failure (with error details)
-- **Transaction details** — hash, fee, spend totals (for transactions)
+- **Timestamp** - when the operation occurred
+- **Tool** - which MCP tool was called
+- **Parameters** - what the agent requested
+- **Result** - success or failure (with error details)
+- **Transaction details** - hash, fee, spend totals (for transactions)
 
 ### Querying the Log
 
@@ -399,6 +399,6 @@ If both allowlist and blocklist are set, the allowlist takes precedence (only al
 
 ## Next Steps
 
-- [Agent Wallets](agent-wallets.md) — wallet creation and management
-- [MCP Server Installation](../mcp-server/installation.md) — setup and configuration
-- [How Vector Works](how-vector-works.md) — UTXO model fundamentals
+- [Agent Wallets](agent-wallets.md) - wallet creation and management
+- [MCP Server Installation](../mcp-server/installation.md) - setup and configuration
+- [How Vector Works](how-vector-works.md) - UTXO model fundamentals

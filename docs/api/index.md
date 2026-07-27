@@ -4,7 +4,7 @@ description: "Vector blockchain API endpoints: Ogmios, TX Submit, Koios, and Fau
 
 # API Reference
 
-Vector exposes chain-access APIs and a testnet faucet API. The MCP server and Python SDK abstract over the chain APIs — you typically don't need to call them directly. The faucet API is called directly to fund testnet wallets.
+Vector exposes chain-access APIs and a testnet faucet API. The MCP server and Python SDK abstract over the chain APIs - you typically don't need to call them directly. The faucet API is called directly to fund testnet wallets.
 
 ---
 
@@ -109,7 +109,7 @@ const submitCborToNode = async (cbor) => {
 **Protocol:** REST API
 
 **Testnet:** `https://v2.koios.vector.testnet.apexfusion.org/` (note trailing slash)
-**Mainnet:** `https://koios.vector.mainnet.apexfusion.org/`
+**Mainnet:** `https://v2.koios.vector.mainnet.apexfusion.org/`
 
 Koios provides indexed, higher-level queries that Ogmios doesn't cover:
 
@@ -143,7 +143,7 @@ curl "https://v2.koios.vector.testnet.apexfusion.org/api/v1/tip"
 ## Block Explorer
 
 **Testnet:** `https://vector.testnet.apexscan.org`
-**Mainnet:** `https://explorer.vector.mainnet.apexfusion.org`
+**Mainnet:** `https://vector.apexscan.org/en/`
 
 Web UI for browsing blocks, transactions, addresses, and tokens. Useful for:
 
@@ -194,7 +194,7 @@ curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `address` | string | Yes | Vector testnet address (starts with `addr1`) |
-| `amount` | integer | Yes | Amount in lovelace (1 AP3X = 1,000,000 lovelace). Range: 10,000,000 – 50,000,000 |
+| `amount` | integer | Yes | Amount in DFM (1 AP3X = 1,000,000 DFM; APIs may call the unit lovelace). Range: 10,000,000 - 50,000,000 |
 
 **Response:**
 
@@ -231,18 +231,18 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 
 | Limit | Amount |
 |-------|--------|
-| Per request | 10 – 50 AP3X |
+| Per request | 10 - 50 AP3X |
 | Daily per account | 200 AP3X |
 | Monthly per account | 2,000 AP3X |
 | API rate limit | 10 requests/minute per IP |
 
-**Full guide:** [Testnet Faucet](../quickstart/faucet.md) — registration walkthrough, SDK examples, and alternative funding methods.
+**Full guide:** [Testnet Faucet](../quickstart/faucet.md) - registration walkthrough, SDK examples, and alternative funding methods.
 
 ---
 
 ## Hosted Services (Demeter)
 
-[Demeter](https://demeter.run/) provides hosted infrastructure for Vector — no self-hosting required:
+[Demeter](https://demeter.run/) provides hosted infrastructure for Vector - no self-hosting required:
 
 | Service | URL Pattern |
 |---------|------------|
@@ -260,14 +260,14 @@ Requires a Demeter API key. See the [Apex Fusion developer portal](https://devel
 |---------|---------|---------|
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
-| Faucet API | `https://faucet.vector.testnet.apexfusion.org` | — |
+| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://v2.koios.vector.mainnet.apexfusion.org/` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org/en/` |
+| Faucet API | `https://faucet.vector.testnet.apexfusion.org` | - |
 
 ---
 
 ## Next Steps
 
-- [MCP Server Installation](../mcp-server/installation.md) — the MCP server wraps these APIs
-- [How Vector Works](../concepts/how-vector-works.md) — UTXO model overview
-- [Python SDK](../sdk/python/index.md) — Python abstractions over these APIs
+- [MCP Server Installation](../mcp-server/installation.md) - the MCP server wraps these APIs
+- [How Vector Works](../concepts/how-vector-works.md) - UTXO model overview
+- [Python SDK](../sdk/python/index.md) - Python abstractions over these APIs

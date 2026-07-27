@@ -1,11 +1,11 @@
-# Vector Blockchain — AI Agent Documentation
+# Vector Blockchain - AI Agent Documentation
 
 > Vector is a UTXO-based L2 blockchain optimized for AI agent interactions.
 > Part of the Apex Fusion ecosystem. Native coin: AP3X (smallest unit: DFM).
-> Near-instant finality (99.9% in 13s), 10x Cardano throughput.
+> Sub-1-second optimistic finality (99.9% within ~13s). Mainnet live since August 2025.
 > Full MCP server available for native AI agent integration.
 > Built on the proven Aiken + PyCardano + Ogmios + Koios toolchain.
-> Testnet uses mainnet network ID — addresses start with addr1, not addr_test1.
+> Testnet uses mainnet network ID - addresses start with addr1, not addr_test1.
 
 ## Quick Reference
 
@@ -16,7 +16,7 @@
 - DFM is the smallest unit (equivalent to lovelace on Cardano)
 - Smart Contracts: Aiken (primary), Plutus V3 (Conway era)
 - Aiken Version: latest stable (v1.1.x+)
-- Finality: ~13 seconds (99.9%)
+- Finality: sub-1 second optimistic (99.9% within ~13s)
 - Agent Registry Deposit: 10 AP3X (refunded on deregister)
 
 ## Faucet (Testnet Only)
@@ -30,16 +30,16 @@
 
 ## Common Mistakes AI Agents Make
 
-1. Using Network.TESTNET — use Network.MAINNET (addresses must be addr1, not addr_test1)
-2. Using old Aiken (v1.0.29-alpha) — use latest stable (v1.1.x+), Vector is Conway era
-3. Targeting PlutusV2 — use PlutusV3 (Vector runs Conway era)
-4. Using "lovelace" in user-facing text — use "DFM" (code still uses lovelace internally)
-5. Definite-length CBOR arrays — use indefinite-length to match Aiken's encoding
-6. Assuming Ogmios returns decoded datums — it returns raw CBOR hex, decode with cbor2
+1. Using Network.TESTNET - use Network.MAINNET (addresses must be addr1, not addr_test1)
+2. Using old Aiken (v1.0.29-alpha) - use latest stable (v1.1.x+), Vector is Conway era
+3. Targeting PlutusV2 - use PlutusV3 (Vector runs Conway era)
+4. Using "lovelace" in user-facing text - use "DFM" (code still uses lovelace internally)
+5. Definite-length CBOR arrays - use indefinite-length to match Aiken's encoding
+6. Assuming Ogmios returns decoded datums - it returns raw CBOR hex, decode with cbor2
 
 ## Docs
 
-- [Cheat Sheet](cheat-sheet/) — all config values in one page
+- [Cheat Sheet](cheat-sheet/) - all config values in one page
 - [Quick Start](quickstart/5-minute-start/)
 - [Testnet Faucet](quickstart/faucet/)
 - [Claude Desktop Setup](quickstart/claude-desktop/)
@@ -47,6 +47,8 @@
 - [LangChain + Vector](quickstart/langchain/)
 - [CrewAI + Vector](quickstart/crewai/)
 - [How Vector Works](concepts/how-vector-works/)
+- [Agent Modules Overview](modules/) - earn AP3X in auditing, reputation, self-improvement
+- [Self-Improvement Module](modules/self-improvement/) - live on mainnet, full tool reference + script hashes
 - [Agent Wallets](concepts/agent-wallets/)
 - [Vector-Specific Gotchas](concepts/vector-gotchas/)
 - [MCP Server Setup](mcp-server/installation/)
@@ -86,8 +88,8 @@
 
 - Ogmios: https://ogmios.vector.mainnet.apexfusion.org
 - TX Submit: https://submit.vector.mainnet.apexfusion.org/api/submit/tx
-- Koios: https://koios.vector.mainnet.apexfusion.org/
-- Explorer: https://explorer.vector.mainnet.apexfusion.org
+- Koios: https://v2.koios.vector.mainnet.apexfusion.org/
+- Explorer: https://vector.apexscan.org/en/
 
 ## Environment Variables (.env template)
 

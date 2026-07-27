@@ -1,6 +1,6 @@
 # Python SDK Reference
 
-Complete API reference for `vector-agent-sdk` — the Python SDK for Vector blockchain.
+Complete API reference for `apex-fusion-agent-sdk` - the Python SDK for Vector blockchain.
 
 **Source:** [github.com/Apex-Fusion/agent-sdk-py](https://github.com/Apex-Fusion/agent-sdk-py) | **PyPI:** [apex-fusion-agent-sdk](https://pypi.org/project/apex-fusion-agent-sdk/)
 
@@ -24,11 +24,11 @@ Requires **Python 3.11+**.
 
 ### Dependencies
 
-- `pycardano >= 0.12.0` — Cardano transaction building
-- `httpx >= 0.27.0` — async HTTP client
-- `pydantic >= 2.0.0` — data models
-- `mcp >= 1.0.0` — MCP client support
-- `python-dotenv >= 1.0.0` — environment variable loading
+- `pycardano >= 0.12.0` - Cardano transaction building
+- `httpx >= 0.27.0` - async HTTP client
+- `pydantic >= 2.0.0` - data models
+- `mcp >= 1.0.0` - MCP client support
+- `python-dotenv >= 1.0.0` - environment variable loading
 
 ---
 
@@ -70,8 +70,8 @@ All parameters fall back to environment variables if not provided:
 | `ogmios_url` | `VECTOR_OGMIOS_URL` | *required* |
 | `submit_url` | `VECTOR_SUBMIT_URL` | *required* |
 | `koios_url` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org` |
-| `mnemonic` | `VECTOR_MNEMONIC` | — |
-| `skey_path` | `VECTOR_SKEY_PATH` | — |
+| `mnemonic` | `VECTOR_MNEMONIC` | - |
+| `skey_path` | `VECTOR_SKEY_PATH` | - |
 | `account_index` | `VECTOR_ACCOUNT_INDEX` | `0` |
 | `spend_limit_per_tx` | `VECTOR_SPEND_LIMIT_PER_TX` | `100000000` |
 | `spend_limit_daily` | `VECTOR_SPEND_LIMIT_DAILY` | `500000000` |
@@ -103,10 +103,10 @@ Returns the agent's payment address. Equivalent to `agent.address`.
 ```python
 balance = await agent.get_balance()
 
-balance.lovelace    # int — AP3X amount in DFM (e.g. 50000000)
-balance.ada         # str — human-readable (e.g. "50.000000")
-balance.address     # str — the queried address
-balance.tokens      # list[TokenBalance] — native tokens
+balance.lovelace    # int - AP3X amount in DFM (e.g. 50000000)
+balance.ada         # str - human-readable (e.g. "50.000000")
+balance.address     # str - the queried address
+balance.tokens      # list[TokenBalance] - native tokens
 ```
 
 Returns a `VectorBalance` object. Pass an `address` to query any address; defaults to the agent's own wallet.
@@ -132,11 +132,11 @@ params = await agent.get_protocol_parameters()
 ```python
 status = await agent.get_spend_limits()
 
-status.per_transaction_limit  # int — DFM
-status.daily_limit            # int — DFM
-status.daily_spent            # int — DFM
-status.daily_remaining        # int — DFM
-status.reset_time             # str — ISO 8601 UTC
+status.per_transaction_limit  # int - DFM
+status.daily_limit            # int - DFM
+status.daily_spent            # int - DFM
+status.daily_remaining        # int - DFM
+status.reset_time             # str - ISO 8601 UTC
 ```
 
 Returns a `SpendStatus` object.
@@ -284,15 +284,15 @@ if balance.lovelace > 10_000_000:
     ```bash
     export VECTOR_OGMIOS_URL=https://ogmios.vector.mainnet.apexfusion.org
     export VECTOR_SUBMIT_URL=https://submit.vector.mainnet.apexfusion.org/api/submit/tx
-    export VECTOR_KOIOS_URL=https://koios.vector.mainnet.apexfusion.org/
-    export VECTOR_EXPLORER_URL=https://explorer.vector.mainnet.apexfusion.org
+    export VECTOR_KOIOS_URL=https://v2.koios.vector.mainnet.apexfusion.org/
+    export VECTOR_EXPLORER_URL=https://vector.apexscan.org/en/
     export VECTOR_MNEMONIC="word1 word2 word3 ..."
     export VECTOR_SPEND_LIMIT_PER_TX=50000000
     export VECTOR_SPEND_LIMIT_DAILY=200000000
     ```
 
 ```python
-# No constructor args needed — everything from env
+# No constructor args needed - everything from env
 agent = VectorAgent()
 ```
 
@@ -331,7 +331,7 @@ agent-sdk-py/
 
 ## Next Steps
 
-- [5-Minute Start](../../quickstart/5-minute-start.md) — get running quickly
-- [MCP Server Installation](../../mcp-server/installation.md) — alternative: use MCP mode
-- [MCP Tools Reference](../../mcp-server/tools-reference.md) — all available operations
-- [Agent Wallets](../../concepts/agent-wallets.md) — wallet security best practices
+- [5-Minute Start](../../quickstart/5-minute-start.md) - get running quickly
+- [MCP Server Installation](../../mcp-server/installation.md) - alternative: use MCP mode
+- [MCP Tools Reference](../../mcp-server/tools-reference.md) - all available operations
+- [Agent Wallets](../../concepts/agent-wallets.md) - wallet security best practices

@@ -47,7 +47,7 @@ Vector testnet uses the **mainnet network ID**. This catches many developers off
 
 ### The symptom
 
-You generate an address and it starts with `addr1` instead of `addr_test1`. This is correct — not a bug.
+You generate an address and it starts with `addr1` instead of `addr_test1`. This is correct - not a bug.
 
 ### In PyCardano
 
@@ -134,7 +134,7 @@ def decode_datum(datum_field):
         # Already decoded JSON datum
         return datum_field
     elif isinstance(datum_field, str):
-        # Raw CBOR hex — decode it
+        # Raw CBOR hex - decode it
         return cbor2.loads(unhexlify(datum_field))
     return None
 ```
@@ -162,7 +162,7 @@ When deploying contracts, always specify `scriptType: "PlutusV3"`.
 
 ## 6. Testnet Funding
 
-The **[Vector Testnet Faucet](../quickstart/faucet.md)** distributes testnet AP3X directly on Vector. Register for an API key at the [faucet web UI](https://apex-fusion.github.io/vector-faucet/), then request funds programmatically. See the [full faucet guide](../quickstart/faucet.md) for API details and limits (10–50 AP3X per request, 200 AP3X/day).
+The **[Vector Testnet Faucet](../quickstart/faucet.md)** distributes testnet AP3X directly on Vector. Register for an API key at the [faucet web UI](https://apex-fusion.github.io/vector-faucet/), then request funds programmatically. See the [full faucet guide](../quickstart/faucet.md) for API details and limits (10-50 AP3X per request, 200 AP3X/day).
 
 !!! tip "Alternative method"
     You can also get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet) and bridge to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge). This was previously the only method but is no longer required.
@@ -184,7 +184,7 @@ Before deploying to Vector testnet:
 
 ## Next Steps
 
-- [How Vector Works](how-vector-works.md) — UTXO model and AP3X coin overview
-- [Smart Contracts for Agents](smart-contracts.md) — deploying contracts on Vector
-- [Contract Templates](../contracts/templates.md) — audited, ready-to-deploy contracts
-- [Contract Testing Guide](../contracts/testing.md) — testing on Vector
+- [How Vector Works](how-vector-works.md) - UTXO model and AP3X coin overview
+- [Smart Contracts for Agents](smart-contracts.md) - deploying contracts on Vector
+- [Contract Templates](../contracts/templates.md) - audited, ready-to-deploy contracts
+- [Contract Testing Guide](../contracts/testing.md) - testing on Vector

@@ -19,31 +19,19 @@ The server handles:
 
 **Transport:** SSE (Server-Sent Events) over HTTPS.
 
-**Mnemonic handling:** The wallet mnemonic is passed per-call by the MCP client — it is NOT stored in the server environment.
+**Mnemonic handling:** The wallet mnemonic is passed per-call by the MCP client - it is NOT stored in the server environment.
 
 ---
 
 ## Connect to the Hosted Server
 
-The Vector MCP server is hosted and publicly available — no installation required. Connect your AI client directly.
+The Vector MCP server is hosted and publicly available - no installation required. Connect your AI client directly.
 
 No authentication, no API keys, no environment variables needed.
 
 ### Claude Code (Terminal)
 
 One command:
-
-=== "Testnet"
-
-    ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
-    ```
-
-    To make it available across all your projects, add `--scope user`:
-
-    ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
-    ```
 
 === "Mainnet"
 
@@ -57,24 +45,23 @@ One command:
     claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
     ```
 
-That's it — all 18 Vector MCP tools are immediately available in Claude Code.
+=== "Testnet"
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+    ```
+
+    To make it available across all your projects, add `--scope user`:
+
+    ```bash
+    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+    ```
+
+That's it - all 18 Vector MCP tools are immediately available in Claude Code.
 
 ### Claude Desktop
 
 Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
-
-=== "Testnet"
-
-    ```json
-    {
-      "mcpServers": {
-        "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
-        }
-      }
-    }
-    ```
 
 === "Mainnet"
 
@@ -84,6 +71,19 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) o
         "vector-mcp": {
           "type": "sse",
           "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+        }
+      }
+    }
+    ```
+
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
         }
       }
     }
@@ -95,34 +95,21 @@ Restart Claude Desktop after saving. See [Claude Desktop + Vector](../quickstart
 
 Go to **Settings → Connectors → Add custom connector**, then enter:
 
-=== "Testnet"
-
-    ```
-    https://mcp.vector.testnet.apexfusion.org/sse
-    ```
-
 === "Mainnet"
 
     ```
     https://mcp.vector.mainnet.apexfusion.org/sse
     ```
 
+=== "Testnet"
+
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
+    ```
+
 ### Project-Level Setup
 
 For team collaboration, commit a `.mcp.json` file to your project root:
-
-=== "Testnet"
-
-    ```json
-    {
-      "mcpServers": {
-        "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
-        }
-      }
-    }
-    ```
 
 === "Mainnet"
 
@@ -137,17 +124,24 @@ For team collaboration, commit a `.mcp.json` file to your project root:
     }
     ```
 
+=== "Testnet"
+
+    ```json
+    {
+      "mcpServers": {
+        "vector-mcp": {
+          "type": "sse",
+          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+        }
+      }
+    }
+    ```
+
 Anyone who opens the project with Claude Code will automatically pick up the Vector MCP server.
 
 ### Other MCP Clients
 
 Connect any MCP-compatible client to the SSE endpoint:
-
-=== "Testnet"
-
-    ```
-    https://mcp.vector.testnet.apexfusion.org/sse
-    ```
 
 === "Mainnet"
 
@@ -155,7 +149,13 @@ Connect any MCP-compatible client to the SSE endpoint:
     https://mcp.vector.mainnet.apexfusion.org/sse
     ```
 
-No additional configuration required — the hosted server handles all chain access internally.
+=== "Testnet"
+
+    ```
+    https://mcp.vector.testnet.apexfusion.org/sse
+    ```
+
+No additional configuration required - the hosted server handles all chain access internally.
 
 **Source repository:** [github.com/Apex-Fusion/mcp-server](https://github.com/Apex-Fusion/mcp-server)
 
@@ -221,8 +221,8 @@ Read the JSON file directly, or query it programmatically.
 |---------|---------|---------|
 | Ogmios | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | TX Submit | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| Explorer | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
+| Koios | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://v2.koios.vector.mainnet.apexfusion.org/` |
+| Explorer | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org/en/` |
 
 ---
 
@@ -244,14 +244,14 @@ Check your current limits and usage via the `vector_get_spend_limits` tool. Eith
 
 ### Transaction failures
 
-- **"Insufficient funds"** — balance too low for amount + fee + min UTxO
-- **"UTxO contention"** — another transaction consumed a needed UTxO; retry
-- **"Validation failed"** — smart contract validator returned false; check datum/redeemer
+- **"Insufficient funds"** - balance too low for amount + fee + min UTxO
+- **"UTxO contention"** - another transaction consumed a needed UTxO; retry
+- **"Validation failed"** - smart contract validator returned false; check datum/redeemer
 
 ---
 
 ## Next Steps
 
-- [MCP Tools Reference](tools-reference.md) — complete tool documentation
-- [Safety Model](../concepts/safety-model.md) — detailed safety architecture
-- [5-Minute Start](../quickstart/5-minute-start.md) — quick setup guide
+- [MCP Tools Reference](tools-reference.md) - complete tool documentation
+- [Safety Model](../concepts/safety-model.md) - detailed safety architecture
+- [5-Minute Start](../quickstart/5-minute-start.md) - quick setup guide

@@ -48,8 +48,8 @@ Everything you need in one place. Bookmark this page.
 |---------|-----|
 | **Ogmios** | `https://ogmios.vector.mainnet.apexfusion.org` |
 | **TX Submit** | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| **Koios** | `https://koios.vector.mainnet.apexfusion.org/` |
-| **Explorer** | `https://explorer.vector.mainnet.apexfusion.org` |
+| **Koios** | `https://v2.koios.vector.mainnet.apexfusion.org/` |
+| **Explorer** | `https://vector.apexscan.org/en/` |
 
 ## Faucet API (Testnet)
 
@@ -67,7 +67,7 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 
 | Limit | Value |
 |-------|-------|
-| Per request | 10–50 AP3X |
+| Per request | 10-50 AP3X |
 | Daily | 200 AP3X |
 | Monthly | 2,000 AP3X |
 | Rate limit | 10 requests/minute |
@@ -100,12 +100,12 @@ FAUCET_API_KEY=vf_your_key_here
 ## Common Mistakes
 
 !!! danger "Top 6 mistakes AI agents make"
-    1. **Using `Network.TESTNET`** — Use `Network.MAINNET` (Vector testnet uses mainnet network ID)
-    2. **Using old Aiken `v1.0.29-alpha`** — Use latest stable (v1.1.x+), Vector is Conway era
-    3. **Targeting `PlutusV2`** — Use `PlutusV3` (Vector runs Conway era)
-    4. **Using `addr_test1` addresses** — Vector uses `addr1` for both testnet and mainnet
-    5. **Definite-length CBOR** — Use indefinite-length arrays to match Aiken encoding
-    6. **Assuming decoded datums** — Ogmios returns raw CBOR hex, decode with `cbor2`
+    1. **Using `Network.TESTNET`** - Use `Network.MAINNET` (Vector testnet uses mainnet network ID)
+    2. **Using old Aiken `v1.0.29-alpha`** - Use latest stable (v1.1.x+), Vector is Conway era
+    3. **Targeting `PlutusV2`** - Use `PlutusV3` (Vector runs Conway era)
+    4. **Using `addr_test1` addresses** - Vector uses `addr1` for both testnet and mainnet
+    5. **Definite-length CBOR** - Use indefinite-length arrays to match Aiken encoding
+    6. **Assuming decoded datums** - Ogmios returns raw CBOR hex, decode with `cbor2`
 
 ## Source Repositories
 

@@ -4,7 +4,7 @@ description: "Deploy Aiken/Plutus V3 smart contracts on Vector. MCP and Python S
 
 # Contract Deployment
 
-How to deploy smart contracts on Vector — from compiled Aiken validators to on-chain script addresses.
+How to deploy smart contracts on Vector - from compiled Aiken validators to on-chain script addresses.
 
 ---
 
@@ -34,7 +34,7 @@ aiken --version
 
 ### From an Audited Template
 
-The [contract templates](templates.md) include pre-compiled `script.cbor` files — no compilation needed.
+The [contract templates](templates.md) include pre-compiled `script.cbor` files - no compilation needed.
 
 ```bash
 git clone https://github.com/Apex-Fusion/vector-ai-agents
@@ -223,7 +223,7 @@ Use `aiken check` to verify CBOR round-trips correctly with your validators.
 After deploying, verify on the block explorer:
 
 1. Open `https://vector.testnet.apexscan.org/transaction/{tx_hash}`
-2. Check the outputs — one should be at the script address
+2. Check the outputs - one should be at the script address
 3. Verify the datum is attached correctly
 4. Check the locked AP3X amount
 
@@ -231,7 +231,7 @@ After deploying, verify on the block explorer:
 
 ## Next Steps
 
-- [Contract Templates](templates.md) — pre-compiled, audited contracts
-- [Testing Guide](testing.md) — test before deploying
-- [Vector Gotchas](../concepts/vector-gotchas.md) — CBOR parity, network ID, and other pitfalls
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — deploy and interact tools
+- [Contract Templates](templates.md) - pre-compiled, audited contracts
+- [Testing Guide](testing.md) - test before deploying
+- [Vector Gotchas](../concepts/vector-gotchas.md) - CBOR parity, network ID, and other pitfalls
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - deploy and interact tools

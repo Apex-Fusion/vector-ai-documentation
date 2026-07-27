@@ -4,7 +4,7 @@ description: "Get testnet AP3X tokens via the Vector faucet API. Endpoints, auth
 
 # Vector Testnet Faucet
 
-Get testnet AP3X tokens sent directly to your Vector wallet — no bridging required. Designed for AI agents that need programmatic access to testnet funds.
+Get testnet AP3X tokens sent directly to your Vector wallet - no bridging required. Designed for AI agents that need programmatic access to testnet funds.
 
 ---
 
@@ -26,7 +26,7 @@ Registration is a one-time process done by the human operator through the web UI
 2. **Register** with your email and a password (CAPTCHA-protected)
 3. **Verify your email** by clicking the link sent to your inbox
 4. **Log in** to generate your API key (prefixed `vf_`)
-5. **Copy and store** the API key — it is shown only once
+5. **Copy and store** the API key - it is shown only once
 
 !!! warning "API Key Security"
     Treat your faucet API key like a password. Never commit it to version control or expose it in client-side code. Store it in a secrets manager or environment variable.
@@ -76,7 +76,7 @@ curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `address` | string | Yes | Vector testnet address (starts with `addr1`) |
-| `amount` | integer | Yes | Amount in lovelace (1 AP3X = 1,000,000 lovelace) |
+| `amount` | integer | Yes | Amount in DFM (1 AP3X = 1,000,000 DFM; APIs may call the unit lovelace) |
 
 **Response:**
 
@@ -115,13 +115,13 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 
 | Limit | Amount |
 |-------|--------|
-| Per request | 10 – 50 AP3X |
+| Per request | 10 - 50 AP3X |
 | Daily per account | 200 AP3X |
 | Monthly per account | 2,000 AP3X |
 | API rate limit | 10 requests/minute per IP |
 
 !!! note "Units"
-    All API amounts are in **lovelace** (also called DFM). 1 AP3X = 1,000,000 lovelace. To request 10 AP3X, set `amount` to `10000000`.
+    All API amounts are in **DFM**, the smallest unit (code and APIs may call it lovelace). 1 AP3X = 1,000,000 DFM. To request 10 AP3X, set `amount` to `10000000`.
 
 ---
 
@@ -193,7 +193,7 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 ## Alternative: Prime Faucet + Reactor Bridge
 
 !!! info "Legacy method"
-    Before the Vector Testnet Faucet existed, the only way to get testnet AP3X on Vector was through Prime. This still works as an alternative — useful if the faucet is temporarily unavailable or you need larger amounts.
+    Before the Vector Testnet Faucet existed, the only way to get testnet AP3X on Vector was through Prime. This still works as an alternative - useful if the faucet is temporarily unavailable or you need larger amounts.
 
 1. Get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet)
 2. Bridge AP3X from Prime to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge)
@@ -203,6 +203,6 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 
 ## What's Next?
 
-- [5-Minute Start](5-minute-start.md) — get an agent talking to Vector in under 5 minutes
-- [Agent Wallets](../concepts/agent-wallets.md) — wallet creation, funding, and security
-- [Safety Model](../concepts/safety-model.md) — spend limits and audit logging
+- [5-Minute Start](5-minute-start.md) - get an agent talking to Vector in under 5 minutes
+- [Agent Wallets](../concepts/agent-wallets.md) - wallet creation, funding, and security
+- [Safety Model](../concepts/safety-model.md) - spend limits and audit logging

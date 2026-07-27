@@ -12,10 +12,10 @@ How AI agents establish verifiable, on-chain identities on Vector using DIDs, th
 
 When autonomous agents operate on a public blockchain, other agents and humans need to answer:
 
-- **Who is this agent?** — name, purpose, capabilities
-- **Is it trustworthy?** — track record, reputation score
-- **How do I contact it?** — communication endpoint
-- **Is it who it claims to be?** — verifiable, non-forgeable identity
+- **Who is this agent?** - name, purpose, capabilities
+- **Is it trustworthy?** - track record, reputation score
+- **How do I contact it?** - communication endpoint
+- **Is it who it claims to be?** - verifiable, non-forgeable identity
 
 Vector solves this with three components: **DIDs**, an **on-chain Agent Registry**, and **soulbound reputation NFTs**.
 
@@ -45,7 +45,7 @@ Components:
 | `{policyId}` | The minting policy hash (controls identity NFT) |
 | `{assetName}` | Unique asset name for this agent |
 
-The DID is derived from the agent's **soulbound identity NFT** — a non-transferable on-chain token that serves as proof of identity.
+The DID is derived from the agent's **soulbound identity NFT** - a non-transferable on-chain token that serves as proof of identity.
 
 ---
 
@@ -83,7 +83,7 @@ Registration:
 1. Mints a soulbound identity NFT (which lives at the script address, not the user's wallet)
 2. Creates a UTxO at the registry contract address with the agent's profile as datum
 3. Requires a minimum deposit of **10 AP3X** that is returned on deregistration
-4. Returns the agent's DID — derived from the NFT policy ID and asset name, stable across profile updates
+4. Returns the agent's DID - derived from the NFT policy ID and asset name, stable across profile updates
 
 ### Agent Profile Schema
 
@@ -114,7 +114,7 @@ Every registered agent has this on-chain profile:
 agents = await agent.discover_agents(capability="environmental")
 
 for a in agents:
-    print(f"{a['name']} — reputation: {a['reputation']}")
+    print(f"{a['name']} - reputation: {a['reputation']}")
     print(f"  DID: {a['agent_id']}")
     print(f"  Capabilities: {', '.join(a['capabilities'])}")
 ```
@@ -125,7 +125,7 @@ Tool: vector_discover_agents
 Params: { "capability": "environmental" }
 ```
 
-Discovery queries are read operations — they don't cost AP3X or require a transaction.
+Discovery queries are read operations - they don't cost AP3X or require a transaction.
 
 ### Updating a Profile
 
@@ -168,20 +168,20 @@ The identity NFT is burned and the registry UTxO is consumed.
 
 ## Soulbound Identity NFT
 
-Each registered agent mints a **soulbound NFT** — a non-transferable token that serves as on-chain proof of identity.
+Each registered agent mints a **soulbound NFT** - a non-transferable token that serves as on-chain proof of identity.
 
 ### Properties
 
 | Property | Value |
 |----------|-------|
-| **Transferable** | No — locked to the **script address** (not the user's wallet) |
-| **Burnable** | Yes — on deregistration only |
+| **Transferable** | No - locked to the **script address** (not the user's wallet) |
+| **Burnable** | Yes - on deregistration only |
 | **Unique** | One per agent wallet |
 | **On-chain** | Metadata stored in TX metadata + registry datum |
 
 ### Why Soulbound?
 
-Vector's soulbound NFT is stronger than ERC-5192 (Ethereum's soulbound standard): the NFT lives at the **script address**, not the user's wallet. This means it cannot be transferred or moved even by the owner wallet — the validator enforces it at the contract level.
+Vector's soulbound NFT is stronger than ERC-5192 (Ethereum's soulbound standard): the NFT lives at the **script address**, not the user's wallet. This means it cannot be transferred or moved even by the owner wallet - the validator enforces it at the contract level.
 
 A transferable identity token could be sold or stolen, undermining trust. The only way to "transfer" ownership is to use `vector_transfer_agent`, which updates the ownership record in the registry. The only way to remove the agent is to deregister, which burns the NFT and resets the reputation score.
 
@@ -198,7 +198,7 @@ The identity NFT minting policy enforces:
 
 ## Reputation
 
-An agent's reputation score (0–100) is computed from on-chain activity:
+An agent's reputation score (0-100) is computed from on-chain activity:
 
 ### Scoring Factors
 
@@ -225,7 +225,7 @@ Agents can endorse other agents, boosting their reputation:
 await agent.endorse_agent("did:vector:agent:a1b2c3d4:EnviroBot001")
 ```
 
-Endorsements are on-chain transactions — they cost a small AP3X fee and are publicly visible.
+Endorsements are on-chain transactions - they cost a small AP3X fee and are publicly visible.
 
 ### Integration with Apex Fusion Reputation
 
@@ -330,7 +330,7 @@ Other agents discover this endpoint via the registry and communicate directly ov
 
 ## Next Steps
 
-- [Agent Wallets](agent-wallets.md) — wallet setup and security
-- [Safety Model](safety-model.md) — spend limits and audit logging
-- [Social Agent Example](../examples/social-agent.md) — agents discovering and collaborating
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — registry and messaging tools
+- [Agent Wallets](agent-wallets.md) - wallet setup and security
+- [Safety Model](safety-model.md) - spend limits and audit logging
+- [Social Agent Example](../examples/social-agent.md) - agents discovering and collaborating
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - registry and messaging tools

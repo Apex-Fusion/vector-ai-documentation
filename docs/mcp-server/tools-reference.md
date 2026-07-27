@@ -1,6 +1,6 @@
 # MCP Tools Reference
 
-Complete reference for all 18 tools exposed by the Vector MCP server ([source](https://github.com/Apex-Fusion/mcp-server)).
+Complete reference for the core 18 tools exposed by the Vector MCP server ([source](https://github.com/Apex-Fusion/mcp-server)). The live servers expose **23 tools in total** - the five `vector_self_improvement_*` tools are documented on the [Self-Improvement Module](../modules/self-improvement.md) page.
 
 ---
 
@@ -225,7 +225,7 @@ Build multi-output transactions. Can sign and submit, or return unsigned CBOR.
 
 ### `vector_dry_run`
 
-Simulate a transaction without submitting — estimate fees and validate.
+Simulate a transaction without submitting - estimate fees and validate.
 
 **Parameters:**
 
@@ -295,7 +295,7 @@ Lock AP3X at a script address or spend from it with a redeemer.
 | `redeemer` | string | No | Redeemer as hex CBOR (required for `spend`) |
 | `datum` | string | No | Datum as hex CBOR (required for `lock`) |
 | `lovelaceAmount` | integer | No | AP3X to lock at script address, in DFM (for `lock`) |
-| `utxoRef` | object | No | `{txHash, outputIndex}` — specific UTxO to spend |
+| `utxoRef` | object | No | `{txHash, outputIndex}` - specific UTxO to spend |
 | `assets` | object | No | Native tokens to include |
 
 **Returns:**
@@ -315,7 +315,7 @@ Lock AP3X at a script address or spend from it with a redeemer.
 
 ### `vector_register_agent`
 
-Register an agent — mints a soulbound identity NFT and locks a 10 AP3X deposit.
+Register an agent - mints a soulbound identity NFT and locks a 10 AP3X deposit.
 
 **Parameters:**
 
@@ -457,7 +457,7 @@ Transfer agent ownership to a new address.
 
 ### `vector_deregister_agent`
 
-Deregister an agent — burns the identity NFT and returns the 10 AP3X deposit.
+Deregister an agent - burns the identity NFT and returns the 10 AP3X deposit.
 
 **Parameters:**
 

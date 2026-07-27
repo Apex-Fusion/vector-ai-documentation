@@ -6,21 +6,21 @@ A guide to Vector's UTXO model, written for AI developers who may be familiar wi
 
 ## What is Vector?
 
-Vector is a Layer 2 blockchain in the [Apex Fusion](https://apexfusion.org) ecosystem. It inherits Cardano's UTXO model and Plutus/Aiken smart contract platform, with significantly higher throughput and near-instant finality.
+Vector is a Layer 2 blockchain in the [Apex Fusion](https://apexfusion.org) ecosystem. It inherits Cardano's UTXO model and Plutus/Aiken smart contract platform, with sub-1-second optimistic finality. The consortium behind Vector writes Cardano's consensus standards - the most recent, [CIP-0177 (Ouroboros Tachys)](https://cips.cardano.org/cip/CIP-0177), defines faster consensus for Cardano partner chains.
 
 **Key specs:**
 
 - **Model:** Extended UTXO (eUTxO)
 - **Smart contracts:** Plutus V3 / Aiken (Conway era)
-- **Finality:** ~13 seconds (99.9%)
+- **Finality:** sub-1 second optimistic; 99.9% finality within ~13 seconds
 - **Throughput:** 10x Cardano
 - **Native assets:** First-class multi-asset support (no ERC-20 contracts needed)
 
 ---
 
-## AP3X — Vector's Native Coin
+## AP3X - Vector's Native Coin
 
-Vector's native coin is **AP3X** — not ADA. While Vector inherits Cardano's UTXO model and tooling (PyCardano, Aiken), the coin name is different.
+Vector's native coin is **AP3X** - not ADA. While Vector inherits Cardano's UTXO model and tooling (PyCardano, Aiken), the coin name is different.
 
 | Unit | Equivalent |
 |------|-----------|
@@ -31,7 +31,7 @@ Vector's native coin is **AP3X** — not ADA. While Vector inherits Cardano's UT
 
 ### In Aiken
 
-Aiken's standard library uses `lovelace_of` to read the AP3X quantity from a value — the function name is `lovelace_of` but it reads AP3X:
+Aiken's standard library uses `lovelace_of` to read the AP3X quantity from a value - the function name is `lovelace_of` but it reads AP3X:
 
 ```aiken
 let ap3x_amount = assets.lovelace_of(value)
@@ -59,7 +59,7 @@ Vector testnet uses the **mainnet network ID**. This is a key difference from Ca
 ```python
 from pycardano import Network
 
-# For Vector testnet — use MAINNET network ID
+# For Vector testnet - use MAINNET network ID
 network = Network.MAINNET
 ```
 
@@ -67,7 +67,7 @@ network = Network.MAINNET
 
 ## The UTXO Model (vs. Account Model)
 
-If you've built on Ethereum, you're used to the **account model**: each address has a balance, and transactions debit one account and credit another — like a bank.
+If you've built on Ethereum, you're used to the **account model**: each address has a balance, and transactions debit one account and credit another - like a bank.
 
 Vector uses the **UTXO model** (Unspent Transaction Output). Think of it like **cash**: you have specific bills (UTxOs) in your wallet, and when you spend, you hand over bills and receive change.
 
@@ -106,7 +106,7 @@ The UTXO model provides properties that are ideal for autonomous AI agents:
 
 ### 1. Deterministic Fees
 
-Before submitting a transaction, your agent knows the **exact fee**. The fee depends only on the transaction's size and the computational resources it uses — both known at build time.
+Before submitting a transaction, your agent knows the **exact fee**. The fee depends only on the transaction's size and the computational resources it uses - both known at build time.
 
 ```python
 # Agent knows the cost before committing
@@ -133,7 +133,7 @@ Agent C spends UTxO #3 ──► processed simultaneously
 
 Ethereum agents must track a sequential nonce. If transaction #5 is stuck, transactions #6, #7, #8 all queue behind it. This is a common source of agent failures.
 
-Vector has no nonces. Each transaction is independent — it references its inputs explicitly.
+Vector has no nonces. Each transaction is independent - it references its inputs explicitly.
 
 **Why this matters:** Agents don't need complex nonce tracking logic. No "stuck transaction" recovery code. Simpler, more reliable agent implementations.
 
@@ -153,7 +153,7 @@ for utxo in utxos:
 
 ### 5. Native Multi-Asset
 
-On Vector, tokens are native chain primitives — not smart contract state (like ERC-20). They live directly in UTxOs alongside AP3X.
+On Vector, tokens are native chain primitives - not smart contract state (like ERC-20). They live directly in UTxOs alongside AP3X.
 
 ```python
 # Tokens are just... there, in the UTxO
@@ -176,26 +176,26 @@ The base unit of AP3X. 1 AP3X = 1,000,000 DFM. In Aiken source code and some API
 
 A discrete unit of value sitting at an address. Each UTxO has:
 
-- **Address** — who owns it (a public key hash or script hash)
-- **Value** — how much AP3X + any native tokens it contains
-- **Datum** (optional) — structured data attached to the UTxO (used by smart contracts)
-- **Reference** — a unique ID (`tx_hash#index`) that identifies this specific UTxO
+- **Address** - who owns it (a public key hash or script hash)
+- **Value** - how much AP3X + any native tokens it contains
+- **Datum** (optional) - structured data attached to the UTxO (used by smart contracts)
+- **Reference** - a unique ID (`tx_hash#index`) that identifies this specific UTxO
 
 ### Transaction
 
 A transaction consumes one or more UTxOs (inputs) and creates new UTxOs (outputs). It must satisfy:
 
-1. **Value conservation** — inputs = outputs + fee (no AP3X created or destroyed)
-2. **Witness** — each input must be authorized by the owner (signature or script execution)
-3. **Validity interval** — optional time bounds for when the transaction is valid
+1. **Value conservation** - inputs = outputs + fee (no AP3X created or destroyed)
+2. **Witness** - each input must be authorized by the owner (signature or script execution)
+3. **Validity interval** - optional time bounds for when the transaction is valid
 
 ### Smart Contracts (Validators)
 
-On Vector, smart contracts are **validators** — they say "yes" or "no" to spending a UTxO. A validator receives:
+On Vector, smart contracts are **validators** - they say "yes" or "no" to spending a UTxO. A validator receives:
 
-- **Datum** — data stored with the UTxO being spent
-- **Redeemer** — data provided by the transaction trying to spend it
-- **Script Context** — information about the transaction itself
+- **Datum** - data stored with the UTxO being spent
+- **Redeemer** - data provided by the transaction trying to spend it
+- **Script Context** - information about the transaction itself
 
 The validator returns `True` (allow spend) or `False` (reject). That's it.
 
@@ -214,7 +214,7 @@ Validator checks → True → Transaction succeeds
 
 ### Policy IDs and Native Tokens
 
-Every native token on Vector has a **minting policy** — a script that controls when new tokens can be created or burned. Tokens are identified by `PolicyId.AssetName`.
+Every native token on Vector has a **minting policy** - a script that controls when new tokens can be created or burned. Tokens are identified by `PolicyId.AssetName`.
 
 ---
 
@@ -225,10 +225,10 @@ Vector exposes three primary interfaces:
 | Interface | Protocol | Use Case |
 |-----------|----------|----------|
 | **Ogmios** | WebSocket + HTTP JSON-RPC | Chain sync, TX submission, TX evaluation, state queries |
-| **Koios** | REST API | Indexed queries — address history, token info, UTxO lookups |
+| **Koios** | REST API | Indexed queries - address history, token info, UTxO lookups |
 | **TX Submit API** | HTTP POST (CBOR) | Direct transaction submission |
 
-The MCP server and Agent SDK abstract over all three — your agent doesn't need to interact with them directly.
+The MCP server and Agent SDK abstract over all three - your agent doesn't need to interact with them directly.
 
 ---
 
@@ -240,18 +240,18 @@ Vector runs both a public testnet and mainnet, both in the Conway era with Plutu
 |---|---------|---------|
 | **Ogmios** | `wss://ogmios.vector.testnet.apexfusion.org` | `wss://ogmios.vector.mainnet.apexfusion.org` |
 | **TX Submit** | `submit.vector.testnet.apexfusion.org/api/submit/tx` | `submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| **Explorer** | `vector.testnet.apexscan.org` | `explorer.vector.mainnet.apexfusion.org` |
+| **Explorer** | `vector.testnet.apexscan.org` | `vector.apexscan.org/en/` |
 | **Funds** | Free (testnet faucet) | Real value |
 
-Start on testnet. The code is identical — just change the endpoint URLs.
+Start on testnet. The code is identical - just change the endpoint URLs.
 
 ---
 
 ## Next Steps
 
-- [5-Minute Start](../quickstart/5-minute-start.md) — get an agent running on Vector
-- [Claude Desktop + Vector](../quickstart/claude-desktop.md) — set up Claude as a Vector agent
-- [Agent Wallets](agent-wallets.md) — wallet creation, funding, and security
-- [Smart Contracts for Agents](smart-contracts.md) — deploy and interact with on-chain logic
-- [Agent Identity](agent-identity.md) — DIDs, registry, and reputation
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — see what your agent can do
+- [5-Minute Start](../quickstart/5-minute-start.md) - get an agent running on Vector
+- [Claude Desktop + Vector](../quickstart/claude-desktop.md) - set up Claude as a Vector agent
+- [Agent Wallets](agent-wallets.md) - wallet creation, funding, and security
+- [Smart Contracts for Agents](smart-contracts.md) - deploy and interact with on-chain logic
+- [Agent Identity](agent-identity.md) - DIDs, registry, and reputation
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - see what your agent can do

@@ -1,6 +1,6 @@
 # TypeScript SDK Reference
 
-Complete API reference for `@apexfusion/agent-sdk` — the TypeScript SDK for Vector blockchain.
+Complete API reference for `@apexfusion/agent-sdk` - the TypeScript SDK for Vector blockchain.
 
 **Source:** [github.com/Apex-Fusion/agent-sdk-ts](https://github.com/Apex-Fusion/agent-sdk-ts) | **npm:** [@apexfusion/agent-sdk](https://www.npmjs.com/package/@apexfusion/agent-sdk)
 
@@ -16,10 +16,10 @@ Requires **Node.js 18+**. Supports both ESM and CommonJS.
 
 ### Dependencies
 
-- `@lucid-evolution/lucid >= 0.4.29` — Cardano transaction building
-- `@noble/hashes >= 1.7.1` — cryptographic hashing
-- `cross-fetch >= 4.0.0` — universal fetch
-- `zod >= 3.24.1` — schema validation
+- `@lucid-evolution/lucid >= 0.4.29` - Cardano transaction building
+- `@noble/hashes >= 1.7.1` - cryptographic hashing
+- `cross-fetch >= 4.0.0` - universal fetch
+- `zod >= 3.24.1` - schema validation
 
 ---
 
@@ -63,8 +63,8 @@ All parameters fall back to environment variables if not provided:
 | `ogmiosUrl` | `VECTOR_OGMIOS_URL` | *required* |
 | `submitUrl` | `VECTOR_SUBMIT_URL` | *required* |
 | `koiosUrl` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org` |
-| `mnemonic` | `VECTOR_MNEMONIC` | — |
-| `skeyPath` | `VECTOR_SKEY_PATH` | — |
+| `mnemonic` | `VECTOR_MNEMONIC` | - |
+| `skeyPath` | `VECTOR_SKEY_PATH` | - |
 | `accountIndex` | `VECTOR_ACCOUNT_INDEX` | `0` |
 | `spendLimitPerTx` | `VECTOR_SPEND_LIMIT_PER_TX` | `100000000` |
 | `spendLimitDaily` | `VECTOR_SPEND_LIMIT_DAILY` | `500000000` |
@@ -87,13 +87,13 @@ All parameters fall back to environment variables if not provided:
     ```bash
     export VECTOR_OGMIOS_URL=https://ogmios.vector.mainnet.apexfusion.org
     export VECTOR_SUBMIT_URL=https://submit.vector.mainnet.apexfusion.org/api/submit/tx
-    export VECTOR_KOIOS_URL=https://koios.vector.mainnet.apexfusion.org/
-    export VECTOR_EXPLORER_URL=https://explorer.vector.mainnet.apexfusion.org
+    export VECTOR_KOIOS_URL=https://v2.koios.vector.mainnet.apexfusion.org/
+    export VECTOR_EXPLORER_URL=https://vector.apexscan.org/en/
     export VECTOR_MNEMONIC="word1 word2 word3 ..."
     ```
 
 ```typescript
-// No constructor args needed — everything from env
+// No constructor args needed - everything from env
 const agent = new VectorAgent();
 ```
 
@@ -113,10 +113,10 @@ const address = await agent.getAddress();
 ```typescript
 const balance = await agent.getBalance();
 
-balance.lovelace   // bigint — AP3X amount in DFM
-balance.ada        // string — human-readable (e.g. "50.000000")
-balance.address    // string — the queried address
-balance.tokens     // TokenBalance[] — native tokens
+balance.lovelace   // bigint - AP3X amount in DFM
+balance.ada        // string - human-readable (e.g. "50.000000")
+balance.address    // string - the queried address
+balance.tokens     // TokenBalance[] - native tokens
 ```
 
 Pass an `address` to query any address; defaults to the agent's own wallet.
@@ -138,11 +138,11 @@ const params = await agent.getProtocolParameters();
 ```typescript
 const status = await agent.getSpendLimits();
 
-status.perTransactionLimit  // number — DFM
-status.dailyLimit           // number — DFM
-status.dailySpent           // number — DFM
-status.dailyRemaining       // number — DFM
-status.resetTime            // string — ISO 8601 UTC
+status.perTransactionLimit  // number - DFM
+status.dailyLimit           // number - DFM
+status.dailySpent           // number - DFM
+status.dailyRemaining       // number - DFM
+status.resetTime            // string - ISO 8601 UTC
 ```
 
 ---
@@ -325,8 +325,8 @@ import {
 
 ## Next Steps
 
-- [5-Minute Start](../../quickstart/5-minute-start.md) — get running quickly
-- [Python SDK Reference](../python/index.md) — Python alternative
-- [MCP Server Setup](../../mcp-server/installation.md) — use MCP mode instead
-- [MCP Tools Reference](../../mcp-server/tools-reference.md) — all available operations
-- [Agent Wallets](../../concepts/agent-wallets.md) — wallet security best practices
+- [5-Minute Start](../../quickstart/5-minute-start.md) - get running quickly
+- [Python SDK Reference](../python/index.md) - Python alternative
+- [MCP Server Setup](../../mcp-server/installation.md) - use MCP mode instead
+- [MCP Tools Reference](../../mcp-server/tools-reference.md) - all available operations
+- [Agent Wallets](../../concepts/agent-wallets.md) - wallet security best practices

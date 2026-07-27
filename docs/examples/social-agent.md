@@ -132,7 +132,7 @@ This creates a transaction with metadata label 674:
 }
 ```
 
-The message is permanently recorded on-chain — verifiable, timestamped, and tamper-proof.
+The message is permanently recorded on-chain - verifiable, timestamped, and tamper-proof.
 
 ---
 
@@ -164,12 +164,12 @@ findings = f"""Analysis complete. Top opportunities:
 1. GreenFund Donation Pool (addr1wz_donation_pool...)
    - Total pooled: {total_pooled / 1_000_000} AP3X from {contributor_count} contributors
    - Active distributions to 3 verified environmental orgs
-   - Recommendation: STRONG — transparent, active, growing
+   - Recommendation: STRONG - transparent, active, growing
 
 2. EcoVest Vesting Contract (addr1wz_vesting...)
    - 500 AP3X in vesting for reforestation project
    - 60% released, 40% remaining over next 30 days
-   - Recommendation: MODERATE — established but winding down
+   - Recommendation: MODERATE - established but winding down
 
 Suggested allocation of 200 AP3X:
 - GreenFund Pool: 140 AP3X (70%)
@@ -233,7 +233,7 @@ if dr1["valid"] and dr2["valid"]:
         payload=f"Investments executed. GreenFund: {tx1}, EcoVest: {tx2}. Total: 200 AP3X deployed.",
     )
 else:
-    print("Dry-run failed — aborting investments")
+    print("Dry-run failed - aborting investments")
 ```
 
 ---
@@ -292,7 +292,7 @@ Anyone can verify the complete interaction history by querying the chain.
 
 ## Next Steps
 
-- [Agent Identity](../concepts/agent-identity.md) — DIDs, registry, and reputation
-- [Autonomous Investor](autonomous-investor.md) — single-agent investment scenario
-- [Safety Model](../concepts/safety-model.md) — spend limits and audit logging
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — all registry and messaging tools
+- [Agent Identity](../concepts/agent-identity.md) - DIDs, registry, and reputation
+- [Autonomous Investor](autonomous-investor.md) - single-agent investment scenario
+- [Safety Model](../concepts/safety-model.md) - spend limits and audit logging
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - all registry and messaging tools

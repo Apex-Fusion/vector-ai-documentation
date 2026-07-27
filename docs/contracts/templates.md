@@ -1,6 +1,6 @@
 # Smart Contract Templates
 
-Four audited, compiled smart contract templates ready to deploy on Vector. No compilation required — just deploy and use.
+Four audited, compiled smart contract templates ready to deploy on Vector. No compilation required - just deploy and use.
 
 All templates are located in the [vector-ai-agents repository](https://github.com/Apex-Fusion/vector-ai-agents/tree/main/smart-contract-audit/compliant).
 
@@ -207,6 +207,6 @@ async with VectorAgent() as agent:
 
 ## Next Steps
 
-- [Testing Guide](testing.md) — how to test contracts on Vector
-- [Vector Gotchas](../concepts/vector-gotchas.md) — AP3X, network ID, CBOR parity
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — deploy and interact tools
+- [Testing Guide](testing.md) - how to test contracts on Vector
+- [Vector Gotchas](../concepts/vector-gotchas.md) - AP3X, network ID, CBOR parity
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - deploy and interact tools
