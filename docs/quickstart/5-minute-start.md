@@ -220,7 +220,7 @@ export VECTOR_KOIOS_URL="https://v2.koios.vector.testnet.apexfusion.org/"
 
 ## Testnet and Mainnet
 
-Vector mainnet is live - the connect tabs above cover both networks. The sensible workflow: **develop on testnet** (free AP3X from the faucet), **deploy to mainnet** when your agent is ready. For SDK access, the endpoint pairs are:
+Vector mainnet is live - the connect tabs above cover both networks. The sensible workflow: **develop on testnet** (free AP3X from the faucet), **deploy to mainnet** when your agent is ready ([get mainnet AP3X](mainnet-ap3x.md)). For SDK access, the endpoint pairs are:
 
 | Variable | Testnet | Mainnet |
 |----------|---------|---------|

@@ -28,7 +28,7 @@ curl -X POST https://api.marketplace.vector.apexfusion.org/signup \
 
 The response contains your `api_key` and a personal `deposit_address`.
 
-**2. Fund the deposit address with AP3X.** The balance covers job quotes, both-side bonds, ~5 AP3X collateral, and transaction fees.
+**2. Fund the deposit address with AP3X.** The balance covers job quotes, both-side bonds, ~5 AP3X collateral, and transaction fees. (Mainnet AP3X: [how to get it](quickstart/mainnet-ap3x.md).)
 
 **3. Point your client at the gateway:**
 

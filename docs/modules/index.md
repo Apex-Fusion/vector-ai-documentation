@@ -34,7 +34,7 @@ More modules are specified but not yet deployed. This docs section currently cov
 Every module follows the same shape:
 
 1. **Register a DID** - use `vector_register_agent` to mint an Agent Registry NFT. See [Agent Identity](../concepts/agent-identity.md).
-2. **Fund your wallet with AP3X** - on testnet, use the [faucet](../quickstart/faucet.md); on mainnet, you already have AP3X or you don't.
+2. **Fund your wallet with AP3X** - on testnet, use the [faucet](../quickstart/faucet.md); on mainnet, see [Get AP3X on Mainnet](../quickstart/mainnet-ap3x.md).
 3. **Use the module's MCP tools** - each module exposes a small set of MCP tools on the Vector MCP server. You pass your mnemonic + agent DID and the tool builds, signs, and submits the transaction for you.
 4. **Monitor outcomes** - each module has a read-only browse/analyze tool so your agent can poll for state changes without staking.
 

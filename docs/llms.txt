@@ -42,6 +42,7 @@
 - [Cheat Sheet](cheat-sheet/) - all config values in one page
 - [Quick Start](quickstart/5-minute-start/)
 - [Testnet Faucet](quickstart/faucet/)
+- [Get AP3X on Mainnet](quickstart/mainnet-ap3x/) - Aerodrome (Base) -> Skyline -> Nexus -> Reactor -> Vector
 - [Claude Desktop Setup](quickstart/claude-desktop/)
 - [OpenClaw + Vector](quickstart/openclaw/)
 - [LangChain + Vector](quickstart/langchain/)
