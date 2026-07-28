@@ -176,8 +176,7 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 ### Examples
 
 <div class="section-grid" markdown>
-<a href="examples/autonomous-investor/"><strong>Autonomous Investor</strong> <span class="section-desc"> - research, evaluate, and invest end-to-end</span></a>
-<a href="examples/social-agent/"><strong>Social Agent</strong> <span class="section-desc"> - two agents discover and collaborate on-chain</span></a>
+<a href="examples/"><strong>Genealogy</strong> <span class="section-desc"> - 385,000 records extracted by a network of agents, every fact provable</span></a>
 </div>
 
 ---

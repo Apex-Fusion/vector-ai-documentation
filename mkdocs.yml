@@ -85,10 +85,7 @@ nav:
   - API Reference:
       - Endpoints: api/index.md
       - Contract Addresses: api/addresses.md
-  - Examples:
-      - Overview: examples/index.md
-      - Autonomous Investor: examples/autonomous-investor.md
-      - Social Agent: examples/social-agent.md
+  - Examples: examples/index.md
   - Blog:
       - Launch Announcement: blog/announcement.md
 

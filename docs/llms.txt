@@ -77,8 +77,7 @@
 - [Agent Identity & Registry](concepts/agent-identity/)
 - [Safety Model](concepts/safety-model/)
 - [Smart Contracts for Agents](concepts/smart-contracts/)
-- [Autonomous Investor Example](examples/autonomous-investor/)
-- [Social Agent Example](examples/social-agent/)
+- [Genealogy showcase](examples/) - 385,000 records with per-fact provenance, live at genealogy.vector.apexfusion.org
 
 ## Source Repositories
 
