@@ -97,16 +97,16 @@ from crewai import Agent, Task, Crew
 
 researcher = Agent(
     role="Blockchain Researcher",
-    goal="Analyze the Vector blockchain to find investment opportunities",
-    backstory="You are an expert at analyzing blockchain data and discovering valuable projects and agents on the Vector network.",
+    goal="Analyze the Vector agent network to find capable environmental-data agents",
+    backstory="You are an expert at analyzing on-chain data and discovering capable agents on the Vector network.",
     tools=[check_balance, find_agents, search_tokens, read_contract],
     verbose=True,
 )
 
-investor = Agent(
-    role="Investment Executor",
-    goal="Execute investment decisions safely on Vector",
-    backstory="You are a careful investor. You always dry-run transactions before executing them and never exceed spend limits.",
+executor = Agent(
+    role="Work Executor",
+    goal="Commission work safely on Vector",
+    backstory="You are a careful operator. You always dry-run transactions before executing them and never exceed spend limits.",
     tools=[check_balance, send_apex, dry_run_transaction],
     verbose=True,
 )
@@ -117,15 +117,15 @@ research_task = Task(
     agent=researcher,
 )
 
-invest_task = Task(
-    description="Based on the research, dry-run a 5 AP3X transaction to the most promising environmental project. Report the dry-run results. Do NOT submit the real transaction yet.",
+commission_task = Task(
+    description="Based on the research, dry-run a 5 AP3X transfer to the most promising environmental-data agent. Report the dry-run results. Do NOT submit the real transaction yet.",
     expected_output="Dry-run results showing the transaction is valid and the expected fee.",
-    agent=investor,
+    agent=executor,
 )
 
 crew = Crew(
-    agents=[researcher, investor],
-    tasks=[research_task, invest_task],
+    agents=[researcher, executor],
+    tasks=[research_task, commission_task],
     verbose=True,
 )
 
@@ -135,7 +135,7 @@ print(result)
 
 ---
 
-## Advanced: Investment Crew with Safety Controls
+## Advanced: Research Crew with Safety Controls
 
 A more realistic setup with dedicated roles:
 
@@ -144,16 +144,16 @@ from crewai import Agent, Task, Crew, Process
 
 analyst = Agent(
     role="Vector Chain Analyst",
-    goal="Provide detailed analysis of opportunities on Vector",
-    backstory="""You analyze the Vector blockchain ecosystem. You check agent
-    registries, token markets, and smart contract states to identify opportunities.
+    goal="Provide detailed analysis of the agent network on Vector",
+    backstory="""You analyze the Vector agent ecosystem. You check the agent
+    registry, token holdings, and smart contract states to identify capable agents.
     You never make transactions - only research.""",
     tools=[find_agents, search_tokens, read_contract],
 )
 
 risk_manager = Agent(
     role="Risk Manager",
-    goal="Evaluate risks and enforce investment safety",
+    goal="Evaluate risks and enforce transaction safety",
     backstory="""You evaluate proposed transactions for risk. You check balances,
     verify spend limits, and dry-run every transaction before approving.
     You reject any transaction that exceeds 10% of the wallet balance.""",
@@ -173,12 +173,12 @@ crew = Crew(
     agents=[analyst, risk_manager, executor],
     tasks=[
         Task(
-            description="Analyze environmental investment opportunities on Vector. Find agents, tokens, and contracts related to environmental impact.",
-            expected_output="Ranked list of opportunities with addresses and reasoning.",
+            description="Survey environmental-data agents on Vector. Find registered agents, their tokens, and contracts related to environmental monitoring.",
+            expected_output="Ranked list of candidate agents with addresses and reasoning.",
             agent=analyst,
         ),
         Task(
-            description="Evaluate the top opportunity. Check our balance, verify we have sufficient AP3X, and dry-run the transaction. Reject if risk is too high.",
+            description="Evaluate the top candidate. Check our balance, verify we have sufficient AP3X, and dry-run the transaction. Reject if risk is too high.",
             expected_output="Risk assessment with dry-run results. Approve or reject with reasoning.",
             agent=risk_manager,
         ),

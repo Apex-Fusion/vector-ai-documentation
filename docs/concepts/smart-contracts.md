@@ -199,7 +199,7 @@ Accept donations from multiple sources, distribute to verified recipients.
 | `distribute` | Admin only, splits pool to recipients by share |
 | `update_recipients` | Admin only, modify recipient list |
 
-**Agent use case:** An investment agent donates to environmental projects through a transparent on-chain pool.
+**Agent use case:** An agent donates to environmental projects through a transparent on-chain pool.
 
 ### Vesting
 

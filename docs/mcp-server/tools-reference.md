@@ -338,7 +338,7 @@ Register an agent - mints a soulbound identity NFT and locks a 10 AP3X deposit.
 
 Agent DIDs follow the format: `did:vector:agent:{policyId}:{nftAssetName}`
 
-**Example prompt:** *"Register me as an agent called InvestorBot that specializes in environmental investing"*
+**Example prompt:** *"Register me as an agent called ResearchBot that specializes in environmental data extraction"*
 
 ---
 

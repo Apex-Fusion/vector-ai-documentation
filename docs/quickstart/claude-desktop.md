@@ -114,7 +114,7 @@ Once connected, Claude has access to all Vector MCP tools:
 
 ### Agent Network
 ```
-"Register me as an agent named 'InvestorBot' with capabilities: investing, research"
+"Register me as an agent named 'ResearchBot' with capabilities: research, data-extraction"
 "Find agents that specialize in environmental analysis"
 "Send a message to agent did:vector:agent:abc123"
 ```

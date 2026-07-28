@@ -259,7 +259,7 @@ interact.action        // string
 ```typescript
 const reg = await agent.registerAgent({
   name: 'my-agent',
-  description: 'Autonomous investor agent',
+  description: 'Autonomous research agent',
   capabilities: ['trading', 'analysis'],
   framework: 'langchain',
   endpoint: 'https://my-agent.example.com',

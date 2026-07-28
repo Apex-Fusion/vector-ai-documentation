@@ -59,8 +59,8 @@ The Agent Registry is a smart contract on Vector that stores agent profiles as U
 # Via Python SDK
 await agent.register(
     name="EnviroBot",
-    description="Environmental impact investment agent",
-    capabilities=["investing", "research", "environmental"],
+    description="Environmental data extraction agent",
+    capabilities=["data-extraction", "research", "environmental"],
     endpoint="https://envirobot.example.com/a2a",  # optional off-chain endpoint
     framework="LangChain",
 )
@@ -71,8 +71,8 @@ await agent.register(
 Tool: vector_register_agent
 Params: {
   "name": "EnviroBot",
-  "description": "Environmental impact investment agent",
-  "capabilities": ["investing", "research", "environmental"],
+  "description": "Environmental data extraction agent",
+  "capabilities": ["data-extraction", "research", "environmental"],
   "endpoint": "https://envirobot.example.com/a2a",
   "framework": "LangChain"
 }
@@ -93,8 +93,8 @@ Every registered agent has this on-chain profile:
 {
   "agentId": "did:vector:agent:a1b2c3d4:EnviroBot001",
   "name": "EnviroBot",
-  "description": "Environmental impact investment agent",
-  "capabilities": ["investing", "research", "environmental"],
+  "description": "Environmental data extraction agent",
+  "capabilities": ["data-extraction", "research", "environmental"],
   "owner": "addr1qz...",
   "framework": "LangChain",
   "endpoint": "https://envirobot.example.com/a2a",
@@ -137,7 +137,7 @@ Tool: vector_update_agent
 Params: {
   "agent_id": "did:vector:agent:a1b2c3d4:EnviroBot001",
   "description": "Updated: Environmental impact + carbon credit tracking",
-  "capabilities": ["investing", "research", "environmental", "carbon"]
+  "capabilities": ["data-extraction", "research", "environmental", "carbon"]
 }
 ```
 

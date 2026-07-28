@@ -167,14 +167,14 @@ def get_contract_state(script_address: str) -> str:
     return "\n".join(lines) or "No UTxOs at this address."
 ```
 
-### Chain-of-Thought Investment Agent
+### Chain-of-Thought Commissioning Agent
 
 ```python
 prompt = ChatPromptTemplate.from_messages([
-    ("system", """You are a careful investment agent on Vector.
-For any investment decision, follow these steps:
+    ("system", """You are a careful operations agent on Vector.
+Before commissioning any work, follow these steps:
 1. Check your current balance
-2. Research available agents and tokens
+2. Research available agents and their track records
 3. Dry-run the transaction
 4. Only proceed if the dry-run succeeds and the amount is within limits
 5. Log your reasoning for each decision"""),

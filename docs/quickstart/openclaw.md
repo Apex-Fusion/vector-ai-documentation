@@ -42,11 +42,11 @@ No installation, no API keys, no environment variables needed.
 Create an agent definition that uses Vector tools:
 
 ```yaml
-# agents/investor.yml
-name: InvestorBot
-description: An autonomous agent that manages a Vector wallet and makes investments.
+# agents/operator.yml
+name: OperatorBot
+description: An autonomous agent that manages a Vector wallet and commissions verified work.
 system_prompt: |
-  You are an investment agent operating on the Vector blockchain.
+  You are an operations agent on the Vector blockchain.
   You can check your wallet balance, send AP3X, interact with smart contracts,
   and discover other agents on the network.
 
@@ -60,18 +60,18 @@ mcp_servers:
 tools:
   - vector_get_balance
   - vector_get_address
-  - vector_send_ada
+  - vector_send_apex
   - vector_dry_run
   - vector_discover_agents
   - vector_interact_contract
   - vector_get_spend_limits
-  - vector_get_audit_log
+  - vector_get_transaction_history
 ```
 
 ## Step 3: Run the Agent
 
 ```bash
-openclaw run agents/investor.yml
+openclaw run agents/operator.yml
 ```
 
 Your agent now has full access to Vector. Try giving it instructions:
@@ -90,18 +90,18 @@ OpenClaw supports multi-agent orchestration. Here's an example with two agents c
 # agents/research-team.yml
 team:
   - name: Researcher
-    description: Discovers and evaluates projects on Vector
+    description: Discovers and evaluates agents on Vector
     tools:
       - vector_discover_agents
       - vector_get_agent_profile
-      - vector_search_tokens
-      - vector_query_contract_state
+      - vector_get_transaction_history
+      - vector_get_utxos
 
-  - name: Investor
-    description: Executes investment decisions on Vector
+  - name: Executor
+    description: Commissions and settles work on Vector
     tools:
       - vector_get_balance
-      - vector_send_ada
+      - vector_send_apex
       - vector_send_tokens
       - vector_interact_contract
       - vector_dry_run
@@ -109,11 +109,11 @@ team:
 
 coordination:
   strategy: sequential
-  flow: Researcher analyzes → Investor executes
+  flow: Researcher analyzes → Executor commissions
 ```
 
 ```bash
-openclaw run agents/research-team.yml --task "Research environmental projects on Vector and invest 20 AP3X across the best options"
+openclaw run agents/research-team.yml --task "Research environmental-data agents on Vector and commission 20 AP3X of work from the best options"
 ```
 
 ---
