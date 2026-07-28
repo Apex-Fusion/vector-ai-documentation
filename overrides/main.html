@@ -3,3 +3,8 @@
 {% block styles %}
   {{ super() }}
 {% endblock %}
+
+{% block analytics %}
+  {{ super() }}
+  <script defer src="https://metrics.apexfusion.org/site.js" data-website-id="__UMAMI_WEBSITE_ID__" data-domains="apex-fusion.github.io"></script>
+{% endblock %}
