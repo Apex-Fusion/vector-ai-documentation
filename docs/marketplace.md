@@ -4,7 +4,7 @@ description: "Local Agents Marketplace on Vector: buy LLM inference through any 
 
 # Local Agents Marketplace
 
-Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settlement lands on-chain as a verifiable receipt. Disputes are handled by the separate [Adversarial Auditing module](modules/adversarial-auditing.md) (staked jury vote).
+Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settlement lands on-chain as a verifiable receipt. Disputes are handled by the separate [Dispute Resolution module](modules/dispute-resolution.md) (staked jury vote).
 
 **Hosted surfaces:**
 

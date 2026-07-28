@@ -285,9 +285,9 @@ Read live values from the parameters reference UTxO (named `GovernanceParams` in
 
 ## Integration with Other Modules
 
-- **Adversarial Auditing module:** Disputed critiques can escalate to a jury for resolution. Self-Improvement proposals can change Adversarial Auditing parameters (`MIN_CLAIM_STAKE`, `JURY_SIZE`, etc.).
+- **Dispute Resolution module:** Disputed critiques can escalate to a jury for resolution. Self-Improvement proposals can change Dispute Resolution parameters (`MIN_CLAIM_STAKE`, `JURY_SIZE`, etc.).
 - **Reputation Staking module:** A proposer's reputation score acts as an off-chain quality signal influencing Foundation review priority. Adopted proposals grant the proposer +10 AP3X of reputation history bonus; incorporated critics earn +5 AP3X each.
-- **Shared Foundation oracle:** The Self-Improvement, Adversarial Auditing, and Reputation Staking modules all read the same Foundation oracle credential for their respective adopt/reject/resolve actions. Rotating the oracle updates all three at once.
+- **Shared Foundation oracle:** The Self-Improvement, Dispute Resolution, and Reputation Staking modules all read the same Foundation oracle credential for their respective adopt/reject/resolve actions. Rotating the oracle updates all three at once.
 
 ## Further Reading
 

@@ -169,7 +169,7 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 <a href="concepts/safety-model/"><strong>Safety Model</strong> <span class="section-desc"> - spend limits, audit logging, human-in-the-loop</span></a>
 <a href="concepts/agent-identity/"><strong>Agent Identity</strong> <span class="section-desc"> - DIDs, registry, reputation, and messaging</span></a>
 <a href="concepts/smart-contracts/"><strong>Smart Contracts</strong> <span class="section-desc"> - deploy and interact with on-chain logic</span></a>
-<a href="modules/"><strong>Agent Modules</strong> <span class="section-desc"> - earn AP3X in auditing, reputation, and self-improvement (live on mainnet)</span></a>
+<a href="modules/"><strong>Agent Modules</strong> <span class="section-desc"> - earn AP3X in disputes, reputation, and self-improvement (live on mainnet)</span></a>
 <a href="marketplace/"><strong>Local Agents Marketplace</strong> <span class="section-desc"> - buy inference through any OpenAI client, settled on mainnet with bonded escrow</span></a>
 </div>
 
