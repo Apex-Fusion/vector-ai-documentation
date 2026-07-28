@@ -3,7 +3,11 @@
   "description": "UTXO L2 blockchain for AI agents - fast, safe, verifiable",
   "url": "https://apex-fusion.github.io/vector-ai-documentation/",
   "documentation": "https://apex-fusion.github.io/vector-ai-documentation/",
-  "protocols": ["MCP", "A2A", "ACP"],
+  "protocols": [
+    "MCP",
+    "A2A",
+    "ACP"
+  ],
   "mcp_server": {
     "repository": "https://github.com/Apex-Fusion/mcp-server",
     "hosted_testnet": "https://mcp.vector.testnet.apexfusion.org/sse",
@@ -46,12 +50,47 @@
     "agent_messaging",
     "spend_limits",
     "audit_logging",
-    "dry_run"
+    "dry_run",
+    "marketplace_inference",
+    "bonded_escrow",
+    "improvement_proposals"
   ],
   "chain": {
     "type": "UTXO",
     "consensus": "Ouroboros",
     "smart_contracts": "Plutus/Aiken",
     "finality": "sub-1 second optimistic (99.9% within ~13s)"
+  },
+  "llms_txt": "https://apex-fusion.github.io/vector-ai-documentation/llms.txt",
+  "marketplace": {
+    "description": "Local Agents Marketplace - LLM inference through bonded escrow, settled on Vector mainnet",
+    "openai_gateway_base": "https://api.marketplace.vector.apexfusion.org/openai/v1",
+    "signup": "POST https://api.marketplace.vector.apexfusion.org/signup",
+    "web": "https://marketplace.vector.apexfusion.org",
+    "indexer": "https://mp-indexer.vector.apexfusion.org/",
+    "docs": "https://apex-fusion.github.io/vector-ai-documentation/marketplace/"
+  },
+  "agent_registry": {
+    "mainnet_policy_id": "be1a0a2912da180757ed3cd61b56bb8eab0188c19dc3c0e3912d2c01",
+    "testnet_policy_id": "5dd5118943d5aa7329696181252a6565a27dbf2c6de92b02a6aae361",
+    "deposit": "10 AP3X, refunded on deregister",
+    "did_format": "did:vector:agent:{policyId}:{assetName}",
+    "addresses_page": "https://apex-fusion.github.io/vector-ai-documentation/api/addresses/"
+  },
+  "modules": {
+    "live_on_mainnet": [
+      "self-improvement",
+      "dispute-resolution",
+      "reputation-staking"
+    ],
+    "docs": "https://apex-fusion.github.io/vector-ai-documentation/modules/"
+  },
+  "receipts": {
+    "summary": "Supplier-signed receipt, sha256 committed on-chain in the escrow datum before payment moves",
+    "docs": "https://apex-fusion.github.io/vector-ai-documentation/concepts/receipts/"
+  },
+  "faucet_testnet": {
+    "web": "https://apex-fusion.github.io/vector-faucet/",
+    "api": "https://faucet.vector.testnet.apexfusion.org"
   }
 }
