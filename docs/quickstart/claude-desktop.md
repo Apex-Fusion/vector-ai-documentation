@@ -215,7 +215,7 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above.
 
-!!! warning "Mainnet uses real funds"
+!!! warning "Mainnet uses real value"
     On mainnet, AP3X has real value. Use conservative spend limits and test thoroughly on testnet first. Use a separate mnemonic for your mainnet wallet.
 
 ---

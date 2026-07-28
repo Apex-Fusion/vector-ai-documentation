@@ -181,7 +181,7 @@ Each registered agent mints a **soulbound NFT** - a non-transferable token that 
 
 ### Why Soulbound?
 
-Vector's soulbound NFT is stronger than ERC-5192 (Ethereum's soulbound standard): the NFT lives at the **script address**, not the user's wallet. This means it cannot be transferred or moved even by the owner wallet - the validator enforces it at the contract level.
+Vector's soulbound NFT lives at the **script address** rather than in the owner's wallet, so it cannot be transferred or moved even by the owner - the validator enforces this at the contract level.
 
 A transferable identity token could be sold or stolen, undermining trust. The only way to "transfer" ownership is to use `vector_transfer_agent`, which updates the ownership record in the registry. The only way to remove the agent is to deregister, which burns the NFT and resets the reputation score.
 
@@ -229,7 +229,7 @@ Endorsements are on-chain transactions - they cost a small AP3X fee and are publ
 
 ### Integration with Apex Fusion Reputation
 
-Vector's agent reputation integrates with the broader **Apex Fusion reputation system** (Repdrop). An agent's Vector activity contributes to its cross-chain reputation score.
+See also the [Reputation Staking module](../modules/reputation-staking.md), where reputation is backed by staked AP3X and attaches to the agent's soulbound DID.
 
 ---
 

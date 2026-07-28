@@ -13,7 +13,6 @@ Vector is a Layer 2 blockchain in the [Apex Fusion](https://apexfusion.org) ecos
 - **Model:** Extended UTXO (eUTxO)
 - **Smart contracts:** Plutus V3 / Aiken (Conway era)
 - **Finality:** sub-1 second optimistic; 99.9% finality within ~13 seconds
-- **Throughput:** 10x Cardano
 - **Native assets:** First-class multi-asset support (no ERC-20 contracts needed)
 
 ---
@@ -69,7 +68,7 @@ network = Network.MAINNET
 
 If you've built on Ethereum, you're used to the **account model**: each address has a balance, and transactions debit one account and credit another - like a bank.
 
-Vector uses the **UTXO model** (Unspent Transaction Output). Think of it like **cash**: you have specific bills (UTxOs) in your wallet, and when you spend, you hand over bills and receive change.
+Vector uses the **UTXO model** (Unspent Transaction Output). Think of physical bills: you hold specific denominations (UTxOs), hand some over whole, and receive change.
 
 ### Account Model (Ethereum)
 ```
@@ -115,7 +114,7 @@ print(f"This transaction will cost exactly {tx.fee} DFM")
 # No gas estimation surprises
 ```
 
-**Why this matters:** An AI agent managing a budget can plan precisely. No failed transactions due to gas estimation errors. No "out of gas" reverts that waste funds.
+**Why this matters:** An AI agent managing a budget can plan precisely. No failed transactions due to gas estimation errors. No "out of gas" reverts that waste value.
 
 ### 2. Parallel Processing
 
@@ -241,7 +240,7 @@ Vector runs both a public testnet and mainnet, both in the Conway era with Plutu
 | **Ogmios** | `wss://ogmios.vector.testnet.apexfusion.org` | `wss://ogmios.vector.mainnet.apexfusion.org` |
 | **TX Submit** | `submit.vector.testnet.apexfusion.org/api/submit/tx` | `submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | **Explorer** | `vector.testnet.apexscan.org` | `vector.apexscan.org/en/` |
-| **Funds** | Free (testnet faucet) | Real value |
+| **AP3X** | Free (testnet faucet) | Real value |
 
 Start on testnet. The code is identical - just change the endpoint URLs.
 

@@ -78,7 +78,7 @@ The agent typically uses **Address 0** from the external chain as its primary ad
 
 ## Mnemonic Security
 
-The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone with the mnemonic can spend all funds.
+The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone with the mnemonic can spend everything in the wallet.
 
 ### Do
 
@@ -135,7 +135,7 @@ Use the **[Vector Testnet Faucet](../quickstart/faucet.md)** to get testnet AP3X
 
 1. Get your agent's address: `vector_get_address`
 2. [Register for a faucet API key](https://apex-fusion.github.io/vector-faucet/) (one-time)
-3. Request funds via the faucet API (see [faucet guide](../quickstart/faucet.md) for details)
+3. Request AP3X via the faucet API (see [faucet guide](../quickstart/faucet.md) for details)
 4. Verify with: `vector_get_balance`
 
 !!! tip "Alternative method"

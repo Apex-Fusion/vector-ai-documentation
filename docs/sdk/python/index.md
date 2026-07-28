@@ -69,7 +69,7 @@ All parameters fall back to environment variables if not provided:
 |-----------|---------------------|---------|
 | `ogmios_url` | `VECTOR_OGMIOS_URL` | *required* |
 | `submit_url` | `VECTOR_SUBMIT_URL` | *required* |
-| `koios_url` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org` |
+| `koios_url` | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org/` |
 | `mnemonic` | `VECTOR_MNEMONIC` | - |
 | `skey_path` | `VECTOR_SKEY_PATH` | - |
 | `account_index` | `VECTOR_ACCOUNT_INDEX` | `0` |

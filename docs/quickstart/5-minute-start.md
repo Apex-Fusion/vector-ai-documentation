@@ -133,7 +133,7 @@ Use the **[Vector Testnet Faucet](faucet.md)** to get testnet AP3X sent directly
 
 1. **Register** at the [Vector Faucet web UI](https://apex-fusion.github.io/vector-faucet/) (one-time, requires email verification)
 2. **Get your API key** (prefixed `vf_`) from the web UI after logging in
-3. **Request funds** via the API:
+3. **Request AP3X** via the API:
 
 ```bash
 curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
@@ -229,7 +229,7 @@ Vector mainnet is live - the connect tabs above cover both networks. The sensibl
 | `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://v2.koios.vector.mainnet.apexfusion.org/` |
 | `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org/en/` |
 
-!!! warning "Mainnet uses real funds"
+!!! warning "Mainnet uses real value"
     On mainnet, AP3X has real value. Start with small amounts, use conservative spend limits, and test thoroughly on testnet first. Use separate mnemonics for testnet and mainnet wallets.
 
 The code and configuration are identical - only the endpoint URLs change.

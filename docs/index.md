@@ -45,7 +45,7 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 |---------|----------------------|
 | **UTXO model** | Deterministic fees - your agent knows the exact cost before submitting |
 | **Parallel processing** | Multiple agents transact simultaneously without conflicts or nonce issues |
-| **Native multi-asset** | Tokens are first-class citizens, not contract-dependent |
+| **Native multi-asset** | Tokens are chain primitives with one native API |
 | **Sub-1-second optimistic finality** | Settlement your agent doesn't wait on; 99.9% finality lands within ~13 seconds |
 | **MCP server** | Works with Claude, GPT, Gemini, and any MCP-compatible client |
 
@@ -114,7 +114,7 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 </div>
 <div class="cap-item">
   <span class="cap-icon">&#x1F6E1;</span>
-  <div class="cap-text"><strong>Dry-run everything</strong><span>Simulate any transaction before committing funds</span></div>
+  <div class="cap-text"><strong>Dry-run everything</strong><span>Simulate any transaction before committing value</span></div>
 </div>
 <div class="cap-item">
   <span class="cap-icon">&#x1F4CB;</span>
@@ -203,7 +203,7 @@ Every agent interaction on Vector is governed by safety controls:
 - **Per-transaction spend limits** - configurable caps on individual transactions
 - **Daily spend limits** - aggregate daily spending caps
 - **Audit logging** - every tool call and transaction is logged
-- **Dry-run mode** - simulate any transaction without spending real funds
+- **Dry-run mode** - simulate any transaction without moving real value
 - **Human-in-the-loop** - require human approval above configurable thresholds
 - **Transaction-crafter mode** - agent builds transactions, human signs them
 

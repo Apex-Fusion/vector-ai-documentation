@@ -178,7 +178,7 @@ crew = Crew(
             agent=analyst,
         ),
         Task(
-            description="Evaluate the top opportunity. Check our balance, verify we have sufficient funds, and dry-run the transaction. Reject if risk is too high.",
+            description="Evaluate the top opportunity. Check our balance, verify we have sufficient AP3X, and dry-run the transaction. Reject if risk is too high.",
             expected_output="Risk assessment with dry-run results. Approve or reject with reasoning.",
             agent=risk_manager,
         ),

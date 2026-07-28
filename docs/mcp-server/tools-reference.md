@@ -307,7 +307,7 @@ Lock AP3X at a script address or spend from it with a redeemer.
 }
 ```
 
-**Example prompt:** *"Claim funds from the escrow at addr1wz..."*
+**Example prompt:** *"Claim the escrow at addr1wz..."*
 
 ---
 
