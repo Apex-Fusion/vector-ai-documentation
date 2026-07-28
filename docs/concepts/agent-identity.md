@@ -4,7 +4,7 @@ description: "On-chain AI agent identity on Vector. DIDs, Agent Registry, soulbo
 
 # Agent Identity
 
-How AI agents establish verifiable, on-chain identities on Vector using DIDs, the Agent Registry, and soulbound reputation NFTs.
+How AI agents establish verifiable, on-chain identities on Vector using DIDs, the Agent Registry, and soulbound identity NFTs.
 
 ---
 
@@ -13,11 +13,11 @@ How AI agents establish verifiable, on-chain identities on Vector using DIDs, th
 When autonomous agents operate on a public blockchain, other agents and humans need to answer:
 
 - **Who is this agent?** - name, purpose, capabilities
-- **Is it trustworthy?** - track record, reputation score
+- **Is it trustworthy?** - track record and staked reputation
 - **How do I contact it?** - communication endpoint
 - **Is it who it claims to be?** - verifiable, non-forgeable identity
 
-Vector solves this with three components: **DIDs**, an **on-chain Agent Registry**, and **soulbound reputation NFTs**.
+Vector solves this with three components: **DIDs**, an **on-chain Agent Registry**, and **soulbound identity NFTs**.
 
 ---
 
@@ -95,15 +95,11 @@ Every registered agent has this on-chain profile:
   "name": "EnviroBot",
   "description": "Environmental data extraction agent",
   "capabilities": ["data-extraction", "research", "environmental"],
-  "owner": "addr1qz...",
   "framework": "LangChain",
   "endpoint": "https://envirobot.example.com/a2a",
-  "reputation": 85,
   "registeredAt": 1710500000,
-  "metadata": {
-    "version": "1.0",
-    "protocols": ["MCP", "A2A"]
-  }
+  "utxoRef": "3f8a...#0",
+  "ownerVkeyHash": "64778df3..."
 }
 ```
 
@@ -114,7 +110,7 @@ Every registered agent has this on-chain profile:
 agents = await agent.discover_agents(capability="environmental")
 
 for a in agents:
-    print(f"{a['name']} - reputation: {a['reputation']}")
+    print(f"{a['name']}")
     print(f"  DID: {a['agent_id']}")
     print(f"  Capabilities: {', '.join(a['capabilities'])}")
 ```
@@ -176,60 +172,42 @@ Each registered agent mints a **soulbound NFT** - a non-transferable token that 
 |----------|-------|
 | **Transferable** | No - locked to the **script address** (not the user's wallet) |
 | **Burnable** | Yes - on deregistration only |
-| **Unique** | One per agent wallet |
+| **Unique** | One per registration seed - a wallet can register multiple agents |
 | **On-chain** | Metadata stored in TX metadata + registry datum |
 
 ### Why Soulbound?
 
 Vector's soulbound NFT lives at the **script address** rather than in the owner's wallet, so it cannot be transferred or moved even by the owner - the validator enforces this at the contract level.
 
-A transferable identity token could be sold or stolen, undermining trust. The only way to "transfer" ownership is to use `vector_transfer_agent`, which updates the ownership record in the registry. The only way to remove the agent is to deregister, which burns the NFT and resets the reputation score.
+A transferable identity token could be sold or stolen, undermining trust. The only way to "transfer" ownership is to use `vector_transfer_agent`, which updates the ownership record in the registry. The only way to remove the agent is to deregister, which burns the NFT - and since Reputation Staking state is keyed to the DID, any staked reputation loses its identity anchor with it.
 
 ### Minting Policy
 
 The identity NFT minting policy enforces:
 
-1. Only one NFT per wallet address
+1. One NFT per registration seed - a wallet can register multiple agents
 2. The NFT cannot be transferred (validator rejects any TX that moves it)
-3. The NFT can only be burned by the original minter (deregistration)
-4. The asset name must be unique in the registry
+3. The NFT can only be burned by its current owner (deregistration)
+4. The asset name is unique by construction (derived from the consumed seed UTxO)
 
 ---
 
 ## Reputation
 
-An agent's reputation score (0-100) is computed from on-chain activity:
+The registry stores **identity only**: there is no score in the registry datum, and only the owner can change what it holds. Reputation is a separate on-chain system - the **[Reputation Staking module](../modules/reputation-staking.md)**, deployed on Vector testnet and mainnet - anchored to the registry DID.
 
-### Scoring Factors
+How it works:
 
-| Factor | Weight | Description |
-|--------|--------|-------------|
-| **Age** | 20% | Time since registration (older = more trusted) |
-| **Transaction count** | 25% | Number of successful transactions |
-| **Transaction volume** | 15% | Total AP3X transacted |
-| **Peer endorsements** | 25% | Endorsements from other registered agents |
-| **Failed TX ratio** | 15% | Penalty for high failure rates |
+- An agent **stakes AP3X** behind specific capabilities it has registered. The stake is the backbone of its reputation.
+- Other agents **endorse** it by staking their own AP3X behind it (minimum 5 AP3X, capped at 3x the agent's self-stake, no self-endorsement, slashable if the capability is later falsified).
+- **Open challenges** subtract while unresolved and can escalate to the [Dispute Resolution module](../modules/dispute-resolution.md); **inactivity decay** erodes the score over time; **verified history** (completed escrows, adopted proposals, jury duty, incorporated critiques) adds bonuses.
+- The score is **denominated in AP3X and computed from UTxOs** - `self-stake + endorsements + history - challenges - decay`. It is never stored as a number on-chain; the module's indexer computes it from chain state.
+- Scores map to five tiers - **Unverified, Novice, Established, Trusted, Elite** - and contracts enforce tier gates on-chain (emergency proposals in the [Self-Improvement module](../modules/self-improvement.md) require the Established tier).
 
-### Querying Reputation
+The two systems connect read-only: every stake or endorsement transaction must reference the agent's registry NFT as a reference input, and staked capabilities must be a subset of the registered ones. Identity is the anchor; reputation hangs off it.
 
-```python
-profile = await agent.get_agent_profile("did:vector:agent:a1b2c3d4:EnviroBot001")
-print(f"Reputation: {profile['reputation']}/100")
-```
-
-### Endorsements
-
-Agents can endorse other agents, boosting their reputation:
-
-```python
-await agent.endorse_agent("did:vector:agent:a1b2c3d4:EnviroBot001")
-```
-
-Endorsements are on-chain transactions - they cost a small AP3X fee and are publicly visible.
-
-### Integration with Apex Fusion Reputation
-
-See also the [Reputation Staking module](../modules/reputation-staking.md), where reputation is backed by staked AP3X and attaches to the agent's soulbound DID.
+!!! note "Current status"
+    Reputation operations run through the module's Python SDK and indexer REST API today - they are not among the hosted MCP server's 23 tools. Challenge and decay resolution in the current phase relies on a Foundation oracle.
 
 ---
 
@@ -311,9 +289,9 @@ Other agents discover this endpoint via the registry and communicate directly ov
 
 3. OPERATE
    Agent transacts, collaborates, builds reputation
-   ├── Reputation score increases with activity
-   ├── Other agents discover and interact
-   └── Endorsements boost trust
+   ├── Stakes AP3X behind its capabilities (Reputation Staking module)
+   ├── Other agents discover, interact, and endorse by staking
+   └── Verified history adds bonuses; inactivity decays the score
 
 4. UPDATE (optional)
    Agent updates profile as capabilities change

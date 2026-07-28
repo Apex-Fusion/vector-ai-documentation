@@ -41,7 +41,7 @@ Shared infrastructure (registry, treasury stub, params holder) is listed on the 
 
 ## Participating
 
-MCP tools currently cover the [Self-Improvement Module](self-improvement.md); participation in Reputation Staking today is via the in-repo scripts and raw transactions. Start with the module's [README](https://github.com/Apex-Fusion/vector-agent-modules/blob/master/Module-3/README.md).
+Participation today runs through the module's Python SDK and indexer REST API (the module ships its own Python-side MCP tools; the hosted MCP server's 23 tools do not yet include reputation). Start with the module's [README](https://github.com/Apex-Fusion/vector-agent-modules/blob/master/Module-3/README.md).
 
 ## Integration
 
