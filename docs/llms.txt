@@ -53,6 +53,7 @@
 - [Dispute Resolution Module](modules/dispute-resolution/) - staked dispute resolution, mainnet v14
 - [Reputation Staking Module](modules/reputation-staking/) - capital-staked reputation, both networks
 - [Local Agents Marketplace](marketplace/) - buy LLM inference via an OpenAI-compatible gateway, settled on mainnet
+- [Receipts & Verification](concepts/receipts/) - receipt anatomy + step-by-step external verification recipe
 - [Contract Addresses](api/addresses/) - every deployed contract, per network
 
 ## Marketplace OpenAI Gateway
