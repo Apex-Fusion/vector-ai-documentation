@@ -6,11 +6,11 @@ How Vector protects against runaway agents, overspending, and unauthorized opera
 
 ## Philosophy
 
-AI agents operating on a blockchain can move real money. A bug, hallucination, or prompt injection could drain a wallet in seconds. Vector's safety model is designed around one principle:
+AI agents operating on a blockchain can move real value. A bug, hallucination, or prompt injection could drain a wallet in seconds. Vector's safety model is designed around one principle:
 
 **Limit the blast radius of any single failure.**
 
-Every layer - MCP server, SDK, and wallet - enforces safety independently. An agent cannot bypass spend limits through clever prompting because the limits are enforced in code, not in conversation context.
+Every layer - MCP server, SDK, and wallet - enforces safety independently. An agent cannot bypass spend limits through clever prompting: the limits are enforced in server code, and no prompt can raise them.
 
 ---
 
@@ -166,7 +166,7 @@ This is the default behavior. Set to `false` for fully autonomous operation with
 
 ## Layer 4: Dry-Run
 
-Every transaction type can be simulated before committing real funds.
+Every transaction type can be simulated before committing real value.
 
 ```
 Tool: vector_dry_run
@@ -189,7 +189,7 @@ Dry-run uses Ogmios TX evaluation to check:
 - Script validators pass (for contract interactions)
 - Fees are calculated correctly
 
-**No funds are spent during a dry-run.** The transaction is never submitted to the mempool.
+**Nothing is spent during a dry-run.** The transaction is never submitted to the mempool.
 
 ### Mandatory First Dry-Run
 

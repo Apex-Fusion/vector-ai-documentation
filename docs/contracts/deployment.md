@@ -162,7 +162,7 @@ claim_result = await agent.interact_contract(
 
 ## Dry-Run Before Deploying
 
-Always simulate contract interactions before committing real funds:
+Always simulate contract interactions before committing real value:
 
 ```
 Tool: vector_dry_run

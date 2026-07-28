@@ -4,7 +4,7 @@ description: "Local Agents Marketplace on Vector: buy LLM inference through any 
 
 # Local Agents Marketplace
 
-Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settlement lands on-chain as a verifiable receipt. Disputes are handled by the separate [Dispute Resolution module](modules/dispute-resolution.md) (staked jury vote).
+Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settled job leaves a [supplier-signed receipt whose hash is committed on-chain](concepts/receipts.md) before payment can move. Disputes are handled by the separate [Dispute Resolution module](modules/dispute-resolution.md) (staked jury vote).
 
 **Hosted surfaces:**
 
@@ -28,7 +28,7 @@ curl -X POST https://api.marketplace.vector.apexfusion.org/signup \
 
 The response contains your `api_key` and a personal `deposit_address`.
 
-**2. Fund the deposit address with AP3X.** The balance covers job quotes, both-side bonds, ~5 AP3X collateral, and transaction fees.
+**2. Fund the deposit address with AP3X.** The balance covers job quotes, both-side bonds, ~5 AP3X collateral, and transaction fees. (Mainnet AP3X: [how to get it](quickstart/mainnet-ap3x.md).)
 
 **3. Point your client at the gateway:**
 
@@ -48,6 +48,9 @@ resp = client.chat.completions.create(
 print(resp.choices[0].message.content)
 ```
 
+!!! tip "Store your receipts"
+    Every response carries an `x_vector` extension with `{receipt, receipt_signature, escrow_ref}` - the [verifiable receipt](concepts/receipts.md) for that job. Store it; the gateway does not persist receipts.
+
 **Account endpoints** (Bearer `api_key`):
 
 | Endpoint | What |
@@ -59,9 +62,9 @@ print(resp.choices[0].message.content)
 
 1. **Advert** - the job is posted with escrow bonded
 2. **Claim** - a supplier claims it, bonding their side
-3. **Work** - the supplier runs the model and submits the result hash on-chain
-4. **Accept** - the result is accepted (or disputed - jury path)
-5. **Settle** - the escrow releases; the settlement is a signed on-chain receipt
+3. **Work** - the supplier runs the model and commits the [receipt hash](concepts/receipts.md) on-chain with its own key
+4. **Accept** - the buyer's signed transaction accepts (contested work goes the jury path)
+5. **Settle** - the escrow releases; the payout transaction completes the on-chain record
 
 The gateway drives this lifecycle for you on every request. To watch it happen, open the [indexer UI](https://mp-indexer.vector.apexfusion.org/) or query the chain directly.
 
@@ -69,9 +72,9 @@ The gateway drives this lifecycle for you on every request. To watch it happen, 
 
 Everything is open source in [`Apex-Fusion/agents-marketplace`](https://github.com/Apex-Fusion/agents-marketplace): self-deploy the indexer and UI, run a **supplier** node (serve models, bond AP3X, build an on-chain track record), or run the buyer app directly against the contracts. Start with [`docs/ARCHITECTURE.md`](https://github.com/Apex-Fusion/agents-marketplace/blob/main/docs/ARCHITECTURE.md), then the role guides in `docs/buyer/` and `docs/supplier/`.
 
-## Mainnet contracts
+## Contracts
 
-As supplied by the team, 2026-07-27:
+The script addresses and validator hashes are identical on both networks (Vector's testnet uses the mainnet network ID); reference inputs below are the mainnet values. As of 2026-07-27:
 
 | Contract | Script address | Validator hash |
 |----------|----------------|----------------|

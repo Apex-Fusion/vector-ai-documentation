@@ -15,8 +15,7 @@ Everything you need in one place. Bookmark this page.
 | **PyCardano Network** | `Network.MAINNET` (even for testnet!) |
 | **Native Coin** | AP3X |
 | **Smallest Unit** | DFM (1 AP3X = 1,000,000 DFM) |
-| **Finality** | ~13 seconds (99.9%) |
-| **Throughput** | 10x Cardano |
+| **Finality** | sub-1 second optimistic; 99.9% within ~13s |
 
 ## Smart Contracts
 

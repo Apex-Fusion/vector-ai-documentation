@@ -10,7 +10,7 @@ All templates are located in the [vector-ai-agents repository](https://github.co
 
 **Status:** Audited, compiled, ready to deploy
 
-A two-party escrow contract. One party locks funds with a deadline; the other can claim before the deadline, or the depositor reclaims after the deadline.
+A two-party escrow contract. One party locks AP3X with a deadline; the other can claim before the deadline, or the depositor reclaims after the deadline.
 
 **GitHub:** [`smart-contract-audit/compliant/simple-escrow`](https://github.com/Apex-Fusion/vector-ai-agents/tree/main/smart-contract-audit/compliant/simple-escrow)
 
@@ -26,7 +26,7 @@ A two-party escrow contract. One party locks funds with a deadline; the other ca
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `beneficiary` | address bytes | Who can claim the funds |
+| `beneficiary` | address bytes | Who can claim the AP3X |
 | `depositor` | address bytes | Who deposited (can reclaim after deadline) |
 | `deadline` | integer | Slot number after which depositor can reclaim |
 
@@ -63,7 +63,7 @@ Params: {
 
 **Status:** Audited, compiled, ready to deploy
 
-A pooled donation contract where multiple contributors can deposit AP3X. The pool owner can distribute funds to recipients. Contributors can view the total pool.
+A pooled donation contract where multiple contributors can deposit AP3X. The pool owner can distribute the pooled AP3X to recipients. Contributors can view the total pool.
 
 **GitHub:** [`smart-contract-audit/compliant/donation-pool`](https://github.com/Apex-Fusion/vector-ai-agents/tree/main/smart-contract-audit/compliant/donation-pool)
 
@@ -79,7 +79,7 @@ A pooled donation contract where multiple contributors can deposit AP3X. The poo
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `owner` | address bytes | Who can distribute funds |
+| `owner` | address bytes | Who can distribute the pool |
 | `recipients` | list of address bytes | Approved recipients |
 | `total_contributions` | integer | Running total in DFM |
 
@@ -99,7 +99,7 @@ or
 
 **Status:** Audited, compiled, ready to deploy
 
-A time-locked vesting contract. Funds are released linearly over a vesting period. Useful for token grants, team allocations, and long-term funding.
+A time-locked vesting contract. AP3X is released linearly over a vesting period. Useful for token grants, team allocations, and long-term funding.
 
 **GitHub:** [`smart-contract-audit/compliant/vesting`](https://github.com/Apex-Fusion/vector-ai-agents/tree/main/smart-contract-audit/compliant/vesting)
 
@@ -116,7 +116,7 @@ A time-locked vesting contract. Funds are released linearly over a vesting perio
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `beneficiary` | address bytes | Who receives the vested funds |
+| `beneficiary` | address bytes | Who receives the vested AP3X |
 | `vest_start` | integer | Slot when vesting begins |
 | `vest_end` | integer | Slot when fully vested |
 | `total_amount` | integer | Total AP3X locked in DFM |
@@ -169,7 +169,7 @@ or
 
 | Value | Who can use | Condition |
 |-------|-------------|-----------|
-| `Buy` | Anyone | Must pay `ask_lovelace` DFM |
+| `Buy` | Anyone | Must transfer `ask_lovelace` DFM |
 | `Cancel` | Seller only | Reclaim the offer |
 
 ---

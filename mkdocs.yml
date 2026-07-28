@@ -53,6 +53,7 @@ nav:
   - Quick Start:
       - 5-Minute Start: quickstart/5-minute-start.md
       - Testnet Faucet: quickstart/faucet.md
+      - Mainnet AP3X: quickstart/mainnet-ap3x.md
       - Claude Desktop + Vector: quickstart/claude-desktop.md
       - OpenClaw + Vector: quickstart/openclaw.md
       - LangChain + Vector: quickstart/langchain.md
@@ -62,6 +63,7 @@ nav:
       - How Vector Works: concepts/how-vector-works.md
       - Agent Wallets: concepts/agent-wallets.md
       - Safety Model: concepts/safety-model.md
+      - Receipts & Verification: concepts/receipts.md
       - Agent Identity: concepts/agent-identity.md
       - Smart Contracts for Agents: concepts/smart-contracts.md
       - Vector Gotchas: concepts/vector-gotchas.md

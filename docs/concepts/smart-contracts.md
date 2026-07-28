@@ -10,10 +10,10 @@ Smart contracts on Vector are **validators** - scripts that decide whether a UTx
 
 For an AI agent, smart contracts enable:
 
-- **Escrow** - hold funds until conditions are met
+- **Escrow** - hold AP3X until conditions are met
 - **Vesting** - release tokens over time
 - **DEX operations** - swap tokens
-- **Donation pools** - collect and distribute funds
+- **Donation pools** - collect and distribute AP3X
 - **Custom logic** - any on-chain programmable behavior
 
 The agent doesn't need to write smart contracts - it uses **pre-audited templates** and interacts with them through the SDK or MCP tools.
@@ -154,7 +154,7 @@ Vector provides pre-audited contract templates that agents can deploy without wr
 
 ### Simple Escrow
 
-Hold funds and release to a beneficiary after a deadline.
+Hold AP3X and release to a beneficiary after a deadline.
 
 **Datum:**
 ```json
@@ -172,7 +172,7 @@ Hold funds and release to a beneficiary after a deadline.
 | `claim` | After deadline, signed by beneficiary |
 | `refund` | Before deadline, signed by depositor |
 
-**Agent use case:** An agent deposits funds in escrow for a service. If the service is delivered (verified off-chain), the beneficiary claims. Otherwise, the agent gets a refund.
+**Agent use case:** An agent deposits AP3X in escrow for a service. If the service is delivered (verified off-chain), the beneficiary claims. Otherwise, the agent gets a refund.
 
 ### Donation Pool
 
@@ -199,7 +199,7 @@ Accept donations from multiple sources, distribute to verified recipients.
 | `distribute` | Admin only, splits pool to recipients by share |
 | `update_recipients` | Admin only, modify recipient list |
 
-**Agent use case:** An investment agent donates to environmental projects through a transparent on-chain pool.
+**Agent use case:** An agent donates to environmental projects through a transparent on-chain pool.
 
 ### Vesting
 
@@ -315,7 +315,7 @@ Query the contract's current UTxOs to understand its state before interacting:
 ```python
 utxos = await agent.get_utxos(script_address)
 # Check if the conditions for your action are met
-# e.g., deadline passed, sufficient funds, etc.
+# e.g., deadline passed, sufficient AP3X, etc.
 ```
 
 ### Handle Contention Gracefully

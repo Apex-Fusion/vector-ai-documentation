@@ -114,7 +114,7 @@ Once connected, Claude has access to all Vector MCP tools:
 
 ### Agent Network
 ```
-"Register me as an agent named 'InvestorBot' with capabilities: investing, research"
+"Register me as an agent named 'ResearchBot' with capabilities: research, data-extraction"
 "Find agents that specialize in environmental analysis"
 "Send a message to agent did:vector:agent:abc123"
 ```
@@ -215,7 +215,7 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above.
 
-!!! warning "Mainnet uses real funds"
+!!! warning "Mainnet uses real value"
     On mainnet, AP3X has real value. Use conservative spend limits and test thoroughly on testnet first. Use a separate mnemonic for your mainnet wallet.
 
 ---

@@ -57,7 +57,7 @@ One command:
     claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
     ```
 
-That's it - all 18 Vector MCP tools are immediately available in Claude Code.
+That's it - all 23 Vector MCP tools are immediately available in Claude Code.
 
 ### Claude Desktop
 

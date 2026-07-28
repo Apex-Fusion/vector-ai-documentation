@@ -27,7 +27,7 @@ That's it. Your agent can now:
 - **Deploy smart contracts** - deploy Aiken/Plutus contracts to the chain
 - **Discover other agents** - query the on-chain agent registry
 - **Communicate on-chain** - send verifiable messages to other agents
-- **Dry-run everything** - simulate any operation before committing real funds
+- **Dry-run everything** - simulate any operation before committing real value
 
 ## Why Vector?
 
@@ -36,8 +36,8 @@ We chose Vector (Apex Fusion's UTXO L2) because the UTXO model solves problems t
 - **Deterministic fees** - your agent knows the exact cost before submitting. No gas estimation surprises, no "out of gas" reverts.
 - **Parallel processing** - multiple agents transact simultaneously without nonce conflicts or stuck transaction queues.
 - **Explicit state** - all contract state is visible as UTxOs. No opaque storage slots to decode.
-- **Native multi-asset** - tokens are chain primitives, not contract state. One API for AP3X and tokens alike.
-- **Near-instant finality** - 99.9% in ~13 seconds. Agents don't wait.
+- **Native multi-asset** - tokens are chain primitives. One API for AP3X and tokens alike.
+- **Sub-1-second optimistic finality** - agents don't wait; 99.9% finality lands within ~13 seconds.
 
 ## The Stack
 
@@ -52,7 +52,7 @@ Layer 1: Chain Access - Ogmios + Koios + TX Submission API
 
 ## Safety First
 
-AI agents managing money need guardrails. Every Vector agent interaction is governed by:
+AI agents managing value need guardrails. Every Vector agent interaction is governed by:
 
 - **Per-transaction spend limits** - hard caps on individual transactions
 - **Daily spend limits** - aggregate daily caps that reset at midnight UTC
@@ -61,7 +61,7 @@ AI agents managing money need guardrails. Every Vector agent interaction is gove
 - **Human-in-the-loop** - optional human approval for transactions
 - **Transaction-crafter mode** - agent builds, human signs
 
-An agent cannot bypass spend limits through clever prompting - they're enforced in code, not conversation.
+An agent cannot bypass spend limits through clever prompting: the limits are enforced in server code, and no prompt can raise them.
 
 ## Framework Support
 
@@ -88,7 +88,7 @@ Each agent gets a DID (Decentralized Identifier) and a soulbound identity NFT. I
 
 Pre-audited contract templates that agents can deploy without writing Aiken:
 
-- **Simple Escrow** - hold funds, release on condition
+- **Simple Escrow** - hold AP3X, release on condition
 - **Donation Pool** - collect and distribute to verified recipients
 - **Vesting** - time-locked token release
 - **Simple DEX** - basic token swap
@@ -103,7 +103,7 @@ Each template includes tests, attack surface documentation, and SDK integration 
 2. Fund with testnet AP3X (via [Vector Testnet Faucet](../quickstart/faucet.md))
 3. Ask your agent: *"What's my Vector balance?"*
 
-Full documentation: [docs.vector.apexfusion.org/agents](https://docs.vector.apexfusion.org/agents/)
+Full documentation: [apex-fusion.github.io/vector-ai-documentation](https://apex-fusion.github.io/vector-ai-documentation/)
 
 **Machine-readable discovery:**
 - `llms.txt` at `vector.apexfusion.org/llms.txt`
@@ -127,4 +127,4 @@ The Vector AI Agent Platform was built in a 5-day sprint by Filip, Časlav, Davi
 
 ---
 
-*Vector is part of the [Apex Fusion](https://apexfusion.org) ecosystem. Follow us on GitHub: [ApexFusion/vector-ai-agents](https://github.com/ApexFusion/vector-ai-agents)*
+*Vector is part of the [Apex Fusion](https://apexfusion.org) ecosystem. Follow us on GitHub: [github.com/Apex-Fusion](https://github.com/Apex-Fusion)*

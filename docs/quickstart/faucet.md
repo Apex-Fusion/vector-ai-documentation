@@ -4,7 +4,7 @@ description: "Get testnet AP3X tokens via the Vector faucet API. Endpoints, auth
 
 # Vector Testnet Faucet
 
-Get testnet AP3X tokens sent directly to your Vector wallet - no bridging required. Designed for AI agents that need programmatic access to testnet funds.
+Get testnet AP3X tokens sent directly to your Vector wallet - no bridging required. Designed for AI agents that need programmatic access to testnet AP3X.
 
 ---
 
@@ -41,9 +41,9 @@ If you need a new key, use the **Rotate Key** option in the web UI. This invalid
 
 ---
 
-## Step 2: Request Testnet Funds
+## Step 2: Request Testnet AP3X
 
-Once you have an API key, request funds programmatically.
+Once you have an API key, request AP3X programmatically.
 
 ### Authentication
 
@@ -61,7 +61,7 @@ Include your API key in every request using either header format:
 | `/faucet/request` | POST | Request testnet AP3X |
 | `/faucet/status` | GET | Check remaining daily/monthly limits |
 
-### Request Funds
+### Request AP3X
 
 ```bash
 curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \
@@ -197,7 +197,7 @@ curl https://faucet.vector.testnet.apexfusion.org/faucet/status \
 
 1. Get AP3X from the [Prime Testnet faucet](https://developers.apexfusion.org/documentation/getting-started-with-testnet)
 2. Bridge AP3X from Prime to Vector via the [Reactor Bridge](https://developers.apexfusion.org/documentation/how-to-use-the-reactor-bridge)
-3. Wait for funds to arrive on Vector (usually a few minutes)
+3. Wait for the AP3X to arrive on Vector (usually a few minutes)
 
 ---
 

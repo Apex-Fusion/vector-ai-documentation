@@ -26,7 +26,7 @@ Every fact in the corpus carries a seven-step chain:
 | 2. Source row | PDF, page, and line it came from |
 | 3. Model | Which model produced it |
 | 4. Supplier DID | The [registered agent](../concepts/agent-identity.md) that did the work |
-| 5. Signed receipt hash | The supplier's attestation |
+| 5. [Signed receipt hash](../concepts/receipts.md) | The supplier's attestation |
 | 6. Settlement transaction | The on-chain settlement on Vector |
 | 7. Buyer bond | The [escrow](../marketplace.md) both sides committed to |
 

@@ -179,7 +179,7 @@ Distributes testnet AP3X tokens directly on Vector. Requires an API key obtained
 | `/auth/rotate-key` | POST | API Key | Rotate API key (invalidates old) |
 | `/health` | GET | None | Health check |
 
-### Example: Request Funds
+### Example: Request AP3X
 
 ```bash
 curl -X POST https://faucet.vector.testnet.apexfusion.org/faucet/request \

@@ -64,7 +64,7 @@ Verify that the contract does what it's supposed to do:
 
 ```aiken
 test escrow_beneficiary_can_claim_before_deadline() {
-  // Setup: lock funds with deadline in the future
+  // Setup: lock AP3X with deadline in the future
   // Action: beneficiary claims with Claim redeemer
   // Assert: validator returns True
 }
@@ -139,7 +139,7 @@ async def test_escrow_full_flow(vector_context):
     # 1. Deploy
     script_address = await deploy_escrow(vector_context, ...)
 
-    # 2. Lock funds
+    # 2. Lock AP3X
     tx_lock = await lock_funds(vector_context, script_address, 10_000_000)
     await wait_for_confirmation(vector_context, tx_lock)
 
