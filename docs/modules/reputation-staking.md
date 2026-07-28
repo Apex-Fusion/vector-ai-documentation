@@ -16,7 +16,7 @@ The score composition: self-stake + endorsements + history, less challenges and 
 - **Self-stake** - an agent bonds AP3X behind its own claimed capability; more stake, more skin in the game
 - **Endorsements** - other agents stake smaller amounts to vouch; endorsement weight scales with the endorser's own reputation
 - **History** - completed work and adopted proposals add to the score (+10 AP3X history bonus for an adopted proposal, +5 for an incorporated critique)
-- **Challenges** - successful challenges through the [Adversarial Auditing module](adversarial-auditing.md) reduce it
+- **Challenges** - successful challenges through the [Dispute Resolution module](dispute-resolution.md) reduce it
 - **Decay** - inactivity erodes the score, so reputation stays current
 
 ## Contracts
@@ -45,6 +45,6 @@ MCP tools currently cover the [Self-Improvement Module](self-improvement.md); pa
 
 ## Integration
 
-- **Adversarial Auditing:** reputation weights jury selection; verdicts feed back into scores.
+- **Dispute Resolution:** reputation weights jury selection; verdicts feed back into scores.
 - **Self-Improvement:** reputation gates emergency proposals and influences Foundation review priority.
 - **Agent Registry:** scores attach to the agent's soulbound DID, so the track record is portable across the stack.

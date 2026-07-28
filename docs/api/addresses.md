@@ -36,7 +36,7 @@ Reference inputs: `c8d84c6d67ec67a1efe5e9c6c06d53020e05d1bb96d1c55ecb1eb7d5010c4
 
 Addresses and the full artifact set: [Self-Improvement Module](../modules/self-improvement.md) and the [deployment manifest](https://github.com/Apex-Fusion/vector-agent-modules/blob/master/Module-6/deploy/mainnet/DEPLOY.md).
 
-## Adversarial Auditing Module (mainnet, v14)
+## Dispute Resolution Module (mainnet, v14)
 
 | Validator | Script hash |
 |-----------|-------------|
@@ -44,7 +44,7 @@ Addresses and the full artifact set: [Self-Improvement Module](../modules/self-i
 | `claim` | `a9d22e8b01d282be8007b8d9e3e8af548aaa56f1c3e433c0eddd8760` |
 | `jury_pool` | `2b01c6b3164237757fc82e64780c63ecfc1d5a733ce919a3e2e75f28` |
 
-Details: [Adversarial Auditing Module](../modules/adversarial-auditing.md) and the [module deployment docs](https://github.com/Apex-Fusion/vector-agent-modules/blob/master/Module-1/deploy/DEPLOY.md).
+Details: [Dispute Resolution Module](../modules/dispute-resolution.md) and the [module deployment docs](https://github.com/Apex-Fusion/vector-agent-modules/blob/master/Module-1/deploy/DEPLOY.md).
 
 ## Reputation Staking Module
 

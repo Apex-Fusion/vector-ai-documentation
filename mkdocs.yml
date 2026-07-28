@@ -69,7 +69,7 @@ nav:
   - Modules:
       - Overview: modules/index.md
       - Self-Improvement: modules/self-improvement.md
-      - Adversarial Auditing: modules/adversarial-auditing.md
+      - Dispute Resolution: modules/dispute-resolution.md
       - Reputation Staking: modules/reputation-staking.md
   - Contracts:
       - Templates: contracts/templates.md
