@@ -4,18 +4,18 @@ description: "AI agent wallet management on Vector. HD wallets, mnemonics, addr1
 
 # Agent Wallets
 
-How AI agents manage wallets on Vector — creation, funding, security, and best practices.
+How AI agents manage wallets on Vector - creation, funding, security, and best practices.
 
 ---
 
 ## Overview
 
-Every AI agent interacting with Vector needs a **wallet** — a cryptographic identity that holds AP3X and native tokens, signs transactions, and represents the agent on-chain.
+Every AI agent interacting with Vector needs a **wallet** - a cryptographic identity that holds AP3X and native tokens, signs transactions, and represents the agent on-chain.
 
 Vector uses **HD wallets** (Hierarchical Deterministic) derived from a 15-word mnemonic phrase (15 or 24 words are both accepted). From a single mnemonic, the agent can derive multiple addresses for different purposes.
 
 !!! note "Vector testnet addresses start with addr1"
-    Vector testnet uses mainnet network ID (networkMagic: 764824073). All addresses — testnet and mainnet — start with `addr1`, not `addr_test1`.
+    Vector testnet uses mainnet network ID (networkMagic: 764824073). All addresses - testnet and mainnet - start with `addr1`, not `addr_test1`.
 
 ---
 
@@ -115,8 +115,8 @@ The 15-word mnemonic (or 24-word) is the **master key** to the wallet. Anyone wi
     export VECTOR_MNEMONIC="your mainnet mnemonic phrase ..."
     export VECTOR_OGMIOS_URL="https://ogmios.vector.mainnet.apexfusion.org"
     export VECTOR_SUBMIT_URL="https://submit.vector.mainnet.apexfusion.org/api/submit/tx"
-    export VECTOR_KOIOS_URL="https://koios.vector.mainnet.apexfusion.org/"
-    export VECTOR_EXPLORER_URL="https://explorer.vector.mainnet.apexfusion.org"
+    export VECTOR_KOIOS_URL="https://v2.koios.vector.mainnet.apexfusion.org/"
+    export VECTOR_EXPLORER_URL="https://vector.apexscan.org/en/"
     export VECTOR_ACCOUNT_INDEX="0"
     export VECTOR_SPEND_LIMIT_PER_TX="50000000"
     export VECTOR_SPEND_LIMIT_DAILY="200000000"
@@ -202,7 +202,7 @@ Agent wants to send 50 AP3X (daily total already at 460 AP3X)
   → REJECTED: "Transaction of 50 AP3X would exceed daily limit. Remaining: 40 AP3X"
 ```
 
-Limits are enforced at the MCP server and SDK level — the agent cannot bypass them.
+Limits are enforced at the MCP server and SDK level - the agent cannot bypass them.
 
 ### Configuring Limits
 
@@ -247,9 +247,9 @@ Agent C: mnemonic_c → wallet_c → address_c
 
 This provides:
 
-- **Isolation** — one compromised agent doesn't affect others
-- **Auditability** — clear on-chain trail per agent
-- **Independent limits** — each agent has its own spend limits
+- **Isolation** - one compromised agent doesn't affect others
+- **Auditability** - clear on-chain trail per agent
+- **Independent limits** - each agent has its own spend limits
 
 ---
 
@@ -259,7 +259,7 @@ This provides:
 
 ```python
 balance = await agent.get_balance()
-# balance.lovelace = 50000000 (DFM — AP3X amount in smallest units)
+# balance.lovelace = 50000000 (DFM - AP3X amount in smallest units)
 # balance.tokens = {"PolicyId.Token": 100}
 ap3x = balance.lovelace / 1_000_000
 ```
@@ -311,6 +311,6 @@ If two transactions try to spend the same UTxO simultaneously, one will fail. Th
 
 ## Next Steps
 
-- [Safety Model](safety-model.md) — full safety architecture
-- [How Vector Works](how-vector-works.md) — UTXO model fundamentals
-- [5-Minute Start](../quickstart/5-minute-start.md) — get started quickly
+- [Safety Model](safety-model.md) - full safety architecture
+- [How Vector Works](how-vector-works.md) - UTXO model fundamentals
+- [5-Minute Start](../quickstart/5-minute-start.md) - get started quickly

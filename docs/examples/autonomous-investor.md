@@ -51,7 +51,7 @@ All within configured spend limits, with full audit logging.
 
 ## Implementation: Claude Desktop
 
-The simplest version — just tell Claude what to do.
+The simplest version - just tell Claude what to do.
 
 ### Setup
 
@@ -86,15 +86,15 @@ The simplest version — just tell Claude what to do.
 
 ### Discovered Environmental Projects
 
-1. **EnviroBot** (reputation: 85) — Environmental impact analysis agent
+1. **EnviroBot** (reputation: 85) - Environmental impact analysis agent
    - Donation pool contract at addr1wz...
    - 15 contributors, 450 AP3X total pooled
 
-2. **GreenDAO** (reputation: 72) — Community environmental governance
+2. **GreenDAO** (reputation: 72) - Community environmental coordination
    - Vesting contract at addr1wx...
-   - Active governance proposals
+   - Active improvement proposals
 
-3. **CarbonTracker** (reputation: 68) — Carbon credit tracking
+3. **CarbonTracker** (reputation: 68) - Carbon credit tracking
    - Registry contract at addr1wy...
 
 ### Allocation
@@ -102,7 +102,7 @@ The simplest version — just tell Claude what to do.
 | Project | Amount | TX Hash | Status |
 |---------|--------|---------|--------|
 | EnviroBot Donation Pool | 10 AP3X | abc123... | ✓ Confirmed |
-| GreenDAO Governance | 6 AP3X | def456... | ✓ Confirmed |
+| GreenDAO Proposals | 6 AP3X | def456... | ✓ Confirmed |
 | CarbonTracker Registry | 4 AP3X | ghi789... | ✓ Confirmed |
 
 **Total invested:** 20 AP3X
@@ -218,7 +218,7 @@ tools = [
     check_spend_limits,
 ]
 
-llm = ChatAnthropic(model="claude-sonnet-4-20250514")
+llm = ChatAnthropic(model="claude-sonnet-5")
 
 prompt = ChatPromptTemplate.from_messages([
     ("system", """You are an autonomous investment agent operating on Vector blockchain.
@@ -319,18 +319,18 @@ print(result)
 
 This example demonstrates several safety patterns:
 
-1. **Budget cap** — only investing a percentage of funds, never the full balance
-2. **Dry-run first** — every transaction is simulated before execution
-3. **Spend limits** — server-enforced caps prevent overspending even if the agent logic fails
-4. **Audit trail** — every operation is logged for post-hoc review
-5. **Reputation-based selection** — preferring higher-reputation agents/projects
-6. **Multi-agent oversight** (CrewAI version) — separate research, risk, and execution roles
+1. **Budget cap** - only investing a percentage of funds, never the full balance
+2. **Dry-run first** - every transaction is simulated before execution
+3. **Spend limits** - server-enforced caps prevent overspending even if the agent logic fails
+4. **Audit trail** - every operation is logged for post-hoc review
+5. **Reputation-based selection** - preferring higher-reputation agents/projects
+6. **Multi-agent oversight** (CrewAI version) - separate research, risk, and execution roles
 
 ---
 
 ## Next Steps
 
-- [Safety Model](../concepts/safety-model.md) — full safety architecture
-- [Agent Wallets](../concepts/agent-wallets.md) — wallet management
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — all available tools
-- [CrewAI + Vector](../quickstart/crewai.md) — multi-agent framework setup
+- [Safety Model](../concepts/safety-model.md) - full safety architecture
+- [Agent Wallets](../concepts/agent-wallets.md) - wallet management
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - all available tools
+- [CrewAI + Vector](../quickstart/crewai.md) - multi-agent framework setup

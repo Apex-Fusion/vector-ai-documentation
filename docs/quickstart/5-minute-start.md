@@ -12,29 +12,17 @@ Get an AI agent talking to Vector blockchain in under 5 minutes.
 
 - An **MCP-compatible AI client** (Claude Code, Claude Desktop, or any MCP client)
 
-That's it — no installs needed. The Vector MCP server is hosted publicly.
+That's it - no installs needed. The Vector MCP server is hosted publicly.
 
 ---
 
 ## Step 1: Connect to the MCP Server
 
-The Vector MCP server is hosted and publicly available — no installation, no API keys, no configuration.
+The Vector MCP server is hosted and publicly available - no installation, no API keys, no configuration.
 
 === "Claude Code (Terminal)"
 
     One command:
-
-    === "Testnet"
-
-        ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
-        ```
-
-        To make it available across all your projects, add `--scope user`:
-
-        ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
-        ```
 
     === "Mainnet"
 
@@ -48,22 +36,21 @@ The Vector MCP server is hosted and publicly available — no installation, no A
         claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
         ```
 
+    === "Testnet"
+
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+        ```
+
+        To make it available across all your projects, add `--scope user`:
+
+        ```bash
+        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+        ```
+
 === "Claude Desktop"
 
     Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
-
-    === "Testnet"
-
-        ```json
-        {
-          "mcpServers": {
-            "vector-mcp": {
-              "type": "sse",
-              "url": "https://mcp.vector.testnet.apexfusion.org/sse"
-            }
-          }
-        }
-        ```
 
     === "Mainnet"
 
@@ -78,48 +65,71 @@ The Vector MCP server is hosted and publicly available — no installation, no A
         }
         ```
 
+    === "Testnet"
+
+        ```json
+        {
+          "mcpServers": {
+            "vector-mcp": {
+              "type": "sse",
+              "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+            }
+          }
+        }
+        ```
+
     Restart Claude Desktop after saving.
 
 === "Claude.ai (Web / Mobile)"
 
     Go to **Settings → Connectors → Add custom connector**, then enter:
 
-    === "Testnet"
-
-        ```
-        https://mcp.vector.testnet.apexfusion.org/sse
-        ```
-
     === "Mainnet"
 
         ```
         https://mcp.vector.mainnet.apexfusion.org/sse
+        ```
+
+    === "Testnet"
+
+        ```
+        https://mcp.vector.testnet.apexfusion.org/sse
         ```
 
 === "Other MCP Clients"
 
     Connect to the SSE endpoint:
 
-    === "Testnet"
-
-        ```
-        https://mcp.vector.testnet.apexfusion.org/sse
-        ```
-
     === "Mainnet"
 
         ```
         https://mcp.vector.mainnet.apexfusion.org/sse
         ```
 
-All 18 Vector MCP tools are immediately available.
+    === "Testnet"
+
+        ```
+        https://mcp.vector.testnet.apexfusion.org/sse
+        ```
+
+All 23 Vector MCP tools are immediately available.
+
+## Step 2: Create Your Agent's Wallet
+
+Your agent's wallet is a **BIP39 mnemonic** - 15 or 24 words, both accepted. Generate a fresh one with any BIP39 tool or a Cardano wallet (Eternl works), and use it only for this agent.
+
+The mnemonic is passed per-call by the MCP client and never stored on the server. Once your agent has it, ask:
+
+> "What's my Vector wallet address?"
+
+The agent calls `vector_get_address` and returns the address it derived from the mnemonic (it starts with `addr1` - Vector uses the mainnet network ID on both networks).
 
 !!! warning "Secure your mnemonic"
-    Your mnemonic (15 words, or 24 words — both accepted) controls your agent's wallet. Store it securely. Never commit it to version control. The mnemonic is passed per-call by the MCP client, not stored in the server environment.
+    Your mnemonic controls your agent's wallet. Store it securely. Never commit it to version control. On mainnet it controls real value - use separate mnemonics for testnet and mainnet.
 
 ## Step 3: Fund Your Agent (Testnet)
 
-Use the **[Vector Testnet Faucet](faucet.md)** to get testnet AP3X sent directly to your agent's wallet — no bridging required.
+Use the **[Vector Testnet Faucet](faucet.md)** to get testnet AP3X sent directly to your agent's wallet - no bridging required.
 
 1. **Register** at the [Vector Faucet web UI](https://apex-fusion.github.io/vector-faucet/) (one-time, requires email verification)
 2. **Get your API key** (prefixed `vf_`) from the web UI after logging in
@@ -136,7 +146,7 @@ Ask your agent for its address first:
 
 > "What's my Vector wallet address?"
 
-The agent will call `vector_get_address` and return your testnet address (it starts with `addr1` — Vector testnet uses mainnet network ID).
+The agent will call `vector_get_address` and return your testnet address (it starts with `addr1` - Vector testnet uses mainnet network ID).
 
 See the [full faucet documentation](faucet.md) for limits, SDK examples, and alternative funding methods.
 
@@ -208,27 +218,27 @@ export VECTOR_KOIOS_URL="https://v2.koios.vector.testnet.apexfusion.org/"
 
 ---
 
-## Switching to Mainnet
+## Testnet and Mainnet
 
-The guides above use **testnet** endpoints. When you're ready for mainnet, replace the endpoint URLs:
+Vector mainnet is live - the connect tabs above cover both networks. The sensible workflow: **develop on testnet** (free AP3X from the faucet), **deploy to mainnet** when your agent is ready. For SDK access, the endpoint pairs are:
 
 | Variable | Testnet | Mainnet |
 |----------|---------|---------|
 | `VECTOR_OGMIOS_URL` | `https://ogmios.vector.testnet.apexfusion.org` | `https://ogmios.vector.mainnet.apexfusion.org` |
 | `VECTOR_SUBMIT_URL` | `https://submit.vector.testnet.apexfusion.org/api/submit/tx` | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
-| `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://koios.vector.mainnet.apexfusion.org/` |
-| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://explorer.vector.mainnet.apexfusion.org` |
+| `VECTOR_KOIOS_URL` | `https://v2.koios.vector.testnet.apexfusion.org/` | `https://v2.koios.vector.mainnet.apexfusion.org/` |
+| `VECTOR_EXPLORER_URL` | `https://vector.testnet.apexscan.org` | `https://vector.apexscan.org/en/` |
 
 !!! warning "Mainnet uses real funds"
     On mainnet, AP3X has real value. Start with small amounts, use conservative spend limits, and test thoroughly on testnet first. Use separate mnemonics for testnet and mainnet wallets.
 
-The code and configuration are identical — only the endpoint URLs change.
+The code and configuration are identical - only the endpoint URLs change.
 
 ---
 
 ## What's Next?
 
-- [Claude Desktop + Vector](claude-desktop.md) — detailed Claude Desktop setup
-- [How Vector Works](../concepts/how-vector-works.md) — understand the UTXO model
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — full tool documentation
-- [Safety Model](../concepts/safety-model.md) — spend limits and audit logging
+- [Claude Desktop + Vector](claude-desktop.md) - detailed Claude Desktop setup
+- [How Vector Works](../concepts/how-vector-works.md) - understand the UTXO model
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - full tool documentation
+- [Safety Model](../concepts/safety-model.md) - spend limits and audit logging

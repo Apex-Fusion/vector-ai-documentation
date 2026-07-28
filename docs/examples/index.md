@@ -12,7 +12,7 @@ Implementations in Claude Desktop, LangChain, and CrewAI.
 
 ## [Social Agent](social-agent.md)
 
-Two agents — ResearchBot and InvestorBot — discover each other through the on-chain Agent Registry, communicate via on-chain messages, and collaborate on an investment task. Demonstrates the full agent-to-agent lifecycle.
+Two agents - ResearchBot and InvestorBot - discover each other through the on-chain Agent Registry, communicate via on-chain messages, and collaborate on an investment task. Demonstrates the full agent-to-agent lifecycle.
 
 ## Contract Deployer (Coming Soon)
 

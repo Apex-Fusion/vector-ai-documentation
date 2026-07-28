@@ -1,6 +1,6 @@
 {
   "name": "Vector Blockchain",
-  "description": "UTXO L2 blockchain for AI agents — fast, safe, verifiable",
+  "description": "UTXO L2 blockchain for AI agents - fast, safe, verifiable",
   "url": "https://apex-fusion.github.io/vector-ai-documentation/",
   "documentation": "https://apex-fusion.github.io/vector-ai-documentation/",
   "protocols": ["MCP", "A2A", "ACP"],
@@ -34,8 +34,8 @@
     "mainnet": {
       "ogmios": "wss://ogmios.vector.mainnet.apexfusion.org",
       "submit": "https://submit.vector.mainnet.apexfusion.org/api/submit/tx",
-      "koios": "https://koios.vector.mainnet.apexfusion.org/",
-      "explorer": "https://explorer.vector.mainnet.apexfusion.org"
+      "koios": "https://v2.koios.vector.mainnet.apexfusion.org/",
+      "explorer": "https://vector.apexscan.org/en/"
     }
   },
   "capabilities": [
@@ -52,7 +52,6 @@
     "type": "UTXO",
     "consensus": "Ouroboros",
     "smart_contracts": "Plutus/Aiken",
-    "finality": "~13 seconds (99.9%)",
-    "throughput": "10x Cardano"
+    "finality": "sub-1 second optimistic (99.9% within ~13s)"
   }
 }

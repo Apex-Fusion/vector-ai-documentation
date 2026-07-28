@@ -1,6 +1,6 @@
 # MCP Server Security
 
-Detailed security architecture of the Vector MCP server — how spend limits, audit logging, rate limiting, and wallet modes protect against agent failures.
+Detailed security architecture of the Vector MCP server - how spend limits, audit logging, rate limiting, and wallet modes protect against agent failures.
 
 ---
 
@@ -34,7 +34,7 @@ Detailed security architecture of the Vector MCP server — how spend limits, au
                               └──────────────────────────┘
 ```
 
-Every tool call passes through three gates: **rate limiter**, **safety layer**, and **audit log** — in that order. An agent cannot bypass any gate through conversation or prompt injection.
+Every tool call passes through three gates: **rate limiter**, **safety layer**, and **audit log** - in that order. An agent cannot bypass any gate through conversation or prompt injection.
 
 ---
 
@@ -47,7 +47,7 @@ The safety layer runs a pre-flight check **before** signing any transaction:
 1. Parse the outgoing value (AP3X in DFM, excluding fees)
 2. Compare against the per-transaction limit
 3. Compare against the daily cumulative limit (tracked in memory, reset at midnight UTC)
-4. If either check fails, return a structured error — the transaction is never signed or submitted
+4. If either check fails, return a structured error - the transaction is never signed or submitted
 
 ### Configuration
 
@@ -74,7 +74,7 @@ The agent can use this to inform the user or adjust the amount.
 
 ### Changing Limits at Runtime
 
-The `vector_set_spend_limit` tool **always requires human confirmation** — even if `requireConfirmation` is set to `false`. An agent cannot escalate its own limits.
+The `vector_set_spend_limit` tool **always requires human confirmation** - even if `requireConfirmation` is set to `false`. An agent cannot escalate its own limits.
 
 ---
 
@@ -124,7 +124,7 @@ Prevents agents from flooding the network with requests.
 |----------|---------|-------------|
 | `VECTOR_RATE_LIMIT_PER_MINUTE` | `60` | Max tool calls per minute |
 
-Rate limiting operates at the MCP tool call level — all tools count toward the same limit. When exceeded, the server returns a `429` error and the agent should wait before retrying.
+Rate limiting operates at the MCP tool call level - all tools count toward the same limit. When exceeded, the server returns a `429` error and the agent should wait before retrying.
 
 ---
 
@@ -166,7 +166,7 @@ Enable by passing `"submitted": false` in `vector_build_transaction`.
 
 ## Mnemonic Handling
 
-The wallet mnemonic is **passed per-call** by the MCP client — it is NOT stored in the server environment. This means:
+The wallet mnemonic is **passed per-call** by the MCP client - it is NOT stored in the server environment. This means:
 
 - The mnemonic lives in the MCP client configuration (e.g., Claude Desktop's `claude_desktop_config.json`)
 - The server never writes it to disk
@@ -193,7 +193,7 @@ The hosted MCP server uses **SSE (Server-Sent Events) over HTTPS** (port 443). A
 | Prompt injection to escalate limits | `vector_set_spend_limit` always requires human confirmation |
 | Agent hallucinates TX parameters | `vector_dry_run` catches invalid transactions before commit |
 | Undetected misbehavior | Persistent audit log for post-hoc review |
-| Agent compromised entirely | Transaction-crafter mode — agent can't sign |
+| Agent compromised entirely | Transaction-crafter mode - agent can't sign |
 | Mnemonic stolen from server | Mnemonic passed per-call, never stored on server |
 | Man-in-the-middle | TLS via reverse proxy |
 
@@ -201,7 +201,7 @@ The hosted MCP server uses **SSE (Server-Sent Events) over HTTPS** (port 443). A
 
 ## Next Steps
 
-- [MCP Server Installation](installation.md) — setup and configuration
-- [Safety Model](../concepts/safety-model.md) — conceptual overview of all safety layers
-- [Agent Wallets](../concepts/agent-wallets.md) — wallet security best practices
-- [MCP Tools Reference](tools-reference.md) — all available tools
+- [MCP Server Installation](installation.md) - setup and configuration
+- [Safety Model](../concepts/safety-model.md) - conceptual overview of all safety layers
+- [Agent Wallets](../concepts/agent-wallets.md) - wallet security best practices
+- [MCP Tools Reference](tools-reference.md) - all available tools

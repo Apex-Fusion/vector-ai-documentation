@@ -20,7 +20,7 @@ Open Claude Desktop's MCP configuration file:
 - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 - **Linux:** `~/.config/Claude/claude_desktop_config.json`
 
-Add the Vector MCP server — connect directly to the hosted server (no installs needed):
+Add the Vector MCP server - connect directly to the hosted server (no installs needed):
 
 === "Testnet"
 
@@ -55,7 +55,7 @@ No API keys, no environment variables, no Node.js required.
 Generate or locate your **15-word mnemonic phrase** (15 or 24 words are both accepted).
 
 !!! danger "Save your mnemonic securely"
-    Write down the words and store them safely. This is the only way to recover your agent's wallet. Never share it, never commit it to git. The mnemonic is passed per-call by the tool — it is not stored in the server config.
+    Write down the words and store them safely. This is the only way to recover your agent's wallet. Never share it, never commit it to git. The mnemonic is passed per-call by the tool - it is not stored in the server config.
 
 ## Step 3: Restart Claude Desktop
 
@@ -67,7 +67,7 @@ Ask Claude:
 
 > "What's my Vector wallet address?"
 
-Claude will call `vector_get_address` and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with `addr1` (not `addr_test1`). To fund it, use the **[Vector Testnet Faucet](faucet.md)** to request AP3X directly on Vector — see the [faucet guide](faucet.md) for setup and API details.
+Claude will call `vector_get_address` and show your testnet address. Note that Vector testnet uses mainnet network ID, so your address starts with `addr1` (not `addr_test1`). To fund it, use the **[Vector Testnet Faucet](faucet.md)** to request AP3X directly on Vector - see the [faucet guide](faucet.md) for setup and API details.
 
 ## Step 5: Verify the Setup
 
@@ -205,9 +205,9 @@ curl -s https://ogmios.vector.testnet.apexfusion.org/health
 
 ### Transaction failures
 
-- **"Insufficient funds"** — check your balance, ensure you have enough to cover the amount + fee
-- **"Spend limit exceeded"** — increase limits in your config or split into smaller transactions
-- **"UTxO contention"** — another transaction consumed a UTxO you were trying to spend; retry
+- **"Insufficient funds"** - check your balance, ensure you have enough to cover the amount + fee
+- **"Spend limit exceeded"** - increase limits in your config or split into smaller transactions
+- **"UTxO contention"** - another transaction consumed a UTxO you were trying to spend; retry
 
 ---
 
@@ -222,7 +222,7 @@ Switch to mainnet by selecting the **Mainnet** tab in the Step 1 config above.
 
 ## Next Steps
 
-- [5-Minute Start](5-minute-start.md) — quick overview for other setups
-- [How Vector Works](../concepts/how-vector-works.md) — understand the UTXO model
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — complete tool documentation
-- [Safety Model](../concepts/safety-model.md) — detailed safety configuration
+- [5-Minute Start](5-minute-start.md) - quick overview for other setups
+- [How Vector Works](../concepts/how-vector-works.md) - understand the UTXO model
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - complete tool documentation
+- [Safety Model](../concepts/safety-model.md) - detailed safety configuration

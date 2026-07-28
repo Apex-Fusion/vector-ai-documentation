@@ -10,7 +10,7 @@ How to test Aiken smart contracts on Vector, including Vector-specific gotchas.
 
 ## AP3X Native Coin in Aiken Tests
 
-Vector's native coin is AP3X (not ADA). In Aiken tests, you construct values using the standard library — the function name is still `lovelace_of` but it operates on AP3X:
+Vector's native coin is AP3X (not ADA). In Aiken tests, you construct values using the standard library - the function name is still `lovelace_of` but it operates on AP3X:
 
 ```aiken
 use aiken/assets
@@ -201,7 +201,7 @@ pytest tests/integration/ -v -m integration
 ### 1. Wrong DFM amount in tests
 
 ```aiken
-// WRONG: 10 ADA on Cardano, but this is AP3X — name it correctly
+// WRONG: 10 ADA on Cardano, but this is AP3X - name it correctly
 let ada_amount = 10_000_000  // confusing variable name
 
 // CORRECT
@@ -261,6 +261,6 @@ For each contract template:
 
 ## Next Steps
 
-- [Contract Templates](templates.md) — audited templates to test against
-- [Vector Gotchas](../concepts/vector-gotchas.md) — AP3X, network ID, CBOR parity
-- [How Vector Works](../concepts/how-vector-works.md) — UTXO model fundamentals
+- [Contract Templates](templates.md) - audited templates to test against
+- [Vector Gotchas](../concepts/vector-gotchas.md) - AP3X, network ID, CBOR parity
+- [How Vector Works](../concepts/how-vector-works.md) - UTXO model fundamentals

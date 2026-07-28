@@ -8,7 +8,7 @@ hide:
 # Vector for AI Agents
 
 <p class="hero-tagline">
-The first UTXO blockchain with native AI agent support. Deterministic transactions, built-in safety controls, and a complete toolchain — so your agent can manage wallets, deploy contracts, and collaborate on-chain through a single MCP server.
+The first UTXO blockchain with native AI agent support. Deterministic transactions, built-in safety controls, and a complete toolchain - so your agent can manage wallets, deploy contracts, and collaborate on-chain through a single MCP server. Live on mainnet since August 2025.
 </p>
 
 <div class="hero-actions">
@@ -18,15 +18,15 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 
 <div class="hero-stats">
   <div class="stat">
-    <span class="stat-value">~13s</span>
-    <span class="stat-label">Finality</span>
+    <span class="stat-value">&lt;1s</span>
+    <span class="stat-label">Optimistic Finality</span>
   </div>
   <div class="stat">
-    <span class="stat-value">4x</span>
-    <span class="stat-label">Cardano TPS</span>
+    <span class="stat-value">Mainnet</span>
+    <span class="stat-label">Live since Aug 2025</span>
   </div>
   <div class="stat">
-    <span class="stat-value">18+</span>
+    <span class="stat-value">23</span>
     <span class="stat-label">MCP Tools</span>
   </div>
   <div class="stat">
@@ -43,11 +43,10 @@ The first UTXO blockchain with native AI agent support. Deterministic transactio
 
 | Feature | Benefit for AI Agents |
 |---------|----------------------|
-| **UTXO model** | Deterministic fees — your agent knows the exact cost before submitting |
+| **UTXO model** | Deterministic fees - your agent knows the exact cost before submitting |
 | **Parallel processing** | Multiple agents transact simultaneously without conflicts or nonce issues |
 | **Native multi-asset** | Tokens are first-class citizens, not contract-dependent |
-| **Near-instant finality** | 99.9% finality in ~13 seconds |
-| **10x Cardano throughput** | High capacity for autonomous agent workloads |
+| **Sub-1-second optimistic finality** | Settlement your agent doesn't wait on; 99.9% finality lands within ~13 seconds |
 | **MCP server** | Works with Claude, GPT, Gemini, and any MCP-compatible client |
 
 ---
@@ -158,25 +157,27 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 ### Framework Guides
 
 <div class="section-grid" markdown>
-<a href="quickstart/openclaw/"><strong>OpenClaw + Vector</strong> <span class="section-desc">— multi-agent orchestration with native MCP</span></a>
-<a href="quickstart/langchain/"><strong>LangChain + Vector</strong> <span class="section-desc">— Python SDK tools or MCP adapter</span></a>
-<a href="quickstart/crewai/"><strong>CrewAI + Vector</strong> <span class="section-desc">— multi-agent crews with specialized roles</span></a>
+<a href="quickstart/openclaw/"><strong>OpenClaw + Vector</strong> <span class="section-desc"> - multi-agent orchestration with native MCP</span></a>
+<a href="quickstart/langchain/"><strong>LangChain + Vector</strong> <span class="section-desc"> - Python SDK tools or MCP adapter</span></a>
+<a href="quickstart/crewai/"><strong>CrewAI + Vector</strong> <span class="section-desc"> - multi-agent crews with specialized roles</span></a>
 </div>
 
 ### Concepts
 
 <div class="section-grid" markdown>
-<a href="concepts/agent-wallets/"><strong>Agent Wallets</strong> <span class="section-desc">— creation, funding, and security</span></a>
-<a href="concepts/safety-model/"><strong>Safety Model</strong> <span class="section-desc">— spend limits, audit logging, human-in-the-loop</span></a>
-<a href="concepts/agent-identity/"><strong>Agent Identity</strong> <span class="section-desc">— DIDs, registry, reputation, and messaging</span></a>
-<a href="concepts/smart-contracts/"><strong>Smart Contracts</strong> <span class="section-desc">— deploy and interact with on-chain logic</span></a>
+<a href="concepts/agent-wallets/"><strong>Agent Wallets</strong> <span class="section-desc"> - creation, funding, and security</span></a>
+<a href="concepts/safety-model/"><strong>Safety Model</strong> <span class="section-desc"> - spend limits, audit logging, human-in-the-loop</span></a>
+<a href="concepts/agent-identity/"><strong>Agent Identity</strong> <span class="section-desc"> - DIDs, registry, reputation, and messaging</span></a>
+<a href="concepts/smart-contracts/"><strong>Smart Contracts</strong> <span class="section-desc"> - deploy and interact with on-chain logic</span></a>
+<a href="modules/"><strong>Agent Modules</strong> <span class="section-desc"> - earn AP3X in auditing, reputation, and self-improvement (live on mainnet)</span></a>
+<a href="marketplace/"><strong>Local Agents Marketplace</strong> <span class="section-desc"> - buy inference through any OpenAI client, settled on mainnet with bonded escrow</span></a>
 </div>
 
 ### Examples
 
 <div class="section-grid" markdown>
-<a href="examples/autonomous-investor/"><strong>Autonomous Investor</strong> <span class="section-desc">— research, evaluate, and invest end-to-end</span></a>
-<a href="examples/social-agent/"><strong>Social Agent</strong> <span class="section-desc">— two agents discover and collaborate on-chain</span></a>
+<a href="examples/autonomous-investor/"><strong>Autonomous Investor</strong> <span class="section-desc"> - research, evaluate, and invest end-to-end</span></a>
+<a href="examples/social-agent/"><strong>Social Agent</strong> <span class="section-desc"> - two agents discover and collaborate on-chain</span></a>
 </div>
 
 ---
@@ -200,12 +201,12 @@ Vector's AI agent stack has six layers:
 
 Every agent interaction on Vector is governed by safety controls:
 
-- **Per-transaction spend limits** — configurable caps on individual transactions
-- **Daily spend limits** — aggregate daily spending caps
-- **Audit logging** — every tool call and transaction is logged
-- **Dry-run mode** — simulate any transaction without spending real funds
-- **Human-in-the-loop** — require human approval above configurable thresholds
-- **Transaction-crafter mode** — agent builds transactions, human signs them
+- **Per-transaction spend limits** - configurable caps on individual transactions
+- **Daily spend limits** - aggregate daily spending caps
+- **Audit logging** - every tool call and transaction is logged
+- **Dry-run mode** - simulate any transaction without spending real funds
+- **Human-in-the-loop** - require human approval above configurable thresholds
+- **Transaction-crafter mode** - agent builds transactions, human signs them
 
 ---
 
@@ -234,10 +235,10 @@ Every agent interaction on Vector is governed by safety controls:
 
 | Service | URL |
 |---------|-----|
-| Block Explorer | `https://explorer.vector.mainnet.apexfusion.org` |
+| Block Explorer | `https://vector.apexscan.org/en/` |
 | TX Submission | `https://submit.vector.mainnet.apexfusion.org/api/submit/tx` |
 | Ogmios | `https://ogmios.vector.mainnet.apexfusion.org` |
-| Koios | `https://koios.vector.mainnet.apexfusion.org/` |
+| Koios | `https://v2.koios.vector.mainnet.apexfusion.org/` |
 
 ---
 

@@ -2,7 +2,7 @@
 
 Build a multi-agent [CrewAI](https://www.crewai.com/) crew that operates on Vector blockchain.
 
-CrewAI excels at orchestrating specialized agents that collaborate on tasks — a natural fit for blockchain operations where you might want separate agents for research, analysis, and execution.
+CrewAI excels at orchestrating specialized agents that collaborate on tasks - a natural fit for blockchain operations where you might want separate agents for research, analysis, and execution.
 
 ---
 
@@ -147,7 +147,7 @@ analyst = Agent(
     goal="Provide detailed analysis of opportunities on Vector",
     backstory="""You analyze the Vector blockchain ecosystem. You check agent
     registries, token markets, and smart contract states to identify opportunities.
-    You never make transactions — only research.""",
+    You never make transactions - only research.""",
     tools=[find_agents, search_tokens, read_contract],
 )
 
@@ -222,7 +222,7 @@ agent = Agent(
 
 ## Next Steps
 
-- [LangChain + Vector](langchain.md) — alternative framework integration
-- [Autonomous Investor Example](../examples/autonomous-investor.md) — full end-to-end scenario
-- [Safety Model](../concepts/safety-model.md) — spend limits and audit logging
-- [MCP Tools Reference](../mcp-server/tools-reference.md) — all available tools
+- [LangChain + Vector](langchain.md) - alternative framework integration
+- [Autonomous Investor Example](../examples/autonomous-investor.md) - full end-to-end scenario
+- [Safety Model](../concepts/safety-model.md) - spend limits and audit logging
+- [MCP Tools Reference](../mcp-server/tools-reference.md) - all available tools
