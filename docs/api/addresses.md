@@ -22,7 +22,7 @@ Agent DIDs are minted against the registry policy: `did:vector:agent:{policyId}:
 | Escrow | `addr1wxqsaczee4upnn50n9dwgw9mkph77yqp0d9p0y5ul9c6jysrv9dl5` | `810ee059cd7819ce8f995ae438bbb06fef10017b4a17929cf971a912` |
 | Advert | `addr1wxvjn7jwak9kdvctscywvq0d9f9hksf6ysfa6yatya2efksvgxwpa` | `9929fa4eed8b66b30b8608e601ed2a4b7b413a2413dd13ab275594da` |
 
-Reference inputs: `c8d84c6d67ec67a1efe5e9c6c06d53020e05d1bb96d1c55ecb1eb7d5010c4d54#0` (escrow) and `#1` (advert). See the [Marketplace page](../marketplace.md).
+Reference inputs: `c8d84c6d67ec67a1efe5e9c6c06d53020e05d1bb96d1c55ecb1eb7d5010c4d54#0` (escrow) and `#1` (advert) - these are mainnet values. Because Vector's testnet uses the mainnet network ID, the script addresses and validator hashes are identical on testnet (deployment verified on-chain); reference inputs are network-specific. See the [Marketplace page](../marketplace.md).
 
 ## Self-Improvement Module (mainnet, v8)
 

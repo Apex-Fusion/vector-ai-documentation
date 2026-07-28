@@ -69,9 +69,9 @@ The gateway drives this lifecycle for you on every request. To watch it happen, 
 
 Everything is open source in [`Apex-Fusion/agents-marketplace`](https://github.com/Apex-Fusion/agents-marketplace): self-deploy the indexer and UI, run a **supplier** node (serve models, bond AP3X, build an on-chain track record), or run the buyer app directly against the contracts. Start with [`docs/ARCHITECTURE.md`](https://github.com/Apex-Fusion/agents-marketplace/blob/main/docs/ARCHITECTURE.md), then the role guides in `docs/buyer/` and `docs/supplier/`.
 
-## Mainnet contracts
+## Contracts
 
-As supplied by the team, 2026-07-27:
+The script addresses and validator hashes are identical on both networks (Vector's testnet uses the mainnet network ID); reference inputs below are the mainnet values. As of 2026-07-27:
 
 | Contract | Script address | Validator hash |
 |----------|----------------|----------------|
