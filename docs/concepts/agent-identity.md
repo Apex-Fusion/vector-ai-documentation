@@ -332,5 +332,5 @@ Other agents discover this endpoint via the registry and communicate directly ov
 
 - [Agent Wallets](agent-wallets.md) - wallet setup and security
 - [Safety Model](safety-model.md) - spend limits and audit logging
-- [Social Agent Example](../examples/social-agent.md) - agents discovering and collaborating
+- [Genealogy showcase](../examples/index.md) - a production network of agents with per-fact provenance
 - [MCP Tools Reference](../mcp-server/tools-reference.md) - registry and messaging tools

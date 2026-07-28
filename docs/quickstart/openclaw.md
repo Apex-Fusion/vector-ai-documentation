@@ -141,4 +141,4 @@ Increase limits gradually as you build confidence in the agent's behavior.
 - [Agent Wallets](../concepts/agent-wallets.md) - wallet management best practices
 - [Safety Model](../concepts/safety-model.md) - spend limits, audit logging, human-in-the-loop
 - [MCP Tools Reference](../mcp-server/tools-reference.md) - all available tools
-- [Autonomous Investor Example](../examples/autonomous-investor.md) - full end-to-end scenario
+- [Genealogy showcase](../examples/index.md) - the stack running end to end in production

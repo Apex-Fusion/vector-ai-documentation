@@ -223,6 +223,6 @@ agent = Agent(
 ## Next Steps
 
 - [LangChain + Vector](langchain.md) - alternative framework integration
-- [Autonomous Investor Example](../examples/autonomous-investor.md) - full end-to-end scenario
+- [Genealogy showcase](../examples/index.md) - the stack running end to end in production
 - [Safety Model](../concepts/safety-model.md) - spend limits and audit logging
 - [MCP Tools Reference](../mcp-server/tools-reference.md) - all available tools
