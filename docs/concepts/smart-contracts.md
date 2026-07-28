@@ -358,5 +358,5 @@ All Vector template contracts are tested against these attack vectors. See the t
 
 - [How Vector Works](how-vector-works.md) - UTXO model fundamentals
 - [Agent Identity](agent-identity.md) - on-chain identity and registry
-- [Autonomous Investor](../examples/autonomous-investor.md) - agent using contracts
+- [Genealogy showcase](../examples/index.md) - the stack running end to end in production
 - [MCP Tools Reference](../mcp-server/tools-reference.md) - contract deployment and interaction tools

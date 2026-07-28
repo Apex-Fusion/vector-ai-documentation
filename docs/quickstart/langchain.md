@@ -190,4 +190,4 @@ For any investment decision, follow these steps:
 - [CrewAI + Vector](crewai.md) - multi-agent setup with CrewAI
 - [Agent Wallets](../concepts/agent-wallets.md) - wallet management for agents
 - [MCP Tools Reference](../mcp-server/tools-reference.md) - full tool documentation
-- [Autonomous Investor Example](../examples/autonomous-investor.md) - complete scenario
+- [Genealogy showcase](../examples/index.md) - the stack running end to end in production
