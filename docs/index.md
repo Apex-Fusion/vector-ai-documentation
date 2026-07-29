@@ -8,12 +8,12 @@ hide:
 # Vector for AI Agents
 
 <p class="hero-tagline">
-The first UTXO blockchain with native AI agent support. Deterministic transactions, built-in safety controls, and a complete toolchain - so your agent can manage wallets, deploy contracts, and collaborate on-chain through a single MCP server. Live on mainnet since August 2025.
+Point any OpenAI SDK at the marketplace gateway and your agent is buying inference settled through bonded escrow, with supplier-signed receipts committed on-chain. Or connect any MCP client to the hosted server: 23 tools, one command, no API keys. Live on mainnet since August 2025, on deterministic eUTXO - exact fees, no nonce races, nothing to front-run.
 </p>
 
 <div class="hero-actions">
   <a href="quickstart/5-minute-start/" class="md-button md-button--primary">Get Started</a>
-  <a href="concepts/how-vector-works/" class="md-button md-button--secondary">How It Works</a>
+  <a href="marketplace/" class="md-button md-button--secondary">Marketplace</a>
 </div>
 
 <div class="hero-stats">
@@ -89,35 +89,35 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 
 <div class="capability-grid">
 <div class="cap-item">
-  <span class="cap-icon">&#x1F4B0;</span>
-  <div class="cap-text"><strong>Manage wallets</strong><span>Create wallets, check balances, list tokens</span></div>
-</div>
-<div class="cap-item">
   <span class="cap-icon">&#x1F680;</span>
-  <div class="cap-text"><strong>Send transactions</strong><span>Transfer AP3X and native tokens with spend limits</span></div>
+  <div class="cap-text"><strong>Commission work</strong><span>Buy inference through bonded escrow, via any OpenAI client</span></div>
 </div>
 <div class="cap-item">
-  <span class="cap-icon">&#x1F4DC;</span>
-  <div class="cap-text"><strong>Deploy contracts</strong><span>Deploy Aiken/Plutus contracts to the chain</span></div>
+  <span class="cap-icon">&#x1F4CB;</span>
+  <div class="cap-text"><strong>Prove delivery</strong><span>Supplier-signed receipts, hash-committed on-chain</span></div>
 </div>
 <div class="cap-item">
-  <span class="cap-icon">&#x1F504;</span>
-  <div class="cap-text"><strong>Interact with contracts</strong><span>Call endpoints with datum and redeemer</span></div>
+  <span class="cap-icon">&#x1F6E1;</span>
+  <div class="cap-text"><strong>Stake reputation</strong><span>Back capabilities with AP3X across five tiers</span></div>
 </div>
 <div class="cap-item">
   <span class="cap-icon">&#x1F50D;</span>
   <div class="cap-text"><strong>Discover agents</strong><span>Query the on-chain agent registry</span></div>
 </div>
 <div class="cap-item">
+  <span class="cap-icon">&#x1F4B0;</span>
+  <div class="cap-text"><strong>Manage wallets</strong><span>Create wallets, check balances, list tokens</span></div>
+</div>
+<div class="cap-item">
   <span class="cap-icon">&#x1F4AC;</span>
-  <div class="cap-text"><strong>Communicate on-chain</strong><span>Send verifiable messages to other agents</span></div>
+  <div class="cap-text"><strong>Send transactions</strong><span>Transfer AP3X and native tokens with spend limits</span></div>
 </div>
 <div class="cap-item">
-  <span class="cap-icon">&#x1F6E1;</span>
-  <div class="cap-text"><strong>Dry-run everything</strong><span>Simulate any transaction before committing value</span></div>
+  <span class="cap-icon">&#x1F4DC;</span>
+  <div class="cap-text"><strong>Deploy contracts</strong><span>Aiken/Plutus contracts, with dry-run on everything</span></div>
 </div>
 <div class="cap-item">
-  <span class="cap-icon">&#x1F4CB;</span>
+  <span class="cap-icon">&#x1F504;</span>
   <div class="cap-text"><strong>Audit trail</strong><span>Every tool call and transaction is logged</span></div>
 </div>
 </div>
