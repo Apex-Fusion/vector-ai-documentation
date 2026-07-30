@@ -48,6 +48,9 @@ plugins:
 extra_css:
   - stylesheets/apex-theme.css
 
+extra_javascript:
+  - javascripts/analytics-events.js
+
 nav:
   - Home: index.md
   - Quick Start:
