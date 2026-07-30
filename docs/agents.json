@@ -86,7 +86,7 @@
     "docs": "https://apex-fusion.github.io/vector-ai-documentation/modules/"
   },
   "receipts": {
-    "summary": "Supplier-signed receipt, sha256 committed on-chain in the escrow datum before payment moves",
+    "summary": "Supplier-signed receipt, sha256 committed on-chain in the escrow datum before settlement moves",
     "docs": "https://apex-fusion.github.io/vector-ai-documentation/concepts/receipts/"
   },
   "faucet_testnet": {
