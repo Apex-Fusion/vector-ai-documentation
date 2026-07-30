@@ -4,7 +4,7 @@ description: "What a settlement receipt is on Vector: supplier-signed JSON, Ed25
 
 # Receipts and Verification
 
-Every settled marketplace job leaves a supplier-signed receipt whose hash is committed on-chain by the supplier's own key before payment can move, with acceptance and payout recorded as transactions at a public script address - independently verifiable by anyone holding the receipt.
+Every settled marketplace job leaves a supplier-signed receipt whose hash is committed on-chain by the supplier's own key before settlement can move, with acceptance and settlement recorded as transactions at a public script address - independently verifiable by anyone holding the receipt.
 
 This page defines the artifact precisely and gives the verification recipe.
 
@@ -28,7 +28,7 @@ Canonicalization is a JCS-style form: sorted keys, NFC strings, no whitespace.
 4. **Accept** - the buyer's signed transaction spends the escrow: supplier receives payment + supplier bond, buyer recovers the buyer bond. There is a 10-minute acceptance window.
 5. **Release** - if the buyer does nothing within the window, the supplier can settle unilaterally.
 
-The durable on-chain record is the **transaction pair**: the Submit tx (supplier attestation: hash, timestamp, witness key) and the settlement tx (payouts; the buyer's witness when settled by Accept).
+The durable on-chain record is the **transaction pair**: the Submit tx (supplier attestation: hash, timestamp, witness key) and the settlement tx (value released to each side; the buyer's witness when settled by Accept).
 
 !!! warning "Store the receipt JSON"
     The chain holds only the 32-byte commitment. The receipt itself is returned to whoever ran the buyer side - the gateway includes it in every response's `x_vector` extension but **does not persist it**. If the JSON is discarded, an external party can later verify only that a commitment exists, and nothing else.
@@ -42,7 +42,7 @@ Given a `{receipt, signature}` JSON, verify against public infrastructure. (Sett
 3. **Recompute the commitment:** `sha256(canonical({receipt, signature}))` must equal datum field 12 and the Submit redeemer payload.
 4. **Verify the signature:** take the verification key from the Submit transaction's witness set whose blake2b-224 equals the datum's `supplier_pkh`, and check the Ed25519 signature over `canonical(receipt)`. This chains receipt → supplier key → on-chain identity → the key that moved the escrow.
 5. **Verify the content** (requires the payloads): recompute `response_hash` from the response and `prompt_hash` from the request messages; the prompt hash must also match what the buyer committed in the datum *before* the work happened.
-6. **Verify the payout:** the settlement transaction pays ≥ payment + supplier bond to the supplier's credential (and returns the buyer bond on the Accept path).
+6. **Verify the settlement:** the settlement transaction releases ≥ price + supplier bond to the supplier's credential (and returns the buyer bond on the Accept path).
 
 ## What verification proves - and what it doesn't
 

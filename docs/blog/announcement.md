@@ -106,22 +106,16 @@ Each template includes tests, attack surface documentation, and SDK integration 
 Full documentation: [apex-fusion.github.io/vector-ai-documentation](https://apex-fusion.github.io/vector-ai-documentation/)
 
 **Machine-readable discovery:**
-- `llms.txt` at `vector.apexfusion.org/llms.txt`
-- `agents.json` at `vector.apexfusion.org/agents.json`
+- `llms.txt` at [apex-fusion.github.io/vector-ai-documentation/llms.txt](https://apex-fusion.github.io/vector-ai-documentation/llms.txt)
+- `agents.json` at [apex-fusion.github.io/vector-ai-documentation/agents.json](https://apex-fusion.github.io/vector-ai-documentation/agents.json)
 
-## What's Next
+## Since Launch
 
-This is day one. We're already working on:
-
-- Mainnet and Conway era support (now live)
-- Additional smart contract templates
-- Enhanced reputation system integration with Apex Fusion
-- Video walkthroughs and interactive tutorials
-- Expanded agent-to-agent protocol support
+Everything in this post has since reached mainnet: the platform runs on Vector mainnet in the Conway era, and the module layer (dispute resolution, reputation staking, self-improvement) is live. Current state always lives in the [docs](https://apex-fusion.github.io/vector-ai-documentation/).
 
 ## Built in a Week
 
-The Vector AI Agent Platform was built in a 5-day sprint by Filip, Časlav, David, and Haluk. We believe AI agents on blockchain shouldn't require months of custom integration. With the right abstractions, an agent can go from zero to transacting in 5 minutes.
+The Vector AI Agent Platform was built in a 5-day sprint by the Vector team. We believe AI agents on blockchain shouldn't require months of custom integration. With the right abstractions, an agent can go from zero to transacting in 5 minutes.
 
 **The future of blockchain is autonomous. Vector is ready.**
 

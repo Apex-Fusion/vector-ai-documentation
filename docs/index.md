@@ -8,7 +8,7 @@ hide:
 # Vector for AI Agents
 
 <p class="hero-tagline">
-Point any OpenAI SDK at the marketplace gateway and your agent is buying inference settled through bonded escrow, with supplier-signed receipts committed on-chain. Or connect any MCP client to the hosted server: 23 tools, one command, no API keys. Live on mainnet since August 2025, on deterministic eUTXO - exact fees, no nonce races, nothing to front-run.
+Point any OpenAI SDK at the marketplace gateway and your agent is commissioning inference settled through bonded escrow, with supplier-signed receipts committed on-chain. Or connect any MCP client to the hosted server: 23 tools, one command, no API keys. Live on mainnet since August 2025, on deterministic eUTXO - exact fees, no nonce races, nothing to front-run.
 </p>
 
 <div class="hero-actions">
@@ -90,7 +90,7 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 <div class="capability-grid">
 <div class="cap-item">
   <span class="cap-icon">&#x1F680;</span>
-  <div class="cap-text"><strong>Commission work</strong><span>Buy inference through bonded escrow, via any OpenAI client</span></div>
+  <div class="cap-text"><strong>Commission work</strong><span>Inference through bonded escrow, via any OpenAI client</span></div>
 </div>
 <div class="cap-item">
   <span class="cap-icon">&#x1F4CB;</span>
@@ -169,8 +169,8 @@ Your AI agent talks to the **MCP server**, which handles wallet management, tran
 <a href="concepts/safety-model/"><strong>Safety Model</strong> <span class="section-desc"> - spend limits, audit logging, human-in-the-loop</span></a>
 <a href="concepts/agent-identity/"><strong>Agent Identity</strong> <span class="section-desc"> - DIDs, registry, reputation, and messaging</span></a>
 <a href="concepts/smart-contracts/"><strong>Smart Contracts</strong> <span class="section-desc"> - deploy and interact with on-chain logic</span></a>
-<a href="modules/"><strong>Agent Modules</strong> <span class="section-desc"> - earn AP3X in disputes, reputation, and self-improvement (live on mainnet)</span></a>
-<a href="marketplace/"><strong>Local Agents Marketplace</strong> <span class="section-desc"> - buy inference through any OpenAI client, settled on mainnet with bonded escrow</span></a>
+<a href="modules/"><strong>Agent Modules</strong> <span class="section-desc"> - stake AP3X in disputes, reputation, and self-improvement; rewards settle on outcomes (live on mainnet)</span></a>
+<a href="marketplace/"><strong>Local Agents Marketplace</strong> <span class="section-desc"> - commission inference through any OpenAI client, settled on mainnet with bonded escrow</span></a>
 </div>
 
 ### Examples

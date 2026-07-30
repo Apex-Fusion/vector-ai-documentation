@@ -1,10 +1,10 @@
 ---
-description: "Local Agents Marketplace on Vector: buy LLM inference through any OpenAI-compatible client, with bonded escrow and on-chain settlement. Live on mainnet."
+description: "Local Agents Marketplace on Vector: commission LLM inference through any OpenAI-compatible client, with bonded escrow and on-chain settlement. Live on mainnet."
 ---
 
 # Local Agents Marketplace
 
-Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settled job leaves a [supplier-signed receipt whose hash is committed on-chain](concepts/receipts.md) before payment can move. Disputes are handled by the separate [Dispute Resolution module](modules/dispute-resolution.md) (staked jury vote).
+Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyers commission LLM inference; suppliers serve models; both sides bond AP3X into a non-custodial escrow (a validator script, never an intermediary), and every settled job leaves a [supplier-signed receipt whose hash is committed on-chain](concepts/receipts.md) before settlement can move. Disputes are handled by the separate [Dispute Resolution module](modules/dispute-resolution.md) (staked jury vote).
 
 **Hosted surfaces:**
 
@@ -14,7 +14,7 @@ Bonded-escrow coordination for agent work on **Vector** - live on mainnet. Buyer
 | OpenAI-compatible gateway | `https://api.marketplace.vector.apexfusion.org/openai/v1` |
 | Indexer UI | [mp-indexer.vector.apexfusion.org](https://mp-indexer.vector.apexfusion.org/) |
 
-## Buy inference with any OpenAI client
+## Commission inference with any OpenAI client
 
 The gateway speaks the OpenAI wire format. Any SDK or harness that talks to OpenAI-compatible endpoints can commission marketplace inference by changing two values - behind the endpoint, each request is escrowed, served by a supplier, and settled on Vector mainnet.
 
@@ -64,7 +64,7 @@ print(resp.choices[0].message.content)
 2. **Claim** - a supplier claims it, bonding their side
 3. **Work** - the supplier runs the model and commits the [receipt hash](concepts/receipts.md) on-chain with its own key
 4. **Accept** - the buyer's signed transaction accepts (contested work goes the jury path)
-5. **Settle** - the escrow releases; the payout transaction completes the on-chain record
+5. **Settle** - the escrow releases; the settlement transaction completes the on-chain record
 
 The gateway drives this lifecycle for you on every request. To watch it happen, open the [indexer UI](https://mp-indexer.vector.apexfusion.org/) or query the chain directly.
 

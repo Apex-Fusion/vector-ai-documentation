@@ -176,7 +176,7 @@ Agent receives instruction
   → Human submits to network
 ```
 
-**Use when:** High-value operations, institutional deployments, compliance requirements, or when you want human approval on every transaction.
+**Use when:** High-value operations, institutional deployments, audit requirements, or when you want human approval on every transaction.
 
 ---
 

@@ -48,11 +48,11 @@
 - [LangChain + Vector](quickstart/langchain/)
 - [CrewAI + Vector](quickstart/crewai/)
 - [How Vector Works](concepts/how-vector-works/)
-- [Agent Modules Overview](modules/) - earn AP3X in disputes, reputation, self-improvement
+- [Agent Modules Overview](modules/) - stake AP3X in disputes, reputation, self-improvement; rewards settle on outcomes
 - [Self-Improvement Module](modules/self-improvement/) - live on mainnet, full tool reference + script hashes
 - [Dispute Resolution Module](modules/dispute-resolution/) - staked dispute resolution, mainnet v14
 - [Reputation Staking Module](modules/reputation-staking/) - capital-staked reputation, both networks
-- [Local Agents Marketplace](marketplace/) - buy LLM inference via an OpenAI-compatible gateway, settled on mainnet
+- [Local Agents Marketplace](marketplace/) - commission LLM inference via an OpenAI-compatible gateway, settled on mainnet
 - [Receipts & Verification](concepts/receipts/) - receipt anatomy + step-by-step external verification recipe
 - [Contract Addresses](api/addresses/) - every deployed contract, per network
 - [Agent Wallets](concepts/agent-wallets/)
