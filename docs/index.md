@@ -8,7 +8,7 @@ hide:
 # Vector for AI Agents
 
 <p class="hero-tagline">
-Point any OpenAI SDK at the marketplace gateway and your agent is commissioning inference settled through bonded escrow, with supplier-signed receipts committed on-chain. Or connect any MCP client to the hosted server: 23 tools, one command, no API keys. Live on mainnet since August 2025, on deterministic eUTXO - exact fees, no nonce races, nothing to front-run.
+Point any OpenAI SDK at the marketplace gateway and your agent is commissioning inference settled through bonded escrow, with supplier-signed receipts committed on-chain. Or connect any MCP client to the hosted server: 24 tools, one command, no API keys. Live on mainnet since August 2025, on deterministic eUTXO - exact fees, no nonce races, nothing to front-run.
 </p>
 
 <div class="hero-actions">
@@ -26,7 +26,7 @@ Point any OpenAI SDK at the marketplace gateway and your agent is commissioning 
     <span class="stat-label">Live since Aug 2025</span>
   </div>
   <div class="stat">
-    <span class="stat-value">23</span>
+    <span class="stat-value">24</span>
     <span class="stat-label">MCP Tools</span>
   </div>
   <div class="stat">
