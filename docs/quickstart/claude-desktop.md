@@ -28,8 +28,8 @@ Add the Vector MCP server - connect directly to the hosted server (no installs n
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.testnet.apexfusion.org/mcp"
         }
       }
     }
@@ -41,8 +41,8 @@ Add the Vector MCP server - connect directly to the hosted server (no installs n
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/mcp"
         }
       }
     }

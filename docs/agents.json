@@ -10,9 +10,9 @@
   ],
   "mcp_server": {
     "repository": "https://github.com/Apex-Fusion/mcp-server",
-    "hosted_testnet": "https://mcp.vector.testnet.apexfusion.org/sse",
-    "hosted_mainnet": "https://mcp.vector.mainnet.apexfusion.org/sse",
-    "transport": "sse"
+    "hosted_testnet": "https://mcp.vector.testnet.apexfusion.org/mcp",
+    "hosted_mainnet": "https://mcp.vector.mainnet.apexfusion.org/mcp",
+    "transport": "streamable-http"
   },
   "sdk": {
     "python": {

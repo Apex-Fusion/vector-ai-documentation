@@ -17,7 +17,7 @@ The server handles:
 - Agent registry operations (register, update, transfer, deregister, discover, message)
 - Safety controls (spend limits, audit logging, dry-run)
 
-**Transport:** SSE (Server-Sent Events) over HTTPS.
+**Transport:** MCP Streamable HTTP over HTTPS, at the `/mcp` endpoint. The deprecated SSE transport (`/sse` + `/messages`) was removed in server v2.0.0.
 
 **Mnemonic handling:** The wallet mnemonic is passed per-call by the MCP client - it is NOT stored in the server environment.
 
@@ -36,25 +36,25 @@ One command:
 === "Mainnet"
 
     ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse
+    claude mcp add --transport http vector-mcp https://mcp.vector.mainnet.apexfusion.org/mcp
     ```
 
     To make it available across all your projects, add `--scope user`:
 
     ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
+    claude mcp add --transport http vector-mcp https://mcp.vector.mainnet.apexfusion.org/mcp --scope user
     ```
 
 === "Testnet"
 
     ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+    claude mcp add --transport http vector-mcp https://mcp.vector.testnet.apexfusion.org/mcp
     ```
 
     To make it available across all your projects, add `--scope user`:
 
     ```bash
-    claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+    claude mcp add --transport http vector-mcp https://mcp.vector.testnet.apexfusion.org/mcp --scope user
     ```
 
 That's it - all 24 Vector MCP tools are immediately available in Claude Code.
@@ -69,8 +69,8 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) o
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/mcp"
         }
       }
     }
@@ -82,8 +82,8 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) o
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.testnet.apexfusion.org/mcp"
         }
       }
     }
@@ -98,13 +98,13 @@ Go to **Settings → Connectors → Add custom connector**, then enter:
 === "Mainnet"
 
     ```
-    https://mcp.vector.mainnet.apexfusion.org/sse
+    https://mcp.vector.mainnet.apexfusion.org/mcp
     ```
 
 === "Testnet"
 
     ```
-    https://mcp.vector.testnet.apexfusion.org/sse
+    https://mcp.vector.testnet.apexfusion.org/mcp
     ```
 
 ### Project-Level Setup
@@ -117,8 +117,8 @@ For team collaboration, commit a `.mcp.json` file to your project root:
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.mainnet.apexfusion.org/mcp"
         }
       }
     }
@@ -130,8 +130,8 @@ For team collaboration, commit a `.mcp.json` file to your project root:
     {
       "mcpServers": {
         "vector-mcp": {
-          "type": "sse",
-          "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+          "type": "http",
+          "url": "https://mcp.vector.testnet.apexfusion.org/mcp"
         }
       }
     }
@@ -141,21 +141,24 @@ Anyone who opens the project with Claude Code will automatically pick up the Vec
 
 ### Other MCP Clients
 
-Connect any MCP-compatible client to the SSE endpoint:
+Connect any MCP-compatible client (Streamable HTTP transport) to the `/mcp` endpoint:
 
 === "Mainnet"
 
     ```
-    https://mcp.vector.mainnet.apexfusion.org/sse
+    https://mcp.vector.mainnet.apexfusion.org/mcp
     ```
 
 === "Testnet"
 
     ```
-    https://mcp.vector.testnet.apexfusion.org/sse
+    https://mcp.vector.testnet.apexfusion.org/mcp
     ```
 
 No additional configuration required - the hosted server handles all chain access internally.
+
+!!! warning "Upgrading from the SSE endpoint?"
+    Server v2.0.0 removed the legacy `/sse` and `/messages` routes. If your client was configured with `.../sse` and transport `sse`, change it to `.../mcp` with transport `http` (Streamable HTTP) and restart the client. The old URL returns `404`.
 
 **Source repository:** [github.com/Apex-Fusion/mcp-server](https://github.com/Apex-Fusion/mcp-server)
 
@@ -233,10 +236,15 @@ Read the JSON file directly, or query it programmatically.
 Check endpoint availability:
 
 ```bash
+# Hosted MCP server (mainnet shown; use .testnet. for testnet)
+curl -s https://mcp.vector.mainnet.apexfusion.org/health
+# {"status":"ok","version":"2.0.0"}
+
+# Chain access
 curl -s https://ogmios.vector.testnet.apexfusion.org/health
 ```
 
-If the endpoint is down, check the [Apex Fusion status page](https://apexfusion.org) or flag it with the team.
+If either endpoint is down, check the [Apex Fusion status page](https://apexfusion.org) or flag it with the team.
 
 ### "Spend limit exceeded"
 

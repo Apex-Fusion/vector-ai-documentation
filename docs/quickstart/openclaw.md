@@ -22,8 +22,8 @@ Add the hosted Vector MCP server to your OpenClaw configuration file (`openclaw.
     ```yaml
     mcp_servers:
       - name: vector
-        transport: sse
-        url: https://mcp.vector.testnet.apexfusion.org/sse
+        transport: http
+        url: https://mcp.vector.testnet.apexfusion.org/mcp
     ```
 
 === "Mainnet"
@@ -31,8 +31,8 @@ Add the hosted Vector MCP server to your OpenClaw configuration file (`openclaw.
     ```yaml
     mcp_servers:
       - name: vector
-        transport: sse
-        url: https://mcp.vector.mainnet.apexfusion.org/sse
+        transport: http
+        url: https://mcp.vector.mainnet.apexfusion.org/mcp
     ```
 
 No installation, no API keys, no environment variables needed.

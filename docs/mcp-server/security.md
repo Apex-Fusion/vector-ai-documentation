@@ -9,7 +9,7 @@ Detailed security architecture of the Vector MCP server - how spend limits, audi
 ```
 ┌──────────────────────┐      ┌──────────────────────────┐
 │  Claude / GPT / etc. │◄────►│  Vector MCP Server       │
-│  (any MCP client)    │ SSE  │                          │
+│  (any MCP client)    │ HTTP │                          │
 └──────────────────────┘      │  ┌────────────────────┐  │
                               │  │ Rate Limiter        │  │
                               │  │ (60 calls/min)      │  │
@@ -179,7 +179,7 @@ This design prevents mnemonic leakage via server logs, environment dumps, or pro
 
 ## Transport Security
 
-The hosted MCP server uses **SSE (Server-Sent Events) over HTTPS** (port 443). All connections are TLS-encrypted.
+The hosted MCP server uses **MCP Streamable HTTP over HTTPS** (port 443) at the `/mcp` endpoint. All connections are TLS-encrypted. Each client session is identified by an `mcp-session-id` header that the server issues on `initialize`; idle sessions expire after 10 minutes. The deprecated SSE transport (`/sse` + `/messages`) was removed in server v2.0.0 and now returns `404`.
 
 ---
 

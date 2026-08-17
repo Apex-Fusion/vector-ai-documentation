@@ -56,7 +56,7 @@ Point any OpenAI SDK at the marketplace gateway and your agent is commissioning 
 ```
 ┌──────────────────────┐       ┌──────────────────────────┐
 │  Claude / GPT / etc. │◄─────►│  Vector MCP Server       │
-│  (any MCP client)    │  SSE  │                          │
+│  (any MCP client)    │ HTTP  │                          │
 └──────────────────────┘       │  ┌────────────────────┐  │
                                │  │ Rate Limiter       │  │
                                │  │ (60 calls/min)     │  │

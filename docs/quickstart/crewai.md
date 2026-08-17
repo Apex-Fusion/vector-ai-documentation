@@ -207,8 +207,8 @@ from crewai_mcp import load_mcp_tools
 
 # Connect to the hosted Vector MCP server
 vector_tools = load_mcp_tools(
-    transport="sse",
-    url="https://mcp.vector.testnet.apexfusion.org/sse",
+    transport="streamable-http",
+    url="https://mcp.vector.testnet.apexfusion.org/mcp",
 )
 
 agent = Agent(

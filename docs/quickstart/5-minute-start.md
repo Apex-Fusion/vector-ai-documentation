@@ -27,25 +27,25 @@ The Vector MCP server is hosted and publicly available - no installation, no API
     === "Mainnet"
 
         ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse
+        claude mcp add --transport http vector-mcp https://mcp.vector.mainnet.apexfusion.org/mcp
         ```
 
         To make it available across all your projects, add `--scope user`:
 
         ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.mainnet.apexfusion.org/sse --scope user
+        claude mcp add --transport http vector-mcp https://mcp.vector.mainnet.apexfusion.org/mcp --scope user
         ```
 
     === "Testnet"
 
         ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse
+        claude mcp add --transport http vector-mcp https://mcp.vector.testnet.apexfusion.org/mcp
         ```
 
         To make it available across all your projects, add `--scope user`:
 
         ```bash
-        claude mcp add --transport sse vector-mcp https://mcp.vector.testnet.apexfusion.org/sse --scope user
+        claude mcp add --transport http vector-mcp https://mcp.vector.testnet.apexfusion.org/mcp --scope user
         ```
 
 === "Claude Desktop"
@@ -58,8 +58,8 @@ The Vector MCP server is hosted and publicly available - no installation, no API
         {
           "mcpServers": {
             "vector-mcp": {
-              "type": "sse",
-              "url": "https://mcp.vector.mainnet.apexfusion.org/sse"
+              "type": "http",
+              "url": "https://mcp.vector.mainnet.apexfusion.org/mcp"
             }
           }
         }
@@ -71,8 +71,8 @@ The Vector MCP server is hosted and publicly available - no installation, no API
         {
           "mcpServers": {
             "vector-mcp": {
-              "type": "sse",
-              "url": "https://mcp.vector.testnet.apexfusion.org/sse"
+              "type": "http",
+              "url": "https://mcp.vector.testnet.apexfusion.org/mcp"
             }
           }
         }
@@ -87,32 +87,32 @@ The Vector MCP server is hosted and publicly available - no installation, no API
     === "Mainnet"
 
         ```
-        https://mcp.vector.mainnet.apexfusion.org/sse
+        https://mcp.vector.mainnet.apexfusion.org/mcp
         ```
 
     === "Testnet"
 
         ```
-        https://mcp.vector.testnet.apexfusion.org/sse
+        https://mcp.vector.testnet.apexfusion.org/mcp
         ```
 
 === "Other MCP Clients"
 
-    Connect to the SSE endpoint:
+    Connect any MCP client that supports Streamable HTTP to the `/mcp` endpoint:
 
     === "Mainnet"
 
         ```
-        https://mcp.vector.mainnet.apexfusion.org/sse
+        https://mcp.vector.mainnet.apexfusion.org/mcp
         ```
 
     === "Testnet"
 
         ```
-        https://mcp.vector.testnet.apexfusion.org/sse
+        https://mcp.vector.testnet.apexfusion.org/mcp
         ```
 
-All 23 Vector MCP tools are immediately available.
+All 24 Vector MCP tools are immediately available.
 
 ## Step 2: Create Your Agent's Wallet
 

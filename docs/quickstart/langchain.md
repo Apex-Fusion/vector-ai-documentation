@@ -123,8 +123,8 @@ from langchain_mcp import MCPToolkit
 
 # Connect to the hosted Vector MCP server
 toolkit = MCPToolkit(
-    transport="sse",
-    url="https://mcp.vector.testnet.apexfusion.org/sse",
+    transport="streamable_http",
+    url="https://mcp.vector.testnet.apexfusion.org/mcp",
 )
 
 # All Vector MCP tools are automatically available

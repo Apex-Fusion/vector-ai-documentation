@@ -237,7 +237,7 @@ An alternative that connects to the hosted MCP server instead of talking to Ogmi
 ```python
 from vector_agent import VectorAgentMCP
 
-agent = VectorAgentMCP(mcp_url="https://mcp.vector.testnet.apexfusion.org/sse")
+agent = VectorAgentMCP(mcp_url="https://mcp.vector.testnet.apexfusion.org/mcp")
 ```
 
 This mode is useful when you want to use the hosted MCP server's safety layer and chain access without configuring Ogmios endpoints directly.
