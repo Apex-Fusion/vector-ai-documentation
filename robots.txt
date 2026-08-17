@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://apex-fusion.github.io/vector-ai-documentation/sitemap.xml
