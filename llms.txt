@@ -1,0 +1,118 @@
+# Vector Blockchain - AI Agent Documentation
+
+> Vector is a UTXO-based L2 blockchain optimized for AI agent interactions.
+> Part of the Apex Fusion ecosystem. Native coin: AP3X (smallest unit: DFM).
+> Sub-1-second optimistic finality (99.9% within ~13s). Mainnet live since August 2025.
+> Full MCP server available for native AI agent integration.
+> Built on the proven Aiken + PyCardano + Ogmios + Koios toolchain.
+> Testnet uses mainnet network ID - addresses start with addr1, not addr_test1.
+
+## Quick Reference
+
+- Network Magic: 764824073
+- Address Format: addr1 (mainnet flag for BOTH testnet and mainnet)
+- PyCardano Network: Network.MAINNET (even for testnet!)
+- Native Coin: AP3X (1 AP3X = 1,000,000 DFM)
+- DFM is the smallest unit (equivalent to lovelace on Cardano)
+- Smart Contracts: Aiken (primary), Plutus V3 (Conway era)
+- Aiken Version: latest stable (v1.1.x+)
+- Finality: sub-1 second optimistic (99.9% within ~13s)
+- Agent Registry Deposit: 10 AP3X (refunded on deregister)
+
+## Faucet (Testnet Only)
+
+- Register: https://apex-fusion.github.io/vector-faucet/
+- API: POST https://faucet.vector.testnet.apexfusion.org/faucet/request
+- Status: GET https://faucet.vector.testnet.apexfusion.org/faucet/status
+- Auth Header: X-API-Key: vf_your_key (or Authorization: Bearer vf_your_key)
+- Body: {"address": "addr1...", "amount": 10000000}
+- Limits: 10-50 AP3X per request, 200 AP3X/day, 2000 AP3X/month
+
+## Common Mistakes AI Agents Make
+
+1. Using Network.TESTNET - use Network.MAINNET (addresses must be addr1, not addr_test1)
+2. Using old Aiken (v1.0.29-alpha) - use latest stable (v1.1.x+), Vector is Conway era
+3. Targeting PlutusV2 - use PlutusV3 (Vector runs Conway era)
+4. Using "lovelace" in user-facing text - use "DFM" (code still uses lovelace internally)
+5. Definite-length CBOR arrays - use indefinite-length to match Aiken's encoding
+6. Assuming Ogmios returns decoded datums - it returns raw CBOR hex, decode with cbor2
+
+## Docs
+
+- [Cheat Sheet](cheat-sheet/) - all config values in one page
+- [Quick Start](quickstart/5-minute-start/)
+- [Testnet Faucet](quickstart/faucet/)
+- [Get AP3X on Mainnet](quickstart/mainnet-ap3x/) - Aerodrome (Base) -> Skyline -> Nexus -> Reactor -> Vector
+- [Claude Desktop Setup](quickstart/claude-desktop/)
+- [OpenClaw + Vector](quickstart/openclaw/)
+- [LangChain + Vector](quickstart/langchain/)
+- [CrewAI + Vector](quickstart/crewai/)
+- [How Vector Works](concepts/how-vector-works/)
+- [Agent Modules Overview](modules/) - stake AP3X in disputes, reputation, self-improvement; rewards settle on outcomes
+- [Self-Improvement Module](modules/self-improvement/) - live on mainnet, full tool reference + script hashes
+- [Dispute Resolution Module](modules/dispute-resolution/) - staked dispute resolution, mainnet v14
+- [Reputation Staking Module](modules/reputation-staking/) - capital-staked reputation, both networks
+- [Local Agents Marketplace](marketplace/) - commission LLM inference via an OpenAI-compatible gateway, settled on mainnet
+- [Receipts & Verification](concepts/receipts/) - receipt anatomy + step-by-step external verification recipe
+- [Contract Addresses](api/addresses/) - every deployed contract, per network
+- [Agent Wallets](concepts/agent-wallets/)
+- [Vector-Specific Gotchas](concepts/vector-gotchas/)
+- [MCP Server Setup](mcp-server/installation/)
+- [MCP Tools Reference](mcp-server/tools-reference/)
+- [Python SDK Reference](sdk/python/)
+- [TypeScript SDK Reference](sdk/typescript/)
+- [Smart Contract Templates](contracts/templates/)
+- [Contract Testing Guide](contracts/testing/)
+- [Contract Deployment](contracts/deployment/)
+- [API Endpoints](api/)
+
+## Marketplace OpenAI Gateway
+
+- Base URL: https://api.marketplace.vector.apexfusion.org/openai/v1
+- Create key: POST https://api.marketplace.vector.apexfusion.org/signup {"label": "..."} (key shown once + AP3X deposit address)
+- Works with any OpenAI-compatible SDK: set base_url + api_key; GET /openai/v1/models lists available models
+- Account: GET /account, POST /account/withdraw (Bearer api_key); every request escrowed and settled on Vector mainnet
+- Web app: https://marketplace.vector.apexfusion.org - Indexer: https://mp-indexer.vector.apexfusion.org/
+
+## Optional
+
+- [Agent Identity & Registry](concepts/agent-identity/)
+- [Safety Model](concepts/safety-model/)
+- [Smart Contracts for Agents](concepts/smart-contracts/)
+- [Genealogy showcase](examples/) - 385,000 records with per-fact provenance, live at genealogy.vector.apexfusion.org
+
+## Source Repositories
+
+- MCP Server: https://github.com/Apex-Fusion/mcp-server
+- Python SDK: https://github.com/Apex-Fusion/agent-sdk-py
+- TypeScript SDK: https://github.com/Apex-Fusion/agent-sdk-ts
+- Smart Contracts: https://github.com/Apex-Fusion/vector-ai-agents
+- Documentation: https://github.com/Apex-Fusion/vector-ai-documentation
+
+## Endpoints (Testnet)
+
+- Ogmios: https://ogmios.vector.testnet.apexfusion.org
+- TX Submit: https://submit.vector.testnet.apexfusion.org/api/submit/tx
+- Koios: https://v2.koios.vector.testnet.apexfusion.org/
+- Faucet API: https://faucet.vector.testnet.apexfusion.org
+- Explorer: https://vector.testnet.apexscan.org
+
+## Endpoints (Mainnet)
+
+- Ogmios: https://ogmios.vector.mainnet.apexfusion.org
+- TX Submit: https://submit.vector.mainnet.apexfusion.org/api/submit/tx
+- Koios: https://v2.koios.vector.mainnet.apexfusion.org/
+- Explorer: https://vector.apexscan.org/en/
+
+## Environment Variables (.env template)
+
+```
+VECTOR_OGMIOS_URL=https://ogmios.vector.testnet.apexfusion.org
+VECTOR_SUBMIT_URL=https://submit.vector.testnet.apexfusion.org/api/submit/tx
+VECTOR_KOIOS_URL=https://v2.koios.vector.testnet.apexfusion.org/
+VECTOR_EXPLORER_URL=https://vector.testnet.apexscan.org
+VECTOR_MNEMONIC="your 24 word mnemonic here"
+VECTOR_SPEND_LIMIT_PER_TX=100000000
+VECTOR_SPEND_LIMIT_DAILY=500000000
+FAUCET_API_KEY=vf_your_key_here
+```
